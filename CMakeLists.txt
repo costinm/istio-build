@@ -75,6 +75,6 @@ include(third_party/protobuf/protobuf.cmake)
 
 include(third_party/mixer/istio-mixer.cmake)
 
-add_subdirectory(src/envoy-istio)
+add_subdirectory(third_party/envoy-istio)
 
 include(third_party/envoy/envoy.cmake)

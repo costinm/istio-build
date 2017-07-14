@@ -1,5 +1,16 @@
 workspace(name= "istio")
 
+# Style:
+# - assume repo or godep will download the repositories, in a format compatible
+#   with golang.
+# - try to stay close to the envoy style for envoy sources
+#
+# Ok:
+# @envoy -> envoy defined as a repository
+# //external/ -> a binding
+#
+#
+
 # Cleaned up Envoy build file, without 'binary build' blobs
 new_local_repository(
     name = "envoy",
@@ -33,10 +44,7 @@ new_local_repository(
 
 # Using the protobuf_bzl name, to make envoy happy (since it's hardcoding @protobuf_bzl in envoy_build_system)
 
-bind(
-    name = "mixer_client_lib",
-    actual = "//src/mixerclient:mixer_client_lib",
-)
+bind( name = "mixer_client_lib", actual = "//src/mixerclient:mixer_client_lib",)
 
 bind(
     name = "spdlog",

@@ -1,5 +1,5 @@
 include_directories(
-       ../spdlog/include
+       ../../src/spdlog/include
        .
 )
 add_library(envoy-istio OBJECT

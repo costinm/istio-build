@@ -1,5 +1,8 @@
-build-cmake-*/
+src/
+cmake-build*/
+bazel-*/
 envoy/
-prebuilds/
+prebuilts/
 pkg/
+.repo/
 
