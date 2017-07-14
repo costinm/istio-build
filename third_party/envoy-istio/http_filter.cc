@@ -443,7 +443,8 @@ class Instance : public Http::StreamDecoderFilter,
 namespace Server {
 namespace Configuration {
 
-class IstioMixerConfig : public NamedHttpFilterConfigFactory {
+#ifdef ISTIO_NEW
+        class IstioMixerConfig : public NamedHttpFilterConfigFactory {
  public:
     HttpFilterFactoryCb createFilterFactory(HttpFilterType type, const Json::Object& config,
                                             const std::string& stats, Server::Instance& server) override {
@@ -473,6 +474,38 @@ class IstioMixerConfig : public NamedHttpFilterConfigFactory {
 };
 
 static RegisterNamedHttpFilterConfigFactory<IstioMixerConfig> register_;
+
+#else
+        class IstioMixerConfig : public HttpFilterConfigFactory {
+        public:
+            HttpFilterFactoryCb tryCreateFilterFactory(
+                    HttpFilterType type, const std::string& name, const Json::Object& config,
+                    const std::string&, Server::Instance& server) override {
+              if (type != HttpFilterType::Decoder || name != "istiomixer") {
+                return nullptr;
+              }
+
+              Http::IstioMixer::ConfigPtr mixer_config(
+                      new Http::IstioMixer::Config(config, server));
+              return
+                      [mixer_config](Http::FilterChainFactoryCallbacks& callbacks) -> void {
+                          std::shared_ptr<Http::IstioMixer::Instance> instance =
+                                  std::make_shared<Http::IstioMixer::Instance>(mixer_config);
+                          callbacks.addStreamDecoderFilter(
+                                  Http::StreamDecoderFilterSharedPtr(instance));
+                          callbacks.addAccessLogHandler(
+                                  Http::AccessLog::InstanceSharedPtr(instance));
+                      };
+            }
+
+            std::string name() {
+              return "istiomixer";
+            };
+
+        };
+
+        static RegisterHttpFilterConfigFactory<IstioMixerConfig> register_;
+#endif
 
 }  // namespace Configuration
 }  // namespace Server

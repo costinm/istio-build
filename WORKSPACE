@@ -1,9 +1,15 @@
-############### Envoy module requirements.
+workspace(name= "istio")
+
+# Cleaned up Envoy build file, without 'binary build' blobs
 new_local_repository(
     name = "envoy",
     path = "envoy",
-    build_file = "src/envoy.BUILD"
+    build_file = "third_party/envoy/envoy.BUILD"
 )
+
+# Naming conflicts:
+# mixerclient: @protobuf_bzl (for cc_proto_library )
+
 
 # load("@envoy//bazel:repositories.bzl", "envoy_dependencies")
 # load("@envoy//bazel:cc_configure.bzl", "cc_configure")

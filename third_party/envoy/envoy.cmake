@@ -45,7 +45,6 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/filter/tcp_proxy.cc
         envoy/source/common/grpc/codec.cc
         envoy/source/common/grpc/common.cc
-        envoy/source/common/grpc/grpc_web_filter.cc
         envoy/source/common/grpc/http1_bridge_filter.cc
         envoy/source/common/grpc/rpc_channel_impl.cc
         envoy/source/common/grpc/rpc_channel_impl.h
@@ -124,24 +123,14 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/config/http/buffer.cc
         envoy/source/server/config/http/fault.cc
         envoy/source/server/config/http/grpc_http1_bridge.cc
-        envoy/source/server/config/http/grpc_web.cc
         envoy/source/server/config/http/ratelimit.cc
         envoy/source/server/config/http/router.cc
-        envoy/source/server/config/http/zipkin_http_tracer.cc
         envoy/source/server/config/network/client_ssl_auth.cc
         envoy/source/server/config/network/echo.cc
         envoy/source/server/config/network/http_connection_manager.cc
         envoy/source/server/config/network/ratelimit.cc
         envoy/source/server/config/network/redis_proxy.cc
         envoy/source/server/config/network/tcp_proxy.cc
-
-        envoy/source/server/config_validation/api.cc
-        envoy/source/server/config_validation/async_client.cc
-        envoy/source/server/config_validation/cluster_manager.cc
-        envoy/source/server/config_validation/connection_handler.cc
-        envoy/source/server/config_validation/dispatcher.cc
-        envoy/source/server/config_validation/dns.cc
-        envoy/source/server/config_validation/server.cc
 
         envoy/source/server/http/admin.cc
         envoy/source/server/http/health_check.cc
@@ -153,7 +142,6 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/worker.cc
         envoy/source/server/options_impl.cc
         envoy/source/server/configuration_impl.cc
-        envoy/source/server/config/http/lightstep_http_tracer.cc
 
         envoy/source/exe/main.cc
         envoy/source/exe/hot_restart.cc
@@ -166,14 +154,23 @@ add_executable(envoy ${ENVOY_SOURCE_FILES}
         $<TARGET_OBJECTS:istioproxy>
         $<TARGET_OBJECTS:envoy-istio>
         )
-target_link_libraries (envoy PUBLIC -lpthread -lrt)
+
+if (DEFINED ANDROID_TOOLCHAIN)
+    target_link_libraries (envoy PUBLIC -llog -landroid)
+else()
+    target_link_libraries (envoy PUBLIC -lpthread -lrt)
+
+endif()
+
 target_link_libraries(envoy PUBLIC tracer)
 target_link_libraries(envoy PUBLIC cares)
 #target_link_libraries(envoy PUBLIC bssl)
 target_link_libraries(envoy PUBLIC ssl)
 target_link_libraries(envoy PUBLIC crypto)
 target_link_libraries(envoy PUBLIC nghttp2)
-target_link_libraries(envoy PUBLIC ev)
+#target_link_libraries(envoy PUBLIC ev)
+target_link_libraries(envoy PUBLIC event_pthreads_static)
+target_link_libraries(envoy PUBLIC event_core_static)
 target_link_libraries(envoy PUBLIC protobuf)
 
 # envoy/source/common/common/version_linkstamp.cc:5:35:

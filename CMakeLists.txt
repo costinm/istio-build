@@ -1,15 +1,21 @@
 # Android uses 3.6, clion 3.7.1, trusty 2.8.12
-cmake_minimum_required(VERSION 2.8) #3.6)
+cmake_minimum_required(VERSION 2.8)
 
-# Trusty - doesn't work (c99)
-project(istio_all)
+project(istio)
 
 # No effect on trusty - must set cxx flag
 set(CMAKE_CXX_STANDARD 11)
-
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11" )
 
+# Envoy uses its own boring ssl crypto, no need for it in libevent
+set(EVENT__DISABLE_OPENSSL ON CACHE bool "Disable ssl")
+set(EVENT__DISABLE_TESTS ON CACHE bool "disable tests")
+set(EVENT__DISABLE_SAMPLES ON CACHE bool "disable samples")
+set(EVENT__DISABLE_BENCHMARK ON CACHE bool "disable bench")
+
+# To compile boring ssl - requires go in path
+set(GO_EXECUTABLE "go")
 
 # protobuf requires it
 add_definitions(-DHAVE_PTHREAD)
@@ -53,7 +59,10 @@ include_directories(
 set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl)
 
 
-include(third_party/libevent/libevent.cmake)
+#include(third_party/libevent/libevent.cmake)
+# Doesn't work with CMake 2.8 on trusty
+add_subdirectory(src/libevent)
+
 include(third_party/cares/cares.cmake)
 
 include(third_party/lightstep-tracer/lightstep-tracer.cmake)
