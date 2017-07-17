@@ -1,3 +1,5 @@
+licenses(["permissive"])
+
 config_setting(
     name = "darwin",
     values = {"cpu": "darwin"},
@@ -83,9 +85,15 @@ cc_library(
         ":darwin": ["config_darwin/ares_config.h"],
         "//conditions:default": ["config_linux/ares_config.h"],
     }),
+    copts = [
+        "-D_GNU_SOURCE",
+        "-D_HAS_EXCEPTIONS=0",
+        "-DNOMINMAX",
+        "-DHAVE_CONFIG_H",
+    ],
     includes = [
         ".",
-        "cares"
+        "cares",
     ] + select({
         ":darwin": ["config_darwin"],
         "//conditions:default": ["config_linux"],
@@ -93,11 +101,5 @@ cc_library(
     linkstatic = 1,
     visibility = [
         "//visibility:public",
-    ],
-    copts = [
-        "-D_GNU_SOURCE",
-        "-D_HAS_EXCEPTIONS=0",
-        "-DNOMINMAX",
-        "-DHAVE_CONFIG_H",
     ],
 )

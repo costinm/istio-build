@@ -7,11 +7,11 @@ set(TRACER_SOURCE
         third_party/lightstep-tracer/collector.pb.cc
         third_party/lightstep-tracer/lightstep_carrier.pb.cc
 
-        src/lightstep-tracer/src/c++11/impl.cc
+        third_party/lightstep-tracer/src/src/c++11/impl.cc
         # grpc req. src/lightstep-tracer/src/c++11/recorder.cc
-        src/lightstep-tracer/src/c++11/span.cc
-        src/lightstep-tracer/src/c++11/tracer.cc
-        src/lightstep-tracer/src/c++11/util.cc
+        third_party/lightstep-tracer/src/src/c++11/span.cc
+        third_party/lightstep-tracer/src/src/c++11/tracer.cc
+        third_party/lightstep-tracer/src/src/c++11/util.cc
         )
 
 

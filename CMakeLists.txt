@@ -29,23 +29,23 @@ include_directories(
         envoy/source
         envoy/include
         src/protobuf/src
-        src/libevent/compat
-        src/libevent/include
-        src/cares
-        src/boringssl/include
-        src/http-parser
-        src/nghttp2/lib/includes
+        third_party/cares/cares
+        src/boringssl/src/include
+        third_party/http-parser/src
+        third_party/nghttp2/src/lib/includes
         src/rapidjson/include
         # Tracing
-        src/lightstep-tracer/src/c++11
+        third_party/lightstep-tracer/src/src/c++11
         # CLI
-        src/tclap/include
+        third_party/tclap/include
         # Backtraces
         src/backward
 
         third_party/cares
         third_party/envoy/include
         third_party/nghttp2/include
+        third_party/libevent/src/compat
+        third_party/libevent/src/include
         third_party/libevent/include
         third_party/cares/config_linux
         third_party/external/envoy
@@ -56,20 +56,21 @@ include_directories(
         src/proxy
 )
 
-set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl)
+set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl/src)
 
 
 #include(third_party/libevent/libevent.cmake)
 # Doesn't work with CMake 2.8 on trusty
-add_subdirectory(src/libevent)
+add_subdirectory(third_party/libevent/src)
 
 include(third_party/cares/cares.cmake)
 
 include(third_party/lightstep-tracer/lightstep-tracer.cmake)
+include(third_party/http-parser/CMakeList.txt)
 include(third_party/nghttp2/nghttp2.cmake)
 
 #add_subdirectory(build/boringssl)
-add_subdirectory(src/boringssl)
+add_subdirectory(src/boringssl/src)
 
 include(third_party/protobuf/protobuf.cmake)
 

@@ -5,7 +5,6 @@ include_directories(
 )
 
 set(ENVOY_SOURCE_FILES
-        src/http-parser/http_parser.c
 
         # Problems compiling on android:
         envoy/source/common/common/to_lower_table.cc
@@ -163,6 +162,8 @@ else()
 endif()
 
 target_link_libraries(envoy PUBLIC tracer)
+target_link_libraries(envoy PUBLIC http-parser)
+
 target_link_libraries(envoy PUBLIC cares)
 #target_link_libraries(envoy PUBLIC bssl)
 target_link_libraries(envoy PUBLIC ssl)

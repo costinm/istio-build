@@ -11,6 +11,12 @@ workspace(name= "istio")
 #
 #
 
+# External projects without BUILD files
+bind(name = "lightstep", actual = "//third_party/lightstep-tracer:lightstep_core",)
+bind(name = "nghttp2", actual = "//third_party/nghttp2:nghttp2",)
+bind(name = "http_parser", actual = "//third_party:http_parser",
+)
+
 # Cleaned up Envoy build file, without 'binary build' blobs
 new_local_repository(
     name = "envoy",
@@ -19,15 +25,15 @@ new_local_repository(
 )
 
 # Naming conflicts:
-# mixerclient: @protobuf_bzl (for cc_proto_library )
+# mixerclient: @com_google_protobuf (for cc_proto_library )
 
 
 # load("@envoy//bazel:repositories.bzl", "envoy_dependencies")
 # load("@envoy//bazel:cc_configure.bzl", "cc_configure")
 
 # From original proxy WORKSPACE
-#envoy_dependencies(skip_protobuf_bzl = True, skip_targets=["googletest", "protobuf", "protoc", "lightstep", "ssl"])
-# envoy_dependencies(skip_protobuf_bzl = True)
+#envoy_dependencies(skip_com_google_protobuf = True, skip_targets=["googletest", "protobuf", "protoc", "lightstep", "ssl"])
+# envoy_dependencies(skip_com_google_protobuf = True)
 
 # Envoy BUILD files use things like:
 # //include/envoy/ssl:context_interface
@@ -42,7 +48,7 @@ new_local_repository(
 
 ############### Proxy and mixer
 
-# Using the protobuf_bzl name, to make envoy happy (since it's hardcoding @protobuf_bzl in envoy_build_system)
+# Using the com_google_protobuf name, to make envoy happy (since it's hardcoding @com_google_protobuf in envoy_build_system)
 
 bind( name = "mixer_client_lib", actual = "//src/mixerclient:mixer_client_lib",)
 
@@ -53,37 +59,38 @@ bind(
 
 bind(
     name = "protoc",
-    actual = "@protobuf_bzl//:protoc",
+    actual = "@com_google_protobuf//:protoc",
 )
 
 bind(
     name = "protobuf",
-    actual = "@protobuf_bzl//:protobuf",
+    actual = "@com_google_protobuf//:protobuf",
 )
 
 bind(
     name = "cc_wkt_protos",
-    actual = "@protobuf_bzl//:cc_wkt_protos",
+    actual = "@com_google_protobuf//:cc_wkt_protos",
 )
 
 bind(
     name = "cc_wkt_protos_genproto",
-    actual = "@protobuf_bzl//:cc_wkt_protos_genproto",
+    actual = "@com_google_protobuf//:cc_wkt_protos_genproto",
 )
 
 bind(
     name = "protobuf_compiler",
-    actual = "@protobuf_bzl//:protoc_lib",
+    actual = "@com_google_protobuf//:protoc_lib",
 )
 
 bind(
     name = "protobuf_clib",
-    actual = "@protobuf_bzl//:protoc_lib",
+    actual = "@com_google_protobuf//:protoc_lib",
 )
 bind(
     name = "boringssl_crypto",
     actual = "@boringssl//:crypto",
 )
+
 bind(
     name = "crypto",
     actual = "@boringssl//:crypto",
@@ -106,17 +113,12 @@ bind(
 
 bind(
             name = "cc_wkt_protos",
-            actual = "@protobuf_bzl//:cc_wkt_protos",
+            actual = "@com_google_protobuf//:cc_wkt_protos",
 )
 
-bind(
-            name = "lightstep",
-            actual = "@lightstep_git//:lightstep_core",
-)
 ################ Protobuf dependencies
 bind(
-    name = "nanopb",
-    actual = "//third_party/nanopb",
+    name = "nanopb", actual = "//third_party/nanopb",
 )
 
 bind(
@@ -126,22 +128,17 @@ bind(
 
 bind(
     name = "protobuf",
-    actual = "@protobuf_bzl//:protobuf",
+    actual = "@com_google_protobuf//:protobuf",
 )
 
 bind(
     name = "protobuf_clib",
-    actual = "@protobuf_bzl//:protoc_lib",
+    actual = "@com_google_protobuf//:protoc_lib",
 )
 
 bind(
     name = "protocol_compiler",
-    actual = "@protobuf_bzl//:protoc",
-)
-
-bind(
-    name = "cares",
-    actual = "@submodule_cares//:ares",
+    actual = "@com_google_protobuf//:protoc",
 )
 
 bind(
@@ -159,22 +156,25 @@ bind(
     actual = "@com_github_gflags_gflags//:gflags",
 )
 
-new_local_repository(
+### Mixer
+
+## Repositories (used with @foo )
+
+local_repository(
     name = "boringssl",
-    build_file = "third_party/boringssl-with-bazel/BUILD",
-    path = "third_party/boringssl-with-bazel",
+    path = "src/boringssl",
 )
 
-new_local_repository(
-    name = "submodule_zlib",
-    build_file = "third_party/zlib.BUILD",
-    path = "third_party/zlib",
-)
-
-new_local_repository(
+# Envoy uses this name in its WORKSPACE - and has static @protobuf_bzl//
+local_repository(
     name = "protobuf_bzl",
-    build_file = "third_party/protobuf/BUILD",
-    path = "third_party/protobuf",
+    path = "src/protobuf",
+)
+
+# Required for proto_library
+local_repository(
+    name = "com_google_protobuf",
+    path = "src/protobuf",
 )
 
 new_local_repository(
@@ -194,28 +194,29 @@ new_local_repository(
     build_file = "third_party/benchmark.BUILD",
 )
 
-new_local_repository(
-    name = "submodule_cares",
-    path = "third_party/cares",
-    build_file = "third_party/cares/cares.BUILD",
+bind(
+    name = "ares",
+    actual = "//third_party/cares:ares",
 )
 
 new_local_repository(
     name = "mixerapi_git",
-    path = "src/api",
-    build_file = "src/api.BUILD",
+    path = "src/istio.io/api",
+    build_file = "third_party/api/api.BUILD",
 )
 
-local_repository(
-    name = "grpc_git",
-    path = "src/grpc",
-)
+#local_repository(
+#    name = "mixerapi_git",
+#    path = "src/api",
+#)
 
-new_local_repository(
-    name = "lightstep_git",
-    path = "src/lightstep-tracer",
-    build_file = "src/lightstep.BUILD"
-)
+
+#bind(name = "lightstep", actual = "@lightstep//:lightstep_core",)
+#new_local_repository(
+#    name = "lightstep",
+#    path = "src/lightstep-tracer",
+#    build_file = "third_party/lightstep-tracer/BUILD"
+#)
 
 new_local_repository(
     name = "lightstep_common_git",
@@ -226,5 +227,24 @@ new_local_repository(
 new_local_repository(
     name = "spdlog_git",
     path = "src/spdlog",
-    build_file = "src/spdlog.BUILD"
+    build_file = "third_party/spdlog/spdlog.BUILD"
 )
+
+bind(name="event", actual="@libevent_bzl//:event")
+bind(name="event_pthreads", actual="@libevent_bzl//:event_pthreads")
+
+local_repository(
+    name = "libevent_bzl",
+    path = "third_party/libevent",
+)
+
+bind(name="backward", actual="@backward//:backward")
+new_local_repository(
+    name = "backward",
+    path = "src/backward",
+    build_file = "third_party/backward/BUILD"
+)
+
+bind(name="tclap", actual="//third_party:tclap")
+
+bind(name="rapidjson", actual="//src:rapidjson")
