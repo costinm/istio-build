@@ -1,3 +1,5 @@
+licenses(["notice"])
+
 cc_library(
     name = "http_parser",
     srcs = ["http-parser/src/http_parser.c"],
