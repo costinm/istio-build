@@ -25,7 +25,6 @@
 #include "server/config/network/http_connection_manager.h"
 #include "config.h"
 #include "utils.h"
-#include "src/envoy/mixer/http_control.h"
 
 using ::google::protobuf::util::Status;
 using StatusCode = ::google::protobuf::util::error::Code;

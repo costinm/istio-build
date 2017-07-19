@@ -159,6 +159,10 @@ local_repository(
     name = "protobuf_bzl",
     path = "src/protobuf",
 )
+local_repository(
+    name = "protobuf_git",
+    path = "src/protobuf",
+)
 
 # Required for proto_library
 local_repository(

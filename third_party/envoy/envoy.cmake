@@ -161,8 +161,8 @@ set(ENVOY_SOURCE_FILES
         )
 
 add_executable(envoy ${ENVOY_SOURCE_FILES}
-        $<TARGET_OBJECTS:istioproxy>
-        $<TARGET_OBJECTS:envoy-istio>
+       # $<TARGET_OBJECTS:istioproxy>
+        #$<TARGET_OBJECTS:envoy-istio>
         )
 
 if (DEFINED ANDROID_TOOLCHAIN)

@@ -40,6 +40,7 @@ include_directories(
         third_party/tclap/include
         # Backtraces
         src/backward
+        src/grpc_transcoding/src/include
 
         third_party/cares
         third_party/envoy/include

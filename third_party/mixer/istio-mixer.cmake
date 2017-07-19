@@ -1,6 +1,7 @@
 include_directories(
-        third_party/mixerapi
-        third_party/mixer
+        src/mixer
+        src/proxy
+        third_party/api
 )
 
 set(ISTIOPROXY_SOURCES
@@ -13,7 +14,6 @@ set(ISTIOPROXY_SOURCES
         src/mixerclient/utils/md5.cc
         src/mixerclient/utils/protobuf.cc
         src/mixerclient/src/attribute_converter.cc
-        src/proxy/src/envoy/mixer/http_control.cc
         src/proxy/src/envoy/mixer/http_filter.cc
         src/proxy/src/envoy/mixer/utils.cc
         src/proxy/src/envoy/mixer/config.cc
