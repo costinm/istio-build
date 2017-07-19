@@ -15,6 +15,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/access_log/access_log_manager_impl.cc
         envoy/source/common/api/api_impl.cc
         envoy/source/common/buffer/buffer_impl.cc
+        envoy/source/common/buffer/zero_copy_input_stream_impl.cc
         envoy/source/common/common/base64.cc
         envoy/source/common/common/hex.cc
         envoy/source/common/common/logger.cc
@@ -31,6 +32,7 @@ set(ENVOY_SOURCE_FILES
         #envoy/source/common/mongo/proxy.cc
         #envoy/source/common/mongo/utility.cc
         #envoy/source/server/config/network/mongo_proxy.cc
+        envoy/source/common/event/dispatched_thread.cc
         envoy/source/common/event/dispatcher_impl.cc
         envoy/source/common/event/event_impl_base.cc
         envoy/source/common/event/file_event_impl.cc
@@ -46,11 +48,13 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/grpc/common.cc
         envoy/source/common/grpc/http1_bridge_filter.cc
         envoy/source/common/grpc/rpc_channel_impl.cc
-        envoy/source/common/grpc/rpc_channel_impl.h
+        envoy/source/common/grpc/grpc_web_filter.cc
+        envoy/source/common/grpc/transcoder_input_stream_impl.cc
         envoy/source/common/http/access_log/access_log_formatter.cc
         envoy/source/common/http/access_log/access_log_impl.cc
         envoy/source/common/http/filter/buffer_filter.cc
         envoy/source/common/http/filter/fault_filter.cc
+        envoy/source/common/http/filter/ip_tagging_filter.cc
         envoy/source/common/http/filter/ratelimit.cc
         envoy/source/common/http/http1/codec_impl.cc
         envoy/source/common/http/http1/conn_pool.cc
@@ -59,6 +63,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/http/async_client_impl.cc
         envoy/source/common/http/codec_client.cc
         envoy/source/common/http/codes.cc
+        envoy/source/common/http/filter_utility.cc
         envoy/source/common/http/conn_manager_impl.cc
         envoy/source/common/http/conn_manager_utility.cc
         envoy/source/common/http/date_provider_impl.cc
@@ -110,8 +115,9 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/upstream/logical_dns_cluster.cc
         envoy/source/common/upstream/outlier_detection_impl.cc
         envoy/source/common/upstream/ring_hash_lb.cc
-        envoy/source/common/upstream/sds.cc
         envoy/source/common/upstream/upstream_impl.cc
+        envoy/source/common/upstream/eds.cc
+        envoy/source/common/upstream/sds_subscription.cc
         envoy/source/common/ssl/connection_impl.cc
         envoy/source/common/ssl/context_config_impl.cc
         envoy/source/common/ssl/context_impl.cc
@@ -123,6 +129,8 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/config/http/fault.cc
         envoy/source/server/config/http/grpc_http1_bridge.cc
         envoy/source/server/config/http/ratelimit.cc
+        envoy/source/server/config/http/grpc_web.cc
+        envoy/source/server/config/http/ip_tagging.cc
         envoy/source/server/config/http/router.cc
         envoy/source/server/config/network/client_ssl_auth.cc
         envoy/source/server/config/network/echo.cc
@@ -137,12 +145,15 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/drain_manager_impl.cc
         envoy/source/server/guarddog_impl.cc
         envoy/source/server/server.cc
+        envoy/source/server/init_manager_impl.cc
+        envoy/source/server/worker_impl.cc
+        envoy/source/server/listener_manager_impl.cc
         envoy/source/server/watchdog_impl.cc
-        envoy/source/server/worker.cc
         envoy/source/server/options_impl.cc
         envoy/source/server/configuration_impl.cc
 
         envoy/source/exe/main.cc
+        envoy/source/exe/main_common.cc
         envoy/source/exe/hot_restart.cc
         envoy/source/exe/signal_action.cc
 
@@ -150,8 +161,8 @@ set(ENVOY_SOURCE_FILES
         )
 
 add_executable(envoy ${ENVOY_SOURCE_FILES}
-#        $<TARGET_OBJECTS:istioproxy>
-#        $<TARGET_OBJECTS:envoy-istio>
+        $<TARGET_OBJECTS:istioproxy>
+        $<TARGET_OBJECTS:envoy-istio>
         )
 
 if (DEFINED ANDROID_TOOLCHAIN)
