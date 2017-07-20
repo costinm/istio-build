@@ -56,7 +56,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _oneof_case_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LbEndpoint, endpoint_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LbEndpoint, health_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LbEndpoint, canary_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LbEndpoint, metadata_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LbEndpoint, load_balancing_weight_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LocalityLbEndpoints, _internal_metadata_),
@@ -237,8 +237,8 @@ void TableStruct::InitDefaultsImpl() {
   _LoadAssignmentResponse_default_instance_.DefaultConstruct();
   _LbEndpoint_default_instance_.get_mutable()->endpoint_ = const_cast< ::envoy::api::v2::Endpoint*>(
       ::envoy::api::v2::Endpoint::internal_default_instance());
-  _LbEndpoint_default_instance_.get_mutable()->canary_ = const_cast< ::google::protobuf::BoolValue*>(
-      ::google::protobuf::BoolValue::internal_default_instance());
+  _LbEndpoint_default_instance_.get_mutable()->metadata_ = const_cast< ::envoy::api::v2::Metadata*>(
+      ::envoy::api::v2::Metadata::internal_default_instance());
   _LbEndpoint_default_instance_.get_mutable()->load_balancing_weight_ = const_cast< ::google::protobuf::UInt32Value*>(
       ::google::protobuf::UInt32Value::internal_default_instance());
   _LocalityLbEndpoints_default_instance_.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
@@ -264,66 +264,66 @@ void AddDescriptorsImpl() {
       "proto\032\026api/health_check.proto\032\034google/ap"
       "i/annotations.proto\032\036google/protobuf/dur"
       "ation.proto\032\036google/protobuf/wrappers.pr"
-      "oto\"\322\001\n\nLbEndpoint\022(\n\010endpoint\030\001 \001(\0132\026.e"
+      "oto\"\320\001\n\nLbEndpoint\022(\n\010endpoint\030\001 \001(\0132\026.e"
       "nvoy.api.v2.Endpoint\0221\n\rhealth_status\030\002 "
-      "\001(\0162\032.envoy.api.v2.HealthStatus\022*\n\006canar"
-      "y\030\003 \001(\0132\032.google.protobuf.BoolValue\022;\n\025l"
-      "oad_balancing_weight\030\004 \001(\0132\034.google.prot"
-      "obuf.UInt32Value\"\254\001\n\023LocalityLbEndpoints"
-      "\022(\n\010locality\030\001 \001(\0132\026.envoy.api.v2.Locali"
-      "ty\022.\n\014lb_endpoints\030\002 \003(\0132\030.envoy.api.v2."
-      "LbEndpoint\022;\n\025load_balancing_weight\030\003 \001("
-      "\0132\034.google.protobuf.UInt32Value\"u\n\027Endpo"
-      "intLoadMetricStats\022\023\n\013metric_name\030\001 \001(\t\022"
-      ")\n!num_requests_finished_with_metric\030\002 \001"
-      "(\004\022\032\n\022total_metric_value\030\003 \001(\001\"\322\004\n\025Upstr"
-      "eamLocalityStats\022\020\n\010Locality\030\001 \001(\t\022\026\n\016to"
-      "tal_requests\030\002 \001(\004\022\"\n\032total_requests_in_"
-      "progress\030\003 \001(\004\022F\n\ntcp_errors\030\004 \003(\01322.env"
-      "oy.api.v2.UpstreamLocalityStats.TcpError"
-      "sEntry\022H\n\013http_errors\030\005 \003(\01323.envoy.api."
-      "v2.UpstreamLocalityStats.HttpErrorsEntry"
-      "\022H\n\013grpc_errors\030\006 \003(\01323.envoy.api.v2.Ups"
-      "treamLocalityStats.GrpcErrorsEntry\022\030\n\020dr"
-      "opped_requests\030\007 \001(\004\022@\n\021load_metric_stat"
-      "s\030\010 \003(\0132%.envoy.api.v2.EndpointLoadMetri"
-      "cStats\0320\n\016TcpErrorsEntry\022\013\n\003key\030\001 \001(\r\022\r\n"
-      "\005value\030\002 \001(\004:\0028\001\0321\n\017HttpErrorsEntry\022\013\n\003k"
-      "ey\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\0321\n\017GrpcError"
-      "sEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\"\033"
-      "\n\014TcpErrorType\022\013\n\007TIMEOUT\020\000\"j\n\014ClusterSt"
-      "ats\022\024\n\014cluster_name\030\001 \001(\t\022D\n\027upstream_lo"
-      "cality_stats\030\002 \003(\0132#.envoy.api.v2.Upstre"
-      "amLocalityStats\"\202\001\n\025LoadAssignmentReques"
-      "t\022\024\n\014version_info\030\001 \001(\014\022 \n\004node\030\002 \001(\0132\022."
-      "envoy.api.v2.Node\0221\n\rcluster_stats\030\003 \003(\013"
-      "2\032.envoy.api.v2.ClusterStats\"\377\001\n\025Cluster"
-      "LoadAssignment\022\024\n\014cluster_name\030\001 \001(\t\0224\n\t"
-      "endpoints\030\002 \003(\0132!.envoy.api.v2.LocalityL"
-      "bEndpoints\022=\n\022failover_endpoints\030\003 \003(\0132!"
-      ".envoy.api.v2.LocalityLbEndpoints\022:\n\006pol"
-      "icy\030\004 \001(\0132*.envoy.api.v2.ClusterLoadAssi"
-      "gnment.Policy\032\037\n\006Policy\022\025\n\rdrop_overload"
-      "\030\001 \001(\001\"\241\001\n\026LoadAssignmentResponse\022\024\n\014ver"
-      "sion_info\030\001 \001(\014\0225\n\010clusters\030\002 \003(\0132#.envo"
-      "y.api.v2.ClusterLoadAssignment\022:\n\027load_r"
-      "eporting_interval\030\003 \001(\0132\031.google.protobu"
-      "f.Duration2\341\003\n\030EndpointDiscoveryService\022"
-      "X\n\017StreamEndpoints\022\036.envoy.api.v2.Discov"
-      "eryRequest\032\037.envoy.api.v2.DiscoveryRespo"
-      "nse\"\000(\0010\001\022u\n\016FetchEndpoints\022\036.envoy.api."
-      "v2.DiscoveryRequest\032\037.envoy.api.v2.Disco"
-      "veryResponse\"\"\202\323\344\223\002\034\"\027/v2/discovery:endp"
-      "oints:\001*\022g\n\024StreamLoadAssignment\022#.envoy"
-      ".api.v2.LoadAssignmentRequest\032$.envoy.ap"
-      "i.v2.LoadAssignmentResponse\"\000(\0010\001\022\212\001\n\023Fe"
-      "tchLoadAssignment\022#.envoy.api.v2.LoadAss"
-      "ignmentRequest\032$.envoy.api.v2.LoadAssign"
-      "mentResponse\"(\202\323\344\223\002\"\"\035/v2/discovery:load"
-      "_assignment:\001*b\006proto3"
+      "\001(\0162\032.envoy.api.v2.HealthStatus\022(\n\010metad"
+      "ata\030\003 \001(\0132\026.envoy.api.v2.Metadata\022;\n\025loa"
+      "d_balancing_weight\030\004 \001(\0132\034.google.protob"
+      "uf.UInt32Value\"\254\001\n\023LocalityLbEndpoints\022("
+      "\n\010locality\030\001 \001(\0132\026.envoy.api.v2.Locality"
+      "\022.\n\014lb_endpoints\030\002 \003(\0132\030.envoy.api.v2.Lb"
+      "Endpoint\022;\n\025load_balancing_weight\030\003 \001(\0132"
+      "\034.google.protobuf.UInt32Value\"u\n\027Endpoin"
+      "tLoadMetricStats\022\023\n\013metric_name\030\001 \001(\t\022)\n"
+      "!num_requests_finished_with_metric\030\002 \001(\004"
+      "\022\032\n\022total_metric_value\030\003 \001(\001\"\322\004\n\025Upstrea"
+      "mLocalityStats\022\020\n\010Locality\030\001 \001(\t\022\026\n\016tota"
+      "l_requests\030\002 \001(\004\022\"\n\032total_requests_in_pr"
+      "ogress\030\003 \001(\004\022F\n\ntcp_errors\030\004 \003(\01322.envoy"
+      ".api.v2.UpstreamLocalityStats.TcpErrorsE"
+      "ntry\022H\n\013http_errors\030\005 \003(\01323.envoy.api.v2"
+      ".UpstreamLocalityStats.HttpErrorsEntry\022H"
+      "\n\013grpc_errors\030\006 \003(\01323.envoy.api.v2.Upstr"
+      "eamLocalityStats.GrpcErrorsEntry\022\030\n\020drop"
+      "ped_requests\030\007 \001(\004\022@\n\021load_metric_stats\030"
+      "\010 \003(\0132%.envoy.api.v2.EndpointLoadMetricS"
+      "tats\0320\n\016TcpErrorsEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v"
+      "alue\030\002 \001(\004:\0028\001\0321\n\017HttpErrorsEntry\022\013\n\003key"
+      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\0321\n\017GrpcErrorsE"
+      "ntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\"\033\n\014"
+      "TcpErrorType\022\013\n\007TIMEOUT\020\000\"j\n\014ClusterStat"
+      "s\022\024\n\014cluster_name\030\001 \001(\t\022D\n\027upstream_loca"
+      "lity_stats\030\002 \003(\0132#.envoy.api.v2.Upstream"
+      "LocalityStats\"\202\001\n\025LoadAssignmentRequest\022"
+      "\024\n\014version_info\030\001 \001(\014\022 \n\004node\030\002 \001(\0132\022.en"
+      "voy.api.v2.Node\0221\n\rcluster_stats\030\003 \003(\0132\032"
+      ".envoy.api.v2.ClusterStats\"\377\001\n\025ClusterLo"
+      "adAssignment\022\024\n\014cluster_name\030\001 \001(\t\0224\n\ten"
+      "dpoints\030\002 \003(\0132!.envoy.api.v2.LocalityLbE"
+      "ndpoints\022=\n\022failover_endpoints\030\003 \003(\0132!.e"
+      "nvoy.api.v2.LocalityLbEndpoints\022:\n\006polic"
+      "y\030\004 \001(\0132*.envoy.api.v2.ClusterLoadAssign"
+      "ment.Policy\032\037\n\006Policy\022\025\n\rdrop_overload\030\001"
+      " \001(\001\"\241\001\n\026LoadAssignmentResponse\022\024\n\014versi"
+      "on_info\030\001 \001(\014\0225\n\010clusters\030\002 \003(\0132#.envoy."
+      "api.v2.ClusterLoadAssignment\022:\n\027load_rep"
+      "orting_interval\030\003 \001(\0132\031.google.protobuf."
+      "Duration2\341\003\n\030EndpointDiscoveryService\022X\n"
+      "\017StreamEndpoints\022\036.envoy.api.v2.Discover"
+      "yRequest\032\037.envoy.api.v2.DiscoveryRespons"
+      "e\"\000(\0010\001\022u\n\016FetchEndpoints\022\036.envoy.api.v2"
+      ".DiscoveryRequest\032\037.envoy.api.v2.Discove"
+      "ryResponse\"\"\202\323\344\223\002\034\"\027/v2/discovery:endpoi"
+      "nts:\001*\022g\n\024StreamLoadAssignment\022#.envoy.a"
+      "pi.v2.LoadAssignmentRequest\032$.envoy.api."
+      "v2.LoadAssignmentResponse\"\000(\0010\001\022\212\001\n\023Fetc"
+      "hLoadAssignment\022#.envoy.api.v2.LoadAssig"
+      "nmentRequest\032$.envoy.api.v2.LoadAssignme"
+      "ntResponse\"(\202\323\344\223\002\"\"\035/v2/discovery:load_a"
+      "ssignment:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2422);
+      descriptor, 2420);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api/eds.proto", &protobuf_RegisterTypes);
   ::envoy::api::v2::protobuf_api_2fbase_2eproto::AddDescriptors();
@@ -372,7 +372,7 @@ const int UpstreamLocalityStats::TcpErrorType_ARRAYSIZE;
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int LbEndpoint::kEndpointFieldNumber;
 const int LbEndpoint::kHealthStatusFieldNumber;
-const int LbEndpoint::kCanaryFieldNumber;
+const int LbEndpoint::kMetadataFieldNumber;
 const int LbEndpoint::kLoadBalancingWeightFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -394,10 +394,10 @@ LbEndpoint::LbEndpoint(const LbEndpoint& from)
   } else {
     endpoint_ = NULL;
   }
-  if (from.has_canary()) {
-    canary_ = new ::google::protobuf::BoolValue(*from.canary_);
+  if (from.has_metadata()) {
+    metadata_ = new ::envoy::api::v2::Metadata(*from.metadata_);
   } else {
-    canary_ = NULL;
+    metadata_ = NULL;
   }
   if (from.has_load_balancing_weight()) {
     load_balancing_weight_ = new ::google::protobuf::UInt32Value(*from.load_balancing_weight_);
@@ -424,7 +424,7 @@ void LbEndpoint::SharedDtor() {
     delete endpoint_;
   }
   if (this != internal_default_instance()) {
-    delete canary_;
+    delete metadata_;
   }
   if (this != internal_default_instance()) {
     delete load_balancing_weight_;
@@ -460,10 +460,10 @@ void LbEndpoint::Clear() {
     delete endpoint_;
   }
   endpoint_ = NULL;
-  if (GetArenaNoVirtual() == NULL && canary_ != NULL) {
-    delete canary_;
+  if (GetArenaNoVirtual() == NULL && metadata_ != NULL) {
+    delete metadata_;
   }
-  canary_ = NULL;
+  metadata_ = NULL;
   if (GetArenaNoVirtual() == NULL && load_balancing_weight_ != NULL) {
     delete load_balancing_weight_;
   }
@@ -506,11 +506,11 @@ bool LbEndpoint::MergePartialFromCodedStream(
         break;
       }
 
-      // .google.protobuf.BoolValue canary = 3;
+      // .envoy.api.v2.Metadata metadata = 3;
       case 3: {
         if (tag == 26u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_canary()));
+               input, mutable_metadata()));
         } else {
           goto handle_unusual;
         }
@@ -564,10 +564,10 @@ void LbEndpoint::SerializeWithCachedSizes(
       2, this->health_status(), output);
   }
 
-  // .google.protobuf.BoolValue canary = 3;
-  if (this->has_canary()) {
+  // .envoy.api.v2.Metadata metadata = 3;
+  if (this->has_metadata()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->canary_, output);
+      3, *this->metadata_, output);
   }
 
   // .google.protobuf.UInt32Value load_balancing_weight = 4;
@@ -596,11 +596,11 @@ void LbEndpoint::SerializeWithCachedSizes(
       2, this->health_status(), target);
   }
 
-  // .google.protobuf.BoolValue canary = 3;
-  if (this->has_canary()) {
+  // .envoy.api.v2.Metadata metadata = 3;
+  if (this->has_metadata()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        3, *this->canary_, false, target);
+        3, *this->metadata_, false, target);
   }
 
   // .google.protobuf.UInt32Value load_balancing_weight = 4;
@@ -625,11 +625,11 @@ size_t LbEndpoint::ByteSizeLong() const {
         *this->endpoint_);
   }
 
-  // .google.protobuf.BoolValue canary = 3;
-  if (this->has_canary()) {
+  // .envoy.api.v2.Metadata metadata = 3;
+  if (this->has_metadata()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->canary_);
+        *this->metadata_);
   }
 
   // .google.protobuf.UInt32Value load_balancing_weight = 4;
@@ -674,8 +674,8 @@ void LbEndpoint::MergeFrom(const LbEndpoint& from) {
   if (from.has_endpoint()) {
     mutable_endpoint()->::envoy::api::v2::Endpoint::MergeFrom(from.endpoint());
   }
-  if (from.has_canary()) {
-    mutable_canary()->::google::protobuf::BoolValue::MergeFrom(from.canary());
+  if (from.has_metadata()) {
+    mutable_metadata()->::envoy::api::v2::Metadata::MergeFrom(from.metadata());
   }
   if (from.has_load_balancing_weight()) {
     mutable_load_balancing_weight()->::google::protobuf::UInt32Value::MergeFrom(from.load_balancing_weight());
@@ -709,7 +709,7 @@ void LbEndpoint::Swap(LbEndpoint* other) {
 }
 void LbEndpoint::InternalSwap(LbEndpoint* other) {
   std::swap(endpoint_, other->endpoint_);
-  std::swap(canary_, other->canary_);
+  std::swap(metadata_, other->metadata_);
   std::swap(load_balancing_weight_, other->load_balancing_weight_);
   std::swap(health_status_, other->health_status_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -776,48 +776,43 @@ void LbEndpoint::set_health_status(::envoy::api::v2::HealthStatus value) {
   // @@protoc_insertion_point(field_set:envoy.api.v2.LbEndpoint.health_status)
 }
 
-// .google.protobuf.BoolValue canary = 3;
-bool LbEndpoint::has_canary() const {
-  return this != internal_default_instance() && canary_ != NULL;
+// .envoy.api.v2.Metadata metadata = 3;
+bool LbEndpoint::has_metadata() const {
+  return this != internal_default_instance() && metadata_ != NULL;
 }
-void LbEndpoint::clear_canary() {
-  if (GetArenaNoVirtual() == NULL && canary_ != NULL) delete canary_;
-  canary_ = NULL;
+void LbEndpoint::clear_metadata() {
+  if (GetArenaNoVirtual() == NULL && metadata_ != NULL) delete metadata_;
+  metadata_ = NULL;
 }
-const ::google::protobuf::BoolValue& LbEndpoint::canary() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.canary)
-  return canary_ != NULL ? *canary_
-                         : *::google::protobuf::BoolValue::internal_default_instance();
+const ::envoy::api::v2::Metadata& LbEndpoint::metadata() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.metadata)
+  return metadata_ != NULL ? *metadata_
+                         : *::envoy::api::v2::Metadata::internal_default_instance();
 }
-::google::protobuf::BoolValue* LbEndpoint::mutable_canary() {
+::envoy::api::v2::Metadata* LbEndpoint::mutable_metadata() {
   
-  if (canary_ == NULL) {
-    canary_ = new ::google::protobuf::BoolValue;
+  if (metadata_ == NULL) {
+    metadata_ = new ::envoy::api::v2::Metadata;
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.LbEndpoint.canary)
-  return canary_;
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.LbEndpoint.metadata)
+  return metadata_;
 }
-::google::protobuf::BoolValue* LbEndpoint::release_canary() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.LbEndpoint.canary)
+::envoy::api::v2::Metadata* LbEndpoint::release_metadata() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.LbEndpoint.metadata)
   
-  ::google::protobuf::BoolValue* temp = canary_;
-  canary_ = NULL;
+  ::envoy::api::v2::Metadata* temp = metadata_;
+  metadata_ = NULL;
   return temp;
 }
-void LbEndpoint::set_allocated_canary(::google::protobuf::BoolValue* canary) {
-  delete canary_;
-  if (canary != NULL && canary->GetArena() != NULL) {
-    ::google::protobuf::BoolValue* new_canary = new ::google::protobuf::BoolValue;
-    new_canary->CopyFrom(*canary);
-    canary = new_canary;
-  }
-  canary_ = canary;
-  if (canary) {
+void LbEndpoint::set_allocated_metadata(::envoy::api::v2::Metadata* metadata) {
+  delete metadata_;
+  metadata_ = metadata;
+  if (metadata) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.LbEndpoint.canary)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.LbEndpoint.metadata)
 }
 
 // .google.protobuf.UInt32Value load_balancing_weight = 4;

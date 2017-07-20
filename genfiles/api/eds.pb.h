@@ -40,6 +40,9 @@
 namespace envoy {
 namespace api {
 namespace v2 {
+class ApiConfigSource;
+class ApiConfigSourceDefaultTypeInternal;
+extern ApiConfigSourceDefaultTypeInternal _ApiConfigSource_default_instance_;
 class ClusterLoadAssignment;
 class ClusterLoadAssignmentDefaultTypeInternal;
 extern ClusterLoadAssignmentDefaultTypeInternal _ClusterLoadAssignment_default_instance_;
@@ -49,6 +52,9 @@ extern ClusterLoadAssignment_PolicyDefaultTypeInternal _ClusterLoadAssignment_Po
 class ClusterStats;
 class ClusterStatsDefaultTypeInternal;
 extern ClusterStatsDefaultTypeInternal _ClusterStats_default_instance_;
+class ConfigSource;
+class ConfigSourceDefaultTypeInternal;
+extern ConfigSourceDefaultTypeInternal _ConfigSource_default_instance_;
 class DiscoveryRequest;
 class DiscoveryRequestDefaultTypeInternal;
 extern DiscoveryRequestDefaultTypeInternal _DiscoveryRequest_default_instance_;
@@ -76,6 +82,9 @@ extern HealthCheck_HttpHealthCheckDefaultTypeInternal _HealthCheck_HttpHealthChe
 class HealthCheck_Payload;
 class HealthCheck_PayloadDefaultTypeInternal;
 extern HealthCheck_PayloadDefaultTypeInternal _HealthCheck_Payload_default_instance_;
+class HealthCheck_RedisHealthCheck;
+class HealthCheck_RedisHealthCheckDefaultTypeInternal;
+extern HealthCheck_RedisHealthCheckDefaultTypeInternal _HealthCheck_RedisHealthCheck_default_instance_;
 class HealthCheck_TcpHealthCheck;
 class HealthCheck_TcpHealthCheckDefaultTypeInternal;
 extern HealthCheck_TcpHealthCheckDefaultTypeInternal _HealthCheck_TcpHealthCheck_default_instance_;
@@ -259,14 +268,14 @@ class LbEndpoint : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::envoy::api::v2::Endpoint* release_endpoint();
   void set_allocated_endpoint(::envoy::api::v2::Endpoint* endpoint);
 
-  // .google.protobuf.BoolValue canary = 3;
-  bool has_canary() const;
-  void clear_canary();
-  static const int kCanaryFieldNumber = 3;
-  const ::google::protobuf::BoolValue& canary() const;
-  ::google::protobuf::BoolValue* mutable_canary();
-  ::google::protobuf::BoolValue* release_canary();
-  void set_allocated_canary(::google::protobuf::BoolValue* canary);
+  // .envoy.api.v2.Metadata metadata = 3;
+  bool has_metadata() const;
+  void clear_metadata();
+  static const int kMetadataFieldNumber = 3;
+  const ::envoy::api::v2::Metadata& metadata() const;
+  ::envoy::api::v2::Metadata* mutable_metadata();
+  ::envoy::api::v2::Metadata* release_metadata();
+  void set_allocated_metadata(::envoy::api::v2::Metadata* metadata);
 
   // .google.protobuf.UInt32Value load_balancing_weight = 4;
   bool has_load_balancing_weight() const;
@@ -288,7 +297,7 @@ class LbEndpoint : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::envoy::api::v2::Endpoint* endpoint_;
-  ::google::protobuf::BoolValue* canary_;
+  ::envoy::api::v2::Metadata* metadata_;
   ::google::protobuf::UInt32Value* load_balancing_weight_;
   int health_status_;
   mutable int _cached_size_;
@@ -1332,48 +1341,43 @@ inline void LbEndpoint::set_health_status(::envoy::api::v2::HealthStatus value) 
   // @@protoc_insertion_point(field_set:envoy.api.v2.LbEndpoint.health_status)
 }
 
-// .google.protobuf.BoolValue canary = 3;
-inline bool LbEndpoint::has_canary() const {
-  return this != internal_default_instance() && canary_ != NULL;
+// .envoy.api.v2.Metadata metadata = 3;
+inline bool LbEndpoint::has_metadata() const {
+  return this != internal_default_instance() && metadata_ != NULL;
 }
-inline void LbEndpoint::clear_canary() {
-  if (GetArenaNoVirtual() == NULL && canary_ != NULL) delete canary_;
-  canary_ = NULL;
+inline void LbEndpoint::clear_metadata() {
+  if (GetArenaNoVirtual() == NULL && metadata_ != NULL) delete metadata_;
+  metadata_ = NULL;
 }
-inline const ::google::protobuf::BoolValue& LbEndpoint::canary() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.canary)
-  return canary_ != NULL ? *canary_
-                         : *::google::protobuf::BoolValue::internal_default_instance();
+inline const ::envoy::api::v2::Metadata& LbEndpoint::metadata() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.metadata)
+  return metadata_ != NULL ? *metadata_
+                         : *::envoy::api::v2::Metadata::internal_default_instance();
 }
-inline ::google::protobuf::BoolValue* LbEndpoint::mutable_canary() {
+inline ::envoy::api::v2::Metadata* LbEndpoint::mutable_metadata() {
   
-  if (canary_ == NULL) {
-    canary_ = new ::google::protobuf::BoolValue;
+  if (metadata_ == NULL) {
+    metadata_ = new ::envoy::api::v2::Metadata;
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.LbEndpoint.canary)
-  return canary_;
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.LbEndpoint.metadata)
+  return metadata_;
 }
-inline ::google::protobuf::BoolValue* LbEndpoint::release_canary() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.LbEndpoint.canary)
+inline ::envoy::api::v2::Metadata* LbEndpoint::release_metadata() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.LbEndpoint.metadata)
   
-  ::google::protobuf::BoolValue* temp = canary_;
-  canary_ = NULL;
+  ::envoy::api::v2::Metadata* temp = metadata_;
+  metadata_ = NULL;
   return temp;
 }
-inline void LbEndpoint::set_allocated_canary(::google::protobuf::BoolValue* canary) {
-  delete canary_;
-  if (canary != NULL && canary->GetArena() != NULL) {
-    ::google::protobuf::BoolValue* new_canary = new ::google::protobuf::BoolValue;
-    new_canary->CopyFrom(*canary);
-    canary = new_canary;
-  }
-  canary_ = canary;
-  if (canary) {
+inline void LbEndpoint::set_allocated_metadata(::envoy::api::v2::Metadata* metadata) {
+  delete metadata_;
+  metadata_ = metadata;
+  if (metadata) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.LbEndpoint.canary)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.LbEndpoint.metadata)
 }
 
 // .google.protobuf.UInt32Value load_balancing_weight = 4;

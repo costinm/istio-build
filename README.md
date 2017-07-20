@@ -7,7 +7,8 @@ $ repo init -u https://github.com/costinm/istio-repo -b [BRANCH]
 
 $ repo sync -c
 
-
+$ bazel build @proxy//src/envy/mixer:envoy
+$ bazel build @envoy//source/...
 
 ```
 

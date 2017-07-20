@@ -38,14 +38,21 @@ class DiscoveryRequestDefaultTypeInternal : public ::google::protobuf::internal:
 } _DiscoveryRequest_default_instance_;
 class DiscoveryResponseDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<DiscoveryResponse> {
 } _DiscoveryResponse_default_instance_;
+class ApiConfigSourceDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ApiConfigSource> {
+} _ApiConfigSource_default_instance_;
+class ConfigSourceDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ConfigSource> {
+  public:
+  ::google::protobuf::internal::ArenaStringPtr path_;
+  const ::envoy::api::v2::ApiConfigSource* api_config_source_;
+} _ConfigSource_default_instance_;
 
 namespace protobuf_api_2fbase_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[10];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+::google::protobuf::Metadata file_level_metadata[12];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 }  // namespace
 
@@ -64,6 +71,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Node, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Node, metadata_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Node, locality_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Node, build_version_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Endpoint, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -105,18 +113,35 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _oneof_case_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryResponse, version_info_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryResponse, resources_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryResponse, canary_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ApiConfigSource, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ApiConfigSource, api_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ApiConfigSource, cluster_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ApiConfigSource, refresh_delay_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfigSource, _internal_metadata_),
+  ~0u,  // no _extensions_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfigSource, _oneof_case_[0]),
+  PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ConfigSource_default_instance_), path_),
+  PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ConfigSource_default_instance_), api_config_source_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfigSource, config_source_specifier_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 0, -1, sizeof(Locality)},
   { 7, -1, sizeof(Node)},
-  { 14, -1, sizeof(Endpoint)},
-  { 19, -1, sizeof(Metadata)},
-  { 24, -1, sizeof(RuntimeUInt32)},
-  { 30, -1, sizeof(HeaderValue)},
-  { 36, -1, sizeof(HeaderValueOption)},
-  { 42, -1, sizeof(DiscoveryRequest)},
-  { 49, -1, sizeof(DiscoveryResponse)},
+  { 15, -1, sizeof(Endpoint)},
+  { 20, -1, sizeof(Metadata)},
+  { 25, -1, sizeof(RuntimeUInt32)},
+  { 31, -1, sizeof(HeaderValue)},
+  { 37, -1, sizeof(HeaderValueOption)},
+  { 43, -1, sizeof(DiscoveryRequest)},
+  { 50, -1, sizeof(DiscoveryResponse)},
+  { 57, -1, sizeof(ApiConfigSource)},
+  { 64, -1, sizeof(ConfigSource)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -129,6 +154,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_HeaderValueOption_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_DiscoveryRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_DiscoveryResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_ApiConfigSource_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_ConfigSource_default_instance_),
 };
 
 namespace {
@@ -149,7 +176,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 10);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
   const ::google::protobuf::Descriptor* Metadata_FilterMetadataEntry_descriptor = protobuf_api_2fbase_2eproto::file_level_metadata[3].descriptor;
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
         Metadata_FilterMetadataEntry_descriptor,
@@ -183,6 +210,10 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[8].reflection;
   _DiscoveryResponse_default_instance_.Shutdown();
   delete file_level_metadata[9].reflection;
+  _ApiConfigSource_default_instance_.Shutdown();
+  delete file_level_metadata[10].reflection;
+  _ConfigSource_default_instance_.Shutdown();
+  delete file_level_metadata[11].reflection;
 }
 
 void TableStruct::InitDefaultsImpl() {
@@ -191,6 +222,7 @@ void TableStruct::InitDefaultsImpl() {
   ::google::protobuf::internal::InitProtobufDefaults();
   ::envoy::api::v2::protobuf_api_2faddress_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fany_2eproto::InitDefaults();
+  ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fstruct_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::InitDefaults();
   _Locality_default_instance_.DefaultConstruct();
@@ -202,6 +234,8 @@ void TableStruct::InitDefaultsImpl() {
   _HeaderValueOption_default_instance_.DefaultConstruct();
   _DiscoveryRequest_default_instance_.DefaultConstruct();
   _DiscoveryResponse_default_instance_.DefaultConstruct();
+  _ApiConfigSource_default_instance_.DefaultConstruct();
+  _ConfigSource_default_instance_.DefaultConstruct();
   _Node_default_instance_.get_mutable()->metadata_ = const_cast< ::google::protobuf::Struct*>(
       ::google::protobuf::Struct::internal_default_instance());
   _Node_default_instance_.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
@@ -214,6 +248,12 @@ void TableStruct::InitDefaultsImpl() {
       ::google::protobuf::BoolValue::internal_default_instance());
   _DiscoveryRequest_default_instance_.get_mutable()->node_ = const_cast< ::envoy::api::v2::Node*>(
       ::envoy::api::v2::Node::internal_default_instance());
+  _ApiConfigSource_default_instance_.get_mutable()->refresh_delay_ = const_cast< ::google::protobuf::Duration*>(
+      ::google::protobuf::Duration::internal_default_instance());
+  _ConfigSource_default_instance_.path_.UnsafeSetDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _ConfigSource_default_instance_.api_config_source_ = const_cast< ::envoy::api::v2::ApiConfigSource*>(
+      ::envoy::api::v2::ApiConfigSource::internal_default_instance());
 }
 
 void InitDefaults() {
@@ -224,37 +264,47 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
       "\n\016api/base.proto\022\014envoy.api.v2\032\021api/addr"
-      "ess.proto\032\031google/protobuf/any.proto\032\034go"
-      "ogle/protobuf/struct.proto\032\036google/proto"
-      "buf/wrappers.proto\":\n\010Locality\022\016\n\006region"
-      "\030\001 \001(\t\022\014\n\004zone\030\002 \001(\t\022\020\n\010sub_zone\030\003 \001(\t\"g"
-      "\n\004Node\022\n\n\002id\030\001 \001(\t\022)\n\010metadata\030\002 \001(\0132\027.g"
-      "oogle.protobuf.Struct\022(\n\010locality\030\003 \001(\0132"
-      "\026.envoy.api.v2.Locality\":\n\010Endpoint\022.\n\007a"
-      "ddress\030\001 \001(\0132\035.envoy.api.v2.ResolvedAddr"
-      "ess\"\237\001\n\010Metadata\022C\n\017filter_metadata\030\001 \003("
-      "\0132*.envoy.api.v2.Metadata.FilterMetadata"
-      "Entry\032N\n\023FilterMetadataEntry\022\013\n\003key\030\001 \001("
-      "\t\022&\n\005value\030\002 \001(\0132\027.google.protobuf.Struc"
-      "t:\0028\001\";\n\rRuntimeUInt32\022\025\n\rdefault_value\030"
-      "\002 \001(\r\022\023\n\013runtime_key\030\003 \001(\t\")\n\013HeaderValu"
-      "e\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"j\n\021HeaderV"
-      "alueOption\022)\n\006header\030\001 \001(\0132\031.envoy.api.v"
-      "2.HeaderValue\022*\n\006append\030\002 \001(\0132\032.google.p"
-      "rotobuf.BoolValue\"b\n\020DiscoveryRequest\022\024\n"
-      "\014version_info\030\001 \001(\t\022 \n\004node\030\002 \001(\0132\022.envo"
-      "y.api.v2.Node\022\026\n\016resource_names\030\003 \003(\t\"R\n"
-      "\021DiscoveryResponse\022\024\n\014version_info\030\001 \001(\t"
-      "\022\'\n\tresources\030\002 \003(\0132\024.google.protobuf.An"
-      "y*(\n\017RoutingPriority\022\013\n\007DEFAULT\020\000\022\010\n\004HIG"
-      "H\020\001b\006proto3"
+      "ess.proto\032\031google/protobuf/any.proto\032\036go"
+      "ogle/protobuf/duration.proto\032\034google/pro"
+      "tobuf/struct.proto\032\036google/protobuf/wrap"
+      "pers.proto\":\n\010Locality\022\016\n\006region\030\001 \001(\t\022\014"
+      "\n\004zone\030\002 \001(\t\022\020\n\010sub_zone\030\003 \001(\t\"~\n\004Node\022\n"
+      "\n\002id\030\001 \001(\t\022)\n\010metadata\030\002 \001(\0132\027.google.pr"
+      "otobuf.Struct\022(\n\010locality\030\003 \001(\0132\026.envoy."
+      "api.v2.Locality\022\025\n\rbuild_version\030\004 \001(\t\":"
+      "\n\010Endpoint\022.\n\007address\030\001 \001(\0132\035.envoy.api."
+      "v2.ResolvedAddress\"\237\001\n\010Metadata\022C\n\017filte"
+      "r_metadata\030\001 \003(\0132*.envoy.api.v2.Metadata"
+      ".FilterMetadataEntry\032N\n\023FilterMetadataEn"
+      "try\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.google"
+      ".protobuf.Struct:\0028\001\";\n\rRuntimeUInt32\022\025\n"
+      "\rdefault_value\030\002 \001(\r\022\023\n\013runtime_key\030\003 \001("
+      "\t\")\n\013HeaderValue\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+      " \001(\t\"j\n\021HeaderValueOption\022)\n\006header\030\001 \001("
+      "\0132\031.envoy.api.v2.HeaderValue\022*\n\006append\030\002"
+      " \001(\0132\032.google.protobuf.BoolValue\"b\n\020Disc"
+      "overyRequest\022\024\n\014version_info\030\001 \001(\t\022 \n\004no"
+      "de\030\002 \001(\0132\022.envoy.api.v2.Node\022\026\n\016resource"
+      "_names\030\003 \003(\t\"b\n\021DiscoveryResponse\022\024\n\014ver"
+      "sion_info\030\001 \001(\t\022\'\n\tresources\030\002 \003(\0132\024.goo"
+      "gle.protobuf.Any\022\016\n\006canary\030\003 \001(\010\"\302\001\n\017Api"
+      "ConfigSource\0227\n\010api_type\030\001 \001(\0162%.envoy.a"
+      "pi.v2.ApiConfigSource.ApiType\022\024\n\014cluster"
+      "_name\030\002 \003(\t\0220\n\rrefresh_delay\030\003 \001(\0132\031.goo"
+      "gle.protobuf.Duration\".\n\007ApiType\022\017\n\013REST"
+      "_LEGACY\020\000\022\010\n\004REST\020\001\022\010\n\004GRPC\020\002\"u\n\014ConfigS"
+      "ource\022\016\n\004path\030\001 \001(\tH\000\022:\n\021api_config_sour"
+      "ce\030\002 \001(\0132\035.envoy.api.v2.ApiConfigSourceH"
+      "\000B\031\n\027config_source_specifier*(\n\017RoutingP"
+      "riority\022\013\n\007DEFAULT\020\000\022\010\n\004HIGH\020\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 971);
+      descriptor, 1358);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api/base.proto", &protobuf_RegisterTypes);
   ::envoy::api::v2::protobuf_api_2faddress_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fany_2eproto::AddDescriptors();
+  ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fstruct_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::AddDescriptors();
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -273,9 +323,32 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_api_2fbase_2eproto
 
-const ::google::protobuf::EnumDescriptor* RoutingPriority_descriptor() {
+const ::google::protobuf::EnumDescriptor* ApiConfigSource_ApiType_descriptor() {
   protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2fbase_2eproto::file_level_enum_descriptors[0];
+}
+bool ApiConfigSource_ApiType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const ApiConfigSource_ApiType ApiConfigSource::REST_LEGACY;
+const ApiConfigSource_ApiType ApiConfigSource::REST;
+const ApiConfigSource_ApiType ApiConfigSource::GRPC;
+const ApiConfigSource_ApiType ApiConfigSource::ApiType_MIN;
+const ApiConfigSource_ApiType ApiConfigSource::ApiType_MAX;
+const int ApiConfigSource::ApiType_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* RoutingPriority_descriptor() {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_enum_descriptors[1];
 }
 bool RoutingPriority_IsValid(int value) {
   switch (value) {
@@ -791,6 +864,7 @@ void Locality::set_allocated_sub_zone(::std::string* sub_zone) {
 const int Node::kIdFieldNumber;
 const int Node::kMetadataFieldNumber;
 const int Node::kLocalityFieldNumber;
+const int Node::kBuildVersionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Node::Node()
@@ -810,6 +884,10 @@ Node::Node(const Node& from)
   if (from.id().size() > 0) {
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
+  build_version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.build_version().size() > 0) {
+    build_version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.build_version_);
+  }
   if (from.has_metadata()) {
     metadata_ = new ::google::protobuf::Struct(*from.metadata_);
   } else {
@@ -825,6 +903,7 @@ Node::Node(const Node& from)
 
 void Node::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  build_version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&metadata_, 0, reinterpret_cast<char*>(&locality_) -
     reinterpret_cast<char*>(&metadata_) + sizeof(locality_));
   _cached_size_ = 0;
@@ -837,6 +916,7 @@ Node::~Node() {
 
 void Node::SharedDtor() {
   id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  build_version_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) {
     delete metadata_;
   }
@@ -871,6 +951,7 @@ Node* Node::New(::google::protobuf::Arena* arena) const {
 void Node::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.Node)
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  build_version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == NULL && metadata_ != NULL) {
     delete metadata_;
   }
@@ -928,6 +1009,21 @@ bool Node::MergePartialFromCodedStream(
         break;
       }
 
+      // string build_version = 4;
+      case 4: {
+        if (tag == 34u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_build_version()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->build_version().data(), this->build_version().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "envoy.api.v2.Node.build_version"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -974,6 +1070,16 @@ void Node::SerializeWithCachedSizes(
       3, *this->locality_, output);
   }
 
+  // string build_version = 4;
+  if (this->build_version().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->build_version().data(), this->build_version().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.Node.build_version");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->build_version(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.Node)
 }
 
@@ -1006,6 +1112,17 @@ void Node::SerializeWithCachedSizes(
         3, *this->locality_, false, target);
   }
 
+  // string build_version = 4;
+  if (this->build_version().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->build_version().data(), this->build_version().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.Node.build_version");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->build_version(), target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.Node)
   return target;
 }
@@ -1019,6 +1136,13 @@ size_t Node::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->id());
+  }
+
+  // string build_version = 4;
+  if (this->build_version().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->build_version());
   }
 
   // .google.protobuf.Struct metadata = 2;
@@ -1065,6 +1189,10 @@ void Node::MergeFrom(const Node& from) {
 
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
+  if (from.build_version().size() > 0) {
+
+    build_version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.build_version_);
+  }
   if (from.has_metadata()) {
     mutable_metadata()->::google::protobuf::Struct::MergeFrom(from.metadata());
   }
@@ -1097,6 +1225,7 @@ void Node::Swap(Node* other) {
 }
 void Node::InternalSwap(Node* other) {
   id_.Swap(&other->id_);
+  build_version_.Swap(&other->build_version_);
   std::swap(metadata_, other->metadata_);
   std::swap(locality_, other->locality_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -1243,6 +1372,58 @@ void Node::set_allocated_locality(::envoy::api::v2::Locality* locality) {
     
   }
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.Node.locality)
+}
+
+// string build_version = 4;
+void Node::clear_build_version() {
+  build_version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& Node::build_version() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.Node.build_version)
+  return build_version_.GetNoArena();
+}
+void Node::set_build_version(const ::std::string& value) {
+  
+  build_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.Node.build_version)
+}
+#if LANG_CXX11
+void Node::set_build_version(::std::string&& value) {
+  
+  build_version_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.Node.build_version)
+}
+#endif
+void Node::set_build_version(const char* value) {
+  
+  build_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.Node.build_version)
+}
+void Node::set_build_version(const char* value, size_t size) {
+  
+  build_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.Node.build_version)
+}
+::std::string* Node::mutable_build_version() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.Node.build_version)
+  return build_version_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Node::release_build_version() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.Node.build_version)
+  
+  return build_version_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Node::set_allocated_build_version(::std::string* build_version) {
+  if (build_version != NULL) {
+    
+  } else {
+    
+  }
+  build_version_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), build_version);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.Node.build_version)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -3412,6 +3593,7 @@ DiscoveryRequest::mutable_resource_names() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DiscoveryResponse::kVersionInfoFieldNumber;
 const int DiscoveryResponse::kResourcesFieldNumber;
+const int DiscoveryResponse::kCanaryFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DiscoveryResponse::DiscoveryResponse()
@@ -3432,11 +3614,13 @@ DiscoveryResponse::DiscoveryResponse(const DiscoveryResponse& from)
   if (from.version_info().size() > 0) {
     version_info_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_info_);
   }
+  canary_ = from.canary_;
   // @@protoc_insertion_point(copy_constructor:envoy.api.v2.DiscoveryResponse)
 }
 
 void DiscoveryResponse::SharedCtor() {
   version_info_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  canary_ = false;
   _cached_size_ = 0;
 }
 
@@ -3476,6 +3660,7 @@ void DiscoveryResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.DiscoveryResponse)
   resources_.Clear();
   version_info_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  canary_ = false;
 }
 
 bool DiscoveryResponse::MergePartialFromCodedStream(
@@ -3513,6 +3698,19 @@ bool DiscoveryResponse::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         input->UnsafeDecrementRecursionDepth();
+        break;
+      }
+
+      // bool canary = 3;
+      case 3: {
+        if (tag == 24u) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &canary_)));
+        } else {
+          goto handle_unusual;
+        }
         break;
       }
 
@@ -3556,6 +3754,11 @@ void DiscoveryResponse::SerializeWithCachedSizes(
       2, this->resources(i), output);
   }
 
+  // bool canary = 3;
+  if (this->canary() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->canary(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.DiscoveryResponse)
 }
 
@@ -3579,6 +3782,11 @@ void DiscoveryResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         2, this->resources(i), false, target);
+  }
+
+  // bool canary = 3;
+  if (this->canary() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->canary(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.DiscoveryResponse)
@@ -3605,6 +3813,11 @@ size_t DiscoveryResponse::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->version_info());
+  }
+
+  // bool canary = 3;
+  if (this->canary() != 0) {
+    total_size += 1 + 1;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -3638,6 +3851,9 @@ void DiscoveryResponse::MergeFrom(const DiscoveryResponse& from) {
 
     version_info_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_info_);
   }
+  if (from.canary() != 0) {
+    set_canary(from.canary());
+  }
 }
 
 void DiscoveryResponse::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3665,6 +3881,7 @@ void DiscoveryResponse::Swap(DiscoveryResponse* other) {
 void DiscoveryResponse::InternalSwap(DiscoveryResponse* other) {
   resources_.UnsafeArenaSwap(&other->resources_);
   version_info_.Swap(&other->version_info_);
+  std::swap(canary_, other->canary_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
@@ -3758,6 +3975,902 @@ DiscoveryResponse::resources() const {
   return resources_;
 }
 
+// bool canary = 3;
+void DiscoveryResponse::clear_canary() {
+  canary_ = false;
+}
+bool DiscoveryResponse::canary() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.DiscoveryResponse.canary)
+  return canary_;
+}
+void DiscoveryResponse::set_canary(bool value) {
+  
+  canary_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.DiscoveryResponse.canary)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ApiConfigSource::kApiTypeFieldNumber;
+const int ApiConfigSource::kClusterNameFieldNumber;
+const int ApiConfigSource::kRefreshDelayFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ApiConfigSource::ApiConfigSource()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_api_2fbase_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:envoy.api.v2.ApiConfigSource)
+}
+ApiConfigSource::ApiConfigSource(const ApiConfigSource& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      cluster_name_(from.cluster_name_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_refresh_delay()) {
+    refresh_delay_ = new ::google::protobuf::Duration(*from.refresh_delay_);
+  } else {
+    refresh_delay_ = NULL;
+  }
+  api_type_ = from.api_type_;
+  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.ApiConfigSource)
+}
+
+void ApiConfigSource::SharedCtor() {
+  ::memset(&refresh_delay_, 0, reinterpret_cast<char*>(&api_type_) -
+    reinterpret_cast<char*>(&refresh_delay_) + sizeof(api_type_));
+  _cached_size_ = 0;
+}
+
+ApiConfigSource::~ApiConfigSource() {
+  // @@protoc_insertion_point(destructor:envoy.api.v2.ApiConfigSource)
+  SharedDtor();
+}
+
+void ApiConfigSource::SharedDtor() {
+  if (this != internal_default_instance()) {
+    delete refresh_delay_;
+  }
+}
+
+void ApiConfigSource::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ApiConfigSource::descriptor() {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_metadata[10].descriptor;
+}
+
+const ApiConfigSource& ApiConfigSource::default_instance() {
+  protobuf_api_2fbase_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+ApiConfigSource* ApiConfigSource::New(::google::protobuf::Arena* arena) const {
+  ApiConfigSource* n = new ApiConfigSource;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void ApiConfigSource::Clear() {
+// @@protoc_insertion_point(message_clear_start:envoy.api.v2.ApiConfigSource)
+  cluster_name_.Clear();
+  if (GetArenaNoVirtual() == NULL && refresh_delay_ != NULL) {
+    delete refresh_delay_;
+  }
+  refresh_delay_ = NULL;
+  api_type_ = 0;
+}
+
+bool ApiConfigSource::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:envoy.api.v2.ApiConfigSource)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+      case 1: {
+        if (tag == 8u) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_api_type(static_cast< ::envoy::api::v2::ApiConfigSource_ApiType >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string cluster_name = 2;
+      case 2: {
+        if (tag == 18u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_cluster_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->cluster_name(this->cluster_name_size() - 1).data(),
+            this->cluster_name(this->cluster_name_size() - 1).length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "envoy.api.v2.ApiConfigSource.cluster_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Duration refresh_delay = 3;
+      case 3: {
+        if (tag == 26u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_refresh_delay()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:envoy.api.v2.ApiConfigSource)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:envoy.api.v2.ApiConfigSource)
+  return false;
+#undef DO_
+}
+
+void ApiConfigSource::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:envoy.api.v2.ApiConfigSource)
+  // .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+  if (this->api_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->api_type(), output);
+  }
+
+  // repeated string cluster_name = 2;
+  for (int i = 0; i < this->cluster_name_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cluster_name(i).data(), this->cluster_name(i).length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.ApiConfigSource.cluster_name");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->cluster_name(i), output);
+  }
+
+  // .google.protobuf.Duration refresh_delay = 3;
+  if (this->has_refresh_delay()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, *this->refresh_delay_, output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:envoy.api.v2.ApiConfigSource)
+}
+
+::google::protobuf::uint8* ApiConfigSource::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.ApiConfigSource)
+  // .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+  if (this->api_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->api_type(), target);
+  }
+
+  // repeated string cluster_name = 2;
+  for (int i = 0; i < this->cluster_name_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cluster_name(i).data(), this->cluster_name(i).length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.ApiConfigSource.cluster_name");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(2, this->cluster_name(i), target);
+  }
+
+  // .google.protobuf.Duration refresh_delay = 3;
+  if (this->has_refresh_delay()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->refresh_delay_, false, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ApiConfigSource)
+  return target;
+}
+
+size_t ApiConfigSource::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ApiConfigSource)
+  size_t total_size = 0;
+
+  // repeated string cluster_name = 2;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->cluster_name_size());
+  for (int i = 0; i < this->cluster_name_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->cluster_name(i));
+  }
+
+  // .google.protobuf.Duration refresh_delay = 3;
+  if (this->has_refresh_delay()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->refresh_delay_);
+  }
+
+  // .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+  if (this->api_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->api_type());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ApiConfigSource::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.ApiConfigSource)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ApiConfigSource* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const ApiConfigSource>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.ApiConfigSource)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.ApiConfigSource)
+    MergeFrom(*source);
+  }
+}
+
+void ApiConfigSource::MergeFrom(const ApiConfigSource& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.ApiConfigSource)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  cluster_name_.MergeFrom(from.cluster_name_);
+  if (from.has_refresh_delay()) {
+    mutable_refresh_delay()->::google::protobuf::Duration::MergeFrom(from.refresh_delay());
+  }
+  if (from.api_type() != 0) {
+    set_api_type(from.api_type());
+  }
+}
+
+void ApiConfigSource::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.ApiConfigSource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ApiConfigSource::CopyFrom(const ApiConfigSource& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.ApiConfigSource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ApiConfigSource::IsInitialized() const {
+  return true;
+}
+
+void ApiConfigSource::Swap(ApiConfigSource* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ApiConfigSource::InternalSwap(ApiConfigSource* other) {
+  cluster_name_.UnsafeArenaSwap(&other->cluster_name_);
+  std::swap(refresh_delay_, other->refresh_delay_);
+  std::swap(api_type_, other->api_type_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata ApiConfigSource::GetMetadata() const {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_metadata[10];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// ApiConfigSource
+
+// .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+void ApiConfigSource::clear_api_type() {
+  api_type_ = 0;
+}
+::envoy::api::v2::ApiConfigSource_ApiType ApiConfigSource::api_type() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ApiConfigSource.api_type)
+  return static_cast< ::envoy::api::v2::ApiConfigSource_ApiType >(api_type_);
+}
+void ApiConfigSource::set_api_type(::envoy::api::v2::ApiConfigSource_ApiType value) {
+  
+  api_type_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ApiConfigSource.api_type)
+}
+
+// repeated string cluster_name = 2;
+int ApiConfigSource::cluster_name_size() const {
+  return cluster_name_.size();
+}
+void ApiConfigSource::clear_cluster_name() {
+  cluster_name_.Clear();
+}
+const ::std::string& ApiConfigSource::cluster_name(int index) const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_.Get(index);
+}
+::std::string* ApiConfigSource::mutable_cluster_name(int index) {
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_.Mutable(index);
+}
+void ApiConfigSource::set_cluster_name(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ApiConfigSource.cluster_name)
+  cluster_name_.Mutable(index)->assign(value);
+}
+void ApiConfigSource::set_cluster_name(int index, const char* value) {
+  cluster_name_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+void ApiConfigSource::set_cluster_name(int index, const char* value, size_t size) {
+  cluster_name_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+::std::string* ApiConfigSource::add_cluster_name() {
+  // @@protoc_insertion_point(field_add_mutable:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_.Add();
+}
+void ApiConfigSource::add_cluster_name(const ::std::string& value) {
+  cluster_name_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+void ApiConfigSource::add_cluster_name(const char* value) {
+  cluster_name_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+void ApiConfigSource::add_cluster_name(const char* value, size_t size) {
+  cluster_name_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ApiConfigSource::cluster_name() const {
+  // @@protoc_insertion_point(field_list:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_;
+}
+::google::protobuf::RepeatedPtrField< ::std::string>*
+ApiConfigSource::mutable_cluster_name() {
+  // @@protoc_insertion_point(field_mutable_list:envoy.api.v2.ApiConfigSource.cluster_name)
+  return &cluster_name_;
+}
+
+// .google.protobuf.Duration refresh_delay = 3;
+bool ApiConfigSource::has_refresh_delay() const {
+  return this != internal_default_instance() && refresh_delay_ != NULL;
+}
+void ApiConfigSource::clear_refresh_delay() {
+  if (GetArenaNoVirtual() == NULL && refresh_delay_ != NULL) delete refresh_delay_;
+  refresh_delay_ = NULL;
+}
+const ::google::protobuf::Duration& ApiConfigSource::refresh_delay() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ApiConfigSource.refresh_delay)
+  return refresh_delay_ != NULL ? *refresh_delay_
+                         : *::google::protobuf::Duration::internal_default_instance();
+}
+::google::protobuf::Duration* ApiConfigSource::mutable_refresh_delay() {
+  
+  if (refresh_delay_ == NULL) {
+    refresh_delay_ = new ::google::protobuf::Duration;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ApiConfigSource.refresh_delay)
+  return refresh_delay_;
+}
+::google::protobuf::Duration* ApiConfigSource::release_refresh_delay() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ApiConfigSource.refresh_delay)
+  
+  ::google::protobuf::Duration* temp = refresh_delay_;
+  refresh_delay_ = NULL;
+  return temp;
+}
+void ApiConfigSource::set_allocated_refresh_delay(::google::protobuf::Duration* refresh_delay) {
+  delete refresh_delay_;
+  if (refresh_delay != NULL && refresh_delay->GetArena() != NULL) {
+    ::google::protobuf::Duration* new_refresh_delay = new ::google::protobuf::Duration;
+    new_refresh_delay->CopyFrom(*refresh_delay);
+    refresh_delay = new_refresh_delay;
+  }
+  refresh_delay_ = refresh_delay;
+  if (refresh_delay) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ApiConfigSource.refresh_delay)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ConfigSource::kPathFieldNumber;
+const int ConfigSource::kApiConfigSourceFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ConfigSource::ConfigSource()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_api_2fbase_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:envoy.api.v2.ConfigSource)
+}
+ConfigSource::ConfigSource(const ConfigSource& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  clear_has_config_source_specifier();
+  switch (from.config_source_specifier_case()) {
+    case kPath: {
+      set_path(from.path());
+      break;
+    }
+    case kApiConfigSource: {
+      mutable_api_config_source()->::envoy::api::v2::ApiConfigSource::MergeFrom(from.api_config_source());
+      break;
+    }
+    case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.ConfigSource)
+}
+
+void ConfigSource::SharedCtor() {
+  clear_has_config_source_specifier();
+  _cached_size_ = 0;
+}
+
+ConfigSource::~ConfigSource() {
+  // @@protoc_insertion_point(destructor:envoy.api.v2.ConfigSource)
+  SharedDtor();
+}
+
+void ConfigSource::SharedDtor() {
+  if (has_config_source_specifier()) {
+    clear_config_source_specifier();
+  }
+}
+
+void ConfigSource::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ConfigSource::descriptor() {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_metadata[11].descriptor;
+}
+
+const ConfigSource& ConfigSource::default_instance() {
+  protobuf_api_2fbase_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+ConfigSource* ConfigSource::New(::google::protobuf::Arena* arena) const {
+  ConfigSource* n = new ConfigSource;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void ConfigSource::clear_config_source_specifier() {
+// @@protoc_insertion_point(one_of_clear_start:envoy.api.v2.ConfigSource)
+  switch (config_source_specifier_case()) {
+    case kPath: {
+      config_source_specifier_.path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      break;
+    }
+    case kApiConfigSource: {
+      delete config_source_specifier_.api_config_source_;
+      break;
+    }
+    case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = CONFIG_SOURCE_SPECIFIER_NOT_SET;
+}
+
+
+void ConfigSource::Clear() {
+// @@protoc_insertion_point(message_clear_start:envoy.api.v2.ConfigSource)
+  clear_config_source_specifier();
+}
+
+bool ConfigSource::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:envoy.api.v2.ConfigSource)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string path = 1;
+      case 1: {
+        if (tag == 10u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_path()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->path().data(), this->path().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "envoy.api.v2.ConfigSource.path"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .envoy.api.v2.ApiConfigSource api_config_source = 2;
+      case 2: {
+        if (tag == 18u) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_api_config_source()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:envoy.api.v2.ConfigSource)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:envoy.api.v2.ConfigSource)
+  return false;
+#undef DO_
+}
+
+void ConfigSource::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:envoy.api.v2.ConfigSource)
+  // string path = 1;
+  if (has_path()) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->path().data(), this->path().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.ConfigSource.path");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->path(), output);
+  }
+
+  // .envoy.api.v2.ApiConfigSource api_config_source = 2;
+  if (has_api_config_source()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *config_source_specifier_.api_config_source_, output);
+  }
+
+  // @@protoc_insertion_point(serialize_end:envoy.api.v2.ConfigSource)
+}
+
+::google::protobuf::uint8* ConfigSource::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.ConfigSource)
+  // string path = 1;
+  if (has_path()) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->path().data(), this->path().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.ConfigSource.path");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->path(), target);
+  }
+
+  // .envoy.api.v2.ApiConfigSource api_config_source = 2;
+  if (has_api_config_source()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, *config_source_specifier_.api_config_source_, false, target);
+  }
+
+  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ConfigSource)
+  return target;
+}
+
+size_t ConfigSource::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ConfigSource)
+  size_t total_size = 0;
+
+  switch (config_source_specifier_case()) {
+    // string path = 1;
+    case kPath: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->path());
+      break;
+    }
+    // .envoy.api.v2.ApiConfigSource api_config_source = 2;
+    case kApiConfigSource: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *config_source_specifier_.api_config_source_);
+      break;
+    }
+    case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
+      break;
+    }
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ConfigSource::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.ConfigSource)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ConfigSource* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const ConfigSource>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.ConfigSource)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.ConfigSource)
+    MergeFrom(*source);
+  }
+}
+
+void ConfigSource::MergeFrom(const ConfigSource& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.ConfigSource)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  switch (from.config_source_specifier_case()) {
+    case kPath: {
+      set_path(from.path());
+      break;
+    }
+    case kApiConfigSource: {
+      mutable_api_config_source()->::envoy::api::v2::ApiConfigSource::MergeFrom(from.api_config_source());
+      break;
+    }
+    case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void ConfigSource::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.ConfigSource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ConfigSource::CopyFrom(const ConfigSource& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.ConfigSource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfigSource::IsInitialized() const {
+  return true;
+}
+
+void ConfigSource::Swap(ConfigSource* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ConfigSource::InternalSwap(ConfigSource* other) {
+  std::swap(config_source_specifier_, other->config_source_specifier_);
+  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata ConfigSource::GetMetadata() const {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_metadata[11];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// ConfigSource
+
+// string path = 1;
+bool ConfigSource::has_path() const {
+  return config_source_specifier_case() == kPath;
+}
+void ConfigSource::set_has_path() {
+  _oneof_case_[0] = kPath;
+}
+void ConfigSource::clear_path() {
+  if (has_path()) {
+    config_source_specifier_.path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_config_source_specifier();
+  }
+}
+const ::std::string& ConfigSource::path() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ConfigSource.path)
+  if (has_path()) {
+    return config_source_specifier_.path_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+void ConfigSource::set_path(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ConfigSource.path)
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ConfigSource.path)
+}
+#if LANG_CXX11
+void ConfigSource::set_path(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ConfigSource.path)
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.ConfigSource.path)
+}
+#endif
+void ConfigSource::set_path(const char* value) {
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.ConfigSource.path)
+}
+void ConfigSource::set_path(const char* value, size_t size) {
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.ConfigSource.path)
+}
+::std::string* ConfigSource::mutable_path() {
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ConfigSource.path)
+  return config_source_specifier_.path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* ConfigSource::release_path() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ConfigSource.path)
+  if (has_path()) {
+    clear_has_config_source_specifier();
+    return config_source_specifier_.path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return NULL;
+  }
+}
+void ConfigSource::set_allocated_path(::std::string* path) {
+  if (!has_path()) {
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  clear_config_source_specifier();
+  if (path != NULL) {
+    set_has_path();
+    config_source_specifier_.path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+        path);
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.path)
+}
+
+// .envoy.api.v2.ApiConfigSource api_config_source = 2;
+bool ConfigSource::has_api_config_source() const {
+  return config_source_specifier_case() == kApiConfigSource;
+}
+void ConfigSource::set_has_api_config_source() {
+  _oneof_case_[0] = kApiConfigSource;
+}
+void ConfigSource::clear_api_config_source() {
+  if (has_api_config_source()) {
+    delete config_source_specifier_.api_config_source_;
+    clear_has_config_source_specifier();
+  }
+}
+ const ::envoy::api::v2::ApiConfigSource& ConfigSource::api_config_source() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ConfigSource.api_config_source)
+  return has_api_config_source()
+      ? *config_source_specifier_.api_config_source_
+      : ::envoy::api::v2::ApiConfigSource::default_instance();
+}
+::envoy::api::v2::ApiConfigSource* ConfigSource::mutable_api_config_source() {
+  if (!has_api_config_source()) {
+    clear_config_source_specifier();
+    set_has_api_config_source();
+    config_source_specifier_.api_config_source_ = new ::envoy::api::v2::ApiConfigSource;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ConfigSource.api_config_source)
+  return config_source_specifier_.api_config_source_;
+}
+::envoy::api::v2::ApiConfigSource* ConfigSource::release_api_config_source() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ConfigSource.api_config_source)
+  if (has_api_config_source()) {
+    clear_has_config_source_specifier();
+    ::envoy::api::v2::ApiConfigSource* temp = config_source_specifier_.api_config_source_;
+    config_source_specifier_.api_config_source_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void ConfigSource::set_allocated_api_config_source(::envoy::api::v2::ApiConfigSource* api_config_source) {
+  clear_config_source_specifier();
+  if (api_config_source) {
+    set_has_api_config_source();
+    config_source_specifier_.api_config_source_ = api_config_source;
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.api_config_source)
+}
+
+bool ConfigSource::has_config_source_specifier() const {
+  return config_source_specifier_case() != CONFIG_SOURCE_SPECIFIER_NOT_SET;
+}
+void ConfigSource::clear_has_config_source_specifier() {
+  _oneof_case_[0] = CONFIG_SOURCE_SPECIFIER_NOT_SET;
+}
+ConfigSource::ConfigSourceSpecifierCase ConfigSource::config_source_specifier_case() const {
+  return ConfigSource::ConfigSourceSpecifierCase(_oneof_case_[0]);
+}
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)

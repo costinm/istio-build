@@ -1,15 +1,16 @@
 workspace(name= "istio")
 
 # Style:
-# - assume repo or godep will download the repositories, in a format compatible
+# - assume repo or godep will download the repositories, in a layout compatible
 #   with golang.
 # - try to stay close to the envoy style for envoy sources
 #
-# Ok:
-# @envoy -> envoy defined as a repository
-# //external/ -> a binding
+# Dependencies in BUILD files:
+# //src/project/foo - preferred style
+# @envoy -> envoy defined as a repository - WORKSPACE "local_repository" rule mapping to actual directory
+# //external/ -> a binding to a specific rule, may point to a repository or a //src/.. target.
 #
-#
+
 
 local_repository(
     name = "io_bazel_rules_go",
@@ -144,7 +145,13 @@ bind(name = "ares", actual = "//third_party/cares:ares")
 # Hardcoded @envoy in mixer
 local_repository(name = "envoy", path = "envoy")
 
-bind(name = "envoy_eds", actual = "@envoy_api//api:eds")
+bind(name = "envoy_base", actual = "@envoy_api//api:base_cc")
+bind(name = "envoy_eds", actual = "@envoy_api//api:eds_cc")
+bind(name = "http_api_protos", actual = "@googleapis//:http_api_protos")
+
+bind(name = "grpc_transcoding", actual = "//src/grpc_transcoding/src:transcoding")
+bind(name = "path_matcher", actual = "//src/grpc_transcoding/src:path_matcher")
+
 # latest uses eds_cc - but removed 'canary'
 #bind(name = "envoy_eds", actual = "@envoy_api//api:eds_cc")
 local_repository(name = "envoy_api", path = "src/envoy-api")
@@ -627,3 +634,9 @@ new_local_repository(
     build_file = "third_party/api/api.BUILD",
 )
 
+local_repository(
+    name = "io_bazel_rules_docker",
+    path = "tools/bazelbuild/rules_docker",
+)
+load("@io_bazel_rules_docker//docker:docker.bzl", "docker_repositories")
+docker_repositories()

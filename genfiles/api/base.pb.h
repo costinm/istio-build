@@ -33,12 +33,19 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "api/address.pb.h"
 #include <google/protobuf/any.pb.h>
+#include <google/protobuf/duration.pb.h>
 #include <google/protobuf/struct.pb.h>
 #include <google/protobuf/wrappers.pb.h>
 // @@protoc_insertion_point(includes)
 namespace envoy {
 namespace api {
 namespace v2 {
+class ApiConfigSource;
+class ApiConfigSourceDefaultTypeInternal;
+extern ApiConfigSourceDefaultTypeInternal _ApiConfigSource_default_instance_;
+class ConfigSource;
+class ConfigSourceDefaultTypeInternal;
+extern ConfigSourceDefaultTypeInternal _ConfigSource_default_instance_;
 class DiscoveryRequest;
 class DiscoveryRequestDefaultTypeInternal;
 extern DiscoveryRequestDefaultTypeInternal _DiscoveryRequest_default_instance_;
@@ -107,6 +114,9 @@ extern BytesValueDefaultTypeInternal _BytesValue_default_instance_;
 class DoubleValue;
 class DoubleValueDefaultTypeInternal;
 extern DoubleValueDefaultTypeInternal _DoubleValue_default_instance_;
+class Duration;
+class DurationDefaultTypeInternal;
+extern DurationDefaultTypeInternal _Duration_default_instance_;
 class FloatValue;
 class FloatValueDefaultTypeInternal;
 extern FloatValueDefaultTypeInternal _FloatValue_default_instance_;
@@ -152,6 +162,28 @@ void AddDescriptors();
 void InitDefaults();
 }  // namespace protobuf_api_2fbase_2eproto
 
+enum ApiConfigSource_ApiType {
+  ApiConfigSource_ApiType_REST_LEGACY = 0,
+  ApiConfigSource_ApiType_REST = 1,
+  ApiConfigSource_ApiType_GRPC = 2,
+  ApiConfigSource_ApiType_ApiConfigSource_ApiType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  ApiConfigSource_ApiType_ApiConfigSource_ApiType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool ApiConfigSource_ApiType_IsValid(int value);
+const ApiConfigSource_ApiType ApiConfigSource_ApiType_ApiType_MIN = ApiConfigSource_ApiType_REST_LEGACY;
+const ApiConfigSource_ApiType ApiConfigSource_ApiType_ApiType_MAX = ApiConfigSource_ApiType_GRPC;
+const int ApiConfigSource_ApiType_ApiType_ARRAYSIZE = ApiConfigSource_ApiType_ApiType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* ApiConfigSource_ApiType_descriptor();
+inline const ::std::string& ApiConfigSource_ApiType_Name(ApiConfigSource_ApiType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    ApiConfigSource_ApiType_descriptor(), value);
+}
+inline bool ApiConfigSource_ApiType_Parse(
+    const ::std::string& name, ApiConfigSource_ApiType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ApiConfigSource_ApiType>(
+    ApiConfigSource_ApiType_descriptor(), name, value);
+}
 enum RoutingPriority {
   DEFAULT = 0,
   HIGH = 1,
@@ -377,6 +409,20 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
+  // string build_version = 4;
+  void clear_build_version();
+  static const int kBuildVersionFieldNumber = 4;
+  const ::std::string& build_version() const;
+  void set_build_version(const ::std::string& value);
+  #if LANG_CXX11
+  void set_build_version(::std::string&& value);
+  #endif
+  void set_build_version(const char* value);
+  void set_build_version(const char* value, size_t size);
+  ::std::string* mutable_build_version();
+  ::std::string* release_build_version();
+  void set_allocated_build_version(::std::string* build_version);
+
   // .google.protobuf.Struct metadata = 2;
   bool has_metadata() const;
   void clear_metadata();
@@ -400,6 +446,7 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr build_version_;
   ::google::protobuf::Struct* metadata_;
   ::envoy::api::v2::Locality* locality_;
   mutable int _cached_size_;
@@ -1104,13 +1151,280 @@ class DiscoveryResponse : public ::google::protobuf::Message /* @@protoc_inserti
   ::std::string* release_version_info();
   void set_allocated_version_info(::std::string* version_info);
 
+  // bool canary = 3;
+  void clear_canary();
+  static const int kCanaryFieldNumber = 3;
+  bool canary() const;
+  void set_canary(bool value);
+
   // @@protoc_insertion_point(class_scope:envoy.api.v2.DiscoveryResponse)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::google::protobuf::Any > resources_;
   ::google::protobuf::internal::ArenaStringPtr version_info_;
+  bool canary_;
   mutable int _cached_size_;
+  friend struct  protobuf_api_2fbase_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ApiConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:envoy.api.v2.ApiConfigSource) */ {
+ public:
+  ApiConfigSource();
+  virtual ~ApiConfigSource();
+
+  ApiConfigSource(const ApiConfigSource& from);
+
+  inline ApiConfigSource& operator=(const ApiConfigSource& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ApiConfigSource& default_instance();
+
+  static inline const ApiConfigSource* internal_default_instance() {
+    return reinterpret_cast<const ApiConfigSource*>(
+               &_ApiConfigSource_default_instance_);
+  }
+
+  void Swap(ApiConfigSource* other);
+
+  // implements Message ----------------------------------------------
+
+  inline ApiConfigSource* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  ApiConfigSource* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const ApiConfigSource& from);
+  void MergeFrom(const ApiConfigSource& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output)
+      const PROTOBUF_FINAL {
+    return InternalSerializeWithCachedSizesToArray(
+        ::google::protobuf::io::CodedOutputStream::IsDefaultSerializationDeterministic(), output);
+  }
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(ApiConfigSource* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  typedef ApiConfigSource_ApiType ApiType;
+  static const ApiType REST_LEGACY =
+    ApiConfigSource_ApiType_REST_LEGACY;
+  static const ApiType REST =
+    ApiConfigSource_ApiType_REST;
+  static const ApiType GRPC =
+    ApiConfigSource_ApiType_GRPC;
+  static inline bool ApiType_IsValid(int value) {
+    return ApiConfigSource_ApiType_IsValid(value);
+  }
+  static const ApiType ApiType_MIN =
+    ApiConfigSource_ApiType_ApiType_MIN;
+  static const ApiType ApiType_MAX =
+    ApiConfigSource_ApiType_ApiType_MAX;
+  static const int ApiType_ARRAYSIZE =
+    ApiConfigSource_ApiType_ApiType_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  ApiType_descriptor() {
+    return ApiConfigSource_ApiType_descriptor();
+  }
+  static inline const ::std::string& ApiType_Name(ApiType value) {
+    return ApiConfigSource_ApiType_Name(value);
+  }
+  static inline bool ApiType_Parse(const ::std::string& name,
+      ApiType* value) {
+    return ApiConfigSource_ApiType_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // repeated string cluster_name = 2;
+  int cluster_name_size() const;
+  void clear_cluster_name();
+  static const int kClusterNameFieldNumber = 2;
+  const ::std::string& cluster_name(int index) const;
+  ::std::string* mutable_cluster_name(int index);
+  void set_cluster_name(int index, const ::std::string& value);
+  void set_cluster_name(int index, const char* value);
+  void set_cluster_name(int index, const char* value, size_t size);
+  ::std::string* add_cluster_name();
+  void add_cluster_name(const ::std::string& value);
+  void add_cluster_name(const char* value);
+  void add_cluster_name(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& cluster_name() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_cluster_name();
+
+  // .google.protobuf.Duration refresh_delay = 3;
+  bool has_refresh_delay() const;
+  void clear_refresh_delay();
+  static const int kRefreshDelayFieldNumber = 3;
+  const ::google::protobuf::Duration& refresh_delay() const;
+  ::google::protobuf::Duration* mutable_refresh_delay();
+  ::google::protobuf::Duration* release_refresh_delay();
+  void set_allocated_refresh_delay(::google::protobuf::Duration* refresh_delay);
+
+  // .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+  void clear_api_type();
+  static const int kApiTypeFieldNumber = 1;
+  ::envoy::api::v2::ApiConfigSource_ApiType api_type() const;
+  void set_api_type(::envoy::api::v2::ApiConfigSource_ApiType value);
+
+  // @@protoc_insertion_point(class_scope:envoy.api.v2.ApiConfigSource)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> cluster_name_;
+  ::google::protobuf::Duration* refresh_delay_;
+  int api_type_;
+  mutable int _cached_size_;
+  friend struct  protobuf_api_2fbase_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:envoy.api.v2.ConfigSource) */ {
+ public:
+  ConfigSource();
+  virtual ~ConfigSource();
+
+  ConfigSource(const ConfigSource& from);
+
+  inline ConfigSource& operator=(const ConfigSource& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ConfigSource& default_instance();
+
+  enum ConfigSourceSpecifierCase {
+    kPath = 1,
+    kApiConfigSource = 2,
+    CONFIG_SOURCE_SPECIFIER_NOT_SET = 0,
+  };
+
+  static inline const ConfigSource* internal_default_instance() {
+    return reinterpret_cast<const ConfigSource*>(
+               &_ConfigSource_default_instance_);
+  }
+
+  void Swap(ConfigSource* other);
+
+  // implements Message ----------------------------------------------
+
+  inline ConfigSource* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  ConfigSource* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const ConfigSource& from);
+  void MergeFrom(const ConfigSource& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output)
+      const PROTOBUF_FINAL {
+    return InternalSerializeWithCachedSizesToArray(
+        ::google::protobuf::io::CodedOutputStream::IsDefaultSerializationDeterministic(), output);
+  }
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(ConfigSource* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string path = 1;
+  private:
+  bool has_path() const;
+  public:
+  void clear_path();
+  static const int kPathFieldNumber = 1;
+  const ::std::string& path() const;
+  void set_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_path(::std::string&& value);
+  #endif
+  void set_path(const char* value);
+  void set_path(const char* value, size_t size);
+  ::std::string* mutable_path();
+  ::std::string* release_path();
+  void set_allocated_path(::std::string* path);
+
+  // .envoy.api.v2.ApiConfigSource api_config_source = 2;
+  bool has_api_config_source() const;
+  void clear_api_config_source();
+  static const int kApiConfigSourceFieldNumber = 2;
+  const ::envoy::api::v2::ApiConfigSource& api_config_source() const;
+  ::envoy::api::v2::ApiConfigSource* mutable_api_config_source();
+  ::envoy::api::v2::ApiConfigSource* release_api_config_source();
+  void set_allocated_api_config_source(::envoy::api::v2::ApiConfigSource* api_config_source);
+
+  ConfigSourceSpecifierCase config_source_specifier_case() const;
+  // @@protoc_insertion_point(class_scope:envoy.api.v2.ConfigSource)
+ private:
+  void set_has_path();
+  void set_has_api_config_source();
+
+  inline bool has_config_source_specifier() const;
+  void clear_config_source_specifier();
+  inline void clear_has_config_source_specifier();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  union ConfigSourceSpecifierUnion {
+    ConfigSourceSpecifierUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr path_;
+    ::envoy::api::v2::ApiConfigSource* api_config_source_;
+  } config_source_specifier_;
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct  protobuf_api_2fbase_2eproto::TableStruct;
 };
 // ===================================================================
@@ -1414,6 +1728,58 @@ inline void Node::set_allocated_locality(::envoy::api::v2::Locality* locality) {
     
   }
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.Node.locality)
+}
+
+// string build_version = 4;
+inline void Node::clear_build_version() {
+  build_version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Node::build_version() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.Node.build_version)
+  return build_version_.GetNoArena();
+}
+inline void Node::set_build_version(const ::std::string& value) {
+  
+  build_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.Node.build_version)
+}
+#if LANG_CXX11
+inline void Node::set_build_version(::std::string&& value) {
+  
+  build_version_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.Node.build_version)
+}
+#endif
+inline void Node::set_build_version(const char* value) {
+  
+  build_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.Node.build_version)
+}
+inline void Node::set_build_version(const char* value, size_t size) {
+  
+  build_version_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.Node.build_version)
+}
+inline ::std::string* Node::mutable_build_version() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.Node.build_version)
+  return build_version_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Node::release_build_version() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.Node.build_version)
+  
+  return build_version_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Node::set_allocated_build_version(::std::string* build_version) {
+  if (build_version != NULL) {
+    
+  } else {
+    
+  }
+  build_version_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), build_version);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.Node.build_version)
 }
 
 // -------------------------------------------------------------------
@@ -1984,7 +2350,297 @@ DiscoveryResponse::resources() const {
   return resources_;
 }
 
+// bool canary = 3;
+inline void DiscoveryResponse::clear_canary() {
+  canary_ = false;
+}
+inline bool DiscoveryResponse::canary() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.DiscoveryResponse.canary)
+  return canary_;
+}
+inline void DiscoveryResponse::set_canary(bool value) {
+  
+  canary_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.DiscoveryResponse.canary)
+}
+
+// -------------------------------------------------------------------
+
+// ApiConfigSource
+
+// .envoy.api.v2.ApiConfigSource.ApiType api_type = 1;
+inline void ApiConfigSource::clear_api_type() {
+  api_type_ = 0;
+}
+inline ::envoy::api::v2::ApiConfigSource_ApiType ApiConfigSource::api_type() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ApiConfigSource.api_type)
+  return static_cast< ::envoy::api::v2::ApiConfigSource_ApiType >(api_type_);
+}
+inline void ApiConfigSource::set_api_type(::envoy::api::v2::ApiConfigSource_ApiType value) {
+  
+  api_type_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ApiConfigSource.api_type)
+}
+
+// repeated string cluster_name = 2;
+inline int ApiConfigSource::cluster_name_size() const {
+  return cluster_name_.size();
+}
+inline void ApiConfigSource::clear_cluster_name() {
+  cluster_name_.Clear();
+}
+inline const ::std::string& ApiConfigSource::cluster_name(int index) const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_.Get(index);
+}
+inline ::std::string* ApiConfigSource::mutable_cluster_name(int index) {
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_.Mutable(index);
+}
+inline void ApiConfigSource::set_cluster_name(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ApiConfigSource.cluster_name)
+  cluster_name_.Mutable(index)->assign(value);
+}
+inline void ApiConfigSource::set_cluster_name(int index, const char* value) {
+  cluster_name_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+inline void ApiConfigSource::set_cluster_name(int index, const char* value, size_t size) {
+  cluster_name_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+inline ::std::string* ApiConfigSource::add_cluster_name() {
+  // @@protoc_insertion_point(field_add_mutable:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_.Add();
+}
+inline void ApiConfigSource::add_cluster_name(const ::std::string& value) {
+  cluster_name_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+inline void ApiConfigSource::add_cluster_name(const char* value) {
+  cluster_name_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+inline void ApiConfigSource::add_cluster_name(const char* value, size_t size) {
+  cluster_name_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:envoy.api.v2.ApiConfigSource.cluster_name)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ApiConfigSource::cluster_name() const {
+  // @@protoc_insertion_point(field_list:envoy.api.v2.ApiConfigSource.cluster_name)
+  return cluster_name_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ApiConfigSource::mutable_cluster_name() {
+  // @@protoc_insertion_point(field_mutable_list:envoy.api.v2.ApiConfigSource.cluster_name)
+  return &cluster_name_;
+}
+
+// .google.protobuf.Duration refresh_delay = 3;
+inline bool ApiConfigSource::has_refresh_delay() const {
+  return this != internal_default_instance() && refresh_delay_ != NULL;
+}
+inline void ApiConfigSource::clear_refresh_delay() {
+  if (GetArenaNoVirtual() == NULL && refresh_delay_ != NULL) delete refresh_delay_;
+  refresh_delay_ = NULL;
+}
+inline const ::google::protobuf::Duration& ApiConfigSource::refresh_delay() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ApiConfigSource.refresh_delay)
+  return refresh_delay_ != NULL ? *refresh_delay_
+                         : *::google::protobuf::Duration::internal_default_instance();
+}
+inline ::google::protobuf::Duration* ApiConfigSource::mutable_refresh_delay() {
+  
+  if (refresh_delay_ == NULL) {
+    refresh_delay_ = new ::google::protobuf::Duration;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ApiConfigSource.refresh_delay)
+  return refresh_delay_;
+}
+inline ::google::protobuf::Duration* ApiConfigSource::release_refresh_delay() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ApiConfigSource.refresh_delay)
+  
+  ::google::protobuf::Duration* temp = refresh_delay_;
+  refresh_delay_ = NULL;
+  return temp;
+}
+inline void ApiConfigSource::set_allocated_refresh_delay(::google::protobuf::Duration* refresh_delay) {
+  delete refresh_delay_;
+  if (refresh_delay != NULL && refresh_delay->GetArena() != NULL) {
+    ::google::protobuf::Duration* new_refresh_delay = new ::google::protobuf::Duration;
+    new_refresh_delay->CopyFrom(*refresh_delay);
+    refresh_delay = new_refresh_delay;
+  }
+  refresh_delay_ = refresh_delay;
+  if (refresh_delay) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ApiConfigSource.refresh_delay)
+}
+
+// -------------------------------------------------------------------
+
+// ConfigSource
+
+// string path = 1;
+inline bool ConfigSource::has_path() const {
+  return config_source_specifier_case() == kPath;
+}
+inline void ConfigSource::set_has_path() {
+  _oneof_case_[0] = kPath;
+}
+inline void ConfigSource::clear_path() {
+  if (has_path()) {
+    config_source_specifier_.path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_config_source_specifier();
+  }
+}
+inline const ::std::string& ConfigSource::path() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ConfigSource.path)
+  if (has_path()) {
+    return config_source_specifier_.path_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void ConfigSource::set_path(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ConfigSource.path)
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ConfigSource.path)
+}
+#if LANG_CXX11
+inline void ConfigSource::set_path(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.ConfigSource.path)
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.ConfigSource.path)
+}
+#endif
+inline void ConfigSource::set_path(const char* value) {
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.ConfigSource.path)
+}
+inline void ConfigSource::set_path(const char* value, size_t size) {
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  config_source_specifier_.path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.ConfigSource.path)
+}
+inline ::std::string* ConfigSource::mutable_path() {
+  if (!has_path()) {
+    clear_config_source_specifier();
+    set_has_path();
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ConfigSource.path)
+  return config_source_specifier_.path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ConfigSource::release_path() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ConfigSource.path)
+  if (has_path()) {
+    clear_has_config_source_specifier();
+    return config_source_specifier_.path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return NULL;
+  }
+}
+inline void ConfigSource::set_allocated_path(::std::string* path) {
+  if (!has_path()) {
+    config_source_specifier_.path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  clear_config_source_specifier();
+  if (path != NULL) {
+    set_has_path();
+    config_source_specifier_.path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+        path);
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.path)
+}
+
+// .envoy.api.v2.ApiConfigSource api_config_source = 2;
+inline bool ConfigSource::has_api_config_source() const {
+  return config_source_specifier_case() == kApiConfigSource;
+}
+inline void ConfigSource::set_has_api_config_source() {
+  _oneof_case_[0] = kApiConfigSource;
+}
+inline void ConfigSource::clear_api_config_source() {
+  if (has_api_config_source()) {
+    delete config_source_specifier_.api_config_source_;
+    clear_has_config_source_specifier();
+  }
+}
+inline  const ::envoy::api::v2::ApiConfigSource& ConfigSource::api_config_source() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ConfigSource.api_config_source)
+  return has_api_config_source()
+      ? *config_source_specifier_.api_config_source_
+      : ::envoy::api::v2::ApiConfigSource::default_instance();
+}
+inline ::envoy::api::v2::ApiConfigSource* ConfigSource::mutable_api_config_source() {
+  if (!has_api_config_source()) {
+    clear_config_source_specifier();
+    set_has_api_config_source();
+    config_source_specifier_.api_config_source_ = new ::envoy::api::v2::ApiConfigSource;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ConfigSource.api_config_source)
+  return config_source_specifier_.api_config_source_;
+}
+inline ::envoy::api::v2::ApiConfigSource* ConfigSource::release_api_config_source() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ConfigSource.api_config_source)
+  if (has_api_config_source()) {
+    clear_has_config_source_specifier();
+    ::envoy::api::v2::ApiConfigSource* temp = config_source_specifier_.api_config_source_;
+    config_source_specifier_.api_config_source_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline void ConfigSource::set_allocated_api_config_source(::envoy::api::v2::ApiConfigSource* api_config_source) {
+  clear_config_source_specifier();
+  if (api_config_source) {
+    set_has_api_config_source();
+    config_source_specifier_.api_config_source_ = api_config_source;
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.api_config_source)
+}
+
+inline bool ConfigSource::has_config_source_specifier() const {
+  return config_source_specifier_case() != CONFIG_SOURCE_SPECIFIER_NOT_SET;
+}
+inline void ConfigSource::clear_has_config_source_specifier() {
+  _oneof_case_[0] = CONFIG_SOURCE_SPECIFIER_NOT_SET;
+}
+inline ConfigSource::ConfigSourceSpecifierCase ConfigSource::config_source_specifier_case() const {
+  return ConfigSource::ConfigSourceSpecifierCase(_oneof_case_[0]);
+}
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -2015,6 +2671,11 @@ DiscoveryResponse::resources() const {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::envoy::api::v2::ApiConfigSource_ApiType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::envoy::api::v2::ApiConfigSource_ApiType>() {
+  return ::envoy::api::v2::ApiConfigSource_ApiType_descriptor();
+}
 template <> struct is_proto_enum< ::envoy::api::v2::RoutingPriority> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::envoy::api::v2::RoutingPriority>() {

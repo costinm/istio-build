@@ -16,7 +16,8 @@ cc_library(
     name = "backward",
     srcs = ["backward/backward.cpp"],
     hdrs = [
-        "backward/backwards.hpp",
+        "backward/backward.hpp",
     ],
+    strip_include_prefix = "backward",
     visibility = ["//visibility:public"],
 )

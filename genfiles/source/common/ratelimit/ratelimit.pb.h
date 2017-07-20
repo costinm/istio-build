@@ -28,7 +28,6 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
-#include <google/protobuf/service.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace pb {
@@ -766,65 +765,6 @@ class RateLimitResponse : public ::google::protobuf::Message /* @@protoc_inserti
   mutable int _cached_size_;
   friend struct  protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::TableStruct;
 };
-// ===================================================================
-
-class RateLimitService_Stub;
-
-class RateLimitService : public ::google::protobuf::Service {
- protected:
-  // This class should be treated as an abstract interface.
-  inline RateLimitService() {};
- public:
-  virtual ~RateLimitService();
-
-  typedef RateLimitService_Stub Stub;
-
-  static const ::google::protobuf::ServiceDescriptor* descriptor();
-
-  virtual void ShouldRateLimit(::google::protobuf::RpcController* controller,
-                       const ::pb::lyft::ratelimit::RateLimitRequest* request,
-                       ::pb::lyft::ratelimit::RateLimitResponse* response,
-                       ::google::protobuf::Closure* done);
-
-  // implements Service ----------------------------------------------
-
-  const ::google::protobuf::ServiceDescriptor* GetDescriptor();
-  void CallMethod(const ::google::protobuf::MethodDescriptor* method,
-                  ::google::protobuf::RpcController* controller,
-                  const ::google::protobuf::Message* request,
-                  ::google::protobuf::Message* response,
-                  ::google::protobuf::Closure* done);
-  const ::google::protobuf::Message& GetRequestPrototype(
-    const ::google::protobuf::MethodDescriptor* method) const;
-  const ::google::protobuf::Message& GetResponsePrototype(
-    const ::google::protobuf::MethodDescriptor* method) const;
-
- private:
-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(RateLimitService);
-};
-
-class RateLimitService_Stub : public RateLimitService {
- public:
-  RateLimitService_Stub(::google::protobuf::RpcChannel* channel);
-  RateLimitService_Stub(::google::protobuf::RpcChannel* channel,
-                   ::google::protobuf::Service::ChannelOwnership ownership);
-  ~RateLimitService_Stub();
-
-  inline ::google::protobuf::RpcChannel* channel() { return channel_; }
-
-  // implements RateLimitService ------------------------------------------
-
-  void ShouldRateLimit(::google::protobuf::RpcController* controller,
-                       const ::pb::lyft::ratelimit::RateLimitRequest* request,
-                       ::pb::lyft::ratelimit::RateLimitResponse* response,
-                       ::google::protobuf::Closure* done);
- private:
-  ::google::protobuf::RpcChannel* channel_;
-  bool owns_channel_;
-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(RateLimitService_Stub);
-};
-
-
 // ===================================================================
 
 

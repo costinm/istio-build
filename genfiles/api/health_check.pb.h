@@ -44,6 +44,9 @@ extern HealthCheck_HttpHealthCheckDefaultTypeInternal _HealthCheck_HttpHealthChe
 class HealthCheck_Payload;
 class HealthCheck_PayloadDefaultTypeInternal;
 extern HealthCheck_PayloadDefaultTypeInternal _HealthCheck_Payload_default_instance_;
+class HealthCheck_RedisHealthCheck;
+class HealthCheck_RedisHealthCheckDefaultTypeInternal;
+extern HealthCheck_RedisHealthCheckDefaultTypeInternal _HealthCheck_RedisHealthCheck_default_instance_;
 class HealthCheck_TcpHealthCheck;
 class HealthCheck_TcpHealthCheckDefaultTypeInternal;
 extern HealthCheck_TcpHealthCheckDefaultTypeInternal _HealthCheck_TcpHealthCheck_default_instance_;
@@ -449,6 +452,18 @@ class HealthCheck_TcpHealthCheck : public ::google::protobuf::Message /* @@proto
 
   // accessors -------------------------------------------------------
 
+  // repeated .envoy.api.v2.HealthCheck.Payload receive = 2;
+  int receive_size() const;
+  void clear_receive();
+  static const int kReceiveFieldNumber = 2;
+  const ::envoy::api::v2::HealthCheck_Payload& receive(int index) const;
+  ::envoy::api::v2::HealthCheck_Payload* mutable_receive(int index);
+  ::envoy::api::v2::HealthCheck_Payload* add_receive();
+  ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::HealthCheck_Payload >*
+      mutable_receive();
+  const ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::HealthCheck_Payload >&
+      receive() const;
+
   // .envoy.api.v2.HealthCheck.Payload send = 1;
   bool has_send() const;
   void clear_send();
@@ -458,21 +473,88 @@ class HealthCheck_TcpHealthCheck : public ::google::protobuf::Message /* @@proto
   ::envoy::api::v2::HealthCheck_Payload* release_send();
   void set_allocated_send(::envoy::api::v2::HealthCheck_Payload* send);
 
-  // .envoy.api.v2.HealthCheck.Payload receive = 2;
-  bool has_receive() const;
-  void clear_receive();
-  static const int kReceiveFieldNumber = 2;
-  const ::envoy::api::v2::HealthCheck_Payload& receive() const;
-  ::envoy::api::v2::HealthCheck_Payload* mutable_receive();
-  ::envoy::api::v2::HealthCheck_Payload* release_receive();
-  void set_allocated_receive(::envoy::api::v2::HealthCheck_Payload* receive);
-
   // @@protoc_insertion_point(class_scope:envoy.api.v2.HealthCheck.TcpHealthCheck)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::HealthCheck_Payload > receive_;
   ::envoy::api::v2::HealthCheck_Payload* send_;
-  ::envoy::api::v2::HealthCheck_Payload* receive_;
+  mutable int _cached_size_;
+  friend struct  protobuf_api_2fhealth_5fcheck_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class HealthCheck_RedisHealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:envoy.api.v2.HealthCheck.RedisHealthCheck) */ {
+ public:
+  HealthCheck_RedisHealthCheck();
+  virtual ~HealthCheck_RedisHealthCheck();
+
+  HealthCheck_RedisHealthCheck(const HealthCheck_RedisHealthCheck& from);
+
+  inline HealthCheck_RedisHealthCheck& operator=(const HealthCheck_RedisHealthCheck& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const HealthCheck_RedisHealthCheck& default_instance();
+
+  static inline const HealthCheck_RedisHealthCheck* internal_default_instance() {
+    return reinterpret_cast<const HealthCheck_RedisHealthCheck*>(
+               &_HealthCheck_RedisHealthCheck_default_instance_);
+  }
+
+  void Swap(HealthCheck_RedisHealthCheck* other);
+
+  // implements Message ----------------------------------------------
+
+  inline HealthCheck_RedisHealthCheck* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  HealthCheck_RedisHealthCheck* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const HealthCheck_RedisHealthCheck& from);
+  void MergeFrom(const HealthCheck_RedisHealthCheck& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output)
+      const PROTOBUF_FINAL {
+    return InternalSerializeWithCachedSizesToArray(
+        ::google::protobuf::io::CodedOutputStream::IsDefaultSerializationDeterministic(), output);
+  }
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(HealthCheck_RedisHealthCheck* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:envoy.api.v2.HealthCheck.RedisHealthCheck)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   mutable int _cached_size_;
   friend struct  protobuf_api_2fhealth_5fcheck_2eproto::TableStruct;
 };
@@ -494,8 +576,9 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   static const HealthCheck& default_instance();
 
   enum HealthCheckerCase {
-    kHttpHealthCheck = 8,
-    kTcpHealthCheck = 9,
+    kHttpHealthCheck = 9,
+    kTcpHealthCheck = 10,
+    kRedisHealthCheck = 11,
     HEALTH_CHECKER_NOT_SET = 0,
   };
 
@@ -552,8 +635,23 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   typedef HealthCheck_Payload Payload;
   typedef HealthCheck_HttpHealthCheck HttpHealthCheck;
   typedef HealthCheck_TcpHealthCheck TcpHealthCheck;
+  typedef HealthCheck_RedisHealthCheck RedisHealthCheck;
 
   // accessors -------------------------------------------------------
+
+  // string service_name = 8;
+  void clear_service_name();
+  static const int kServiceNameFieldNumber = 8;
+  const ::std::string& service_name() const;
+  void set_service_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_service_name(::std::string&& value);
+  #endif
+  void set_service_name(const char* value);
+  void set_service_name(const char* value, size_t size);
+  ::std::string* mutable_service_name();
+  ::std::string* release_service_name();
+  void set_allocated_service_name(::std::string* service_name);
 
   // .google.protobuf.Duration timeout = 1;
   bool has_timeout() const;
@@ -618,35 +716,46 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::BoolValue* release_reuse_connection();
   void set_allocated_reuse_connection(::google::protobuf::BoolValue* reuse_connection);
 
-  // .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 8;
+  // .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 9;
   bool has_http_health_check() const;
   void clear_http_health_check();
-  static const int kHttpHealthCheckFieldNumber = 8;
+  static const int kHttpHealthCheckFieldNumber = 9;
   const ::envoy::api::v2::HealthCheck_HttpHealthCheck& http_health_check() const;
   ::envoy::api::v2::HealthCheck_HttpHealthCheck* mutable_http_health_check();
   ::envoy::api::v2::HealthCheck_HttpHealthCheck* release_http_health_check();
   void set_allocated_http_health_check(::envoy::api::v2::HealthCheck_HttpHealthCheck* http_health_check);
 
-  // .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 9;
+  // .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 10;
   bool has_tcp_health_check() const;
   void clear_tcp_health_check();
-  static const int kTcpHealthCheckFieldNumber = 9;
+  static const int kTcpHealthCheckFieldNumber = 10;
   const ::envoy::api::v2::HealthCheck_TcpHealthCheck& tcp_health_check() const;
   ::envoy::api::v2::HealthCheck_TcpHealthCheck* mutable_tcp_health_check();
   ::envoy::api::v2::HealthCheck_TcpHealthCheck* release_tcp_health_check();
   void set_allocated_tcp_health_check(::envoy::api::v2::HealthCheck_TcpHealthCheck* tcp_health_check);
+
+  // .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 11;
+  bool has_redis_health_check() const;
+  void clear_redis_health_check();
+  static const int kRedisHealthCheckFieldNumber = 11;
+  const ::envoy::api::v2::HealthCheck_RedisHealthCheck& redis_health_check() const;
+  ::envoy::api::v2::HealthCheck_RedisHealthCheck* mutable_redis_health_check();
+  ::envoy::api::v2::HealthCheck_RedisHealthCheck* release_redis_health_check();
+  void set_allocated_redis_health_check(::envoy::api::v2::HealthCheck_RedisHealthCheck* redis_health_check);
 
   HealthCheckerCase health_checker_case() const;
   // @@protoc_insertion_point(class_scope:envoy.api.v2.HealthCheck)
  private:
   void set_has_http_health_check();
   void set_has_tcp_health_check();
+  void set_has_redis_health_check();
 
   inline bool has_health_checker() const;
   void clear_health_checker();
   inline void clear_has_health_checker();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr service_name_;
   ::google::protobuf::Duration* timeout_;
   ::google::protobuf::Duration* interval_;
   ::google::protobuf::Duration* interval_jitter_;
@@ -658,6 +767,7 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
     HealthCheckerUnion() {}
     ::envoy::api::v2::HealthCheck_HttpHealthCheck* http_health_check_;
     ::envoy::api::v2::HealthCheck_TcpHealthCheck* tcp_health_check_;
+    ::envoy::api::v2::HealthCheck_RedisHealthCheck* redis_health_check_;
   } health_checker_;
   mutable int _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1098,44 +1208,39 @@ inline void HealthCheck_TcpHealthCheck::set_allocated_send(::envoy::api::v2::Hea
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.TcpHealthCheck.send)
 }
 
-// .envoy.api.v2.HealthCheck.Payload receive = 2;
-inline bool HealthCheck_TcpHealthCheck::has_receive() const {
-  return this != internal_default_instance() && receive_ != NULL;
+// repeated .envoy.api.v2.HealthCheck.Payload receive = 2;
+inline int HealthCheck_TcpHealthCheck::receive_size() const {
+  return receive_.size();
 }
 inline void HealthCheck_TcpHealthCheck::clear_receive() {
-  if (GetArenaNoVirtual() == NULL && receive_ != NULL) delete receive_;
-  receive_ = NULL;
+  receive_.Clear();
 }
-inline const ::envoy::api::v2::HealthCheck_Payload& HealthCheck_TcpHealthCheck::receive() const {
+inline const ::envoy::api::v2::HealthCheck_Payload& HealthCheck_TcpHealthCheck::receive(int index) const {
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
-  return receive_ != NULL ? *receive_
-                         : *::envoy::api::v2::HealthCheck_Payload::internal_default_instance();
+  return receive_.Get(index);
 }
-inline ::envoy::api::v2::HealthCheck_Payload* HealthCheck_TcpHealthCheck::mutable_receive() {
-  
-  if (receive_ == NULL) {
-    receive_ = new ::envoy::api::v2::HealthCheck_Payload;
-  }
+inline ::envoy::api::v2::HealthCheck_Payload* HealthCheck_TcpHealthCheck::mutable_receive(int index) {
   // @@protoc_insertion_point(field_mutable:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
+  return receive_.Mutable(index);
+}
+inline ::envoy::api::v2::HealthCheck_Payload* HealthCheck_TcpHealthCheck::add_receive() {
+  // @@protoc_insertion_point(field_add:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
+  return receive_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::HealthCheck_Payload >*
+HealthCheck_TcpHealthCheck::mutable_receive() {
+  // @@protoc_insertion_point(field_mutable_list:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
+  return &receive_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::HealthCheck_Payload >&
+HealthCheck_TcpHealthCheck::receive() const {
+  // @@protoc_insertion_point(field_list:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
   return receive_;
 }
-inline ::envoy::api::v2::HealthCheck_Payload* HealthCheck_TcpHealthCheck::release_receive() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
-  
-  ::envoy::api::v2::HealthCheck_Payload* temp = receive_;
-  receive_ = NULL;
-  return temp;
-}
-inline void HealthCheck_TcpHealthCheck::set_allocated_receive(::envoy::api::v2::HealthCheck_Payload* receive) {
-  delete receive_;
-  receive_ = receive;
-  if (receive) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.TcpHealthCheck.receive)
-}
+
+// -------------------------------------------------------------------
+
+// HealthCheck_RedisHealthCheck
 
 // -------------------------------------------------------------------
 
@@ -1449,7 +1554,59 @@ inline void HealthCheck::set_allocated_reuse_connection(::google::protobuf::Bool
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.reuse_connection)
 }
 
-// .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 8;
+// string service_name = 8;
+inline void HealthCheck::clear_service_name() {
+  service_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HealthCheck::service_name() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.service_name)
+  return service_name_.GetNoArena();
+}
+inline void HealthCheck::set_service_name(const ::std::string& value) {
+  
+  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.HealthCheck.service_name)
+}
+#if LANG_CXX11
+inline void HealthCheck::set_service_name(::std::string&& value) {
+  
+  service_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.HealthCheck.service_name)
+}
+#endif
+inline void HealthCheck::set_service_name(const char* value) {
+  
+  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.HealthCheck.service_name)
+}
+inline void HealthCheck::set_service_name(const char* value, size_t size) {
+  
+  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.HealthCheck.service_name)
+}
+inline ::std::string* HealthCheck::mutable_service_name() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.HealthCheck.service_name)
+  return service_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HealthCheck::release_service_name() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.HealthCheck.service_name)
+  
+  return service_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HealthCheck::set_allocated_service_name(::std::string* service_name) {
+  if (service_name != NULL) {
+    
+  } else {
+    
+  }
+  service_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), service_name);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.service_name)
+}
+
+// .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 9;
 inline bool HealthCheck::has_http_health_check() const {
   return health_checker_case() == kHttpHealthCheck;
 }
@@ -1497,7 +1654,7 @@ inline void HealthCheck::set_allocated_http_health_check(::envoy::api::v2::Healt
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.http_health_check)
 }
 
-// .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 9;
+// .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 10;
 inline bool HealthCheck::has_tcp_health_check() const {
   return health_checker_case() == kTcpHealthCheck;
 }
@@ -1545,6 +1702,54 @@ inline void HealthCheck::set_allocated_tcp_health_check(::envoy::api::v2::Health
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.tcp_health_check)
 }
 
+// .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 11;
+inline bool HealthCheck::has_redis_health_check() const {
+  return health_checker_case() == kRedisHealthCheck;
+}
+inline void HealthCheck::set_has_redis_health_check() {
+  _oneof_case_[0] = kRedisHealthCheck;
+}
+inline void HealthCheck::clear_redis_health_check() {
+  if (has_redis_health_check()) {
+    delete health_checker_.redis_health_check_;
+    clear_has_health_checker();
+  }
+}
+inline  const ::envoy::api::v2::HealthCheck_RedisHealthCheck& HealthCheck::redis_health_check() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.redis_health_check)
+  return has_redis_health_check()
+      ? *health_checker_.redis_health_check_
+      : ::envoy::api::v2::HealthCheck_RedisHealthCheck::default_instance();
+}
+inline ::envoy::api::v2::HealthCheck_RedisHealthCheck* HealthCheck::mutable_redis_health_check() {
+  if (!has_redis_health_check()) {
+    clear_health_checker();
+    set_has_redis_health_check();
+    health_checker_.redis_health_check_ = new ::envoy::api::v2::HealthCheck_RedisHealthCheck;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.HealthCheck.redis_health_check)
+  return health_checker_.redis_health_check_;
+}
+inline ::envoy::api::v2::HealthCheck_RedisHealthCheck* HealthCheck::release_redis_health_check() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.HealthCheck.redis_health_check)
+  if (has_redis_health_check()) {
+    clear_has_health_checker();
+    ::envoy::api::v2::HealthCheck_RedisHealthCheck* temp = health_checker_.redis_health_check_;
+    health_checker_.redis_health_check_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline void HealthCheck::set_allocated_redis_health_check(::envoy::api::v2::HealthCheck_RedisHealthCheck* redis_health_check) {
+  clear_health_checker();
+  if (redis_health_check) {
+    set_has_redis_health_check();
+    health_checker_.redis_health_check_ = redis_health_check;
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.redis_health_check)
+}
+
 inline bool HealthCheck::has_health_checker() const {
   return health_checker_case() != HEALTH_CHECKER_NOT_SET;
 }
@@ -1555,6 +1760,8 @@ inline HealthCheck::HealthCheckerCase HealthCheck::health_checker_case() const {
   return HealthCheck::HealthCheckerCase(_oneof_case_[0]);
 }
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

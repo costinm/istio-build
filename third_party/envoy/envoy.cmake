@@ -15,6 +15,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/access_log/access_log_manager_impl.cc
         envoy/source/common/api/api_impl.cc
         envoy/source/common/buffer/buffer_impl.cc
+        envoy/source/common/buffer/watermark_buffer.cc
         envoy/source/common/buffer/zero_copy_input_stream_impl.cc
         envoy/source/common/common/base64.cc
         envoy/source/common/common/hex.cc
@@ -32,6 +33,8 @@ set(ENVOY_SOURCE_FILES
         #envoy/source/common/mongo/proxy.cc
         #envoy/source/common/mongo/utility.cc
         #envoy/source/server/config/network/mongo_proxy.cc
+        envoy/source/common/config/metadata.cc
+        envoy/source/common/config/utility.cc
         envoy/source/common/event/dispatched_thread.cc
         envoy/source/common/event/dispatcher_impl.cc
         envoy/source/common/event/event_impl_base.cc
@@ -125,6 +128,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/ratelimit/ratelimit_impl.cc
         envoy/source/common/tracing/lightstep_tracer_impl.cc
 
+
         envoy/source/server/config/http/buffer.cc
         envoy/source/server/config/http/fault.cc
         envoy/source/server/config/http/grpc_http1_bridge.cc
@@ -146,6 +150,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/guarddog_impl.cc
         envoy/source/server/server.cc
         envoy/source/server/init_manager_impl.cc
+        envoy/source/server/lds_api.cc
         envoy/source/server/worker_impl.cc
         envoy/source/server/listener_manager_impl.cc
         envoy/source/server/watchdog_impl.cc
@@ -155,7 +160,6 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/config_validation/api.cc
         envoy/source/server/config_validation/async_client.cc
         envoy/source/server/config_validation/cluster_manager.cc
-        envoy/source/server/config_validation/connection_handler.cc
         envoy/source/server/config_validation/dispatcher.cc
         envoy/source/server/config_validation/dns.cc
         envoy/source/server/config_validation/server.cc

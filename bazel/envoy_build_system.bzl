@@ -11,7 +11,6 @@ def envoy_copts(repository, test = False):
         "-Werror",
         "-Wnon-virtual-dtor",
         "-Woverloaded-virtual",
-        "-Wold-style-cast",
         "-std=c++0x",
     ] + select({
         # Bazel adds an implicit -DNDEBUG for opt.
