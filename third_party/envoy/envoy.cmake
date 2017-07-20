@@ -1,7 +1,7 @@
 
 include_directories(
-    third_party/envoy
     src/spdlog/include
+        envoy/source
 )
 
 set(ENVOY_SOURCE_FILES
@@ -152,23 +152,46 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/options_impl.cc
         envoy/source/server/configuration_impl.cc
 
+        envoy/source/server/config_validation/api.cc
+        envoy/source/server/config_validation/async_client.cc
+        envoy/source/server/config_validation/cluster_manager.cc
+        envoy/source/server/config_validation/connection_handler.cc
+        envoy/source/server/config_validation/dispatcher.cc
+        envoy/source/server/config_validation/dns.cc
+        envoy/source/server/config_validation/server.cc
+
         envoy/source/exe/main.cc
         envoy/source/exe/main_common.cc
         envoy/source/exe/hot_restart.cc
         envoy/source/exe/signal_action.cc
 
-        third_party/envoy/source/common/ratelimit/ratelimit.pb.cc
+        genfiles/api/accesslog.pb.cc
+        genfiles/api/address.pb.cc
+        genfiles/api/base.pb.cc
+        genfiles/api/cds.pb.cc
+        genfiles/api/hds.pb.cc
+        genfiles/api/health_check.pb.cc
+        genfiles/api/lds.pb.cc
+        genfiles/api/rds.pb.cc
+        genfiles/api/rlds.pb.cc
+        genfiles/api/tls_context.pb.cc
+        genfiles/api/eds.pb.cc
+        genfiles/source/common/ratelimit/ratelimit.pb.cc
+
+        genfiles/google/api/annotations.pb.cc
+        genfiles/google/api/http.pb.cc
+
         )
 
 add_executable(envoy ${ENVOY_SOURCE_FILES}
-       # $<TARGET_OBJECTS:istioproxy>
+        $<TARGET_OBJECTS:istioproxy>
         #$<TARGET_OBJECTS:envoy-istio>
         )
 
 if (DEFINED ANDROID_TOOLCHAIN)
     target_link_libraries (envoy PUBLIC -llog -landroid)
 else()
-    target_link_libraries (envoy PUBLIC -lpthread -lrt)
+    target_link_libraries (envoy PUBLIC -lpthread -lrt -luuid)
 
 endif()
 

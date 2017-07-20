@@ -1,6 +1,5 @@
 licenses(["notice"])
 
-
 load("@protobuf_bzl//:protobuf.bzl", "cc_proto_library")
 
 cc_proto_library(
@@ -13,6 +12,7 @@ cc_proto_library(
     visibility = ["//visibility:public"],
     deps = [
        "//external:cc_wkt_protos",
+       "@googleapis//:http_api_protos"
 #        "//external:cc_gogoproto",
 #        "//external:servicecontrol",
     ],

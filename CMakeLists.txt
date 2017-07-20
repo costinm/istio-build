@@ -26,8 +26,8 @@ add_definitions(-DHAVE_PTHREAD)
 
 # Merged includes for all deps. Generated files are checked in (similar with golang style)
 include_directories(
-        envoy/source
         envoy/include
+        genfiles
         src/protobuf/src
         third_party/cares/cares
         src/boringssl/src/include
@@ -63,20 +63,13 @@ set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl/src)
 #include(third_party/libevent/libevent.cmake)
 # Doesn't work with CMake 2.8 on trusty
 add_subdirectory(third_party/libevent/src)
+add_subdirectory(src/boringssl/src)
+add_subdirectory(third_party/envoy-istio)
 
 include(third_party/cares/cares.cmake)
-
 include(third_party/lightstep-tracer/lightstep-tracer.cmake)
 include(third_party/http-parser/CMakeList.txt)
 include(third_party/nghttp2/nghttp2.cmake)
-
-#add_subdirectory(build/boringssl)
-add_subdirectory(src/boringssl/src)
-
 include(third_party/protobuf/protobuf.cmake)
-
 include(third_party/mixer/istio-mixer.cmake)
-
-add_subdirectory(third_party/envoy-istio)
-
 include(third_party/envoy/envoy.cmake)

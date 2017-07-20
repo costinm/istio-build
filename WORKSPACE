@@ -25,10 +25,6 @@ bind(name = "lightstep", actual = "//third_party/lightstep-tracer:lightstep_core
 bind(name = "nghttp2", actual = "//third_party/nghttp2:nghttp2")
 bind(name = "http_parser", actual = "//third_party:http_parser")
 
-# Naming conflicts:
-# mixerclient: @com_google_protobuf (for cc_proto_library )
-
-bind( name = "mixer_client_lib", actual = "//src/mixerclient:mixer_client_lib",)
 
 bind(name = "spdlog",actual = "@spdlog_git//:spdlog")
 
@@ -148,6 +144,21 @@ bind(name = "ares", actual = "//third_party/cares:ares")
 # Hardcoded @envoy in mixer
 local_repository(name = "envoy", path = "envoy")
 
+bind(name = "envoy_eds", actual = "@envoy_api//api:eds")
+# latest uses eds_cc - but removed 'canary'
+#bind(name = "envoy_eds", actual = "@envoy_api//api:eds_cc")
+local_repository(name = "envoy_api", path = "src/envoy-api")
+
+
+bind(
+    name = "protobuf_python",
+    actual = "@protobuf_bzl//:protobuf_python",
+)
+
+bind(
+    name = "protobuf_python_genproto",
+    actual = "@protobuf_bzl//:protobuf_python_genproto",
+)
 
 #local_repository(
 #    name = "boringssl",
@@ -164,16 +175,55 @@ local_repository(
     path = "src/protobuf",
 )
 
+new_local_repository(
+    name = "googleapis",
+    path = "src/googleapis/src",
+    build_file_content = """
+load("@protobuf_bzl//:protobuf.bzl", "cc_proto_library", "py_proto_library")
+
+filegroup(
+    name = "http_api_protos_src",
+    srcs = [
+        "google/api/annotations.proto",
+        "google/api/http.proto",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+cc_proto_library(
+    name = "http_api_protos",
+    srcs = [
+        "google/api/annotations.proto",
+        "google/api/http.proto",
+        "google/rpc/code.proto",
+        "google/rpc/error_details.proto",
+        "google/rpc/status.proto",
+    ],
+    default_runtime = "//external:protobuf",
+    protoc = "//external:protoc",
+    visibility = ["//visibility:public"],
+    deps = ["@protobuf_bzl//:cc_wkt_protos"],
+)
+
+py_proto_library(
+    name = "http_api_protos_py",
+    srcs = [
+        "google/api/annotations.proto",
+        "google/api/http.proto",
+    ],
+    include = ".",
+    default_runtime = "//external:protobuf_python",
+    protoc = "//external:protoc",
+    visibility = ["//visibility:public"],
+    deps = ["//external:protobuf_python"],
+)
+            """,
+)
+
 # Required for proto_library
 local_repository(
     name = "com_google_protobuf",
     path = "src/protobuf",
-)
-
-new_local_repository(
-    name = "mixerapi_git",
-    path = "src/istio.io/api",
-    build_file = "third_party/api/api.BUILD",
 )
 
 new_local_repository(
@@ -529,15 +579,51 @@ new_go_repository(
     importpath = "github.com/golang/protobuf",
 )
 
-http_archive(
-    name = "com_github_google_protobuf",
-    sha256 = "2a25c2b71c707c5552ec9afdfb22532a93a339e1ca5d38f163fe4107af08c54c",
-    strip_prefix = "protobuf-3.2.0",
-    url = "https://github.com/google/protobuf/archive/v3.2.0.tar.gz",
-)
-
 new_go_repository(
     name = "org_golang_google_grpc",
     commit = "8050b9cbc271307e5a716a9d782803d09b0d6f2d",  # v1.2.1
     importpath = "google.golang.org/grpc",
 )
+
+# Dependency of protobuf
+new_http_archive(
+    name = "six_archive",
+    build_file = "@protobuf_bzl//:six.BUILD",
+    sha256 = "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a",
+    url = "https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz#md5=34eed507548117b2ab523ab14b2f8b55",
+)
+
+
+bind(
+    name = "six",
+    actual = "@six_archive//:six",
+)
+
+##### Proxy
+# Can't be used directly - include "src/envoy/.../ must be fixed.
+
+local_repository(
+  name = "proxy",
+  path = "src/proxy",
+)
+
+
+##### Mixerclient
+# depends on uuid-dev for platform uuid.h
+
+# Doesn't work - src/includes not found. Should move BUILD to directory, or
+# find how to specify it.
+#bind( name = "mixer_client_lib", actual = "//src/mixerclient:mixer_client_lib",)
+bind( name = "mixer_client_lib", actual = "@mixerclient//:mixer_client_lib",)
+
+local_repository(
+  name = "mixerclient",
+  path = "src/mixerclient",
+)
+
+new_local_repository(
+    name = "mixerapi_git",
+    path = "src/istio.io/api",
+    build_file = "third_party/api/api.BUILD",
+)
+

@@ -3,7 +3,7 @@ load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar", "pkg_deb")
 pkg_tar(
     name = "istio-bin",
     files = [
-        "//src/proxy/src/envoy/mixer:envoy",
+        "@proxy//src/envoy/mixer:envoy",
     ],
     mode = "0755",
     package_dir = "/opt/istio/bin",
