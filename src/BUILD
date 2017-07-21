@@ -36,25 +36,6 @@ cc_proto_library(
     ],
 )
 
-cc_proto_library(
-    name = "mixer_api_cc_proto",
-    srcs =
-        [
-            "istio.io/api/mixer/v1/attributes.proto",
-            "istio.io/api/mixer/v1/check.proto",
-            "istio.io/api/mixer/v1/report.proto",
-            "istio.io/api/mixer/v1/service.proto",
-        ],
-    include = "istio.io/api",
-    default_runtime = "//external:protobuf",
-    protoc = "//external:protoc",
-    visibility = ["//visibility:public"],
-    deps = [
-        "@googleapis//:http_api_protos",
-        "@protobuf_bzl//:cc_wkt_protos",
-    ],
-)
-
 cc_library(
     name = "lightstep_core",
     testonly = 0,

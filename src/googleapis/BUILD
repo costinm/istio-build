@@ -14,6 +14,8 @@ cc_proto_library(
     srcs = [
         "src/google/api/annotations.proto",
         "src/google/api/http.proto",
+        "src/google/rpc/code.proto",
+        "src/google/rpc/status.proto",
     ],
     default_runtime = "//external:protobuf",
     protoc = "//external:protoc",
