@@ -7,7 +7,15 @@
 bazel build @googleapis//:http_api_protos
 cp -a -f bazel-out/local-fastbuild/genfiles/external/googleapis/google genfiles/
 
-cp -a -f bazel-out/local-fastbuild/genfiles/external/envoy_api/api/ genfiles/
+bazel build @envoy//source/common/ratelimit/...
 cp -a -f bazel-out/local-fastbuild/genfiles/external/envoy/source genfiles/
-cp -a -f bazel-out/local-fastbuild/genfiles/external/mixerapi_git/mixer genfiles/
+
+cp -a -f bazel-out/local-fastbuild/genfiles/external/envoy_api/api/ genfiles/
+
+cp -a -f bazel-out/local-fastbuild/genfiles/src/istio.io/api/mixer genfiles/
+
 cp -a -f bazel-out/local-fastbuild/genfiles/external/proxy/src genfiles/
+
+mkdir -p genfiles/src/lightstep/lightstep-tracer-common
+cp -a -f bazel-out/local-fastbuild/genfiles/src/lightstep/lightstep-tracer-common/* genfiles/src/lightstep/lightstep-tracer-common
+cp -a -f bazel-out/local-fastbuild/genfiles/src/lightstep/lightstep-tracer-common/* genfiles/src/lightstep/lightstep-tracer-common

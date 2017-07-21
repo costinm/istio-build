@@ -22,7 +22,7 @@ go_repositories()
 
 
 # External projects without BUILD files
-bind(name = "lightstep", actual = "//third_party/lightstep-tracer:lightstep_core",)
+bind(name = "lightstep", actual = "//src:lightstep_core",)
 bind(name = "nghttp2", actual = "//third_party/nghttp2:nghttp2")
 bind(name = "http_parser", actual = "//third_party:http_parser")
 
@@ -80,7 +80,7 @@ bind(
 
 bind(
     name = "mixer_api_cc_proto",
-    actual = "@mixerapi_git//:mixer_api_cc_proto",
+    actual = "//src:mixer_api_cc_proto",
 )
 
 bind(
@@ -631,8 +631,11 @@ local_repository(
 new_local_repository(
     name = "mixerapi_git",
     path = "src/istio.io/api",
-    build_file = "third_party/api/api.BUILD",
+    build_file = "tools/bazel-custom/istio-api.BUILD",
 )
+
+bind(name = "cc_gogoproto", actual ="//src:cc_gogoproto")
+bind(name = "cc_gogoproto_genproto", actual ="//src:cc_gogoproto_genproto")
 
 local_repository(
     name = "io_bazel_rules_docker",

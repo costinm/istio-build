@@ -67,7 +67,7 @@ add_subdirectory(src/boringssl/src)
 add_subdirectory(third_party/envoy-istio)
 
 include(third_party/cares/cares.cmake)
-include(third_party/lightstep-tracer/lightstep-tracer.cmake)
+include(tools/cmake/lightstep-tracer.cmake)
 include(third_party/http-parser/CMakeList.txt)
 include(third_party/nghttp2/nghttp2.cmake)
 include(third_party/protobuf/protobuf.cmake)

@@ -16,7 +16,7 @@ To use a workspace-local manifest, copy default.xml, edit and use "-m mymanifest
 
 To start a branch in any repository, you can also use "repo start MYBRANCH directory ..."
 
-To push changes, use "git add remote user git@github.com:USER/REPO.git" and
+To push changes, use "git remote add user git@github.com:USER/REPO.git" and
 "git push user MYBRANCH:REMOTE_BRANCH"
 
 You can switch branches by using the different manifest (a new repo init is needed),

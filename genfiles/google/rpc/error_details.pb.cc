@@ -51,50 +51,82 @@ namespace {
 
 }  // namespace
 
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
+    const TableStruct::entries[] = {
+  {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
+};
+
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
+    const TableStruct::aux[] = {
+  ::google::protobuf::internal::AuxillaryParseTableField(),
+};
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
+    TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+};
+
 const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RetryInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RetryInfo, retry_delay_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DebugInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DebugInfo, stack_entries_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DebugInfo, detail_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuotaFailure_Violation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuotaFailure_Violation, subject_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuotaFailure_Violation, description_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuotaFailure, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(QuotaFailure, violations_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BadRequest_FieldViolation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BadRequest_FieldViolation, field_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BadRequest_FieldViolation, description_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BadRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BadRequest, field_violations_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RequestInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RequestInfo, request_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RequestInfo, serving_data_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResourceInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResourceInfo, resource_type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResourceInfo, resource_name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResourceInfo, owner_),
@@ -103,33 +135,36 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Help_Link, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Help_Link, description_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Help_Link, url_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Help, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Help, links_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LocalizedMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LocalizedMessage, locale_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LocalizedMessage, message_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 0, -1, sizeof(RetryInfo)},
-  { 5, -1, sizeof(DebugInfo)},
-  { 11, -1, sizeof(QuotaFailure_Violation)},
-  { 17, -1, sizeof(QuotaFailure)},
-  { 22, -1, sizeof(BadRequest_FieldViolation)},
-  { 28, -1, sizeof(BadRequest)},
-  { 33, -1, sizeof(RequestInfo)},
-  { 39, -1, sizeof(ResourceInfo)},
-  { 47, -1, sizeof(Help_Link)},
-  { 53, -1, sizeof(Help)},
-  { 58, -1, sizeof(LocalizedMessage)},
+  { 6, -1, sizeof(DebugInfo)},
+  { 13, -1, sizeof(QuotaFailure_Violation)},
+  { 20, -1, sizeof(QuotaFailure)},
+  { 26, -1, sizeof(BadRequest_FieldViolation)},
+  { 33, -1, sizeof(BadRequest)},
+  { 39, -1, sizeof(RequestInfo)},
+  { 46, -1, sizeof(ResourceInfo)},
+  { 55, -1, sizeof(Help_Link)},
+  { 62, -1, sizeof(Help)},
+  { 68, -1, sizeof(LocalizedMessage)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -316,7 +351,7 @@ void RetryInfo::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RetryInfo::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[0].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RetryInfo& RetryInfo::default_instance() {
@@ -352,7 +387,8 @@ bool RetryInfo::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // .google.protobuf.Duration retry_delay = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_retry_delay()));
         } else {
@@ -385,6 +421,9 @@ failure:
 void RetryInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.RetryInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // .google.protobuf.Duration retry_delay = 1;
   if (this->has_retry_delay()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -396,13 +435,16 @@ void RetryInfo::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RetryInfo::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.RetryInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // .google.protobuf.Duration retry_delay = 1;
   if (this->has_retry_delay()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        1, *this->retry_delay_, false, target);
+        1, *this->retry_delay_, deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:google.rpc.RetryInfo)
@@ -446,6 +488,9 @@ void RetryInfo::MergeFrom(const RetryInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.RetryInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.has_retry_delay()) {
     mutable_retry_delay()->::google::protobuf::Duration::MergeFrom(from.retry_delay());
   }
@@ -480,7 +525,7 @@ void RetryInfo::InternalSwap(RetryInfo* other) {
 
 ::google::protobuf::Metadata RetryInfo::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[0];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -581,7 +626,7 @@ void DebugInfo::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* DebugInfo::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[1].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const DebugInfo& DebugInfo::default_instance() {
@@ -615,7 +660,8 @@ bool DebugInfo::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated string stack_entries = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_stack_entries()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -631,7 +677,8 @@ bool DebugInfo::MergePartialFromCodedStream(
 
       // string detail = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_detail()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -668,8 +715,11 @@ failure:
 void DebugInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.DebugInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated string stack_entries = 1;
-  for (int i = 0; i < this->stack_entries_size(); i++) {
+  for (int i = 0, n = this->stack_entries_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->stack_entries(i).data(), this->stack_entries(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
@@ -693,10 +743,13 @@ void DebugInfo::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* DebugInfo::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.DebugInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated string stack_entries = 1;
-  for (int i = 0; i < this->stack_entries_size(); i++) {
+  for (int i = 0, n = this->stack_entries_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->stack_entries(i).data(), this->stack_entries(i).length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
@@ -727,7 +780,7 @@ size_t DebugInfo::ByteSizeLong() const {
   // repeated string stack_entries = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->stack_entries_size());
-  for (int i = 0; i < this->stack_entries_size(); i++) {
+  for (int i = 0, n = this->stack_entries_size(); i < n; i++) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
       this->stack_entries(i));
   }
@@ -765,6 +818,9 @@ void DebugInfo::MergeFrom(const DebugInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.DebugInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   stack_entries_.MergeFrom(from.stack_entries_);
   if (from.detail().size() > 0) {
 
@@ -795,14 +851,14 @@ void DebugInfo::Swap(DebugInfo* other) {
   InternalSwap(other);
 }
 void DebugInfo::InternalSwap(DebugInfo* other) {
-  stack_entries_.UnsafeArenaSwap(&other->stack_entries_);
+  stack_entries_.InternalSwap(&other->stack_entries_);
   detail_.Swap(&other->detail_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata DebugInfo::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[1];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -827,7 +883,14 @@ void DebugInfo::set_stack_entries(int index, const ::std::string& value) {
   // @@protoc_insertion_point(field_set:google.rpc.DebugInfo.stack_entries)
   stack_entries_.Mutable(index)->assign(value);
 }
+#if LANG_CXX11
+void DebugInfo::set_stack_entries(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:google.rpc.DebugInfo.stack_entries)
+  stack_entries_.Mutable(index)->assign(std::move(value));
+}
+#endif
 void DebugInfo::set_stack_entries(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   stack_entries_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:google.rpc.DebugInfo.stack_entries)
 }
@@ -844,7 +907,14 @@ void DebugInfo::add_stack_entries(const ::std::string& value) {
   stack_entries_.Add()->assign(value);
   // @@protoc_insertion_point(field_add:google.rpc.DebugInfo.stack_entries)
 }
+#if LANG_CXX11
+void DebugInfo::add_stack_entries(::std::string&& value) {
+  stack_entries_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:google.rpc.DebugInfo.stack_entries)
+}
+#endif
 void DebugInfo::add_stack_entries(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   stack_entries_.Add()->assign(value);
   // @@protoc_insertion_point(field_add_char:google.rpc.DebugInfo.stack_entries)
 }
@@ -880,11 +950,12 @@ void DebugInfo::set_detail(const ::std::string& value) {
 void DebugInfo::set_detail(::std::string&& value) {
   
   detail_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.DebugInfo.detail)
 }
 #endif
 void DebugInfo::set_detail(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   detail_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.DebugInfo.detail)
@@ -971,7 +1042,7 @@ void QuotaFailure_Violation::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* QuotaFailure_Violation::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[2].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const QuotaFailure_Violation& QuotaFailure_Violation::default_instance() {
@@ -1005,7 +1076,8 @@ bool QuotaFailure_Violation::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string subject = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_subject()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1020,7 +1092,8 @@ bool QuotaFailure_Violation::MergePartialFromCodedStream(
 
       // string description = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_description()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1057,6 +1130,9 @@ failure:
 void QuotaFailure_Violation::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.QuotaFailure.Violation)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string subject = 1;
   if (this->subject().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1082,8 +1158,11 @@ void QuotaFailure_Violation::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* QuotaFailure_Violation::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.QuotaFailure.Violation)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string subject = 1;
   if (this->subject().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1154,6 +1233,9 @@ void QuotaFailure_Violation::MergeFrom(const QuotaFailure_Violation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.QuotaFailure.Violation)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.subject().size() > 0) {
 
     subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
@@ -1194,7 +1276,7 @@ void QuotaFailure_Violation::InternalSwap(QuotaFailure_Violation* other) {
 
 ::google::protobuf::Metadata QuotaFailure_Violation::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[2];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1217,11 +1299,12 @@ void QuotaFailure_Violation::set_subject(const ::std::string& value) {
 void QuotaFailure_Violation::set_subject(::std::string&& value) {
   
   subject_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.QuotaFailure.Violation.subject)
 }
 #endif
 void QuotaFailure_Violation::set_subject(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.QuotaFailure.Violation.subject)
@@ -1269,11 +1352,12 @@ void QuotaFailure_Violation::set_description(const ::std::string& value) {
 void QuotaFailure_Violation::set_description(::std::string&& value) {
   
   description_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.QuotaFailure.Violation.description)
 }
 #endif
 void QuotaFailure_Violation::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.QuotaFailure.Violation.description)
@@ -1348,7 +1432,7 @@ void QuotaFailure::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* QuotaFailure::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[3].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const QuotaFailure& QuotaFailure::default_instance() {
@@ -1381,14 +1465,13 @@ bool QuotaFailure::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated .google.rpc.QuotaFailure.Violation violations = 1;
       case 1: {
-        if (tag == 10u) {
-          DO_(input->IncrementRecursionDepth());
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_violations()));
         } else {
           goto handle_unusual;
         }
-        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
@@ -1416,6 +1499,9 @@ failure:
 void QuotaFailure::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.QuotaFailure)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .google.rpc.QuotaFailure.Violation violations = 1;
   for (unsigned int i = 0, n = this->violations_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1427,13 +1513,16 @@ void QuotaFailure::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* QuotaFailure::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.QuotaFailure)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .google.rpc.QuotaFailure.Violation violations = 1;
   for (unsigned int i = 0, n = this->violations_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        1, this->violations(i), false, target);
+        1, this->violations(i), deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:google.rpc.QuotaFailure)
@@ -1481,6 +1570,9 @@ void QuotaFailure::MergeFrom(const QuotaFailure& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.QuotaFailure)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   violations_.MergeFrom(from.violations_);
 }
 
@@ -1507,13 +1599,13 @@ void QuotaFailure::Swap(QuotaFailure* other) {
   InternalSwap(other);
 }
 void QuotaFailure::InternalSwap(QuotaFailure* other) {
-  violations_.UnsafeArenaSwap(&other->violations_);
+  violations_.InternalSwap(&other->violations_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata QuotaFailure::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[3];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1605,7 +1697,7 @@ void BadRequest_FieldViolation::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* BadRequest_FieldViolation::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[4].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const BadRequest_FieldViolation& BadRequest_FieldViolation::default_instance() {
@@ -1639,7 +1731,8 @@ bool BadRequest_FieldViolation::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string field = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_field()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1654,7 +1747,8 @@ bool BadRequest_FieldViolation::MergePartialFromCodedStream(
 
       // string description = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_description()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1691,6 +1785,9 @@ failure:
 void BadRequest_FieldViolation::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.BadRequest.FieldViolation)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string field = 1;
   if (this->field().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1716,8 +1813,11 @@ void BadRequest_FieldViolation::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* BadRequest_FieldViolation::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.BadRequest.FieldViolation)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string field = 1;
   if (this->field().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1788,6 +1888,9 @@ void BadRequest_FieldViolation::MergeFrom(const BadRequest_FieldViolation& from)
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.BadRequest.FieldViolation)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.field().size() > 0) {
 
     field_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.field_);
@@ -1828,7 +1931,7 @@ void BadRequest_FieldViolation::InternalSwap(BadRequest_FieldViolation* other) {
 
 ::google::protobuf::Metadata BadRequest_FieldViolation::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[4];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1851,11 +1954,12 @@ void BadRequest_FieldViolation::set_field(const ::std::string& value) {
 void BadRequest_FieldViolation::set_field(::std::string&& value) {
   
   field_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.BadRequest.FieldViolation.field)
 }
 #endif
 void BadRequest_FieldViolation::set_field(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   field_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.BadRequest.FieldViolation.field)
@@ -1903,11 +2007,12 @@ void BadRequest_FieldViolation::set_description(const ::std::string& value) {
 void BadRequest_FieldViolation::set_description(::std::string&& value) {
   
   description_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.BadRequest.FieldViolation.description)
 }
 #endif
 void BadRequest_FieldViolation::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.BadRequest.FieldViolation.description)
@@ -1982,7 +2087,7 @@ void BadRequest::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* BadRequest::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[5].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const BadRequest& BadRequest::default_instance() {
@@ -2015,14 +2120,13 @@ bool BadRequest::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated .google.rpc.BadRequest.FieldViolation field_violations = 1;
       case 1: {
-        if (tag == 10u) {
-          DO_(input->IncrementRecursionDepth());
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_field_violations()));
         } else {
           goto handle_unusual;
         }
-        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
@@ -2050,6 +2154,9 @@ failure:
 void BadRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.BadRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .google.rpc.BadRequest.FieldViolation field_violations = 1;
   for (unsigned int i = 0, n = this->field_violations_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -2061,13 +2168,16 @@ void BadRequest::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* BadRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.BadRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .google.rpc.BadRequest.FieldViolation field_violations = 1;
   for (unsigned int i = 0, n = this->field_violations_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        1, this->field_violations(i), false, target);
+        1, this->field_violations(i), deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:google.rpc.BadRequest)
@@ -2115,6 +2225,9 @@ void BadRequest::MergeFrom(const BadRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.BadRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   field_violations_.MergeFrom(from.field_violations_);
 }
 
@@ -2141,13 +2254,13 @@ void BadRequest::Swap(BadRequest* other) {
   InternalSwap(other);
 }
 void BadRequest::InternalSwap(BadRequest* other) {
-  field_violations_.UnsafeArenaSwap(&other->field_violations_);
+  field_violations_.InternalSwap(&other->field_violations_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata BadRequest::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[5];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2239,7 +2352,7 @@ void RequestInfo::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RequestInfo::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[6].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RequestInfo& RequestInfo::default_instance() {
@@ -2273,7 +2386,8 @@ bool RequestInfo::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string request_id = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_request_id()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2288,7 +2402,8 @@ bool RequestInfo::MergePartialFromCodedStream(
 
       // string serving_data = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_serving_data()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2325,6 +2440,9 @@ failure:
 void RequestInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.RequestInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string request_id = 1;
   if (this->request_id().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2350,8 +2468,11 @@ void RequestInfo::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RequestInfo::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.RequestInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string request_id = 1;
   if (this->request_id().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2422,6 +2543,9 @@ void RequestInfo::MergeFrom(const RequestInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.RequestInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.request_id().size() > 0) {
 
     request_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.request_id_);
@@ -2462,7 +2586,7 @@ void RequestInfo::InternalSwap(RequestInfo* other) {
 
 ::google::protobuf::Metadata RequestInfo::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[6];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2485,11 +2609,12 @@ void RequestInfo::set_request_id(const ::std::string& value) {
 void RequestInfo::set_request_id(::std::string&& value) {
   
   request_id_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.RequestInfo.request_id)
 }
 #endif
 void RequestInfo::set_request_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   request_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.RequestInfo.request_id)
@@ -2537,11 +2662,12 @@ void RequestInfo::set_serving_data(const ::std::string& value) {
 void RequestInfo::set_serving_data(::std::string&& value) {
   
   serving_data_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.RequestInfo.serving_data)
 }
 #endif
 void RequestInfo::set_serving_data(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   serving_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.RequestInfo.serving_data)
@@ -2642,7 +2768,7 @@ void ResourceInfo::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* ResourceInfo::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[7].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const ResourceInfo& ResourceInfo::default_instance() {
@@ -2678,7 +2804,8 @@ bool ResourceInfo::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string resource_type = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_resource_type()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2693,7 +2820,8 @@ bool ResourceInfo::MergePartialFromCodedStream(
 
       // string resource_name = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_resource_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2708,7 +2836,8 @@ bool ResourceInfo::MergePartialFromCodedStream(
 
       // string owner = 3;
       case 3: {
-        if (tag == 26u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_owner()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2723,7 +2852,8 @@ bool ResourceInfo::MergePartialFromCodedStream(
 
       // string description = 4;
       case 4: {
-        if (tag == 34u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_description()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2760,6 +2890,9 @@ failure:
 void ResourceInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.ResourceInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string resource_type = 1;
   if (this->resource_type().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2805,8 +2938,11 @@ void ResourceInfo::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* ResourceInfo::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.ResourceInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string resource_type = 1;
   if (this->resource_type().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2913,6 +3049,9 @@ void ResourceInfo::MergeFrom(const ResourceInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.ResourceInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.resource_type().size() > 0) {
 
     resource_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.resource_type_);
@@ -2963,7 +3102,7 @@ void ResourceInfo::InternalSwap(ResourceInfo* other) {
 
 ::google::protobuf::Metadata ResourceInfo::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[7];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2986,11 +3125,12 @@ void ResourceInfo::set_resource_type(const ::std::string& value) {
 void ResourceInfo::set_resource_type(::std::string&& value) {
   
   resource_type_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.ResourceInfo.resource_type)
 }
 #endif
 void ResourceInfo::set_resource_type(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   resource_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.ResourceInfo.resource_type)
@@ -3038,11 +3178,12 @@ void ResourceInfo::set_resource_name(const ::std::string& value) {
 void ResourceInfo::set_resource_name(::std::string&& value) {
   
   resource_name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.ResourceInfo.resource_name)
 }
 #endif
 void ResourceInfo::set_resource_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   resource_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.ResourceInfo.resource_name)
@@ -3090,11 +3231,12 @@ void ResourceInfo::set_owner(const ::std::string& value) {
 void ResourceInfo::set_owner(::std::string&& value) {
   
   owner_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.ResourceInfo.owner)
 }
 #endif
 void ResourceInfo::set_owner(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   owner_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.ResourceInfo.owner)
@@ -3142,11 +3284,12 @@ void ResourceInfo::set_description(const ::std::string& value) {
 void ResourceInfo::set_description(::std::string&& value) {
   
   description_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.ResourceInfo.description)
 }
 #endif
 void ResourceInfo::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.ResourceInfo.description)
@@ -3233,7 +3376,7 @@ void Help_Link::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* Help_Link::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[8].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const Help_Link& Help_Link::default_instance() {
@@ -3267,7 +3410,8 @@ bool Help_Link::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string description = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_description()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3282,7 +3426,8 @@ bool Help_Link::MergePartialFromCodedStream(
 
       // string url = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_url()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3319,6 +3464,9 @@ failure:
 void Help_Link::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.Help.Link)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string description = 1;
   if (this->description().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3344,8 +3492,11 @@ void Help_Link::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* Help_Link::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.Help.Link)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string description = 1;
   if (this->description().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3416,6 +3567,9 @@ void Help_Link::MergeFrom(const Help_Link& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.Help.Link)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.description().size() > 0) {
 
     description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
@@ -3456,7 +3610,7 @@ void Help_Link::InternalSwap(Help_Link* other) {
 
 ::google::protobuf::Metadata Help_Link::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[8];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -3479,11 +3633,12 @@ void Help_Link::set_description(const ::std::string& value) {
 void Help_Link::set_description(::std::string&& value) {
   
   description_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.Help.Link.description)
 }
 #endif
 void Help_Link::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.Help.Link.description)
@@ -3531,11 +3686,12 @@ void Help_Link::set_url(const ::std::string& value) {
 void Help_Link::set_url(::std::string&& value) {
   
   url_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.Help.Link.url)
 }
 #endif
 void Help_Link::set_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.Help.Link.url)
@@ -3610,7 +3766,7 @@ void Help::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* Help::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[9].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const Help& Help::default_instance() {
@@ -3643,14 +3799,13 @@ bool Help::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated .google.rpc.Help.Link links = 1;
       case 1: {
-        if (tag == 10u) {
-          DO_(input->IncrementRecursionDepth());
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_links()));
         } else {
           goto handle_unusual;
         }
-        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
@@ -3678,6 +3833,9 @@ failure:
 void Help::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.Help)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .google.rpc.Help.Link links = 1;
   for (unsigned int i = 0, n = this->links_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -3689,13 +3847,16 @@ void Help::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* Help::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.Help)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .google.rpc.Help.Link links = 1;
   for (unsigned int i = 0, n = this->links_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        1, this->links(i), false, target);
+        1, this->links(i), deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:google.rpc.Help)
@@ -3743,6 +3904,9 @@ void Help::MergeFrom(const Help& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.Help)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   links_.MergeFrom(from.links_);
 }
 
@@ -3769,13 +3933,13 @@ void Help::Swap(Help* other) {
   InternalSwap(other);
 }
 void Help::InternalSwap(Help* other) {
-  links_.UnsafeArenaSwap(&other->links_);
+  links_.InternalSwap(&other->links_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Help::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[9];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -3867,7 +4031,7 @@ void LocalizedMessage::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* LocalizedMessage::descriptor() {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[10].descriptor;
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const LocalizedMessage& LocalizedMessage::default_instance() {
@@ -3901,7 +4065,8 @@ bool LocalizedMessage::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string locale = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_locale()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3916,7 +4081,8 @@ bool LocalizedMessage::MergePartialFromCodedStream(
 
       // string message = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_message()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3953,6 +4119,9 @@ failure:
 void LocalizedMessage::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:google.rpc.LocalizedMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string locale = 1;
   if (this->locale().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3978,8 +4147,11 @@ void LocalizedMessage::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* LocalizedMessage::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:google.rpc.LocalizedMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string locale = 1;
   if (this->locale().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -4050,6 +4222,9 @@ void LocalizedMessage::MergeFrom(const LocalizedMessage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:google.rpc.LocalizedMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.locale().size() > 0) {
 
     locale_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.locale_);
@@ -4090,7 +4265,7 @@ void LocalizedMessage::InternalSwap(LocalizedMessage* other) {
 
 ::google::protobuf::Metadata LocalizedMessage::GetMetadata() const {
   protobuf_google_2frpc_2ferror_5fdetails_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[10];
+  return protobuf_google_2frpc_2ferror_5fdetails_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -4113,11 +4288,12 @@ void LocalizedMessage::set_locale(const ::std::string& value) {
 void LocalizedMessage::set_locale(::std::string&& value) {
   
   locale_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.LocalizedMessage.locale)
 }
 #endif
 void LocalizedMessage::set_locale(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   locale_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.LocalizedMessage.locale)
@@ -4165,11 +4341,12 @@ void LocalizedMessage::set_message(const ::std::string& value) {
 void LocalizedMessage::set_message(::std::string&& value) {
   
   message_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:google.rpc.LocalizedMessage.message)
 }
 #endif
 void LocalizedMessage::set_message(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:google.rpc.LocalizedMessage.message)

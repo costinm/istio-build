@@ -52,6 +52,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/grpc/http1_bridge_filter.cc
         envoy/source/common/grpc/rpc_channel_impl.cc
         envoy/source/common/grpc/grpc_web_filter.cc
+        envoy/source/common/grpc/json_transcoder_filter.cc
         envoy/source/common/grpc/transcoder_input_stream_impl.cc
         envoy/source/common/http/access_log/access_log_formatter.cc
         envoy/source/common/http/access_log/access_log_impl.cc
