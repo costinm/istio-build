@@ -40,38 +40,61 @@ namespace {
 
 ::google::protobuf::Metadata file_level_metadata[6];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
-const ::google::protobuf::ServiceDescriptor* file_level_service_descriptors[1];
 
 }  // namespace
+
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
+    const TableStruct::entries[] = {
+  {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
+};
+
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
+    const TableStruct::aux[] = {
+  ::google::protobuf::internal::AuxillaryParseTableField(),
+};
+PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
+    TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+  { NULL, NULL, 0, -1, -1, false },
+};
 
 const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitRequest, domain_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitRequest, descriptors_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitDescriptor_Entry, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitDescriptor_Entry, key_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitDescriptor_Entry, value_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitDescriptor, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitDescriptor, entries_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimit, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimit, requests_per_unit_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimit, unit_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse_DescriptorStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse_DescriptorStatus, code_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse_DescriptorStatus, current_limit_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse_DescriptorStatus, limit_remaining_),
@@ -79,17 +102,18 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse, overall_code_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RateLimitResponse, statuses_),
 };
 
 static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 0, -1, sizeof(RateLimitRequest)},
-  { 6, -1, sizeof(RateLimitDescriptor_Entry)},
-  { 12, -1, sizeof(RateLimitDescriptor)},
-  { 17, -1, sizeof(RateLimit)},
-  { 23, -1, sizeof(RateLimitResponse_DescriptorStatus)},
-  { 30, -1, sizeof(RateLimitResponse)},
+  { 7, -1, sizeof(RateLimitDescriptor_Entry)},
+  { 14, -1, sizeof(RateLimitDescriptor)},
+  { 20, -1, sizeof(RateLimit)},
+  { 27, -1, sizeof(RateLimitResponse_DescriptorStatus)},
+  { 35, -1, sizeof(RateLimitResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -108,7 +132,7 @@ void protobuf_AssignDescriptors() {
   ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
       "source/common/ratelimit/ratelimit.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, file_level_enum_descriptors, file_level_service_descriptors);
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -182,11 +206,11 @@ void AddDescriptorsImpl() {
       "\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\016\n\nOVER_LIMIT\020\0022r\n\020R"
       "ateLimitService\022^\n\017ShouldRateLimit\022#.pb."
       "lyft.ratelimit.RateLimitRequest\032$.pb.lyf"
-      "t.ratelimit.RateLimitResponse\"\000B\016Z\tratel"
-      "imit\200\001\001b\006proto3"
+      "t.ratelimit.RateLimitResponse\"\000B\013Z\tratel"
+      "imitb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 935);
+      descriptor, 932);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "source/common/ratelimit/ratelimit.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -305,7 +329,7 @@ void RateLimitRequest::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RateLimitRequest::descriptor() {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[0].descriptor;
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RateLimitRequest& RateLimitRequest::default_instance() {
@@ -339,7 +363,8 @@ bool RateLimitRequest::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string domain = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_domain()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -354,14 +379,13 @@ bool RateLimitRequest::MergePartialFromCodedStream(
 
       // repeated .pb.lyft.ratelimit.RateLimitDescriptor descriptors = 2;
       case 2: {
-        if (tag == 18u) {
-          DO_(input->IncrementRecursionDepth());
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_descriptors()));
         } else {
           goto handle_unusual;
         }
-        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
@@ -389,6 +413,9 @@ failure:
 void RateLimitRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.lyft.ratelimit.RateLimitRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string domain = 1;
   if (this->domain().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -410,8 +437,11 @@ void RateLimitRequest::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RateLimitRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:pb.lyft.ratelimit.RateLimitRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string domain = 1;
   if (this->domain().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -427,7 +457,7 @@ void RateLimitRequest::SerializeWithCachedSizes(
   for (unsigned int i = 0, n = this->descriptors_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->descriptors(i), false, target);
+        2, this->descriptors(i), deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:pb.lyft.ratelimit.RateLimitRequest)
@@ -482,6 +512,9 @@ void RateLimitRequest::MergeFrom(const RateLimitRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.lyft.ratelimit.RateLimitRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   descriptors_.MergeFrom(from.descriptors_);
   if (from.domain().size() > 0) {
 
@@ -512,14 +545,14 @@ void RateLimitRequest::Swap(RateLimitRequest* other) {
   InternalSwap(other);
 }
 void RateLimitRequest::InternalSwap(RateLimitRequest* other) {
-  descriptors_.UnsafeArenaSwap(&other->descriptors_);
+  descriptors_.InternalSwap(&other->descriptors_);
   domain_.Swap(&other->domain_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata RateLimitRequest::GetMetadata() const {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[0];
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -542,11 +575,12 @@ void RateLimitRequest::set_domain(const ::std::string& value) {
 void RateLimitRequest::set_domain(::std::string&& value) {
   
   domain_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:pb.lyft.ratelimit.RateLimitRequest.domain)
 }
 #endif
 void RateLimitRequest::set_domain(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:pb.lyft.ratelimit.RateLimitRequest.domain)
@@ -663,7 +697,7 @@ void RateLimitDescriptor_Entry::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RateLimitDescriptor_Entry::descriptor() {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[1].descriptor;
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RateLimitDescriptor_Entry& RateLimitDescriptor_Entry::default_instance() {
@@ -697,7 +731,8 @@ bool RateLimitDescriptor_Entry::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string key = 1;
       case 1: {
-        if (tag == 10u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_key()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -712,7 +747,8 @@ bool RateLimitDescriptor_Entry::MergePartialFromCodedStream(
 
       // string value = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_value()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -749,6 +785,9 @@ failure:
 void RateLimitDescriptor_Entry::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.lyft.ratelimit.RateLimitDescriptor.Entry)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string key = 1;
   if (this->key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -774,8 +813,11 @@ void RateLimitDescriptor_Entry::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RateLimitDescriptor_Entry::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:pb.lyft.ratelimit.RateLimitDescriptor.Entry)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // string key = 1;
   if (this->key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -846,6 +888,9 @@ void RateLimitDescriptor_Entry::MergeFrom(const RateLimitDescriptor_Entry& from)
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.lyft.ratelimit.RateLimitDescriptor.Entry)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.key().size() > 0) {
 
     key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
@@ -886,7 +931,7 @@ void RateLimitDescriptor_Entry::InternalSwap(RateLimitDescriptor_Entry* other) {
 
 ::google::protobuf::Metadata RateLimitDescriptor_Entry::GetMetadata() const {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[1];
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -909,11 +954,12 @@ void RateLimitDescriptor_Entry::set_key(const ::std::string& value) {
 void RateLimitDescriptor_Entry::set_key(::std::string&& value) {
   
   key_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:pb.lyft.ratelimit.RateLimitDescriptor.Entry.key)
 }
 #endif
 void RateLimitDescriptor_Entry::set_key(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:pb.lyft.ratelimit.RateLimitDescriptor.Entry.key)
@@ -961,11 +1007,12 @@ void RateLimitDescriptor_Entry::set_value(const ::std::string& value) {
 void RateLimitDescriptor_Entry::set_value(::std::string&& value) {
   
   value_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:pb.lyft.ratelimit.RateLimitDescriptor.Entry.value)
 }
 #endif
 void RateLimitDescriptor_Entry::set_value(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
   
   value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:pb.lyft.ratelimit.RateLimitDescriptor.Entry.value)
@@ -1040,7 +1087,7 @@ void RateLimitDescriptor::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RateLimitDescriptor::descriptor() {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[2].descriptor;
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RateLimitDescriptor& RateLimitDescriptor::default_instance() {
@@ -1073,14 +1120,13 @@ bool RateLimitDescriptor::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated .pb.lyft.ratelimit.RateLimitDescriptor.Entry entries = 1;
       case 1: {
-        if (tag == 10u) {
-          DO_(input->IncrementRecursionDepth());
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_entries()));
         } else {
           goto handle_unusual;
         }
-        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
@@ -1108,6 +1154,9 @@ failure:
 void RateLimitDescriptor::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.lyft.ratelimit.RateLimitDescriptor)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .pb.lyft.ratelimit.RateLimitDescriptor.Entry entries = 1;
   for (unsigned int i = 0, n = this->entries_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1119,13 +1168,16 @@ void RateLimitDescriptor::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RateLimitDescriptor::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:pb.lyft.ratelimit.RateLimitDescriptor)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // repeated .pb.lyft.ratelimit.RateLimitDescriptor.Entry entries = 1;
   for (unsigned int i = 0, n = this->entries_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        1, this->entries(i), false, target);
+        1, this->entries(i), deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:pb.lyft.ratelimit.RateLimitDescriptor)
@@ -1173,6 +1225,9 @@ void RateLimitDescriptor::MergeFrom(const RateLimitDescriptor& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.lyft.ratelimit.RateLimitDescriptor)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   entries_.MergeFrom(from.entries_);
 }
 
@@ -1199,13 +1254,13 @@ void RateLimitDescriptor::Swap(RateLimitDescriptor* other) {
   InternalSwap(other);
 }
 void RateLimitDescriptor::InternalSwap(RateLimitDescriptor* other) {
-  entries_.UnsafeArenaSwap(&other->entries_);
+  entries_.InternalSwap(&other->entries_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata RateLimitDescriptor::GetMetadata() const {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[2];
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1290,7 +1345,7 @@ void RateLimit::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RateLimit::descriptor() {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[3].descriptor;
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RateLimit& RateLimit::default_instance() {
@@ -1324,7 +1379,8 @@ bool RateLimit::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // uint32 requests_per_unit = 1;
       case 1: {
-        if (tag == 8u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -1337,7 +1393,8 @@ bool RateLimit::MergePartialFromCodedStream(
 
       // .pb.lyft.ratelimit.RateLimit.Unit unit = 2;
       case 2: {
-        if (tag == 16u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u)) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -1373,6 +1430,9 @@ failure:
 void RateLimit::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.lyft.ratelimit.RateLimit)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // uint32 requests_per_unit = 1;
   if (this->requests_per_unit() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->requests_per_unit(), output);
@@ -1389,8 +1449,11 @@ void RateLimit::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RateLimit::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:pb.lyft.ratelimit.RateLimit)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // uint32 requests_per_unit = 1;
   if (this->requests_per_unit() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->requests_per_unit(), target);
@@ -1449,6 +1512,9 @@ void RateLimit::MergeFrom(const RateLimit& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.lyft.ratelimit.RateLimit)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.requests_per_unit() != 0) {
     set_requests_per_unit(from.requests_per_unit());
   }
@@ -1487,7 +1553,7 @@ void RateLimit::InternalSwap(RateLimit* other) {
 
 ::google::protobuf::Metadata RateLimit::GetMetadata() const {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[3];
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1579,7 +1645,7 @@ void RateLimitResponse_DescriptorStatus::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RateLimitResponse_DescriptorStatus::descriptor() {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[4].descriptor;
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RateLimitResponse_DescriptorStatus& RateLimitResponse_DescriptorStatus::default_instance() {
@@ -1617,7 +1683,8 @@ bool RateLimitResponse_DescriptorStatus::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // .pb.lyft.ratelimit.RateLimitResponse.Code code = 1;
       case 1: {
-        if (tag == 8u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -1631,7 +1698,8 @@ bool RateLimitResponse_DescriptorStatus::MergePartialFromCodedStream(
 
       // .pb.lyft.ratelimit.RateLimit current_limit = 2;
       case 2: {
-        if (tag == 18u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_current_limit()));
         } else {
@@ -1642,7 +1710,8 @@ bool RateLimitResponse_DescriptorStatus::MergePartialFromCodedStream(
 
       // uint32 limit_remaining = 3;
       case 3: {
-        if (tag == 24u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -1677,6 +1746,9 @@ failure:
 void RateLimitResponse_DescriptorStatus::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.lyft.ratelimit.RateLimitResponse.DescriptorStatus)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // .pb.lyft.ratelimit.RateLimitResponse.Code code = 1;
   if (this->code() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
@@ -1699,8 +1771,11 @@ void RateLimitResponse_DescriptorStatus::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RateLimitResponse_DescriptorStatus::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:pb.lyft.ratelimit.RateLimitResponse.DescriptorStatus)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // .pb.lyft.ratelimit.RateLimitResponse.Code code = 1;
   if (this->code() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
@@ -1711,7 +1786,7 @@ void RateLimitResponse_DescriptorStatus::SerializeWithCachedSizes(
   if (this->has_current_limit()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, *this->current_limit_, false, target);
+        2, *this->current_limit_, deterministic, target);
   }
 
   // uint32 limit_remaining = 3;
@@ -1773,6 +1848,9 @@ void RateLimitResponse_DescriptorStatus::MergeFrom(const RateLimitResponse_Descr
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.lyft.ratelimit.RateLimitResponse.DescriptorStatus)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   if (from.has_current_limit()) {
     mutable_current_limit()->::pb::lyft::ratelimit::RateLimit::MergeFrom(from.current_limit());
   }
@@ -1815,7 +1893,7 @@ void RateLimitResponse_DescriptorStatus::InternalSwap(RateLimitResponse_Descript
 
 ::google::protobuf::Metadata RateLimitResponse_DescriptorStatus::GetMetadata() const {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[4];
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1935,7 +2013,7 @@ void RateLimitResponse::SetCachedSize(int size) const {
 }
 const ::google::protobuf::Descriptor* RateLimitResponse::descriptor() {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[5].descriptor;
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
 const RateLimitResponse& RateLimitResponse::default_instance() {
@@ -1969,7 +2047,8 @@ bool RateLimitResponse::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // .pb.lyft.ratelimit.RateLimitResponse.Code overall_code = 1;
       case 1: {
-        if (tag == 8u) {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u)) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -1983,14 +2062,13 @@ bool RateLimitResponse::MergePartialFromCodedStream(
 
       // repeated .pb.lyft.ratelimit.RateLimitResponse.DescriptorStatus statuses = 2;
       case 2: {
-        if (tag == 18u) {
-          DO_(input->IncrementRecursionDepth());
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_statuses()));
         } else {
           goto handle_unusual;
         }
-        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
@@ -2018,6 +2096,9 @@ failure:
 void RateLimitResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.lyft.ratelimit.RateLimitResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // .pb.lyft.ratelimit.RateLimitResponse.Code overall_code = 1;
   if (this->overall_code() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
@@ -2035,8 +2116,11 @@ void RateLimitResponse::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* RateLimitResponse::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic;  // Unused
+  (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:pb.lyft.ratelimit.RateLimitResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   // .pb.lyft.ratelimit.RateLimitResponse.Code overall_code = 1;
   if (this->overall_code() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
@@ -2047,7 +2131,7 @@ void RateLimitResponse::SerializeWithCachedSizes(
   for (unsigned int i = 0, n = this->statuses_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->statuses(i), false, target);
+        2, this->statuses(i), deterministic, target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:pb.lyft.ratelimit.RateLimitResponse)
@@ -2101,6 +2185,9 @@ void RateLimitResponse::MergeFrom(const RateLimitResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.lyft.ratelimit.RateLimitResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
   statuses_.MergeFrom(from.statuses_);
   if (from.overall_code() != 0) {
     set_overall_code(from.overall_code());
@@ -2130,14 +2217,14 @@ void RateLimitResponse::Swap(RateLimitResponse* other) {
   InternalSwap(other);
 }
 void RateLimitResponse::InternalSwap(RateLimitResponse* other) {
-  statuses_.UnsafeArenaSwap(&other->statuses_);
+  statuses_.InternalSwap(&other->statuses_);
   std::swap(overall_code_, other->overall_code_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata RateLimitResponse::GetMetadata() const {
   protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[5];
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2188,91 +2275,6 @@ RateLimitResponse::statuses() const {
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-RateLimitService::~RateLimitService() {}
-
-const ::google::protobuf::ServiceDescriptor* RateLimitService::descriptor() {
-  protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_service_descriptors[0];
-}
-
-const ::google::protobuf::ServiceDescriptor* RateLimitService::GetDescriptor() {
-  return descriptor();
-}
-
-void RateLimitService::ShouldRateLimit(::google::protobuf::RpcController* controller,
-                         const ::pb::lyft::ratelimit::RateLimitRequest*,
-                         ::pb::lyft::ratelimit::RateLimitResponse*,
-                         ::google::protobuf::Closure* done) {
-  controller->SetFailed("Method ShouldRateLimit() not implemented.");
-  done->Run();
-}
-
-void RateLimitService::CallMethod(const ::google::protobuf::MethodDescriptor* method,
-                             ::google::protobuf::RpcController* controller,
-                             const ::google::protobuf::Message* request,
-                             ::google::protobuf::Message* response,
-                             ::google::protobuf::Closure* done) {
-  GOOGLE_DCHECK_EQ(method->service(), protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_service_descriptors[0]);
-  switch(method->index()) {
-    case 0:
-      ShouldRateLimit(controller,
-             ::google::protobuf::down_cast<const ::pb::lyft::ratelimit::RateLimitRequest*>(request),
-             ::google::protobuf::down_cast< ::pb::lyft::ratelimit::RateLimitResponse*>(response),
-             done);
-      break;
-    default:
-      GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
-      break;
-  }
-}
-
-const ::google::protobuf::Message& RateLimitService::GetRequestPrototype(
-    const ::google::protobuf::MethodDescriptor* method) const {
-  GOOGLE_DCHECK_EQ(method->service(), descriptor());
-  switch(method->index()) {
-    case 0:
-      return ::pb::lyft::ratelimit::RateLimitRequest::default_instance();
-    default:
-      GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
-      return *::google::protobuf::MessageFactory::generated_factory()
-          ->GetPrototype(method->input_type());
-  }
-}
-
-const ::google::protobuf::Message& RateLimitService::GetResponsePrototype(
-    const ::google::protobuf::MethodDescriptor* method) const {
-  GOOGLE_DCHECK_EQ(method->service(), descriptor());
-  switch(method->index()) {
-    case 0:
-      return ::pb::lyft::ratelimit::RateLimitResponse::default_instance();
-    default:
-      GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
-      return *::google::protobuf::MessageFactory::generated_factory()
-          ->GetPrototype(method->output_type());
-  }
-}
-
-RateLimitService_Stub::RateLimitService_Stub(::google::protobuf::RpcChannel* channel)
-  : channel_(channel), owns_channel_(false) {}
-RateLimitService_Stub::RateLimitService_Stub(
-    ::google::protobuf::RpcChannel* channel,
-    ::google::protobuf::Service::ChannelOwnership ownership)
-  : channel_(channel),
-    owns_channel_(ownership == ::google::protobuf::Service::STUB_OWNS_CHANNEL) {}
-RateLimitService_Stub::~RateLimitService_Stub() {
-  if (owns_channel_) delete channel_;
-}
-
-void RateLimitService_Stub::ShouldRateLimit(::google::protobuf::RpcController* controller,
-                              const ::pb::lyft::ratelimit::RateLimitRequest* request,
-                              ::pb::lyft::ratelimit::RateLimitResponse* response,
-                              ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(0),
-                       controller, request, response, done);
-}
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -170,21 +170,28 @@ set(ENVOY_SOURCE_FILES
         envoy/source/exe/hot_restart.cc
         envoy/source/exe/signal_action.cc
 
-        genfiles/api/accesslog.pb.cc
         genfiles/api/address.pb.cc
         genfiles/api/base.pb.cc
-        genfiles/api/cds.pb.cc
-        genfiles/api/hds.pb.cc
         genfiles/api/health_check.pb.cc
-        genfiles/api/lds.pb.cc
-        genfiles/api/rds.pb.cc
-        genfiles/api/rlds.pb.cc
-        genfiles/api/tls_context.pb.cc
         genfiles/api/eds.pb.cc
-        genfiles/source/common/ratelimit/ratelimit.pb.cc
+        genfiles/common/ratelimit/ratelimit.pb.cc
 
         genfiles/google/api/annotations.pb.cc
         genfiles/google/api/http.pb.cc
+
+        # Envoy deps
+        src/grpc_transcoding/src/http_template.cc
+        src/grpc_transcoding/src/json_request_translator.cc
+        src/grpc_transcoding/src/message_reader.cc
+        src/grpc_transcoding/src/message_stream.cc
+        src/grpc_transcoding/src/path_matcher_node.cc
+        src/grpc_transcoding/src/prefix_writer.cc
+        src/grpc_transcoding/src/request_message_translator.cc
+        src/grpc_transcoding/src/request_stream_translator.cc
+        src/grpc_transcoding/src/request_weaver.cc
+        src/grpc_transcoding/src/response_to_json_translator.cc
+        src/grpc_transcoding/src/type_helper.cc
+
 
         )
 

@@ -9,6 +9,7 @@ cp -a -f bazel-out/local-fastbuild/genfiles/external/googleapis/google genfiles/
 
 bazel build @envoy//source/common/ratelimit/...
 cp -a -f bazel-out/local-fastbuild/genfiles/external/envoy/source genfiles/
+cp -a -f bazel-out/local-fastbuild/genfiles/external/envoy/source/common genfiles/
 
 cp -a -f bazel-out/local-fastbuild/genfiles/external/envoy_api/api/ genfiles/
 
