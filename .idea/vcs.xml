@@ -9,9 +9,12 @@
     <mapping directory="$PROJECT_DIR$/src/backward" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/boringssl" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/cares" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/envoy-api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/envoy-filter-example" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/grpc_transcoding" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/http-parser" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/libevent" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/lightstep" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/lightstep-tracer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/lightstep-tracer-common" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/mixer" vcs="Git" />
@@ -22,5 +25,7 @@
     <mapping directory="$PROJECT_DIR$/src/rapidjson" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/spdlog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/tclap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/util-linux" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/third_party/tclap" vcs="Git" />
   </component>
 </project>

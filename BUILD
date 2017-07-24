@@ -11,10 +11,20 @@ pkg_tar(
 )
 
 pkg_tar(
+    name = "pilot-bin",
+    files = [
+        "@pilot//cmd/pilot:pilot",
+    ],
+    mode = "0755",
+    package_dir = "/opt/istio/bin",
+)
+
+pkg_tar(
     name = "debian-data",
     extension = "tar.gz",
     deps = [
         ":istio-bin",
+        ":pilot-bin",
     ],
 )
 

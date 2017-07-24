@@ -20,3 +20,7 @@ cp -a -f bazel-out/local-fastbuild/genfiles/external/proxy/src genfiles/
 mkdir -p genfiles/src/lightstep/lightstep-tracer-common
 cp -a -f bazel-out/local-fastbuild/genfiles/src/lightstep/lightstep-tracer-common/* genfiles/src/lightstep/lightstep-tracer-common
 cp -a -f bazel-out/local-fastbuild/genfiles/src/lightstep/lightstep-tracer-common/* genfiles/src/lightstep/lightstep-tracer-common
+
+# Go genfiles
+rm -rf go/src/vendor/istio.io/*
+cp -a -f bazel-out/local-fastbuild/genfiles/external/io_istio_api/api go/src/vendor/istio.io

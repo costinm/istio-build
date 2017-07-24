@@ -238,6 +238,11 @@ local_repository(
     path = "src/protobuf",
 )
 
+local_repository(
+    name="com_github_google_protobuf",
+    path="src/protobuf",
+)
+
 new_local_repository(
     name = "lightstep_common_git",
     path = "src/lightstep-tracer-common",
@@ -255,7 +260,7 @@ new_local_repository(
 ## Pilot repositories - in process of moving the deps to godep or repo
 local_repository(
     name = "pilot",
-    path = "src/istio.io/pilot",
+    path = "go/src/istio.io/pilot",
 )
 
 go_repository(
