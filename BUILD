@@ -34,6 +34,7 @@ pkg_deb(
     built_using = "bazel",
     data = ":debian-data",
     depends = [
+        "uuid-runtime",  # Envoy/proxy dep
     ],
     description_file = "tools/debian/description",
     homepage = "http://istio.io",
