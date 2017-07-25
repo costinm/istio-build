@@ -13,7 +13,7 @@ pkg_tar(
 pkg_tar(
     name = "pilot-bin",
     files = [
-        "@pilot//cmd/pilot:pilot",
+        "@pilot//cmd/pilot-agent:pilot-agent",
     ],
     mode = "0755",
     package_dir = "/opt/istio/bin",

@@ -632,6 +632,12 @@ new_http_archive(
     url = "https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz#md5=34eed507548117b2ab523ab14b2f8b55",
 )
 
+go_repository(
+    name = "org_golang_x_time",
+    commit = "8be79e1e0910c292df4e79c241bb7e8f7e725959",
+    importpath = "golang.org/x/time",
+)
+
 
 bind(
     name = "six",
