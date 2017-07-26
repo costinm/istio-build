@@ -147,8 +147,15 @@ bind(name = "ares", actual = "//third_party/cares:ares")
 # Hardcoded @envoy in mixer
 local_repository(name = "envoy", path = "envoy")
 
+# envoy/baze/repositories.bzl uses a macro, this workspace has explicit deps
 bind(name = "envoy_base", actual = "@envoy_api//api:base_cc")
+bind(name = "envoy_cds", actual = "@envoy_api//api:cds_cc")
 bind(name = "envoy_eds", actual = "@envoy_api//api:eds_cc")
+bind(name = "envoy_health_check", actual = "@envoy_api//api:health_check_cc")
+bind(name = "envoy_protocol", actual = "@envoy_api//api:protocol_cc")
+bind(name = "envoy_tls_context", actual = "@envoy_api//api:tls_context_cc")
+
+
 bind(name = "http_api_protos", actual = "@googleapis//:http_api_protos")
 
 bind(name = "grpc_transcoding", actual = "//src/grpc_transcoding/src:transcoding")

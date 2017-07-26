@@ -8,15 +8,15 @@ pkg_tar(
     mode = "0755",
     #    package_dir = "/opt/istio/bin",
     package_dir = "/usr/local/bin",
-    strip_prefix = "/src/proxy/src/envoy/mixer",
+    #strip_prefix = "/src/proxy/src/envoy/mixer",
 )
 
 pkg_tar(
     name = "pilot-bin",
     files = [
-        "@pilot//cmd/istioctl:istioctl",
         "@pilot//cmd/pilot-agent:pilot-agent",
         "@pilot//cmd/pilot-discovery:pilot-discovery",
+        "@pilot//docker:prepare_proxy",
     ],
     mode = "0755",
     package_dir = "/usr/local/bin",
@@ -28,7 +28,6 @@ pkg_tar(
     deps = [
         ":istio-bin",
         ":pilot-bin",
-        "@pilot//docker:prepare_proxy_tar",
     ],
 )
 

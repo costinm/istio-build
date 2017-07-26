@@ -59,17 +59,17 @@ include_directories(
 
 set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl/src)
 
-
 #include(third_party/libevent/libevent.cmake)
 # Doesn't work with CMake 2.8 on trusty
 add_subdirectory(third_party/libevent/src)
 add_subdirectory(src/boringssl/src)
-add_subdirectory(third_party/envoy-istio)
+add_subdirectory(src/envoy-remote-filter)
 
-include(third_party/cares/cares.cmake)
+# Packages without cmake support - custom files, similar with the custom bazel
+include(tools/cmake/cares.cmake)
 include(tools/cmake/lightstep-tracer.cmake)
-include(third_party/http-parser/CMakeList.txt)
-include(third_party/nghttp2/nghttp2.cmake)
-include(third_party/protobuf/protobuf.cmake)
-include(third_party/mixer/istio-mixer.cmake)
-include(third_party/envoy/envoy.cmake)
+include(tools/cmake/envoy.cmake)
+include(tools/cmake/http-parser.cmake)
+include(tools/cmake/nghttp2.cmake)
+include(tools/cmake/protobuf.cmake)
+include(tools/cmake/istio-mixer.cmake)
