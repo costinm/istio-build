@@ -663,19 +663,14 @@ class UpstreamLocalityStats : public ::google::protobuf::Message /* @@protoc_ins
   const ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::EndpointLoadMetricStats >&
       load_metric_stats() const;
 
-  // string Locality = 1;
+  // .envoy.api.v2.Locality locality = 1;
+  bool has_locality() const;
   void clear_locality();
   static const int kLocalityFieldNumber = 1;
-  const ::std::string& locality() const;
-  void set_locality(const ::std::string& value);
-  #if LANG_CXX11
-  void set_locality(::std::string&& value);
-  #endif
-  void set_locality(const char* value);
-  void set_locality(const char* value, size_t size);
-  ::std::string* mutable_locality();
-  ::std::string* release_locality();
-  void set_allocated_locality(::std::string* locality);
+  const ::envoy::api::v2::Locality& locality() const;
+  ::envoy::api::v2::Locality* mutable_locality();
+  ::envoy::api::v2::Locality* release_locality();
+  void set_allocated_locality(::envoy::api::v2::Locality* locality);
 
   // uint64 total_requests = 2;
   void clear_total_requests();
@@ -778,7 +773,7 @@ class UpstreamLocalityStats : public ::google::protobuf::Message /* @@protoc_ins
       0 > grpc_errors_;
   private:
   ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::EndpointLoadMetricStats > load_metric_stats_;
-  ::google::protobuf::internal::ArenaStringPtr locality_;
+  ::envoy::api::v2::Locality* locality_;
   ::google::protobuf::uint64 total_requests_;
   ::google::protobuf::uint64 total_requests_in_progress_;
   ::google::protobuf::uint64 dropped_requests_;
@@ -1650,57 +1645,43 @@ inline void EndpointLoadMetricStats::set_total_metric_value(double value) {
 
 // UpstreamLocalityStats
 
-// string Locality = 1;
+// .envoy.api.v2.Locality locality = 1;
+inline bool UpstreamLocalityStats::has_locality() const {
+  return this != internal_default_instance() && locality_ != NULL;
+}
 inline void UpstreamLocalityStats::clear_locality() {
-  locality_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && locality_ != NULL) delete locality_;
+  locality_ = NULL;
 }
-inline const ::std::string& UpstreamLocalityStats::locality() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.Locality)
-  return locality_.GetNoArena();
+inline const ::envoy::api::v2::Locality& UpstreamLocalityStats::locality() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.locality)
+  return locality_ != NULL ? *locality_
+                         : *::envoy::api::v2::Locality::internal_default_instance();
 }
-inline void UpstreamLocalityStats::set_locality(const ::std::string& value) {
+inline ::envoy::api::v2::Locality* UpstreamLocalityStats::mutable_locality() {
   
-  locality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.Locality)
+  if (locality_ == NULL) {
+    locality_ = new ::envoy::api::v2::Locality;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UpstreamLocalityStats.locality)
+  return locality_;
 }
-#if LANG_CXX11
-inline void UpstreamLocalityStats::set_locality(::std::string&& value) {
+inline ::envoy::api::v2::Locality* UpstreamLocalityStats::release_locality() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.UpstreamLocalityStats.locality)
   
-  locality_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.UpstreamLocalityStats.Locality)
+  ::envoy::api::v2::Locality* temp = locality_;
+  locality_ = NULL;
+  return temp;
 }
-#endif
-inline void UpstreamLocalityStats::set_locality(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  locality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.UpstreamLocalityStats.Locality)
-}
-inline void UpstreamLocalityStats::set_locality(const char* value, size_t size) {
-  
-  locality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.UpstreamLocalityStats.Locality)
-}
-inline ::std::string* UpstreamLocalityStats::mutable_locality() {
-  
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UpstreamLocalityStats.Locality)
-  return locality_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* UpstreamLocalityStats::release_locality() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UpstreamLocalityStats.Locality)
-  
-  return locality_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void UpstreamLocalityStats::set_allocated_locality(::std::string* locality) {
-  if (locality != NULL) {
+inline void UpstreamLocalityStats::set_allocated_locality(::envoy::api::v2::Locality* locality) {
+  delete locality_;
+  locality_ = locality;
+  if (locality) {
     
   } else {
     
   }
-  locality_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), locality);
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UpstreamLocalityStats.Locality)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UpstreamLocalityStats.locality)
 }
 
 // uint64 total_requests = 2;

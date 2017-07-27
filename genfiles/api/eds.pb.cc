@@ -271,6 +271,8 @@ void TableStruct::InitDefaultsImpl() {
   _UpstreamLocalityStats_HttpErrorsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
   _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable()->set_default_instance(_UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable());
   _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
+  _UpstreamLocalityStats_default_instance_.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
+      ::envoy::api::v2::Locality::internal_default_instance());
   _LoadStatsRequest_default_instance_.get_mutable()->node_ = const_cast< ::envoy::api::v2::Node*>(
       ::envoy::api::v2::Node::internal_default_instance());
   _ClusterLoadAssignment_default_instance_.get_mutable()->policy_ = const_cast< ::envoy::api::v2::ClusterLoadAssignment_Policy*>(
@@ -302,48 +304,48 @@ void AddDescriptorsImpl() {
       "\034.google.protobuf.UInt32Value\"u\n\027Endpoin"
       "tLoadMetricStats\022\023\n\013metric_name\030\001 \001(\t\022)\n"
       "!num_requests_finished_with_metric\030\002 \001(\004"
-      "\022\032\n\022total_metric_value\030\003 \001(\001\"\322\004\n\025Upstrea"
-      "mLocalityStats\022\020\n\010Locality\030\001 \001(\t\022\026\n\016tota"
-      "l_requests\030\002 \001(\004\022\"\n\032total_requests_in_pr"
-      "ogress\030\003 \001(\004\022F\n\ntcp_errors\030\004 \003(\01322.envoy"
-      ".api.v2.UpstreamLocalityStats.TcpErrorsE"
-      "ntry\022H\n\013http_errors\030\005 \003(\01323.envoy.api.v2"
-      ".UpstreamLocalityStats.HttpErrorsEntry\022H"
-      "\n\013grpc_errors\030\006 \003(\01323.envoy.api.v2.Upstr"
-      "eamLocalityStats.GrpcErrorsEntry\022\030\n\020drop"
-      "ped_requests\030\007 \001(\004\022@\n\021load_metric_stats\030"
-      "\010 \003(\0132%.envoy.api.v2.EndpointLoadMetricS"
-      "tats\0320\n\016TcpErrorsEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v"
-      "alue\030\002 \001(\004:\0028\001\0321\n\017HttpErrorsEntry\022\013\n\003key"
-      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\0321\n\017GrpcErrorsE"
-      "ntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\"\033\n\014"
-      "TcpErrorType\022\013\n\007TIMEOUT\020\000\"j\n\014ClusterStat"
-      "s\022\024\n\014cluster_name\030\001 \001(\t\022D\n\027upstream_loca"
-      "lity_stats\030\002 \003(\0132#.envoy.api.v2.Upstream"
-      "LocalityStats\"g\n\020LoadStatsRequest\022 \n\004nod"
-      "e\030\001 \001(\0132\022.envoy.api.v2.Node\0221\n\rcluster_s"
-      "tats\030\002 \003(\0132\032.envoy.api.v2.ClusterStats\"\377"
-      "\001\n\025ClusterLoadAssignment\022\024\n\014cluster_name"
-      "\030\001 \001(\t\0224\n\tendpoints\030\002 \003(\0132!.envoy.api.v2"
-      ".LocalityLbEndpoints\022=\n\022failover_endpoin"
-      "ts\030\003 \003(\0132!.envoy.api.v2.LocalityLbEndpoi"
-      "nts\022:\n\006policy\030\004 \001(\0132*.envoy.api.v2.Clust"
-      "erLoadAssignment.Policy\032\037\n\006Policy\022\025\n\rdro"
-      "p_overload\030\001 \001(\001\"a\n\021LoadStatsResponse\022\020\n"
-      "\010clusters\030\001 \003(\t\022:\n\027load_reporting_interv"
-      "al\030\002 \001(\0132\031.google.protobuf.Duration2\305\002\n\030"
-      "EndpointDiscoveryService\022X\n\017StreamEndpoi"
-      "nts\022\036.envoy.api.v2.DiscoveryRequest\032\037.en"
-      "voy.api.v2.DiscoveryResponse\"\000(\0010\001\022u\n\016Fe"
-      "tchEndpoints\022\036.envoy.api.v2.DiscoveryReq"
-      "uest\032\037.envoy.api.v2.DiscoveryResponse\"\"\202"
-      "\323\344\223\002\034\"\027/v2/discovery:endpoints:\001*\022X\n\017Str"
-      "eamLoadStats\022\036.envoy.api.v2.LoadStatsReq"
-      "uest\032\037.envoy.api.v2.LoadStatsResponse\"\000("
-      "\0010\001b\006proto3"
+      "\022\032\n\022total_metric_value\030\003 \001(\001\"\352\004\n\025Upstrea"
+      "mLocalityStats\022(\n\010locality\030\001 \001(\0132\026.envoy"
+      ".api.v2.Locality\022\026\n\016total_requests\030\002 \001(\004"
+      "\022\"\n\032total_requests_in_progress\030\003 \001(\004\022F\n\n"
+      "tcp_errors\030\004 \003(\01322.envoy.api.v2.Upstream"
+      "LocalityStats.TcpErrorsEntry\022H\n\013http_err"
+      "ors\030\005 \003(\01323.envoy.api.v2.UpstreamLocalit"
+      "yStats.HttpErrorsEntry\022H\n\013grpc_errors\030\006 "
+      "\003(\01323.envoy.api.v2.UpstreamLocalityStats"
+      ".GrpcErrorsEntry\022\030\n\020dropped_requests\030\007 \001"
+      "(\004\022@\n\021load_metric_stats\030\010 \003(\0132%.envoy.ap"
+      "i.v2.EndpointLoadMetricStats\0320\n\016TcpError"
+      "sEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\0321"
+      "\n\017HttpErrorsEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030"
+      "\002 \001(\004:\0028\001\0321\n\017GrpcErrorsEntry\022\013\n\003key\030\001 \001("
+      "\r\022\r\n\005value\030\002 \001(\004:\0028\001\"\033\n\014TcpErrorType\022\013\n\007"
+      "TIMEOUT\020\000\"j\n\014ClusterStats\022\024\n\014cluster_nam"
+      "e\030\001 \001(\t\022D\n\027upstream_locality_stats\030\002 \003(\013"
+      "2#.envoy.api.v2.UpstreamLocalityStats\"g\n"
+      "\020LoadStatsRequest\022 \n\004node\030\001 \001(\0132\022.envoy."
+      "api.v2.Node\0221\n\rcluster_stats\030\002 \003(\0132\032.env"
+      "oy.api.v2.ClusterStats\"\377\001\n\025ClusterLoadAs"
+      "signment\022\024\n\014cluster_name\030\001 \001(\t\0224\n\tendpoi"
+      "nts\030\002 \003(\0132!.envoy.api.v2.LocalityLbEndpo"
+      "ints\022=\n\022failover_endpoints\030\003 \003(\0132!.envoy"
+      ".api.v2.LocalityLbEndpoints\022:\n\006policy\030\004 "
+      "\001(\0132*.envoy.api.v2.ClusterLoadAssignment"
+      ".Policy\032\037\n\006Policy\022\025\n\rdrop_overload\030\001 \001(\001"
+      "\"a\n\021LoadStatsResponse\022\020\n\010clusters\030\001 \003(\t\022"
+      ":\n\027load_reporting_interval\030\002 \001(\0132\031.googl"
+      "e.protobuf.Duration2\305\002\n\030EndpointDiscover"
+      "yService\022X\n\017StreamEndpoints\022\036.envoy.api."
+      "v2.DiscoveryRequest\032\037.envoy.api.v2.Disco"
+      "veryResponse\"\000(\0010\001\022u\n\016FetchEndpoints\022\036.e"
+      "nvoy.api.v2.DiscoveryRequest\032\037.envoy.api"
+      ".v2.DiscoveryResponse\"\"\202\323\344\223\002\034\"\027/v2/disco"
+      "very:endpoints:\001*\022X\n\017StreamLoadStats\022\036.e"
+      "nvoy.api.v2.LoadStatsRequest\032\037.envoy.api"
+      ".v2.LoadStatsResponse\"\000(\0010\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2171);
+      descriptor, 2195);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api/eds.proto", &protobuf_RegisterTypes);
   ::envoy::api::v2::protobuf_api_2fbase_2eproto::AddDescriptors();
@@ -1814,9 +1816,10 @@ UpstreamLocalityStats::UpstreamLocalityStats(const UpstreamLocalityStats& from)
   tcp_errors_.MergeFrom(from.tcp_errors_);
   http_errors_.MergeFrom(from.http_errors_);
   grpc_errors_.MergeFrom(from.grpc_errors_);
-  locality_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.locality().size() > 0) {
-    locality_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.locality_);
+  if (from.has_locality()) {
+    locality_ = new ::envoy::api::v2::Locality(*from.locality_);
+  } else {
+    locality_ = NULL;
   }
   ::memcpy(&total_requests_, &from.total_requests_,
     reinterpret_cast<char*>(&dropped_requests_) -
@@ -1825,9 +1828,8 @@ UpstreamLocalityStats::UpstreamLocalityStats(const UpstreamLocalityStats& from)
 }
 
 void UpstreamLocalityStats::SharedCtor() {
-  locality_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&total_requests_, 0, reinterpret_cast<char*>(&dropped_requests_) -
-    reinterpret_cast<char*>(&total_requests_) + sizeof(dropped_requests_));
+  ::memset(&locality_, 0, reinterpret_cast<char*>(&dropped_requests_) -
+    reinterpret_cast<char*>(&locality_) + sizeof(dropped_requests_));
   _cached_size_ = 0;
 }
 
@@ -1837,7 +1839,9 @@ UpstreamLocalityStats::~UpstreamLocalityStats() {
 }
 
 void UpstreamLocalityStats::SharedDtor() {
-  locality_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) {
+    delete locality_;
+  }
 }
 
 void UpstreamLocalityStats::SetCachedSize(int size) const {
@@ -1869,7 +1873,10 @@ void UpstreamLocalityStats::Clear() {
   http_errors_.Clear();
   grpc_errors_.Clear();
   load_metric_stats_.Clear();
-  locality_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && locality_ != NULL) {
+    delete locality_;
+  }
+  locality_ = NULL;
   ::memset(&total_requests_, 0, reinterpret_cast<char*>(&dropped_requests_) -
     reinterpret_cast<char*>(&total_requests_) + sizeof(dropped_requests_));
 }
@@ -1884,16 +1891,12 @@ bool UpstreamLocalityStats::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string Locality = 1;
+      // .envoy.api.v2.Locality locality = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_locality()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->locality().data(), this->locality().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "envoy.api.v2.UpstreamLocalityStats.Locality"));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_locality()));
         } else {
           goto handle_unusual;
         }
@@ -2038,14 +2041,10 @@ void UpstreamLocalityStats::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string Locality = 1;
-  if (this->locality().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->locality().data(), this->locality().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UpstreamLocalityStats.Locality");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->locality(), output);
+  // .envoy.api.v2.Locality locality = 1;
+  if (this->has_locality()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->locality_, output);
   }
 
   // uint64 total_requests = 2;
@@ -2196,15 +2195,11 @@ void UpstreamLocalityStats::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string Locality = 1;
-  if (this->locality().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->locality().data(), this->locality().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UpstreamLocalityStats.Locality");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->locality(), target);
+  // .envoy.api.v2.Locality locality = 1;
+  if (this->has_locality()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->locality_, deterministic, target);
   }
 
   // uint64 total_requests = 2;
@@ -2419,11 +2414,11 @@ size_t UpstreamLocalityStats::ByteSizeLong() const {
     }
   }
 
-  // string Locality = 1;
-  if (this->locality().size() > 0) {
+  // .envoy.api.v2.Locality locality = 1;
+  if (this->has_locality()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->locality());
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->locality_);
   }
 
   // uint64 total_requests = 2;
@@ -2480,9 +2475,8 @@ void UpstreamLocalityStats::MergeFrom(const UpstreamLocalityStats& from) {
   http_errors_.MergeFrom(from.http_errors_);
   grpc_errors_.MergeFrom(from.grpc_errors_);
   load_metric_stats_.MergeFrom(from.load_metric_stats_);
-  if (from.locality().size() > 0) {
-
-    locality_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.locality_);
+  if (from.has_locality()) {
+    mutable_locality()->::envoy::api::v2::Locality::MergeFrom(from.locality());
   }
   if (from.total_requests() != 0) {
     set_total_requests(from.total_requests());
@@ -2522,7 +2516,7 @@ void UpstreamLocalityStats::InternalSwap(UpstreamLocalityStats* other) {
   http_errors_.Swap(&other->http_errors_);
   grpc_errors_.Swap(&other->grpc_errors_);
   load_metric_stats_.InternalSwap(&other->load_metric_stats_);
-  locality_.Swap(&other->locality_);
+  std::swap(locality_, other->locality_);
   std::swap(total_requests_, other->total_requests_);
   std::swap(total_requests_in_progress_, other->total_requests_in_progress_);
   std::swap(dropped_requests_, other->dropped_requests_);
@@ -2537,57 +2531,43 @@ void UpstreamLocalityStats::InternalSwap(UpstreamLocalityStats* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // UpstreamLocalityStats
 
-// string Locality = 1;
+// .envoy.api.v2.Locality locality = 1;
+bool UpstreamLocalityStats::has_locality() const {
+  return this != internal_default_instance() && locality_ != NULL;
+}
 void UpstreamLocalityStats::clear_locality() {
-  locality_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && locality_ != NULL) delete locality_;
+  locality_ = NULL;
 }
-const ::std::string& UpstreamLocalityStats::locality() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.Locality)
-  return locality_.GetNoArena();
+const ::envoy::api::v2::Locality& UpstreamLocalityStats::locality() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.locality)
+  return locality_ != NULL ? *locality_
+                         : *::envoy::api::v2::Locality::internal_default_instance();
 }
-void UpstreamLocalityStats::set_locality(const ::std::string& value) {
+::envoy::api::v2::Locality* UpstreamLocalityStats::mutable_locality() {
   
-  locality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.Locality)
+  if (locality_ == NULL) {
+    locality_ = new ::envoy::api::v2::Locality;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UpstreamLocalityStats.locality)
+  return locality_;
 }
-#if LANG_CXX11
-void UpstreamLocalityStats::set_locality(::std::string&& value) {
+::envoy::api::v2::Locality* UpstreamLocalityStats::release_locality() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.UpstreamLocalityStats.locality)
   
-  locality_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.UpstreamLocalityStats.Locality)
+  ::envoy::api::v2::Locality* temp = locality_;
+  locality_ = NULL;
+  return temp;
 }
-#endif
-void UpstreamLocalityStats::set_locality(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  locality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.UpstreamLocalityStats.Locality)
-}
-void UpstreamLocalityStats::set_locality(const char* value, size_t size) {
-  
-  locality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.UpstreamLocalityStats.Locality)
-}
-::std::string* UpstreamLocalityStats::mutable_locality() {
-  
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UpstreamLocalityStats.Locality)
-  return locality_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-::std::string* UpstreamLocalityStats::release_locality() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UpstreamLocalityStats.Locality)
-  
-  return locality_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-void UpstreamLocalityStats::set_allocated_locality(::std::string* locality) {
-  if (locality != NULL) {
+void UpstreamLocalityStats::set_allocated_locality(::envoy::api::v2::Locality* locality) {
+  delete locality_;
+  locality_ = locality;
+  if (locality) {
     
   } else {
     
   }
-  locality_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), locality);
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UpstreamLocalityStats.Locality)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UpstreamLocalityStats.locality)
 }
 
 // uint64 total_requests = 2;

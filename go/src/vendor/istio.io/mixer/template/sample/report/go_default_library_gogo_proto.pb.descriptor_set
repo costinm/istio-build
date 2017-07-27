@@ -1,0 +1,19 @@
+
+„
+fbazel-out/local-fastbuild/genfiles/external/mixer/template/sample/report/go_default_library_tmpl.proto!istio.mixer.adapter.sample.report+mixer/v1/config/descriptor/value_type.proto-pkg/adapter/template/TemplateExtensions.proto"é
+TypeA
+value (2+.istio.mixer.v1.config.descriptor.ValueTypeRvalueW
+
+dimensions (27.istio.mixer.adapter.sample.report.Type.DimensionsEntryR
+dimensionsj
+DimensionsEntry
+key (	RkeyA
+value (2+.istio.mixer.v1.config.descriptor.ValueTypeRvalue:8"Ã
+ConstructorParam
+value (	Rvaluec
+
+dimensions (2C.istio.mixer.adapter.sample.report.ConstructorParam.DimensionsEntryR
+dimensions=
+DimensionsEntry
+key (	Rkey
+value (	Rvalue:8B¯“‰ìä”‰ìSamplebproto3

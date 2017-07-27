@@ -352,6 +352,20 @@ class HealthCheck_HttpHealthCheck : public ::google::protobuf::Message /* @@prot
   ::std::string* release_path();
   void set_allocated_path(::std::string* path);
 
+  // string service_name = 5;
+  void clear_service_name();
+  static const int kServiceNameFieldNumber = 5;
+  const ::std::string& service_name() const;
+  void set_service_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_service_name(::std::string&& value);
+  #endif
+  void set_service_name(const char* value);
+  void set_service_name(const char* value, size_t size);
+  ::std::string* mutable_service_name();
+  ::std::string* release_service_name();
+  void set_allocated_service_name(::std::string* service_name);
+
   // .envoy.api.v2.HealthCheck.Payload send = 3;
   bool has_send() const;
   void clear_send();
@@ -376,6 +390,7 @@ class HealthCheck_HttpHealthCheck : public ::google::protobuf::Message /* @@prot
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr host_;
   ::google::protobuf::internal::ArenaStringPtr path_;
+  ::google::protobuf::internal::ArenaStringPtr service_name_;
   ::envoy::api::v2::HealthCheck_Payload* send_;
   ::envoy::api::v2::HealthCheck_Payload* receive_;
   mutable int _cached_size_;
@@ -568,9 +583,9 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   static const HealthCheck& default_instance();
 
   enum HealthCheckerCase {
-    kHttpHealthCheck = 9,
-    kTcpHealthCheck = 10,
-    kRedisHealthCheck = 11,
+    kHttpHealthCheck = 8,
+    kTcpHealthCheck = 9,
+    kRedisHealthCheck = 10,
     HEALTH_CHECKER_NOT_SET = 0,
   };
 
@@ -627,20 +642,6 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   typedef HealthCheck_RedisHealthCheck RedisHealthCheck;
 
   // accessors -------------------------------------------------------
-
-  // string service_name = 8;
-  void clear_service_name();
-  static const int kServiceNameFieldNumber = 8;
-  const ::std::string& service_name() const;
-  void set_service_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_service_name(::std::string&& value);
-  #endif
-  void set_service_name(const char* value);
-  void set_service_name(const char* value, size_t size);
-  ::std::string* mutable_service_name();
-  ::std::string* release_service_name();
-  void set_allocated_service_name(::std::string* service_name);
 
   // .google.protobuf.Duration timeout = 1;
   bool has_timeout() const;
@@ -705,28 +706,28 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::BoolValue* release_reuse_connection();
   void set_allocated_reuse_connection(::google::protobuf::BoolValue* reuse_connection);
 
-  // .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 9;
+  // .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 8;
   bool has_http_health_check() const;
   void clear_http_health_check();
-  static const int kHttpHealthCheckFieldNumber = 9;
+  static const int kHttpHealthCheckFieldNumber = 8;
   const ::envoy::api::v2::HealthCheck_HttpHealthCheck& http_health_check() const;
   ::envoy::api::v2::HealthCheck_HttpHealthCheck* mutable_http_health_check();
   ::envoy::api::v2::HealthCheck_HttpHealthCheck* release_http_health_check();
   void set_allocated_http_health_check(::envoy::api::v2::HealthCheck_HttpHealthCheck* http_health_check);
 
-  // .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 10;
+  // .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 9;
   bool has_tcp_health_check() const;
   void clear_tcp_health_check();
-  static const int kTcpHealthCheckFieldNumber = 10;
+  static const int kTcpHealthCheckFieldNumber = 9;
   const ::envoy::api::v2::HealthCheck_TcpHealthCheck& tcp_health_check() const;
   ::envoy::api::v2::HealthCheck_TcpHealthCheck* mutable_tcp_health_check();
   ::envoy::api::v2::HealthCheck_TcpHealthCheck* release_tcp_health_check();
   void set_allocated_tcp_health_check(::envoy::api::v2::HealthCheck_TcpHealthCheck* tcp_health_check);
 
-  // .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 11;
+  // .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 10;
   bool has_redis_health_check() const;
   void clear_redis_health_check();
-  static const int kRedisHealthCheckFieldNumber = 11;
+  static const int kRedisHealthCheckFieldNumber = 10;
   const ::envoy::api::v2::HealthCheck_RedisHealthCheck& redis_health_check() const;
   ::envoy::api::v2::HealthCheck_RedisHealthCheck* mutable_redis_health_check();
   ::envoy::api::v2::HealthCheck_RedisHealthCheck* release_redis_health_check();
@@ -744,7 +745,6 @@ class HealthCheck : public ::google::protobuf::Message /* @@protoc_insertion_poi
   inline void clear_has_health_checker();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr service_name_;
   ::google::protobuf::Duration* timeout_;
   ::google::protobuf::Duration* interval_;
   ::google::protobuf::Duration* interval_jitter_;
@@ -1158,6 +1158,59 @@ inline void HealthCheck_HttpHealthCheck::set_allocated_receive(::envoy::api::v2:
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.HttpHealthCheck.receive)
 }
 
+// string service_name = 5;
+inline void HealthCheck_HttpHealthCheck::clear_service_name() {
+  service_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HealthCheck_HttpHealthCheck::service_name() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+  return service_name_.GetNoArena();
+}
+inline void HealthCheck_HttpHealthCheck::set_service_name(const ::std::string& value) {
+  
+  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+}
+#if LANG_CXX11
+inline void HealthCheck_HttpHealthCheck::set_service_name(::std::string&& value) {
+  
+  service_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+}
+#endif
+inline void HealthCheck_HttpHealthCheck::set_service_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+}
+inline void HealthCheck_HttpHealthCheck::set_service_name(const char* value, size_t size) {
+  
+  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+}
+inline ::std::string* HealthCheck_HttpHealthCheck::mutable_service_name() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+  return service_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HealthCheck_HttpHealthCheck::release_service_name() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+  
+  return service_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HealthCheck_HttpHealthCheck::set_allocated_service_name(::std::string* service_name) {
+  if (service_name != NULL) {
+    
+  } else {
+    
+  }
+  service_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), service_name);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.HttpHealthCheck.service_name)
+}
+
 // -------------------------------------------------------------------
 
 // HealthCheck_TcpHealthCheck
@@ -1547,60 +1600,7 @@ inline void HealthCheck::set_allocated_reuse_connection(::google::protobuf::Bool
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.reuse_connection)
 }
 
-// string service_name = 8;
-inline void HealthCheck::clear_service_name() {
-  service_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& HealthCheck::service_name() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.service_name)
-  return service_name_.GetNoArena();
-}
-inline void HealthCheck::set_service_name(const ::std::string& value) {
-  
-  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.HealthCheck.service_name)
-}
-#if LANG_CXX11
-inline void HealthCheck::set_service_name(::std::string&& value) {
-  
-  service_name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.HealthCheck.service_name)
-}
-#endif
-inline void HealthCheck::set_service_name(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.HealthCheck.service_name)
-}
-inline void HealthCheck::set_service_name(const char* value, size_t size) {
-  
-  service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.HealthCheck.service_name)
-}
-inline ::std::string* HealthCheck::mutable_service_name() {
-  
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.HealthCheck.service_name)
-  return service_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* HealthCheck::release_service_name() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.HealthCheck.service_name)
-  
-  return service_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void HealthCheck::set_allocated_service_name(::std::string* service_name) {
-  if (service_name != NULL) {
-    
-  } else {
-    
-  }
-  service_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), service_name);
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.service_name)
-}
-
-// .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 9;
+// .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 8;
 inline bool HealthCheck::has_http_health_check() const {
   return health_checker_case() == kHttpHealthCheck;
 }
@@ -1648,7 +1648,7 @@ inline void HealthCheck::set_allocated_http_health_check(::envoy::api::v2::Healt
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.http_health_check)
 }
 
-// .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 10;
+// .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 9;
 inline bool HealthCheck::has_tcp_health_check() const {
   return health_checker_case() == kTcpHealthCheck;
 }
@@ -1696,7 +1696,7 @@ inline void HealthCheck::set_allocated_tcp_health_check(::envoy::api::v2::Health
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.HealthCheck.tcp_health_check)
 }
 
-// .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 11;
+// .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 10;
 inline bool HealthCheck::has_redis_health_check() const {
   return health_checker_case() == kRedisHealthCheck;
 }
