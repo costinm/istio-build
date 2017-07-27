@@ -3,23 +3,21 @@ load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar", "pkg_deb")
 pkg_tar(
     name = "istio-bin",
     files = [
-        "@proxy//src/envoy/mixer:envoy",
-    ],
-    mode = "0755",
-    #    package_dir = "/opt/istio/bin",
-    package_dir = "/usr/local/bin",
-    #strip_prefix = "/src/proxy/src/envoy/mixer",
-)
-
-pkg_tar(
-    name = "pilot-bin",
-    files = [
+        "@mixer//cmd/server:mixs",
         "@pilot//cmd/pilot-agent:pilot-agent",
         "@pilot//cmd/pilot-discovery:pilot-discovery",
         "@pilot//docker:prepare_proxy",
+        "@proxy//src/envoy/mixer:envoy",
     ],
     mode = "0755",
     package_dir = "/usr/local/bin",
+)
+
+pkg_tar(
+    name = "istio-systemd",
+    files = ["tools/deb/istio.service"],
+    mode = "644",
+    package_dir = "/lib/systemd/system",
 )
 
 pkg_tar(
@@ -27,7 +25,7 @@ pkg_tar(
     extension = "tar.gz",
     deps = [
         ":istio-bin",
-        ":pilot-bin",
+        ":istio-systemd",
     ],
 )
 

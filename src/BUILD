@@ -94,3 +94,10 @@ cc_proto_library(
         "//external:cc_wkt_protos",
     ],
 )
+
+cc_library(
+    name = "tcmalloc_and_profiler",
+    srcs = [],
+    hdrs = glob(["gperftools/**/*.h"]),
+    strip_include_prefix = "gperftools",
+)
