@@ -3,7 +3,6 @@ load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar", "pkg_deb")
 pkg_tar(
     name = "istio-bin",
     files = [
-        "@mixer//cmd/server:mixs",
         "@pilot//cmd/pilot-agent:pilot-agent",
         "@pilot//cmd/pilot-discovery:pilot-discovery",
         "@pilot//docker:prepare_proxy",
@@ -30,7 +29,7 @@ pkg_tar(
 )
 
 pkg_deb(
-    name = "istio-debian",
+    name = "istio.deb",
     architecture = "amd64",
     built_using = "bazel",
     data = ":debian-data",

@@ -9,7 +9,7 @@ umask 022
 
 if ! getent passwd istio >/dev/null; then
     addgroup --system istio
-    adduser --system istio -g istio --home /var/lib/istio
+    adduser --system --group --home /var/lib/istio istio
 fi
 
 if [ ! -e /etc/istio ]; then

@@ -160,6 +160,7 @@ bind(name = "ares", actual = "//third_party/cares:ares")
 
 bind(name = "tcmalloc_and_profiler", actual="//src:tcmalloc_and_profiler")
 # envoy/baze/repositories.bzl uses a macro, this workspace has explicit deps
+bind(name = "envoy_address", actual = "@envoy_api//api:address_cc")
 bind(name = "envoy_base", actual = "@envoy_api//api:base_cc")
 bind(name = "envoy_cds", actual = "@envoy_api//api:cds_cc")
 bind(name = "envoy_eds", actual = "@envoy_api//api:eds_cc")
@@ -511,6 +512,7 @@ go_repository(
     commit = "20e10d54608f05c3059443a6c0afb9979641e88d",
     importpath = "k8s.io/apimachinery",
 )
+
 
 go_repository(
     name = "io_k8s_client_go",
@@ -1037,4 +1039,40 @@ go_repository(
 )
 
 
+go_repository(
+    name = "com_github_grpc_ecosystem_grpc_opentracing",
+    commit = "c94552f01d20ad74ec45a8cd967833a9d0b106cf",  # Feb 24, 2017 (no releases)
+    importpath = "github.com/grpc-ecosystem/grpc-opentracing",
+)
 
+go_repository(
+    name = "com_github_grpc_ecosystem_go_grpc_middleware",
+    commit = "f63a7dfb64c138bd93d5c5b896d8b33c4b08e000",  # Jun 11, 2017 (no releases)
+    importpath = "github.com/grpc-ecosystem/go-grpc-middleware",
+)
+
+go_repository(
+    name = "com_github_grpc_ecosystem_go_grpc_prometheus",
+    commit = "2500245aa6110c562d17020fb31a2c133d737799",  # Mar 30, 2017 (only 1 release)
+    importpath = "github.com/grpc-ecosystem/go-grpc-prometheus",
+)
+
+go_repository(
+    name = "io_k8s_api",
+    build_file_generation = "on",
+    build_file_name = "BUILD.bazel",
+    commit = "4d5cc6efc5e84aa19fb1bd3f911c16a6723c1bb7",  # Jul 19, 2017 (no releases)
+    importpath = "k8s.io/api",
+)
+
+go_repository(
+    name = "com_github_cactus_go_statsd_client",
+    commit = "91c326c3f7bd20f0226d3d1c289dd9f8ce28d33d",  # release 3.1.0, 5/30/2016
+    importpath = "github.com/cactus/go-statsd-client",
+)
+
+go_repository(
+    name = "com_github_mediocregopher_radix_v2",
+    commit = "1ac54a28f5934ea5e08f588647e734aba2383cb8",  # Jan 28, 2017 (no releases)
+    importpath = "github.com/mediocregopher/radix.v2",
+)

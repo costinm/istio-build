@@ -1,3 +1,15 @@
+
+# Bazel
+
+``` bash
+# Verify envoy builds, baseline
+$ bazel build @envoy//source/exe:envoy
+
+# Build istio-envoy
+$ bazel build @proxy//src/envoy/mixer:envoy
+
+```
+
 # PI
 
 
