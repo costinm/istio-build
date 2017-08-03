@@ -43,3 +43,8 @@ pkg_deb(
     postinst = "tools/deb/postinst.sh",
     version = "0.2.1",
 )
+
+alias(
+    name = "istio-proxy.deb",
+    actual = "@proxy//:istio-proxy.deb",
+)

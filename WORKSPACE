@@ -509,14 +509,21 @@ go_repository(
 
 go_repository(
     name = "io_k8s_apimachinery",
-    commit = "20e10d54608f05c3059443a6c0afb9979641e88d",
+    build_file_name = "BUILD.bazel",
+    build_file_generation = "on",
+    commit = "6134cb2da6d90597b0434e349f90f94fafc9ae51",
     importpath = "k8s.io/apimachinery",
 )
 
+go_repository(
+    name = "com_github_googleapis_gnostic",
+    commit = "68f4ded48ba9414dab2ae69b3f0d69971da73aa5",
+    importpath = "github.com/googleapis/gnostic",
+)
 
 go_repository(
     name = "io_k8s_client_go",
-    commit = "4e221f82e2ad6e61bd6190602de9c3400d79f1aa",  # Apr 4, 2017
+    commit = "7c69e980210777a6292351ac6873de083526f08e",  # Jul 18, 2017
     importpath = "k8s.io/client-go",
 )
 
@@ -526,9 +533,10 @@ go_repository(
     importpath = "github.com/pkg/errors",
 )
 
+
 go_repository(
     name = "io_k8s_ingress",
-    commit = "7f3763590a681011eedc4b14a80a97240dea644c",
+    commit = "3495bfb4aca9d34c97ad0cd3915965a79831fc9c",
     importpath = "k8s.io/ingress",
 )
 
@@ -732,6 +740,12 @@ go_repository(
 )
 
 go_repository(
+    name = "com_github_emicklei_go_restful_swagger12",
+    commit = "dcef7f55730566d41eae5db10e7d6981829720f6",
+    importpath = "github.com/emicklei/go-restful-swagger12",
+)
+
+go_repository(
     name = "org_golang_x_oauth2",
     commit = "3c3a985cb79f52a3190fbc056984415ca6763d01",  # Aug 26, 2016 (no releases)
     importpath = "golang.org/x/oauth2",
@@ -739,7 +753,7 @@ go_repository(
 
 go_repository(
     name = "com_github_juju_ratelimit",
-    commit = "acf38b000a03e4ab89e40f20f1e548f4e6ac7f72",  # Mar 13, 2017 (no releases)
+    commit = "5b9ff866471762aa2ab2dced63c9fb6f53921342",
     importpath = "github.com/juju/ratelimit",
 )
 

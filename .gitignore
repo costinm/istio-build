@@ -1,8 +1,7 @@
 cmake-build*/
-bazel-*/
+./bazel-*/
 envoy/
 prebuilts/
 pkg/
 .repo/
-bazel-*
 build-cmake-pi/
