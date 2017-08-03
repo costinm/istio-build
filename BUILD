@@ -4,7 +4,6 @@ pkg_tar(
     name = "istio-bin",
     files = [
         "@pilot//cmd/pilot-agent:pilot-agent",
-        "@pilot//cmd/pilot-discovery:pilot-discovery",
         "@pilot//docker:prepare_proxy",
         "@proxy//src/envoy/mixer:envoy",
     ],
