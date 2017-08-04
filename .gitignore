@@ -1,6 +1,5 @@
 cmake-build*/
 ./bazel-*/
-envoy/
 prebuilts/
 pkg/
 .repo/
