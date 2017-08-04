@@ -31,6 +31,13 @@ function start() {
    --boot-disk-device-name "debtest"
 }
 
+function getDns() {
+
+  DNS=$(kubectl get endpoints  -n kube-system kube-dns -o jsonpath='{.subsets[0].addresses[0].ip}')
+  echo "server=/default.svc.cluster.local/$DNS"
+
+}
+
 function setFirewall() {
   gcloud compute --project=$PROJECT firewall-rules create default-allow-http --network=$NET \
    --allow=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
