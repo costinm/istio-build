@@ -63,7 +63,7 @@ set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl/src)
 # Doesn't work with CMake 2.8 on trusty
 add_subdirectory(third_party/libevent/src)
 add_subdirectory(src/boringssl/src)
-add_subdirectory(src/envoy-remote-filter)
+#add_subdirectory(src/envoy-remote-filter)
 
 # Packages without cmake support - custom files, similar with the custom bazel
 include(tools/cmake/cares.cmake)
