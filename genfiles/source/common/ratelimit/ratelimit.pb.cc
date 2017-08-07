@@ -40,6 +40,7 @@ namespace {
 
 ::google::protobuf::Metadata file_level_metadata[6];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
+const ::google::protobuf::ServiceDescriptor* file_level_service_descriptors[1];
 
 }  // namespace
 
@@ -132,7 +133,7 @@ void protobuf_AssignDescriptors() {
   ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
       "source/common/ratelimit/ratelimit.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, file_level_enum_descriptors, NULL);
+      file_level_metadata, file_level_enum_descriptors, file_level_service_descriptors);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -206,11 +207,11 @@ void AddDescriptorsImpl() {
       "\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\016\n\nOVER_LIMIT\020\0022r\n\020R"
       "ateLimitService\022^\n\017ShouldRateLimit\022#.pb."
       "lyft.ratelimit.RateLimitRequest\032$.pb.lyf"
-      "t.ratelimit.RateLimitResponse\"\000B\013Z\tratel"
-      "imitb\006proto3"
+      "t.ratelimit.RateLimitResponse\"\000B\016Z\tratel"
+      "imit\200\001\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 932);
+      descriptor, 935);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "source/common/ratelimit/ratelimit.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
@@ -2275,6 +2276,91 @@ RateLimitResponse::statuses() const {
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+RateLimitService::~RateLimitService() {}
+
+const ::google::protobuf::ServiceDescriptor* RateLimitService::descriptor() {
+  protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_service_descriptors[0];
+}
+
+const ::google::protobuf::ServiceDescriptor* RateLimitService::GetDescriptor() {
+  return descriptor();
+}
+
+void RateLimitService::ShouldRateLimit(::google::protobuf::RpcController* controller,
+                         const ::pb::lyft::ratelimit::RateLimitRequest*,
+                         ::pb::lyft::ratelimit::RateLimitResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method ShouldRateLimit() not implemented.");
+  done->Run();
+}
+
+void RateLimitService::CallMethod(const ::google::protobuf::MethodDescriptor* method,
+                             ::google::protobuf::RpcController* controller,
+                             const ::google::protobuf::Message* request,
+                             ::google::protobuf::Message* response,
+                             ::google::protobuf::Closure* done) {
+  GOOGLE_DCHECK_EQ(method->service(), protobuf_source_2fcommon_2fratelimit_2fratelimit_2eproto::file_level_service_descriptors[0]);
+  switch(method->index()) {
+    case 0:
+      ShouldRateLimit(controller,
+             ::google::protobuf::down_cast<const ::pb::lyft::ratelimit::RateLimitRequest*>(request),
+             ::google::protobuf::down_cast< ::pb::lyft::ratelimit::RateLimitResponse*>(response),
+             done);
+      break;
+    default:
+      GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
+      break;
+  }
+}
+
+const ::google::protobuf::Message& RateLimitService::GetRequestPrototype(
+    const ::google::protobuf::MethodDescriptor* method) const {
+  GOOGLE_DCHECK_EQ(method->service(), descriptor());
+  switch(method->index()) {
+    case 0:
+      return ::pb::lyft::ratelimit::RateLimitRequest::default_instance();
+    default:
+      GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
+      return *::google::protobuf::MessageFactory::generated_factory()
+          ->GetPrototype(method->input_type());
+  }
+}
+
+const ::google::protobuf::Message& RateLimitService::GetResponsePrototype(
+    const ::google::protobuf::MethodDescriptor* method) const {
+  GOOGLE_DCHECK_EQ(method->service(), descriptor());
+  switch(method->index()) {
+    case 0:
+      return ::pb::lyft::ratelimit::RateLimitResponse::default_instance();
+    default:
+      GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
+      return *::google::protobuf::MessageFactory::generated_factory()
+          ->GetPrototype(method->output_type());
+  }
+}
+
+RateLimitService_Stub::RateLimitService_Stub(::google::protobuf::RpcChannel* channel)
+  : channel_(channel), owns_channel_(false) {}
+RateLimitService_Stub::RateLimitService_Stub(
+    ::google::protobuf::RpcChannel* channel,
+    ::google::protobuf::Service::ChannelOwnership ownership)
+  : channel_(channel),
+    owns_channel_(ownership == ::google::protobuf::Service::STUB_OWNS_CHANNEL) {}
+RateLimitService_Stub::~RateLimitService_Stub() {
+  if (owns_channel_) delete channel_;
+}
+
+void RateLimitService_Stub::ShouldRateLimit(::google::protobuf::RpcController* controller,
+                              const ::pb::lyft::ratelimit::RateLimitRequest* request,
+                              ::pb::lyft::ratelimit::RateLimitResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(0),
+                       controller, request, response, done);
+}
 
 // @@protoc_insertion_point(namespace_scope)
 

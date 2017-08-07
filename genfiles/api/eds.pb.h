@@ -41,6 +41,9 @@
 namespace envoy {
 namespace api {
 namespace v2 {
+class AggregatedConfigSource;
+class AggregatedConfigSourceDefaultTypeInternal;
+extern AggregatedConfigSourceDefaultTypeInternal _AggregatedConfigSource_default_instance_;
 class ApiConfigSource;
 class ApiConfigSourceDefaultTypeInternal;
 extern ApiConfigSourceDefaultTypeInternal _ApiConfigSource_default_instance_;

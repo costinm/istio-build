@@ -41,6 +41,9 @@
 namespace envoy {
 namespace api {
 namespace v2 {
+class AggregatedConfigSource;
+class AggregatedConfigSourceDefaultTypeInternal;
+extern AggregatedConfigSourceDefaultTypeInternal _AggregatedConfigSource_default_instance_;
 class ApiConfigSource;
 class ApiConfigSourceDefaultTypeInternal;
 extern ApiConfigSourceDefaultTypeInternal _ApiConfigSource_default_instance_;
@@ -1044,6 +1047,20 @@ class DiscoveryRequest : public ::google::protobuf::Message /* @@protoc_insertio
   ::std::string* release_version_info();
   void set_allocated_version_info(::std::string* version_info);
 
+  // string type_url = 4;
+  void clear_type_url();
+  static const int kTypeUrlFieldNumber = 4;
+  const ::std::string& type_url() const;
+  void set_type_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_type_url(::std::string&& value);
+  #endif
+  void set_type_url(const char* value);
+  void set_type_url(const char* value, size_t size);
+  ::std::string* mutable_type_url();
+  ::std::string* release_type_url();
+  void set_allocated_type_url(::std::string* type_url);
+
   // .envoy.api.v2.Node node = 2;
   bool has_node() const;
   void clear_node();
@@ -1059,6 +1076,7 @@ class DiscoveryRequest : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::std::string> resource_names_;
   ::google::protobuf::internal::ArenaStringPtr version_info_;
+  ::google::protobuf::internal::ArenaStringPtr type_url_;
   ::envoy::api::v2::Node* node_;
   mutable int _cached_size_;
   friend struct protobuf_api_2fbase_2eproto::TableStruct;
@@ -1314,6 +1332,79 @@ class ApiConfigSource : public ::google::protobuf::Message /* @@protoc_insertion
 };
 // -------------------------------------------------------------------
 
+class AggregatedConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:envoy.api.v2.AggregatedConfigSource) */ {
+ public:
+  AggregatedConfigSource();
+  virtual ~AggregatedConfigSource();
+
+  AggregatedConfigSource(const AggregatedConfigSource& from);
+
+  inline AggregatedConfigSource& operator=(const AggregatedConfigSource& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AggregatedConfigSource& default_instance();
+
+  static inline const AggregatedConfigSource* internal_default_instance() {
+    return reinterpret_cast<const AggregatedConfigSource*>(
+               &_AggregatedConfigSource_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    11;
+
+  void Swap(AggregatedConfigSource* other);
+
+  // implements Message ----------------------------------------------
+
+  inline AggregatedConfigSource* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  AggregatedConfigSource* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const AggregatedConfigSource& from);
+  void MergeFrom(const AggregatedConfigSource& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(AggregatedConfigSource* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:envoy.api.v2.AggregatedConfigSource)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable int _cached_size_;
+  friend struct protobuf_api_2fbase_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class ConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:envoy.api.v2.ConfigSource) */ {
  public:
   ConfigSource();
@@ -1332,6 +1423,7 @@ class ConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_po
   enum ConfigSourceSpecifierCase {
     kPath = 1,
     kApiConfigSource = 2,
+    kAds = 3,
     CONFIG_SOURCE_SPECIFIER_NOT_SET = 0,
   };
 
@@ -1340,7 +1432,7 @@ class ConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_ConfigSource_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(ConfigSource* other);
 
@@ -1410,11 +1502,21 @@ class ConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::envoy::api::v2::ApiConfigSource* release_api_config_source();
   void set_allocated_api_config_source(::envoy::api::v2::ApiConfigSource* api_config_source);
 
+  // .envoy.api.v2.AggregatedConfigSource ads = 3;
+  bool has_ads() const;
+  void clear_ads();
+  static const int kAdsFieldNumber = 3;
+  const ::envoy::api::v2::AggregatedConfigSource& ads() const;
+  ::envoy::api::v2::AggregatedConfigSource* mutable_ads();
+  ::envoy::api::v2::AggregatedConfigSource* release_ads();
+  void set_allocated_ads(::envoy::api::v2::AggregatedConfigSource* ads);
+
   ConfigSourceSpecifierCase config_source_specifier_case() const;
   // @@protoc_insertion_point(class_scope:envoy.api.v2.ConfigSource)
  private:
   void set_has_path();
   void set_has_api_config_source();
+  void set_has_ads();
 
   inline bool has_config_source_specifier() const;
   void clear_config_source_specifier();
@@ -1425,6 +1527,7 @@ class ConfigSource : public ::google::protobuf::Message /* @@protoc_insertion_po
     ConfigSourceSpecifierUnion() {}
     ::google::protobuf::internal::ArenaStringPtr path_;
     ::envoy::api::v2::ApiConfigSource* api_config_source_;
+    ::envoy::api::v2::AggregatedConfigSource* ads_;
   } config_source_specifier_;
   mutable int _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -2291,6 +2394,59 @@ DiscoveryRequest::mutable_resource_names() {
   return &resource_names_;
 }
 
+// string type_url = 4;
+inline void DiscoveryRequest::clear_type_url() {
+  type_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DiscoveryRequest::type_url() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.DiscoveryRequest.type_url)
+  return type_url_.GetNoArena();
+}
+inline void DiscoveryRequest::set_type_url(const ::std::string& value) {
+  
+  type_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.DiscoveryRequest.type_url)
+}
+#if LANG_CXX11
+inline void DiscoveryRequest::set_type_url(::std::string&& value) {
+  
+  type_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.DiscoveryRequest.type_url)
+}
+#endif
+inline void DiscoveryRequest::set_type_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  type_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.DiscoveryRequest.type_url)
+}
+inline void DiscoveryRequest::set_type_url(const char* value, size_t size) {
+  
+  type_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.DiscoveryRequest.type_url)
+}
+inline ::std::string* DiscoveryRequest::mutable_type_url() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.DiscoveryRequest.type_url)
+  return type_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DiscoveryRequest::release_type_url() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.DiscoveryRequest.type_url)
+  
+  return type_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DiscoveryRequest::set_allocated_type_url(::std::string* type_url) {
+  if (type_url != NULL) {
+    
+  } else {
+    
+  }
+  type_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type_url);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.DiscoveryRequest.type_url)
+}
+
 // -------------------------------------------------------------------
 
 // DiscoveryResponse
@@ -2525,6 +2681,10 @@ inline void ApiConfigSource::set_allocated_refresh_delay(::google::protobuf::Dur
 
 // -------------------------------------------------------------------
 
+// AggregatedConfigSource
+
+// -------------------------------------------------------------------
+
 // ConfigSource
 
 // string path = 1;
@@ -2670,6 +2830,54 @@ inline void ConfigSource::set_allocated_api_config_source(::envoy::api::v2::ApiC
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.api_config_source)
 }
 
+// .envoy.api.v2.AggregatedConfigSource ads = 3;
+inline bool ConfigSource::has_ads() const {
+  return config_source_specifier_case() == kAds;
+}
+inline void ConfigSource::set_has_ads() {
+  _oneof_case_[0] = kAds;
+}
+inline void ConfigSource::clear_ads() {
+  if (has_ads()) {
+    delete config_source_specifier_.ads_;
+    clear_has_config_source_specifier();
+  }
+}
+inline  const ::envoy::api::v2::AggregatedConfigSource& ConfigSource::ads() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ConfigSource.ads)
+  return has_ads()
+      ? *config_source_specifier_.ads_
+      : ::envoy::api::v2::AggregatedConfigSource::default_instance();
+}
+inline ::envoy::api::v2::AggregatedConfigSource* ConfigSource::mutable_ads() {
+  if (!has_ads()) {
+    clear_config_source_specifier();
+    set_has_ads();
+    config_source_specifier_.ads_ = new ::envoy::api::v2::AggregatedConfigSource;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ConfigSource.ads)
+  return config_source_specifier_.ads_;
+}
+inline ::envoy::api::v2::AggregatedConfigSource* ConfigSource::release_ads() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ConfigSource.ads)
+  if (has_ads()) {
+    clear_has_config_source_specifier();
+    ::envoy::api::v2::AggregatedConfigSource* temp = config_source_specifier_.ads_;
+    config_source_specifier_.ads_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline void ConfigSource::set_allocated_ads(::envoy::api::v2::AggregatedConfigSource* ads) {
+  clear_config_source_specifier();
+  if (ads) {
+    set_has_ads();
+    config_source_specifier_.ads_ = ads;
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.ads)
+}
+
 inline bool ConfigSource::has_config_source_specifier() const {
   return config_source_specifier_case() != CONFIG_SOURCE_SPECIFIER_NOT_SET;
 }
@@ -2680,6 +2888,8 @@ inline ConfigSource::ConfigSourceSpecifierCase ConfigSource::config_source_speci
   return ConfigSource::ConfigSourceSpecifierCase(_oneof_case_[0]);
 }
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

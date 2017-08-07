@@ -42,10 +42,13 @@ class DiscoveryResponseDefaultTypeInternal : public ::google::protobuf::internal
 } _DiscoveryResponse_default_instance_;
 class ApiConfigSourceDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ApiConfigSource> {
 } _ApiConfigSource_default_instance_;
+class AggregatedConfigSourceDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<AggregatedConfigSource> {
+} _AggregatedConfigSource_default_instance_;
 class ConfigSourceDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ConfigSource> {
   public:
   ::google::protobuf::internal::ArenaStringPtr path_;
   const ::envoy::api::v2::ApiConfigSource* api_config_source_;
+  const ::envoy::api::v2::AggregatedConfigSource* ads_;
 } _ConfigSource_default_instance_;
 
 namespace protobuf_api_2fbase_2eproto {
@@ -53,7 +56,7 @@ namespace protobuf_api_2fbase_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[12];
+::google::protobuf::Metadata file_level_metadata[13];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 }  // namespace
@@ -69,6 +72,7 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] = {
+  { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
   { NULL, NULL, 0, -1, -1, false },
@@ -142,6 +146,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryRequest, version_info_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryRequest, node_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryRequest, resource_names_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryRequest, type_url_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DiscoveryResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -159,12 +164,18 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ApiConfigSource, cluster_name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ApiConfigSource, refresh_delay_),
   ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AggregatedConfigSource, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfigSource, _internal_metadata_),
   ~0u,  // no _extensions_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfigSource, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ConfigSource_default_instance_), path_),
   GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ConfigSource_default_instance_), api_config_source_),
+  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ConfigSource_default_instance_), ads_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ConfigSource, config_source_specifier_),
 };
 
@@ -177,9 +188,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] = {
   { 36, -1, sizeof(HeaderValue)},
   { 43, -1, sizeof(HeaderValueOption)},
   { 50, -1, sizeof(DiscoveryRequest)},
-  { 58, -1, sizeof(DiscoveryResponse)},
-  { 66, -1, sizeof(ApiConfigSource)},
-  { 74, -1, sizeof(ConfigSource)},
+  { 59, -1, sizeof(DiscoveryResponse)},
+  { 67, -1, sizeof(ApiConfigSource)},
+  { 75, -1, sizeof(AggregatedConfigSource)},
+  { 80, -1, sizeof(ConfigSource)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -194,6 +206,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_DiscoveryRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_DiscoveryResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_ApiConfigSource_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_AggregatedConfigSource_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_ConfigSource_default_instance_),
 };
 
@@ -216,7 +229,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
 }
 
 }  // namespace
@@ -242,8 +255,10 @@ void TableStruct::Shutdown() {
   delete file_level_metadata[9].reflection;
   _ApiConfigSource_default_instance_.Shutdown();
   delete file_level_metadata[10].reflection;
-  _ConfigSource_default_instance_.Shutdown();
+  _AggregatedConfigSource_default_instance_.Shutdown();
   delete file_level_metadata[11].reflection;
+  _ConfigSource_default_instance_.Shutdown();
+  delete file_level_metadata[12].reflection;
   delete file_level_metadata[3].reflection;
 }
 
@@ -267,6 +282,7 @@ void TableStruct::InitDefaultsImpl() {
   _DiscoveryRequest_default_instance_.DefaultConstruct();
   _DiscoveryResponse_default_instance_.DefaultConstruct();
   _ApiConfigSource_default_instance_.DefaultConstruct();
+  _AggregatedConfigSource_default_instance_.DefaultConstruct();
   _ConfigSource_default_instance_.DefaultConstruct();
   _Node_default_instance_.get_mutable()->metadata_ = const_cast< ::google::protobuf::Struct*>(
       ::google::protobuf::Struct::internal_default_instance());
@@ -288,6 +304,8 @@ void TableStruct::InitDefaultsImpl() {
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _ConfigSource_default_instance_.api_config_source_ = const_cast< ::envoy::api::v2::ApiConfigSource*>(
       ::envoy::api::v2::ApiConfigSource::internal_default_instance());
+  _ConfigSource_default_instance_.ads_ = const_cast< ::envoy::api::v2::AggregatedConfigSource*>(
+      ::envoy::api::v2::AggregatedConfigSource::internal_default_instance());
 }
 
 void InitDefaults() {
@@ -316,24 +334,27 @@ void AddDescriptorsImpl() {
       "\t\")\n\013HeaderValue\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
       " \001(\t\"j\n\021HeaderValueOption\022)\n\006header\030\001 \001("
       "\0132\031.envoy.api.v2.HeaderValue\022*\n\006append\030\002"
-      " \001(\0132\032.google.protobuf.BoolValue\"b\n\020Disc"
+      " \001(\0132\032.google.protobuf.BoolValue\"t\n\020Disc"
       "overyRequest\022\024\n\014version_info\030\001 \001(\t\022 \n\004no"
       "de\030\002 \001(\0132\022.envoy.api.v2.Node\022\026\n\016resource"
-      "_names\030\003 \003(\t\"b\n\021DiscoveryResponse\022\024\n\014ver"
-      "sion_info\030\001 \001(\t\022\'\n\tresources\030\002 \003(\0132\024.goo"
-      "gle.protobuf.Any\022\016\n\006canary\030\003 \001(\010\"\302\001\n\017Api"
-      "ConfigSource\0227\n\010api_type\030\001 \001(\0162%.envoy.a"
-      "pi.v2.ApiConfigSource.ApiType\022\024\n\014cluster"
-      "_name\030\002 \003(\t\0220\n\rrefresh_delay\030\003 \001(\0132\031.goo"
-      "gle.protobuf.Duration\".\n\007ApiType\022\017\n\013REST"
-      "_LEGACY\020\000\022\010\n\004REST\020\001\022\010\n\004GRPC\020\002\"u\n\014ConfigS"
-      "ource\022\016\n\004path\030\001 \001(\tH\000\022:\n\021api_config_sour"
-      "ce\030\002 \001(\0132\035.envoy.api.v2.ApiConfigSourceH"
-      "\000B\031\n\027config_source_specifier*(\n\017RoutingP"
-      "riority\022\013\n\007DEFAULT\020\000\022\010\n\004HIGH\020\001b\006proto3"
+      "_names\030\003 \003(\t\022\020\n\010type_url\030\004 \001(\t\"b\n\021Discov"
+      "eryResponse\022\024\n\014version_info\030\001 \001(\t\022\'\n\tres"
+      "ources\030\002 \003(\0132\024.google.protobuf.Any\022\016\n\006ca"
+      "nary\030\003 \001(\010\"\302\001\n\017ApiConfigSource\0227\n\010api_ty"
+      "pe\030\001 \001(\0162%.envoy.api.v2.ApiConfigSource."
+      "ApiType\022\024\n\014cluster_name\030\002 \003(\t\0220\n\rrefresh"
+      "_delay\030\003 \001(\0132\031.google.protobuf.Duration\""
+      ".\n\007ApiType\022\017\n\013REST_LEGACY\020\000\022\010\n\004REST\020\001\022\010\n"
+      "\004GRPC\020\002\"\030\n\026AggregatedConfigSource\"\252\001\n\014Co"
+      "nfigSource\022\016\n\004path\030\001 \001(\tH\000\022:\n\021api_config"
+      "_source\030\002 \001(\0132\035.envoy.api.v2.ApiConfigSo"
+      "urceH\000\0223\n\003ads\030\003 \001(\0132$.envoy.api.v2.Aggre"
+      "gatedConfigSourceH\000B\031\n\027config_source_spe"
+      "cifier*(\n\017RoutingPriority\022\013\n\007DEFAULT\020\000\022\010"
+      "\n\004HIGH\020\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1358);
+      descriptor, 1456);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api/base.proto", &protobuf_RegisterTypes);
   ::envoy::api::v2::protobuf_api_2faddress_2eproto::AddDescriptors();
@@ -3244,6 +3265,7 @@ void HeaderValueOption::set_allocated_append(::google::protobuf::BoolValue* appe
 const int DiscoveryRequest::kVersionInfoFieldNumber;
 const int DiscoveryRequest::kNodeFieldNumber;
 const int DiscoveryRequest::kResourceNamesFieldNumber;
+const int DiscoveryRequest::kTypeUrlFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DiscoveryRequest::DiscoveryRequest()
@@ -3264,6 +3286,10 @@ DiscoveryRequest::DiscoveryRequest(const DiscoveryRequest& from)
   if (from.version_info().size() > 0) {
     version_info_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_info_);
   }
+  type_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.type_url().size() > 0) {
+    type_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_url_);
+  }
   if (from.has_node()) {
     node_ = new ::envoy::api::v2::Node(*from.node_);
   } else {
@@ -3274,6 +3300,7 @@ DiscoveryRequest::DiscoveryRequest(const DiscoveryRequest& from)
 
 void DiscoveryRequest::SharedCtor() {
   version_info_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   node_ = NULL;
   _cached_size_ = 0;
 }
@@ -3285,6 +3312,7 @@ DiscoveryRequest::~DiscoveryRequest() {
 
 void DiscoveryRequest::SharedDtor() {
   version_info_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) {
     delete node_;
   }
@@ -3317,6 +3345,7 @@ void DiscoveryRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.DiscoveryRequest)
   resource_names_.Clear();
   version_info_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == NULL && node_ != NULL) {
     delete node_;
   }
@@ -3378,6 +3407,22 @@ bool DiscoveryRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // string type_url = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_type_url()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->type_url().data(), this->type_url().length(),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "envoy.api.v2.DiscoveryRequest.type_url"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -3431,6 +3476,16 @@ void DiscoveryRequest::SerializeWithCachedSizes(
       3, this->resource_names(i), output);
   }
 
+  // string type_url = 4;
+  if (this->type_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->type_url().data(), this->type_url().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.DiscoveryRequest.type_url");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->type_url(), output);
+  }
+
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.DiscoveryRequest)
 }
 
@@ -3469,6 +3524,17 @@ void DiscoveryRequest::SerializeWithCachedSizes(
       WriteStringToArray(3, this->resource_names(i), target);
   }
 
+  // string type_url = 4;
+  if (this->type_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->type_url().data(), this->type_url().length(),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.DiscoveryRequest.type_url");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->type_url(), target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.DiscoveryRequest)
   return target;
 }
@@ -3490,6 +3556,13 @@ size_t DiscoveryRequest::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->version_info());
+  }
+
+  // string type_url = 4;
+  if (this->type_url().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->type_url());
   }
 
   // .envoy.api.v2.Node node = 2;
@@ -3533,6 +3606,10 @@ void DiscoveryRequest::MergeFrom(const DiscoveryRequest& from) {
 
     version_info_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_info_);
   }
+  if (from.type_url().size() > 0) {
+
+    type_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_url_);
+  }
   if (from.has_node()) {
     mutable_node()->::envoy::api::v2::Node::MergeFrom(from.node());
   }
@@ -3563,6 +3640,7 @@ void DiscoveryRequest::Swap(DiscoveryRequest* other) {
 void DiscoveryRequest::InternalSwap(DiscoveryRequest* other) {
   resource_names_.InternalSwap(&other->resource_names_);
   version_info_.Swap(&other->version_info_);
+  type_url_.Swap(&other->type_url_);
   std::swap(node_, other->node_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -3734,6 +3812,59 @@ DiscoveryRequest::resource_names() const {
 DiscoveryRequest::mutable_resource_names() {
   // @@protoc_insertion_point(field_mutable_list:envoy.api.v2.DiscoveryRequest.resource_names)
   return &resource_names_;
+}
+
+// string type_url = 4;
+void DiscoveryRequest::clear_type_url() {
+  type_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& DiscoveryRequest::type_url() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.DiscoveryRequest.type_url)
+  return type_url_.GetNoArena();
+}
+void DiscoveryRequest::set_type_url(const ::std::string& value) {
+  
+  type_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.DiscoveryRequest.type_url)
+}
+#if LANG_CXX11
+void DiscoveryRequest::set_type_url(::std::string&& value) {
+  
+  type_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.DiscoveryRequest.type_url)
+}
+#endif
+void DiscoveryRequest::set_type_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  type_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.DiscoveryRequest.type_url)
+}
+void DiscoveryRequest::set_type_url(const char* value, size_t size) {
+  
+  type_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.DiscoveryRequest.type_url)
+}
+::std::string* DiscoveryRequest::mutable_type_url() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.DiscoveryRequest.type_url)
+  return type_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* DiscoveryRequest::release_type_url() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.DiscoveryRequest.type_url)
+  
+  return type_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void DiscoveryRequest::set_allocated_type_url(::std::string* type_url) {
+  if (type_url != NULL) {
+    
+  } else {
+    
+  }
+  type_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type_url);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.DiscoveryRequest.type_url)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -4605,8 +4736,186 @@ void ApiConfigSource::set_allocated_refresh_delay(::google::protobuf::Duration* 
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+AggregatedConfigSource::AggregatedConfigSource()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_api_2fbase_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:envoy.api.v2.AggregatedConfigSource)
+}
+AggregatedConfigSource::AggregatedConfigSource(const AggregatedConfigSource& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.AggregatedConfigSource)
+}
+
+void AggregatedConfigSource::SharedCtor() {
+  _cached_size_ = 0;
+}
+
+AggregatedConfigSource::~AggregatedConfigSource() {
+  // @@protoc_insertion_point(destructor:envoy.api.v2.AggregatedConfigSource)
+  SharedDtor();
+}
+
+void AggregatedConfigSource::SharedDtor() {
+}
+
+void AggregatedConfigSource::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* AggregatedConfigSource::descriptor() {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const AggregatedConfigSource& AggregatedConfigSource::default_instance() {
+  protobuf_api_2fbase_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+AggregatedConfigSource* AggregatedConfigSource::New(::google::protobuf::Arena* arena) const {
+  AggregatedConfigSource* n = new AggregatedConfigSource;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void AggregatedConfigSource::Clear() {
+// @@protoc_insertion_point(message_clear_start:envoy.api.v2.AggregatedConfigSource)
+}
+
+bool AggregatedConfigSource::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:envoy.api.v2.AggregatedConfigSource)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0 ||
+        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:envoy.api.v2.AggregatedConfigSource)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:envoy.api.v2.AggregatedConfigSource)
+  return false;
+#undef DO_
+}
+
+void AggregatedConfigSource::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:envoy.api.v2.AggregatedConfigSource)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // @@protoc_insertion_point(serialize_end:envoy.api.v2.AggregatedConfigSource)
+}
+
+::google::protobuf::uint8* AggregatedConfigSource::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.AggregatedConfigSource)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.AggregatedConfigSource)
+  return target;
+}
+
+size_t AggregatedConfigSource::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.AggregatedConfigSource)
+  size_t total_size = 0;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void AggregatedConfigSource::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.AggregatedConfigSource)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AggregatedConfigSource* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const AggregatedConfigSource>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.AggregatedConfigSource)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.AggregatedConfigSource)
+    MergeFrom(*source);
+  }
+}
+
+void AggregatedConfigSource::MergeFrom(const AggregatedConfigSource& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.AggregatedConfigSource)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void AggregatedConfigSource::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.AggregatedConfigSource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AggregatedConfigSource::CopyFrom(const AggregatedConfigSource& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.AggregatedConfigSource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AggregatedConfigSource::IsInitialized() const {
+  return true;
+}
+
+void AggregatedConfigSource::Swap(AggregatedConfigSource* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AggregatedConfigSource::InternalSwap(AggregatedConfigSource* other) {
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata AggregatedConfigSource::GetMetadata() const {
+  protobuf_api_2fbase_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2fbase_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// AggregatedConfigSource
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ConfigSource::kPathFieldNumber;
 const int ConfigSource::kApiConfigSourceFieldNumber;
+const int ConfigSource::kAdsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ConfigSource::ConfigSource()
@@ -4630,6 +4939,10 @@ ConfigSource::ConfigSource(const ConfigSource& from)
     }
     case kApiConfigSource: {
       mutable_api_config_source()->::envoy::api::v2::ApiConfigSource::MergeFrom(from.api_config_source());
+      break;
+    }
+    case kAds: {
+      mutable_ads()->::envoy::api::v2::AggregatedConfigSource::MergeFrom(from.ads());
       break;
     }
     case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
@@ -4689,6 +5002,10 @@ void ConfigSource::clear_config_source_specifier() {
       delete config_source_specifier_.api_config_source_;
       break;
     }
+    case kAds: {
+      delete config_source_specifier_.ads_;
+      break;
+    }
     case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
       break;
     }
@@ -4740,6 +5057,18 @@ bool ConfigSource::MergePartialFromCodedStream(
         break;
       }
 
+      // .envoy.api.v2.AggregatedConfigSource ads = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_ads()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0 ||
@@ -4783,6 +5112,12 @@ void ConfigSource::SerializeWithCachedSizes(
       2, *config_source_specifier_.api_config_source_, output);
   }
 
+  // .envoy.api.v2.AggregatedConfigSource ads = 3;
+  if (has_ads()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, *config_source_specifier_.ads_, output);
+  }
+
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.ConfigSource)
 }
 
@@ -4811,6 +5146,13 @@ void ConfigSource::SerializeWithCachedSizes(
         2, *config_source_specifier_.api_config_source_, deterministic, target);
   }
 
+  // .envoy.api.v2.AggregatedConfigSource ads = 3;
+  if (has_ads()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, *config_source_specifier_.ads_, deterministic, target);
+  }
+
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ConfigSource)
   return target;
 }
@@ -4832,6 +5174,13 @@ size_t ConfigSource::ByteSizeLong() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *config_source_specifier_.api_config_source_);
+      break;
+    }
+    // .envoy.api.v2.AggregatedConfigSource ads = 3;
+    case kAds: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *config_source_specifier_.ads_);
       break;
     }
     case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
@@ -4874,6 +5223,10 @@ void ConfigSource::MergeFrom(const ConfigSource& from) {
     }
     case kApiConfigSource: {
       mutable_api_config_source()->::envoy::api::v2::ApiConfigSource::MergeFrom(from.api_config_source());
+      break;
+    }
+    case kAds: {
+      mutable_ads()->::envoy::api::v2::AggregatedConfigSource::MergeFrom(from.ads());
       break;
     }
     case CONFIG_SOURCE_SPECIFIER_NOT_SET: {
@@ -5059,6 +5412,54 @@ void ConfigSource::set_allocated_api_config_source(::envoy::api::v2::ApiConfigSo
     config_source_specifier_.api_config_source_ = api_config_source;
   }
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.api_config_source)
+}
+
+// .envoy.api.v2.AggregatedConfigSource ads = 3;
+bool ConfigSource::has_ads() const {
+  return config_source_specifier_case() == kAds;
+}
+void ConfigSource::set_has_ads() {
+  _oneof_case_[0] = kAds;
+}
+void ConfigSource::clear_ads() {
+  if (has_ads()) {
+    delete config_source_specifier_.ads_;
+    clear_has_config_source_specifier();
+  }
+}
+ const ::envoy::api::v2::AggregatedConfigSource& ConfigSource::ads() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.ConfigSource.ads)
+  return has_ads()
+      ? *config_source_specifier_.ads_
+      : ::envoy::api::v2::AggregatedConfigSource::default_instance();
+}
+::envoy::api::v2::AggregatedConfigSource* ConfigSource::mutable_ads() {
+  if (!has_ads()) {
+    clear_config_source_specifier();
+    set_has_ads();
+    config_source_specifier_.ads_ = new ::envoy::api::v2::AggregatedConfigSource;
+  }
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ConfigSource.ads)
+  return config_source_specifier_.ads_;
+}
+::envoy::api::v2::AggregatedConfigSource* ConfigSource::release_ads() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.ConfigSource.ads)
+  if (has_ads()) {
+    clear_has_config_source_specifier();
+    ::envoy::api::v2::AggregatedConfigSource* temp = config_source_specifier_.ads_;
+    config_source_specifier_.ads_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+void ConfigSource::set_allocated_ads(::envoy::api::v2::AggregatedConfigSource* ads) {
+  clear_config_source_specifier();
+  if (ads) {
+    set_has_ads();
+    config_source_specifier_.ads_ = ads;
+  }
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ConfigSource.ads)
 }
 
 bool ConfigSource::has_config_source_specifier() const {

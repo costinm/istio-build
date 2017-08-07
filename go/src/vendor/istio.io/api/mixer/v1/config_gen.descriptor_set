@@ -1,71 +1,0 @@
-
-Ÿ
-mixer/v1/config/cfg.protoistio.mixer.v1.configgoogle/protobuf/struct.proto5mixer/v1/config/descriptor/log_entry_descriptor.proto2mixer/v1/config/descriptor/metric_descriptor.proto>mixer/v1/config/descriptor/monitored_resource_descriptor.proto5mixer/v1/config/descriptor/principal_descriptor.proto1mixer/v1/config/descriptor/quota_descriptor.proto+mixer/v1/config/descriptor/value_type.proto"Ž
-ServiceConfig
-subject (	Rsubject
-revision (	Rrevision;
-rules (2!.istio.mixer.v1.config.AspectRuleBRrulesF
-constructors (2".istio.mixer.v1.config.ConstructorRconstructors>
-action_rules (2.istio.mixer.v1.config.RuleRactionRules:"š
-
-AspectRule
-selector (	Rselector7
-aspects (2.istio.mixer.v1.config.AspectRaspects7
-rules (2!.istio.mixer.v1.config.AspectRuleRrules"g
-Aspect
-kind (	Rkind
-adapter (	Radapter/
-params (2.google.protobuf.StructRparams"v
-Adapter
-name (	Rname
-kind (	Rkind
-impl (	Rimpl/
-params (2.google.protobuf.StructRparams"˜
-GlobalConfig
-revision (	Rrevision:
-adapters (2.istio.mixer.v1.config.AdapterRadaptersF
-	manifests (2(.istio.mixer.v1.config.AttributeManifestR	manifestsH
-logs (24.istio.mixer.v1.config.descriptor.LogEntryDescriptorRlogsL
-metrics (22.istio.mixer.v1.config.descriptor.MetricDescriptorRmetricsn
-monitored_resources (2=.istio.mixer.v1.config.descriptor.MonitoredResourceDescriptorRmonitoredResourcesU
-
-principals (25.istio.mixer.v1.config.descriptor.PrincipalDescriptorR
-principalsI
-quotas (21.istio.mixer.v1.config.descriptor.QuotaDescriptorRquotas:
-handlers	 (2.istio.mixer.v1.config.HandlerRhandlers:"“
-AttributeManifest
-revision (	Rrevision
-name (	RnameX
-
-attributes (28.istio.mixer.v1.config.AttributeManifest.AttributesEntryR
-attributes}
-AttributeInfo 
-description (	RdescriptionJ
-
-value_type (2+.istio.mixer.v1.config.descriptor.ValueTypeR	valueTypeu
-AttributesEntry
-key (	RkeyL
-value (26.istio.mixer.v1.config.AttributeManifest.AttributeInfoRvalue:8"
-Uri
-value (	Rvalue"!
-	IpAddress
-value (Rvalue"
-DnsName
-value (	Rvalue"$
-EmailAddress
-value (	Rvalue"Ž
-Rule
-selector (	Rselector7
-actions (2.istio.mixer.v1.config.ActionRactions1
-rules (2.istio.mixer.v1.config.RuleRrules"@
-Action
-handler (	Rhandler
-	instances (	R	instances"
-Constructor#
-instance_name (	RinstanceName
-template (	Rtemplate/
-params (2.google.protobuf.StructRparams"h
-Handler
-name (	Rname
-adapter (	Radapter/
-params (2.google.protobuf.StructRparamsbproto3

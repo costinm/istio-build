@@ -169,8 +169,8 @@ void TableStruct::InitDefaultsImpl() {
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::InitDefaults();
-  ::google::rpc::protobuf_google_2frpc_2fstatus_2eproto::InitDefaults();
   ::istio::mixer::v1::protobuf_mixer_2fv1_2fattributes_2eproto::InitDefaults();
+  ::google::rpc::protobuf_google_2frpc_2fstatus_2eproto::InitDefaults();
   _CheckRequest_QuotaParams_default_instance_.DefaultConstruct();
   _CheckRequest_QuotasEntry_default_instance_.DefaultConstruct();
   _CheckRequest_default_instance_.DefaultConstruct();
@@ -204,8 +204,8 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] = {
       "\n\024mixer/v1/check.proto\022\016istio.mixer.v1\032\036"
-      "google/protobuf/duration.proto\032\027google/r"
-      "pc/status.proto\032\031mixer/v1/attributes.pro"
+      "google/protobuf/duration.proto\032\031mixer/v1"
+      "/attributes.proto\032\027google/rpc/status.pro"
       "to\"\272\002\n\014CheckRequest\022.\n\nattributes\030\001 \001(\0132"
       "\032.istio.mixer.v1.Attributes\022\031\n\021global_wo"
       "rd_count\030\002 \001(\r\022\030\n\020deduplication_id\030\003 \001(\t"
@@ -233,8 +233,8 @@ void AddDescriptorsImpl() {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "mixer/v1/check.proto", &protobuf_RegisterTypes);
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
-  ::google::rpc::protobuf_google_2frpc_2fstatus_2eproto::AddDescriptors();
   ::istio::mixer::v1::protobuf_mixer_2fv1_2fattributes_2eproto::AddDescriptors();
+  ::google::rpc::protobuf_google_2frpc_2fstatus_2eproto::AddDescriptors();
   ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
 

@@ -29,7 +29,7 @@ pkg_tar(
 )
 
 pkg_deb(
-    name = "istio.deb",
+    name = "istio-proxy.deb",
     architecture = "amd64",
     built_using = "bazel",
     data = ":debian-data",
@@ -42,9 +42,4 @@ pkg_deb(
     package = "istio",
     postinst = "tools/deb/postinst.sh",
     version = "0.2.1",
-)
-
-alias(
-    name = "istio-proxy.deb",
-    actual = "@proxy//:istio-proxy.deb",
 )
