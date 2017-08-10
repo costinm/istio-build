@@ -1,0 +1,5 @@
+# If dnsmasq is used together with dhclient, this file need to be installed as /etc/dhclient.conf
+
+interface "eth0" {
+  prepend domain-name-servers 127.0.0.1;
+}
