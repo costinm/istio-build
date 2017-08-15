@@ -70,6 +70,16 @@ function initK8SPilot() {
 
 }
 
+function initClearIPTables() {
+  $SSH -c "iptables -t nat -F; iptables  -t nat -X ISTIO_REDIRECT; iptables  -t nat -X ISTIO_OUTPUT"
+}
+
+function initSetIPTables() {
+  # TODO: how to find the service CIDR range automatically ?
+  $SSH -c "/usr/local/bin/prepare_proxy.sh -p 15001 -u 0 -i 10.23.0.0/16"
+
+}
+
 CMD=$1
 
 SCP="gcloud compute scp --project $PROJECT --zone $ZONE"

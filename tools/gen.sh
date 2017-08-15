@@ -21,6 +21,8 @@ mkdir -p genfiles/src/lightstep/lightstep-tracer-common
 cp -a -f bazel-out/local-fastbuild/genfiles/src/lightstep/lightstep-tracer-common/* genfiles/src/lightstep/lightstep-tracer-common
 cp -a -f bazel-out/local-fastbuild/genfiles/src/lightstep/lightstep-tracer-common/* genfiles/src/lightstep/lightstep-tracer-common
 
+cp -a -f bazel-genfiles/external/proxy/src genfiles
+
 # Go genfiles
 rm -rf go/src/vendor/istio.io/*
 rm -rf go/src/vendor/github.com/googleapis/googleapis
