@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/.repo/manifests" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.repo/repo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/envoy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go/src/istio.io/pilot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/api" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/backward" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/boringssl" vcs="Git" />

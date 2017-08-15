@@ -5,7 +5,6 @@ include_directories(
 )
 
 set(ENVOY_SOURCE_FILES
-
         # Problems compiling on android:
         envoy/source/common/common/to_lower_table.cc
         envoy/source/common/filesystem/watcher_impl.cc

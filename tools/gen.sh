@@ -23,6 +23,8 @@ cp -a -f bazel-genfiles/external/io_istio_api/mixer genfiles/
 cp -a -f bazel-genfiles/external/proxy/src genfiles/
 
 
+cp -a -f bazel-genfiles/external/proxy/src genfiles
+
 # Go genfiles
 rm -rf go/src/vendor/istio.io/*
 rm -rf go/src/vendor/github.com/googleapis/googleapis
