@@ -38,6 +38,10 @@ function buildAndroid() {
 
 }
 
+function buildAlpine() {
+
+    docker run -it --rm -v $WS:/workspace alpine sh -c /workspace/tools/build_alpine.sh
+}
 
 function genUpdate() {
 
@@ -81,8 +85,11 @@ case "$1" in
     "pi")
         buildPi
     ;;
+    "alpine")
+        buildAlpine
+    ;;
     *)
-        echo "update android pi"
+        echo "update android pi alpine"
         exit 1
     ;;
 esac
