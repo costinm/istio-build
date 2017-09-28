@@ -20,27 +20,60 @@
 namespace istio {
 namespace mixer {
 namespace v1 {
-class Attributes_StringsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_StringsEntry> {
+class Attributes_StringsEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_StringsEntry>
+     _instance;
 } _Attributes_StringsEntry_default_instance_;
-class Attributes_Int64sEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_Int64sEntry> {
+class Attributes_Int64sEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_Int64sEntry>
+     _instance;
 } _Attributes_Int64sEntry_default_instance_;
-class Attributes_DoublesEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_DoublesEntry> {
+class Attributes_DoublesEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_DoublesEntry>
+     _instance;
 } _Attributes_DoublesEntry_default_instance_;
-class Attributes_BoolsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_BoolsEntry> {
+class Attributes_BoolsEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_BoolsEntry>
+     _instance;
 } _Attributes_BoolsEntry_default_instance_;
-class Attributes_TimestampsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_TimestampsEntry> {
+class Attributes_TimestampsEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_TimestampsEntry>
+     _instance;
 } _Attributes_TimestampsEntry_default_instance_;
-class Attributes_DurationsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_DurationsEntry> {
+class Attributes_DurationsEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_DurationsEntry>
+     _instance;
 } _Attributes_DurationsEntry_default_instance_;
-class Attributes_BytesEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_BytesEntry> {
+class Attributes_BytesEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_BytesEntry>
+     _instance;
 } _Attributes_BytesEntry_default_instance_;
-class Attributes_StringMapsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_StringMapsEntry> {
+class Attributes_StringMapsEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes::Attributes_StringMapsEntry>
+     _instance;
 } _Attributes_StringMapsEntry_default_instance_;
-class AttributesDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Attributes> {
+class AttributesDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Attributes>
+     _instance;
 } _Attributes_default_instance_;
-class StringMap_EntriesEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<StringMap::StringMap_EntriesEntry> {
+class StringMap_EntriesEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<StringMap::StringMap_EntriesEntry>
+     _instance;
 } _StringMap_EntriesEntry_default_instance_;
-class StringMapDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<StringMap> {
+class StringMapDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<StringMap>
+     _instance;
 } _StringMap_default_instance_;
 
 namespace protobuf_mixer_2fv1_2fattributes_2eproto {
@@ -53,30 +86,30 @@ namespace {
 }  // namespace
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
-    const TableStruct::entries[] = {
+    const TableStruct::entries[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
 };
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
-    const TableStruct::aux[] = {
+    const TableStruct::aux[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ::google::protobuf::internal::AuxillaryParseTableField(),
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
-    TableStruct::schema[] = {
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
+    TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
-const ::google::protobuf::uint32 TableStruct::offsets[] = {
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Attributes, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -98,8 +131,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringMap, entries_),
 };
-
-static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(Attributes)},
   { 14, -1, sizeof(StringMap)},
 };
@@ -126,15 +158,15 @@ void protobuf_AssignDescriptors() {
   AssignDescriptors(
       "mixer/v1/attributes.proto", schemas, file_default_instances, TableStruct::offsets, factory,
       file_level_metadata, NULL, NULL);
-file_level_metadata[0].reflection = Attributes::Attributes_StringsEntry::CreateReflection(file_level_metadata[0].descriptor, _Attributes_StringsEntry_default_instance_.get_mutable());
-file_level_metadata[1].reflection = Attributes::Attributes_Int64sEntry::CreateReflection(file_level_metadata[1].descriptor, _Attributes_Int64sEntry_default_instance_.get_mutable());
-file_level_metadata[2].reflection = Attributes::Attributes_DoublesEntry::CreateReflection(file_level_metadata[2].descriptor, _Attributes_DoublesEntry_default_instance_.get_mutable());
-file_level_metadata[3].reflection = Attributes::Attributes_BoolsEntry::CreateReflection(file_level_metadata[3].descriptor, _Attributes_BoolsEntry_default_instance_.get_mutable());
-file_level_metadata[4].reflection = Attributes::Attributes_TimestampsEntry::CreateReflection(file_level_metadata[4].descriptor, _Attributes_TimestampsEntry_default_instance_.get_mutable());
-file_level_metadata[5].reflection = Attributes::Attributes_DurationsEntry::CreateReflection(file_level_metadata[5].descriptor, _Attributes_DurationsEntry_default_instance_.get_mutable());
-file_level_metadata[6].reflection = Attributes::Attributes_BytesEntry::CreateReflection(file_level_metadata[6].descriptor, _Attributes_BytesEntry_default_instance_.get_mutable());
-file_level_metadata[7].reflection = Attributes::Attributes_StringMapsEntry::CreateReflection(file_level_metadata[7].descriptor, _Attributes_StringMapsEntry_default_instance_.get_mutable());
-file_level_metadata[9].reflection = StringMap::StringMap_EntriesEntry::CreateReflection(file_level_metadata[9].descriptor, _StringMap_EntriesEntry_default_instance_.get_mutable());
+file_level_metadata[0].reflection = Attributes::Attributes_StringsEntry::CreateReflection(file_level_metadata[0].descriptor, _Attributes_StringsEntry_default_instance_._instance.get_mutable());
+file_level_metadata[1].reflection = Attributes::Attributes_Int64sEntry::CreateReflection(file_level_metadata[1].descriptor, _Attributes_Int64sEntry_default_instance_._instance.get_mutable());
+file_level_metadata[2].reflection = Attributes::Attributes_DoublesEntry::CreateReflection(file_level_metadata[2].descriptor, _Attributes_DoublesEntry_default_instance_._instance.get_mutable());
+file_level_metadata[3].reflection = Attributes::Attributes_BoolsEntry::CreateReflection(file_level_metadata[3].descriptor, _Attributes_BoolsEntry_default_instance_._instance.get_mutable());
+file_level_metadata[4].reflection = Attributes::Attributes_TimestampsEntry::CreateReflection(file_level_metadata[4].descriptor, _Attributes_TimestampsEntry_default_instance_._instance.get_mutable());
+file_level_metadata[5].reflection = Attributes::Attributes_DurationsEntry::CreateReflection(file_level_metadata[5].descriptor, _Attributes_DurationsEntry_default_instance_._instance.get_mutable());
+file_level_metadata[6].reflection = Attributes::Attributes_BytesEntry::CreateReflection(file_level_metadata[6].descriptor, _Attributes_BytesEntry_default_instance_._instance.get_mutable());
+file_level_metadata[7].reflection = Attributes::Attributes_StringMapsEntry::CreateReflection(file_level_metadata[7].descriptor, _Attributes_StringMapsEntry_default_instance_._instance.get_mutable());
+file_level_metadata[9].reflection = StringMap::StringMap_EntriesEntry::CreateReflection(file_level_metadata[9].descriptor, _StringMap_EntriesEntry_default_instance_._instance.get_mutable());
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -149,113 +181,111 @@ void protobuf_RegisterTypes(const ::std::string&) {
 }
 
 }  // namespace
-
-void TableStruct::Shutdown() {
-  _Attributes_default_instance_.Shutdown();
-  delete file_level_metadata[8].reflection;
-  _StringMap_default_instance_.Shutdown();
-  delete file_level_metadata[10].reflection;
-  delete file_level_metadata[0].reflection;
-  delete file_level_metadata[1].reflection;
-  delete file_level_metadata[2].reflection;
-  delete file_level_metadata[3].reflection;
-  delete file_level_metadata[4].reflection;
-  delete file_level_metadata[5].reflection;
-  delete file_level_metadata[6].reflection;
-  delete file_level_metadata[7].reflection;
-  delete file_level_metadata[9].reflection;
-}
-
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
+  ::gogoproto::protobuf_gogoproto_2fgogo_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2ftimestamp_2eproto::InitDefaults();
-  _Attributes_StringsEntry_default_instance_.DefaultConstruct();
-  _Attributes_Int64sEntry_default_instance_.DefaultConstruct();
-  _Attributes_DoublesEntry_default_instance_.DefaultConstruct();
-  _Attributes_BoolsEntry_default_instance_.DefaultConstruct();
-  _Attributes_TimestampsEntry_default_instance_.DefaultConstruct();
-  _Attributes_DurationsEntry_default_instance_.DefaultConstruct();
-  _Attributes_BytesEntry_default_instance_.DefaultConstruct();
-  _Attributes_StringMapsEntry_default_instance_.DefaultConstruct();
-  _Attributes_default_instance_.DefaultConstruct();
-  _StringMap_EntriesEntry_default_instance_.DefaultConstruct();
-  _StringMap_default_instance_.DefaultConstruct();
-  _Attributes_StringsEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_StringsEntry_default_instance_.get_mutable());
-  _Attributes_StringsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_Int64sEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_Int64sEntry_default_instance_.get_mutable());
-  _Attributes_Int64sEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_DoublesEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_DoublesEntry_default_instance_.get_mutable());
-  _Attributes_DoublesEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_BoolsEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_BoolsEntry_default_instance_.get_mutable());
-  _Attributes_BoolsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_TimestampsEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_TimestampsEntry_default_instance_.get_mutable());
-  _Attributes_TimestampsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_DurationsEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_DurationsEntry_default_instance_.get_mutable());
-  _Attributes_DurationsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_BytesEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_BytesEntry_default_instance_.get_mutable());
-  _Attributes_BytesEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _Attributes_StringMapsEntry_default_instance_.get_mutable()->set_default_instance(_Attributes_StringMapsEntry_default_instance_.get_mutable());
-  _Attributes_StringMapsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _StringMap_EntriesEntry_default_instance_.get_mutable()->set_default_instance(_StringMap_EntriesEntry_default_instance_.get_mutable());
-  _StringMap_EntriesEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
+  _Attributes_StringsEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_StringsEntry_default_instance_);_Attributes_Int64sEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_Int64sEntry_default_instance_);_Attributes_DoublesEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_DoublesEntry_default_instance_);_Attributes_BoolsEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_BoolsEntry_default_instance_);_Attributes_TimestampsEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_TimestampsEntry_default_instance_);_Attributes_DurationsEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_DurationsEntry_default_instance_);_Attributes_BytesEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_BytesEntry_default_instance_);_Attributes_StringMapsEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_StringMapsEntry_default_instance_);_Attributes_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Attributes_default_instance_);_StringMap_EntriesEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_StringMap_EntriesEntry_default_instance_);_StringMap_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_StringMap_default_instance_);_Attributes_StringsEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_StringsEntry_default_instance_._instance.get_mutable());
+  _Attributes_StringsEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_Int64sEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_Int64sEntry_default_instance_._instance.get_mutable());
+  _Attributes_Int64sEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_DoublesEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_DoublesEntry_default_instance_._instance.get_mutable());
+  _Attributes_DoublesEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_BoolsEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_BoolsEntry_default_instance_._instance.get_mutable());
+  _Attributes_BoolsEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_TimestampsEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_TimestampsEntry_default_instance_._instance.get_mutable());
+  _Attributes_TimestampsEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_DurationsEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_DurationsEntry_default_instance_._instance.get_mutable());
+  _Attributes_DurationsEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_BytesEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_BytesEntry_default_instance_._instance.get_mutable());
+  _Attributes_BytesEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _Attributes_StringMapsEntry_default_instance_._instance.get_mutable()->set_default_instance(_Attributes_StringMapsEntry_default_instance_._instance.get_mutable());
+  _Attributes_StringMapsEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
+  _StringMap_EntriesEntry_default_instance_._instance.get_mutable()->set_default_instance(_StringMap_EntriesEntry_default_instance_._instance.get_mutable());
+  _StringMap_EntriesEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
 }
 
 void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
 }
+namespace {
 void AddDescriptorsImpl() {
   InitDefaults();
-  static const char descriptor[] = {
+  static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\031mixer/v1/attributes.proto\022\016istio.mixer"
-      ".v1\032\036google/protobuf/duration.proto\032\037goo"
-      "gle/protobuf/timestamp.proto\"\307\007\n\nAttribu"
-      "tes\022\r\n\005words\030\001 \003(\t\0228\n\007strings\030\002 \003(\0132\'.is"
-      "tio.mixer.v1.Attributes.StringsEntry\0226\n\006"
-      "int64s\030\003 \003(\0132&.istio.mixer.v1.Attributes"
-      ".Int64sEntry\0228\n\007doubles\030\004 \003(\0132\'.istio.mi"
-      "xer.v1.Attributes.DoublesEntry\0224\n\005bools\030"
-      "\005 \003(\0132%.istio.mixer.v1.Attributes.BoolsE"
-      "ntry\022>\n\ntimestamps\030\006 \003(\0132*.istio.mixer.v"
-      "1.Attributes.TimestampsEntry\022<\n\tduration"
-      "s\030\007 \003(\0132).istio.mixer.v1.Attributes.Dura"
-      "tionsEntry\0224\n\005bytes\030\010 \003(\0132%.istio.mixer."
-      "v1.Attributes.BytesEntry\022\?\n\013string_maps\030"
-      "\t \003(\0132*.istio.mixer.v1.Attributes.String"
-      "MapsEntry\032.\n\014StringsEntry\022\013\n\003key\030\001 \001(\021\022\r"
-      "\n\005value\030\002 \001(\021:\0028\001\032-\n\013Int64sEntry\022\013\n\003key\030"
-      "\001 \001(\021\022\r\n\005value\030\002 \001(\003:\0028\001\032.\n\014DoublesEntry"
-      "\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\001:\0028\001\032,\n\nBool"
-      "sEntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\010:\0028\001\032M"
-      "\n\017TimestampsEntry\022\013\n\003key\030\001 \001(\021\022)\n\005value\030"
-      "\002 \001(\0132\032.google.protobuf.Timestamp:\0028\001\032K\n"
-      "\016DurationsEntry\022\013\n\003key\030\001 \001(\021\022(\n\005value\030\002 "
-      "\001(\0132\031.google.protobuf.Duration:\0028\001\032,\n\nBy"
-      "tesEntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\014:\0028\001"
-      "\032L\n\017StringMapsEntry\022\013\n\003key\030\001 \001(\021\022(\n\005valu"
-      "e\030\002 \001(\0132\031.istio.mixer.v1.StringMap:\0028\001\"t"
-      "\n\tStringMap\0227\n\007entries\030\001 \003(\0132&.istio.mix"
-      "er.v1.StringMap.EntriesEntry\032.\n\014EntriesE"
-      "ntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\021:\0028\001b\006pr"
-      "oto3"
+      ".v1\032\024gogoproto/gogo.proto\032\036google/protob"
+      "uf/duration.proto\032\037google/protobuf/times"
+      "tamp.proto\"\341\007\n\nAttributes\022\r\n\005words\030\001 \003(\t"
+      "\0228\n\007strings\030\002 \003(\0132\'.istio.mixer.v1.Attri"
+      "butes.StringsEntry\0226\n\006int64s\030\003 \003(\0132&.ist"
+      "io.mixer.v1.Attributes.Int64sEntry\0228\n\007do"
+      "ubles\030\004 \003(\0132\'.istio.mixer.v1.Attributes."
+      "DoublesEntry\0224\n\005bools\030\005 \003(\0132%.istio.mixe"
+      "r.v1.Attributes.BoolsEntry\022H\n\ntimestamps"
+      "\030\006 \003(\0132*.istio.mixer.v1.Attributes.Times"
+      "tampsEntryB\010\310\336\037\000\220\337\037\001\022F\n\tdurations\030\007 \003(\0132"
+      ").istio.mixer.v1.Attributes.DurationsEnt"
+      "ryB\010\310\336\037\000\230\337\037\001\0224\n\005bytes\030\010 \003(\0132%.istio.mixe"
+      "r.v1.Attributes.BytesEntry\022E\n\013string_map"
+      "s\030\t \003(\0132*.istio.mixer.v1.Attributes.Stri"
+      "ngMapsEntryB\004\310\336\037\000\032.\n\014StringsEntry\022\013\n\003key"
+      "\030\001 \001(\021\022\r\n\005value\030\002 \001(\021:\0028\001\032-\n\013Int64sEntry"
+      "\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\003:\0028\001\032.\n\014Doub"
+      "lesEntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\001:\0028\001"
+      "\032,\n\nBoolsEntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001"
+      "(\010:\0028\001\032M\n\017TimestampsEntry\022\013\n\003key\030\001 \001(\021\022)"
+      "\n\005value\030\002 \001(\0132\032.google.protobuf.Timestam"
+      "p:\0028\001\032K\n\016DurationsEntry\022\013\n\003key\030\001 \001(\021\022(\n\005"
+      "value\030\002 \001(\0132\031.google.protobuf.Duration:\002"
+      "8\001\032,\n\nBytesEntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002"
+      " \001(\014:\0028\001\032L\n\017StringMapsEntry\022\013\n\003key\030\001 \001(\021"
+      "\022(\n\005value\030\002 \001(\0132\031.istio.mixer.v1.StringM"
+      "ap:\0028\001\"t\n\tStringMap\0227\n\007entries\030\001 \003(\0132&.i"
+      "stio.mixer.v1.StringMap.EntriesEntry\032.\n\014"
+      "EntriesEntry\022\013\n\003key\030\001 \001(\021\022\r\n\005value\030\002 \001(\021"
+      ":\0028\001B\014\310\341\036\000\250\342\036\000\360\341\036\000b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1204);
+      descriptor, 1266);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "mixer/v1/attributes.proto", &protobuf_RegisterTypes);
+  ::gogoproto::protobuf_gogoproto_2fgogo_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2ftimestamp_2eproto::AddDescriptors();
-  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
+} // anonymous namespace
 
 void AddDescriptors() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
 }
-// Force AddDescriptors() to be called at static initialization time.
+// Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
   StaticDescriptorInitializer() {
     AddDescriptors();
@@ -493,6 +523,10 @@ Attributes* Attributes::New(::google::protobuf::Arena* arena) const {
 
 void Attributes::Clear() {
 // @@protoc_insertion_point(message_clear_start:istio.mixer.v1.Attributes)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   words_.Clear();
   strings_.Clear();
   int64s_.Clear();
@@ -502,6 +536,7 @@ void Attributes::Clear() {
   durations_.Clear();
   bytes_.Clear();
   string_maps_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool Attributes::MergePartialFromCodedStream(
@@ -517,12 +552,12 @@ bool Attributes::MergePartialFromCodedStream(
       // repeated string words = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_words()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->words(this->words_size() - 1).data(),
-            this->words(this->words_size() - 1).length(),
+            static_cast<int>(this->words(this->words_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "istio.mixer.v1.Attributes.words"));
         } else {
@@ -534,7 +569,7 @@ bool Attributes::MergePartialFromCodedStream(
       // map<sint32, sint32> strings = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           Attributes_StringsEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_StringsEntry,
               ::google::protobuf::int32, ::google::protobuf::int32,
@@ -553,7 +588,7 @@ bool Attributes::MergePartialFromCodedStream(
       // map<sint32, int64> int64s = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           Attributes_Int64sEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_Int64sEntry,
               ::google::protobuf::int32, ::google::protobuf::int64,
@@ -572,7 +607,7 @@ bool Attributes::MergePartialFromCodedStream(
       // map<sint32, double> doubles = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           Attributes_DoublesEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_DoublesEntry,
               ::google::protobuf::int32, double,
@@ -591,7 +626,7 @@ bool Attributes::MergePartialFromCodedStream(
       // map<sint32, bool> bools = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           Attributes_BoolsEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_BoolsEntry,
               ::google::protobuf::int32, bool,
@@ -607,10 +642,10 @@ bool Attributes::MergePartialFromCodedStream(
         break;
       }
 
-      // map<sint32, .google.protobuf.Timestamp> timestamps = 6;
+      // map<sint32, .google.protobuf.Timestamp> timestamps = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           Attributes_TimestampsEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_TimestampsEntry,
               ::google::protobuf::int32, ::google::protobuf::Timestamp,
@@ -626,10 +661,10 @@ bool Attributes::MergePartialFromCodedStream(
         break;
       }
 
-      // map<sint32, .google.protobuf.Duration> durations = 7;
+      // map<sint32, .google.protobuf.Duration> durations = 7 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u)) {
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           Attributes_DurationsEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_DurationsEntry,
               ::google::protobuf::int32, ::google::protobuf::Duration,
@@ -648,7 +683,7 @@ bool Attributes::MergePartialFromCodedStream(
       // map<sint32, bytes> bytes = 8;
       case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u)) {
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
           Attributes_BytesEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_BytesEntry,
               ::google::protobuf::int32, ::std::string,
@@ -664,10 +699,10 @@ bool Attributes::MergePartialFromCodedStream(
         break;
       }
 
-      // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9;
+      // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9 [(.gogoproto.nullable) = false];
       case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u)) {
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
           Attributes_StringMapsEntry::Parser< ::google::protobuf::internal::MapField<
               Attributes_StringMapsEntry,
               ::google::protobuf::int32, ::istio::mixer::v1::StringMap,
@@ -685,12 +720,11 @@ bool Attributes::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -713,7 +747,7 @@ void Attributes::SerializeWithCachedSizes(
   // repeated string words = 1;
   for (int i = 0, n = this->words_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->words(i).data(), this->words(i).length(),
+      this->words(i).data(), static_cast<int>(this->words(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "istio.mixer.v1.Attributes.words");
     ::google::protobuf::internal::WireFormatLite::WriteString(
@@ -736,13 +770,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
           it = this->strings().begin();
           it != this->strings().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_StringsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(strings_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             2, *entry, output);
       }
@@ -775,13 +809,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int64 >::const_iterator
           it = this->int64s().begin();
           it != this->int64s().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_Int64sEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(int64s_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             3, *entry, output);
       }
@@ -814,13 +848,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, double >::const_iterator
           it = this->doubles().begin();
           it != this->doubles().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_DoublesEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(doubles_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             4, *entry, output);
       }
@@ -853,13 +887,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, bool >::const_iterator
           it = this->bools().begin();
           it != this->bools().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_BoolsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(bools_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             5, *entry, output);
       }
@@ -876,7 +910,7 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
-  // map<sint32, .google.protobuf.Timestamp> timestamps = 6;
+  // map<sint32, .google.protobuf.Timestamp> timestamps = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];
   if (!this->timestamps().empty()) {
     typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Timestamp >::const_pointer
         ConstPtr;
@@ -892,13 +926,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Timestamp >::const_iterator
           it = this->timestamps().begin();
           it != this->timestamps().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_TimestampsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(timestamps_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             6, *entry, output);
       }
@@ -915,7 +949,7 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
-  // map<sint32, .google.protobuf.Duration> durations = 7;
+  // map<sint32, .google.protobuf.Duration> durations = 7 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];
   if (!this->durations().empty()) {
     typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Duration >::const_pointer
         ConstPtr;
@@ -931,13 +965,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Duration >::const_iterator
           it = this->durations().begin();
           it != this->durations().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_DurationsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(durations_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             7, *entry, output);
       }
@@ -970,13 +1004,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::std::string >::const_iterator
           it = this->bytes().begin();
           it != this->bytes().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_BytesEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(bytes_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             8, *entry, output);
       }
@@ -993,7 +1027,7 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
-  // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9;
+  // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9 [(.gogoproto.nullable) = false];
   if (!this->string_maps().empty()) {
     typedef ::google::protobuf::Map< ::google::protobuf::int32, ::istio::mixer::v1::StringMap >::const_pointer
         ConstPtr;
@@ -1009,13 +1043,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::istio::mixer::v1::StringMap >::const_iterator
           it = this->string_maps().begin();
           it != this->string_maps().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_StringMapsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(string_maps_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             9, *entry, output);
       }
@@ -1032,6 +1066,10 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:istio.mixer.v1.Attributes)
 }
 
@@ -1045,7 +1083,7 @@ void Attributes::SerializeWithCachedSizes(
   // repeated string words = 1;
   for (int i = 0, n = this->words_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->words(i).data(), this->words(i).length(),
+      this->words(i).data(), static_cast<int>(this->words(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "istio.mixer.v1.Attributes.words");
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1068,13 +1106,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
           it = this->strings().begin();
           it != this->strings().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_StringsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(strings_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        2, *entry, deterministic, target);
@@ -1111,13 +1149,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int64 >::const_iterator
           it = this->int64s().begin();
           it != this->int64s().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_Int64sEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(int64s_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        3, *entry, deterministic, target);
@@ -1154,13 +1192,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, double >::const_iterator
           it = this->doubles().begin();
           it != this->doubles().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_DoublesEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(doubles_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        4, *entry, deterministic, target);
@@ -1197,13 +1235,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, bool >::const_iterator
           it = this->bools().begin();
           it != this->bools().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_BoolsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(bools_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        5, *entry, deterministic, target);
@@ -1224,7 +1262,7 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
-  // map<sint32, .google.protobuf.Timestamp> timestamps = 6;
+  // map<sint32, .google.protobuf.Timestamp> timestamps = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];
   if (!this->timestamps().empty()) {
     typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Timestamp >::const_pointer
         ConstPtr;
@@ -1240,13 +1278,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Timestamp >::const_iterator
           it = this->timestamps().begin();
           it != this->timestamps().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_TimestampsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(timestamps_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        6, *entry, deterministic, target);
@@ -1267,7 +1305,7 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
-  // map<sint32, .google.protobuf.Duration> durations = 7;
+  // map<sint32, .google.protobuf.Duration> durations = 7 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];
   if (!this->durations().empty()) {
     typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Duration >::const_pointer
         ConstPtr;
@@ -1283,13 +1321,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::Duration >::const_iterator
           it = this->durations().begin();
           it != this->durations().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_DurationsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(durations_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        7, *entry, deterministic, target);
@@ -1326,13 +1364,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::std::string >::const_iterator
           it = this->bytes().begin();
           it != this->bytes().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_BytesEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(bytes_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        8, *entry, deterministic, target);
@@ -1353,7 +1391,7 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
-  // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9;
+  // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9 [(.gogoproto.nullable) = false];
   if (!this->string_maps().empty()) {
     typedef ::google::protobuf::Map< ::google::protobuf::int32, ::istio::mixer::v1::StringMap >::const_pointer
         ConstPtr;
@@ -1369,13 +1407,13 @@ void Attributes::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::istio::mixer::v1::StringMap >::const_iterator
           it = this->string_maps().begin();
           it != this->string_maps().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<Attributes_StringMapsEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(string_maps_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        9, *entry, deterministic, target);
@@ -1396,6 +1434,10 @@ void Attributes::SerializeWithCachedSizes(
     }
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:istio.mixer.v1.Attributes)
   return target;
 }
@@ -1404,6 +1446,11 @@ size_t Attributes::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:istio.mixer.v1.Attributes)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated string words = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->words_size());
@@ -1468,7 +1515,7 @@ size_t Attributes::ByteSizeLong() const {
     }
   }
 
-  // map<sint32, .google.protobuf.Timestamp> timestamps = 6;
+  // map<sint32, .google.protobuf.Timestamp> timestamps = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->timestamps_size());
   {
@@ -1482,7 +1529,7 @@ size_t Attributes::ByteSizeLong() const {
     }
   }
 
-  // map<sint32, .google.protobuf.Duration> durations = 7;
+  // map<sint32, .google.protobuf.Duration> durations = 7 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->durations_size());
   {
@@ -1510,7 +1557,7 @@ size_t Attributes::ByteSizeLong() const {
     }
   }
 
-  // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9;
+  // map<sint32, .istio.mixer.v1.StringMap> string_maps = 9 [(.gogoproto.nullable) = false];
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->string_maps_size());
   {
@@ -1587,6 +1634,7 @@ void Attributes::Swap(Attributes* other) {
   InternalSwap(other);
 }
 void Attributes::InternalSwap(Attributes* other) {
+  using std::swap;
   words_.InternalSwap(&other->words_);
   strings_.Swap(&other->strings_);
   int64s_.Swap(&other->int64s_);
@@ -1596,7 +1644,8 @@ void Attributes::InternalSwap(Attributes* other) {
   durations_.Swap(&other->durations_);
   bytes_.Swap(&other->bytes_);
   string_maps_.Swap(&other->string_maps_);
-  std::swap(_cached_size_, other->_cached_size_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Attributes::GetMetadata() const {
@@ -1748,7 +1797,7 @@ Attributes::mutable_bools() {
   return bools_.MutableMap();
 }
 
-// map<sint32, .google.protobuf.Timestamp> timestamps = 6;
+// map<sint32, .google.protobuf.Timestamp> timestamps = 6 [(.gogoproto.nullable) = false, (.gogoproto.stdtime) = true];
 int Attributes::timestamps_size() const {
   return timestamps_.size();
 }
@@ -1766,7 +1815,7 @@ Attributes::mutable_timestamps() {
   return timestamps_.MutableMap();
 }
 
-// map<sint32, .google.protobuf.Duration> durations = 7;
+// map<sint32, .google.protobuf.Duration> durations = 7 [(.gogoproto.nullable) = false, (.gogoproto.stdduration) = true];
 int Attributes::durations_size() const {
   return durations_.size();
 }
@@ -1802,7 +1851,7 @@ Attributes::mutable_bytes() {
   return bytes_.MutableMap();
 }
 
-// map<sint32, .istio.mixer.v1.StringMap> string_maps = 9;
+// map<sint32, .istio.mixer.v1.StringMap> string_maps = 9 [(.gogoproto.nullable) = false];
 int Attributes::string_maps_size() const {
   return string_maps_.size();
 }
@@ -1901,7 +1950,12 @@ StringMap* StringMap::New(::google::protobuf::Arena* arena) const {
 
 void StringMap::Clear() {
 // @@protoc_insertion_point(message_clear_start:istio.mixer.v1.StringMap)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   entries_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool StringMap::MergePartialFromCodedStream(
@@ -1917,7 +1971,7 @@ bool StringMap::MergePartialFromCodedStream(
       // map<sint32, sint32> entries = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           StringMap_EntriesEntry::Parser< ::google::protobuf::internal::MapField<
               StringMap_EntriesEntry,
               ::google::protobuf::int32, ::google::protobuf::int32,
@@ -1935,12 +1989,11 @@ bool StringMap::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -1976,13 +2029,13 @@ void StringMap::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
           it = this->entries().begin();
           it != this->entries().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<StringMap_EntriesEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(entries_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             1, *entry, output);
       }
@@ -1999,6 +2052,10 @@ void StringMap::SerializeWithCachedSizes(
     }
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:istio.mixer.v1.StringMap)
 }
 
@@ -2025,13 +2082,13 @@ void StringMap::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
           it = this->entries().begin();
           it != this->entries().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<StringMap_EntriesEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(entries_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        1, *entry, deterministic, target);
@@ -2052,6 +2109,10 @@ void StringMap::SerializeWithCachedSizes(
     }
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:istio.mixer.v1.StringMap)
   return target;
 }
@@ -2060,6 +2121,11 @@ size_t StringMap::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:istio.mixer.v1.StringMap)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // map<sint32, sint32> entries = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->entries_size());
@@ -2129,8 +2195,10 @@ void StringMap::Swap(StringMap* other) {
   InternalSwap(other);
 }
 void StringMap::InternalSwap(StringMap* other) {
+  using std::swap;
   entries_.Swap(&other->entries_);
-  std::swap(_cached_size_, other->_cached_size_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata StringMap::GetMetadata() const {

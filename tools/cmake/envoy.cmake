@@ -7,14 +7,14 @@ include_directories(
 set(ENVOY_SOURCE_FILES
         # Problems compiling on android:
         envoy/source/common/common/to_lower_table.cc
-        envoy/source/common/filesystem/watcher_impl.cc
+        #envoy/source/common/filesystem/watcher_impl.cc
         envoy/source/common/runtime/runtime_impl.cc
         envoy/source/common/runtime/uuid_util.cc
 
         envoy/source/common/access_log/access_log_manager_impl.cc
         envoy/source/common/api/api_impl.cc
         envoy/source/common/buffer/buffer_impl.cc
-        #\envoy/source/common/buffer/watermark_buffer.cc
+        envoy/source/common/buffer/watermark_buffer.cc
         envoy/source/common/buffer/zero_copy_input_stream_impl.cc
         envoy/source/common/common/base64.cc
         envoy/source/common/common/hex.cc
@@ -27,11 +27,22 @@ set(ENVOY_SOURCE_FILES
         #envoy/source/common/dynamo/dynamo_request_parser.cc
         #envoy/source/common/dynamo/dynamo_utility.cc
         #envoy/source/server/config/http/dynamo.cc
-        #envoy/source/common/mongo/bson_impl.cc
-        #envoy/source/common/mongo/codec_impl.cc
-        #envoy/source/common/mongo/proxy.cc
-        #envoy/source/common/mongo/utility.cc
+        envoy/source/common/mongo/bson_impl.cc
+        envoy/source/common/mongo/codec_impl.cc
+        envoy/source/common/mongo/proxy.cc
+        envoy/source/common/mongo/utility.cc
         #envoy/source/server/config/network/mongo_proxy.cc
+        envoy/source/common/config/address_json.cc
+        envoy/source/common/config/base_json.cc
+        envoy/source/common/config/bootstrap_json.cc
+        envoy/source/common/config/cds_json.cc
+        envoy/source/common/config/filter_json.cc
+        envoy/source/common/config/grpc_mux_impl.cc
+        envoy/source/common/config/lds_json.cc
+        envoy/source/common/config/protocol_json.cc
+        envoy/source/common/config/rds_json.cc
+        envoy/source/common/config/tls_context_json.cc
+
         envoy/source/common/config/metadata.cc
         envoy/source/common/config/utility.cc
         envoy/source/common/event/dispatched_thread.cc
@@ -42,6 +53,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/event/signal_impl.cc
         envoy/source/common/event/timer_impl.cc
         envoy/source/common/filesystem/filesystem_impl.cc
+        envoy/source/common/filesystem/inotify/watcher_impl.cc
         envoy/source/common/filter/auth/client_ssl.cc
         envoy/source/common/filter/echo.cc
         envoy/source/common/filter/ratelimit.cc
@@ -63,6 +75,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/http/http1/conn_pool.cc
         envoy/source/common/http/http2/codec_impl.cc
         envoy/source/common/http/http2/conn_pool.cc
+        envoy/source/common/http/websocket/ws_handler_impl.cc
         envoy/source/common/http/async_client_impl.cc
         envoy/source/common/http/codec_client.cc
         envoy/source/common/http/codes.cc
@@ -88,6 +101,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/network/proxy_protocol.cc
         envoy/source/common/network/utility.cc
         envoy/source/common/profiler/profiler.cc
+        envoy/source/common/protobuf/utility.cc
         envoy/source/common/redis/codec_impl.cc
         envoy/source/common/redis/command_splitter_impl.cc
         envoy/source/common/redis/conn_pool_impl.cc
@@ -95,10 +109,13 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/router/config_impl.cc
         envoy/source/common/router/config_utility.cc
         envoy/source/common/router/rds_impl.cc
+        envoy/source/common/router/rds_subscription.cc
+        envoy/source/common/router/req_header_formatter.cc
         envoy/source/common/router/retry_state_impl.cc
         envoy/source/common/router/router.cc
         envoy/source/common/router/router_ratelimit.cc
         envoy/source/common/router/shadow_writer_impl.cc
+        envoy/source/common/singleton/manager_impl.cc
         envoy/source/common/stats/stats_impl.cc
         envoy/source/common/stats/statsd.cc
         envoy/source/common/stats/thread_local_store.cc
@@ -119,6 +136,9 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/upstream/outlier_detection_impl.cc
         envoy/source/common/upstream/ring_hash_lb.cc
         envoy/source/common/upstream/upstream_impl.cc
+        envoy/source/common/upstream/cds_subscription.cc
+        envoy/source/common/upstream/original_dst_cluster.cc
+
         envoy/source/common/upstream/eds.cc
         envoy/source/common/upstream/sds_subscription.cc
         envoy/source/common/ssl/connection_impl.cc
@@ -151,6 +171,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/server.cc
         envoy/source/server/init_manager_impl.cc
         envoy/source/server/lds_api.cc
+        envoy/source/server/lds_subscription.cc
         envoy/source/server/worker_impl.cc
         envoy/source/server/listener_manager_impl.cc
         envoy/source/server/watchdog_impl.cc
@@ -158,6 +179,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/server/configuration_impl.cc
 
         envoy/source/server/config_validation/api.cc
+        envoy/source/server/config_validation/admin.cc
         envoy/source/server/config_validation/async_client.cc
         envoy/source/server/config_validation/cluster_manager.cc
         envoy/source/server/config_validation/dispatcher.cc
@@ -166,14 +188,23 @@ set(ENVOY_SOURCE_FILES
 
         envoy/source/exe/main.cc
         envoy/source/exe/main_common.cc
-        envoy/source/exe/hot_restart.cc
-        envoy/source/exe/signal_action.cc
 
         genfiles/api/address.pb.cc
+        genfiles/api/bootstrap.pb.cc
+        genfiles/api/cds.pb.cc
+        genfiles/api/discovery.pb.cc
+        genfiles/api/lds.pb.cc
+        genfiles/api/protocol.pb.cc
+        genfiles/api/rds.pb.cc
+        genfiles/api/tls_context.pb.cc
+        genfiles/api/filter/http_connection_manager.pb.cc
+
         genfiles/api/base.pb.cc
         genfiles/api/health_check.pb.cc
         genfiles/api/eds.pb.cc
         genfiles/common/ratelimit/ratelimit.pb.cc
+
+        genfiles/gogoproto/gogo.pb.cc
 
         genfiles/google/api/annotations.pb.cc
         genfiles/google/api/http.pb.cc
@@ -191,18 +222,23 @@ set(ENVOY_SOURCE_FILES
         src/grpc_transcoding/src/response_to_json_translator.cc
         src/grpc_transcoding/src/type_helper.cc
 
-
         )
 
-add_executable(envoy ${ENVOY_SOURCE_FILES}
-        $<TARGET_OBJECTS:istioproxy>
-        #$<TARGET_OBJECTS:envoy-istio>
+# Files not working/used on android
+set(ENVOY_SOURCE_FILES_NO_ANDROID
+        envoy/source/exe/signal_action.cc
         )
 
 if (DEFINED ANDROID_TOOLCHAIN)
+    add_executable(envoy ${ENVOY_SOURCE_FILES}
+            $<TARGET_OBJECTS:istioproxy>
+            )
     target_link_libraries (envoy PUBLIC -llog -landroid)
 else()
-    target_link_libraries (envoy PUBLIC -lpthread -lrt -luuid)
+    add_executable(envoy ${ENVOY_SOURCE_FILES} ${ENVOY_SOURCE_FILES_NO_ANDROID}
+            $<TARGET_OBJECTS:istioproxy>
+            )
+    target_link_libraries (envoy PUBLIC -lpthread -lrt)
 
 endif()
 
@@ -210,14 +246,16 @@ target_link_libraries(envoy PUBLIC tracer)
 target_link_libraries(envoy PUBLIC http-parser)
 
 target_link_libraries(envoy PUBLIC cares)
-#target_link_libraries(envoy PUBLIC bssl)
 target_link_libraries(envoy PUBLIC ssl)
 target_link_libraries(envoy PUBLIC crypto)
 target_link_libraries(envoy PUBLIC nghttp2)
 #target_link_libraries(envoy PUBLIC ev)
 target_link_libraries(envoy PUBLIC event_pthreads_static)
 target_link_libraries(envoy PUBLIC event_core_static)
-target_link_libraries(envoy PUBLIC protobuf)
+target_link_libraries(envoy PUBLIC libprotobuf)
+target_link_libraries(envoy PUBLIC yaml-cpp)
+target_link_libraries(envoy PUBLIC xxhash)
+
 
 # envoy/source/common/common/version_linkstamp.cc:5:35:
 # main.cc

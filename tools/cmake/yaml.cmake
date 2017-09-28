@@ -1,5 +1,5 @@
-set(CARES_SOURCE
-        src/cares/cares/ares__close_sockets.c
+set(YAML_SOURCE
+        src/
         src/cares/cares/ares__get_hostent.c
         src/cares/cares/ares__read_line.c
         src/cares/cares/ares__timeval.c

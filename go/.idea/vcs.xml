@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/backward" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/boringssl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/envoy-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/envoy-filter-example" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/envoy-remote-filter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/grpc_transcoding" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/istio.io" vcs="Git" />
+  </component>
+</project>

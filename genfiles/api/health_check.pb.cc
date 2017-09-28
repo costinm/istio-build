@@ -20,19 +20,32 @@
 namespace envoy {
 namespace api {
 namespace v2 {
-class HealthCheck_PayloadDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_Payload> {
-  public:
+class HealthCheck_PayloadDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_Payload>
+     _instance;
   ::google::protobuf::internal::ArenaStringPtr text_;
   ::google::protobuf::internal::ArenaStringPtr binary_;
 } _HealthCheck_Payload_default_instance_;
-class HealthCheck_HttpHealthCheckDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_HttpHealthCheck> {
+class HealthCheck_HttpHealthCheckDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_HttpHealthCheck>
+     _instance;
 } _HealthCheck_HttpHealthCheck_default_instance_;
-class HealthCheck_TcpHealthCheckDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_TcpHealthCheck> {
+class HealthCheck_TcpHealthCheckDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_TcpHealthCheck>
+     _instance;
 } _HealthCheck_TcpHealthCheck_default_instance_;
-class HealthCheck_RedisHealthCheckDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_RedisHealthCheck> {
+class HealthCheck_RedisHealthCheckDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck_RedisHealthCheck>
+     _instance;
 } _HealthCheck_RedisHealthCheck_default_instance_;
-class HealthCheckDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck> {
-  public:
+class HealthCheckDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<HealthCheck>
+     _instance;
   const ::envoy::api::v2::HealthCheck_HttpHealthCheck* http_health_check_;
   const ::envoy::api::v2::HealthCheck_TcpHealthCheck* tcp_health_check_;
   const ::envoy::api::v2::HealthCheck_RedisHealthCheck* redis_health_check_;
@@ -49,31 +62,31 @@ const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 }  // namespace
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
-    const TableStruct::entries[] = {
+    const TableStruct::entries[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
 };
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
-    const TableStruct::aux[] = {
+    const TableStruct::aux[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ::google::protobuf::internal::AuxillaryParseTableField(),
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
-    TableStruct::schema[] = {
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
+    TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
-const ::google::protobuf::uint32 TableStruct::offsets[] = {
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck_Payload, _internal_metadata_),
   ~0u,  // no _extensions_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck_Payload, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_HealthCheck_Payload_default_instance_), text_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_HealthCheck_Payload_default_instance_), binary_),
+  offsetof(HealthCheck_PayloadDefaultTypeInternal, text_),
+  offsetof(HealthCheck_PayloadDefaultTypeInternal, binary_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck_Payload, payload_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck_HttpHealthCheck, _internal_metadata_),
@@ -109,13 +122,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck, healthy_threshold_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck, alt_port_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck, reuse_connection_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_HealthCheck_default_instance_), http_health_check_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_HealthCheck_default_instance_), tcp_health_check_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_HealthCheck_default_instance_), redis_health_check_),
+  offsetof(HealthCheckDefaultTypeInternal, http_health_check_),
+  offsetof(HealthCheckDefaultTypeInternal, tcp_health_check_),
+  offsetof(HealthCheckDefaultTypeInternal, redis_health_check_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HealthCheck, health_checker_),
 };
-
-static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(HealthCheck_Payload)},
   { 8, -1, sizeof(HealthCheck_HttpHealthCheck)},
   { 18, -1, sizeof(HealthCheck_TcpHealthCheck)},
@@ -153,54 +165,45 @@ void protobuf_RegisterTypes(const ::std::string&) {
 }
 
 }  // namespace
-
-void TableStruct::Shutdown() {
-  _HealthCheck_Payload_default_instance_.Shutdown();
-  delete file_level_metadata[0].reflection;
-  _HealthCheck_HttpHealthCheck_default_instance_.Shutdown();
-  delete file_level_metadata[1].reflection;
-  _HealthCheck_TcpHealthCheck_default_instance_.Shutdown();
-  delete file_level_metadata[2].reflection;
-  _HealthCheck_RedisHealthCheck_default_instance_.Shutdown();
-  delete file_level_metadata[3].reflection;
-  _HealthCheck_default_instance_.Shutdown();
-  delete file_level_metadata[4].reflection;
-}
-
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::InitDefaults();
-  _HealthCheck_Payload_default_instance_.DefaultConstruct();
-  _HealthCheck_HttpHealthCheck_default_instance_.DefaultConstruct();
-  _HealthCheck_TcpHealthCheck_default_instance_.DefaultConstruct();
-  _HealthCheck_RedisHealthCheck_default_instance_.DefaultConstruct();
-  _HealthCheck_default_instance_.DefaultConstruct();
-  _HealthCheck_Payload_default_instance_.text_.UnsafeSetDefault(
+  _HealthCheck_Payload_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_HealthCheck_Payload_default_instance_);_HealthCheck_HttpHealthCheck_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_HealthCheck_HttpHealthCheck_default_instance_);_HealthCheck_TcpHealthCheck_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_HealthCheck_TcpHealthCheck_default_instance_);_HealthCheck_RedisHealthCheck_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_HealthCheck_RedisHealthCheck_default_instance_);_HealthCheck_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_HealthCheck_default_instance_);_HealthCheck_Payload_default_instance_.text_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _HealthCheck_Payload_default_instance_.binary_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _HealthCheck_HttpHealthCheck_default_instance_.get_mutable()->send_ = const_cast< ::envoy::api::v2::HealthCheck_Payload*>(
+  _HealthCheck_HttpHealthCheck_default_instance_._instance.get_mutable()->send_ = const_cast< ::envoy::api::v2::HealthCheck_Payload*>(
       ::envoy::api::v2::HealthCheck_Payload::internal_default_instance());
-  _HealthCheck_HttpHealthCheck_default_instance_.get_mutable()->receive_ = const_cast< ::envoy::api::v2::HealthCheck_Payload*>(
+  _HealthCheck_HttpHealthCheck_default_instance_._instance.get_mutable()->receive_ = const_cast< ::envoy::api::v2::HealthCheck_Payload*>(
       ::envoy::api::v2::HealthCheck_Payload::internal_default_instance());
-  _HealthCheck_TcpHealthCheck_default_instance_.get_mutable()->send_ = const_cast< ::envoy::api::v2::HealthCheck_Payload*>(
+  _HealthCheck_TcpHealthCheck_default_instance_._instance.get_mutable()->send_ = const_cast< ::envoy::api::v2::HealthCheck_Payload*>(
       ::envoy::api::v2::HealthCheck_Payload::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->timeout_ = const_cast< ::google::protobuf::Duration*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->timeout_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->interval_ = const_cast< ::google::protobuf::Duration*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->interval_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->interval_jitter_ = const_cast< ::google::protobuf::Duration*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->interval_jitter_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->unhealthy_threshold_ = const_cast< ::google::protobuf::UInt32Value*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->unhealthy_threshold_ = const_cast< ::google::protobuf::UInt32Value*>(
       ::google::protobuf::UInt32Value::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->healthy_threshold_ = const_cast< ::google::protobuf::UInt32Value*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->healthy_threshold_ = const_cast< ::google::protobuf::UInt32Value*>(
       ::google::protobuf::UInt32Value::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->alt_port_ = const_cast< ::google::protobuf::UInt32Value*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->alt_port_ = const_cast< ::google::protobuf::UInt32Value*>(
       ::google::protobuf::UInt32Value::internal_default_instance());
-  _HealthCheck_default_instance_.get_mutable()->reuse_connection_ = const_cast< ::google::protobuf::BoolValue*>(
+  _HealthCheck_default_instance_._instance.get_mutable()->reuse_connection_ = const_cast< ::google::protobuf::BoolValue*>(
       ::google::protobuf::BoolValue::internal_default_instance());
   _HealthCheck_default_instance_.http_health_check_ = const_cast< ::envoy::api::v2::HealthCheck_HttpHealthCheck*>(
       ::envoy::api::v2::HealthCheck_HttpHealthCheck::internal_default_instance());
@@ -214,9 +217,10 @@ void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
 }
+namespace {
 void AddDescriptorsImpl() {
   InitDefaults();
-  static const char descriptor[] = {
+  static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\026api/health_check.proto\022\014envoy.api.v2\032\036"
       "google/protobuf/duration.proto\032\036google/p"
       "rotobuf/wrappers.proto\"\314\007\n\013HealthCheck\022*"
@@ -254,14 +258,14 @@ void AddDescriptorsImpl() {
     "api/health_check.proto", &protobuf_RegisterTypes);
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::AddDescriptors();
-  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
+} // anonymous namespace
 
 void AddDescriptors() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
 }
-// Force AddDescriptors() to be called at static initialization time.
+// Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
   StaticDescriptorInitializer() {
     AddDescriptors();
@@ -385,7 +389,12 @@ void HealthCheck_Payload::clear_payload() {
 
 void HealthCheck_Payload::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.HealthCheck.Payload)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   clear_payload();
+  _internal_metadata_.Clear();
 }
 
 bool HealthCheck_Payload::MergePartialFromCodedStream(
@@ -401,11 +410,11 @@ bool HealthCheck_Payload::MergePartialFromCodedStream(
       // string text = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_text()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->text().data(), this->text().length(),
+            this->text().data(), static_cast<int>(this->text().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.HealthCheck.Payload.text"));
         } else {
@@ -417,7 +426,7 @@ bool HealthCheck_Payload::MergePartialFromCodedStream(
       // bytes binary = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_binary()));
         } else {
@@ -428,12 +437,11 @@ bool HealthCheck_Payload::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -456,7 +464,7 @@ void HealthCheck_Payload::SerializeWithCachedSizes(
   // string text = 1;
   if (has_text()) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->text().data(), this->text().length(),
+      this->text().data(), static_cast<int>(this->text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.Payload.text");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -469,6 +477,10 @@ void HealthCheck_Payload::SerializeWithCachedSizes(
       2, this->binary(), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.HealthCheck.Payload)
 }
 
@@ -482,7 +494,7 @@ void HealthCheck_Payload::SerializeWithCachedSizes(
   // string text = 1;
   if (has_text()) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->text().data(), this->text().length(),
+      this->text().data(), static_cast<int>(this->text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.Payload.text");
     target =
@@ -497,6 +509,10 @@ void HealthCheck_Payload::SerializeWithCachedSizes(
         2, this->binary(), target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.HealthCheck.Payload)
   return target;
 }
@@ -505,6 +521,11 @@ size_t HealthCheck_Payload::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.HealthCheck.Payload)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   switch (payload_case()) {
     // string text = 1;
     case kText: {
@@ -591,9 +612,11 @@ void HealthCheck_Payload::Swap(HealthCheck_Payload* other) {
   InternalSwap(other);
 }
 void HealthCheck_Payload::InternalSwap(HealthCheck_Payload* other) {
-  std::swap(payload_, other->payload_);
-  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-  std::swap(_cached_size_, other->_cached_size_);
+  using std::swap;
+  swap(payload_, other->payload_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata HealthCheck_Payload::GetMetadata() const {
@@ -857,8 +880,9 @@ void HealthCheck_HttpHealthCheck::SharedCtor() {
   host_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&send_, 0, reinterpret_cast<char*>(&receive_) -
-    reinterpret_cast<char*>(&send_) + sizeof(receive_));
+  ::memset(&send_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&receive_) -
+      reinterpret_cast<char*>(&send_)) + sizeof(receive_));
   _cached_size_ = 0;
 }
 
@@ -871,12 +895,8 @@ void HealthCheck_HttpHealthCheck::SharedDtor() {
   host_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   service_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) {
-    delete send_;
-  }
-  if (this != internal_default_instance()) {
-    delete receive_;
-  }
+  if (this != internal_default_instance()) delete send_;
+  if (this != internal_default_instance()) delete receive_;
 }
 
 void HealthCheck_HttpHealthCheck::SetCachedSize(int size) const {
@@ -904,6 +924,10 @@ HealthCheck_HttpHealthCheck* HealthCheck_HttpHealthCheck::New(::google::protobuf
 
 void HealthCheck_HttpHealthCheck::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.HealthCheck.HttpHealthCheck)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   host_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   service_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -915,6 +939,7 @@ void HealthCheck_HttpHealthCheck::Clear() {
     delete receive_;
   }
   receive_ = NULL;
+  _internal_metadata_.Clear();
 }
 
 bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
@@ -930,11 +955,11 @@ bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
       // string host = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_host()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->host().data(), this->host().length(),
+            this->host().data(), static_cast<int>(this->host().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.HealthCheck.HttpHealthCheck.host"));
         } else {
@@ -946,11 +971,11 @@ bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
       // string path = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_path()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->path().data(), this->path().length(),
+            this->path().data(), static_cast<int>(this->path().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.HealthCheck.HttpHealthCheck.path"));
         } else {
@@ -962,7 +987,7 @@ bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthCheck.Payload send = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_send()));
         } else {
@@ -974,7 +999,7 @@ bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthCheck.Payload receive = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_receive()));
         } else {
@@ -986,11 +1011,11 @@ bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
       // string service_name = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_service_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->service_name().data(), this->service_name().length(),
+            this->service_name().data(), static_cast<int>(this->service_name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.HealthCheck.HttpHealthCheck.service_name"));
         } else {
@@ -1001,12 +1026,11 @@ bool HealthCheck_HttpHealthCheck::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -1029,7 +1053,7 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
   // string host = 1;
   if (this->host().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->host().data(), this->host().length(),
+      this->host().data(), static_cast<int>(this->host().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.HttpHealthCheck.host");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -1039,7 +1063,7 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
   // string path = 2;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->path().data(), this->path().length(),
+      this->path().data(), static_cast<int>(this->path().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.HttpHealthCheck.path");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -1061,13 +1085,17 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
   // string service_name = 5;
   if (this->service_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->service_name().data(), this->service_name().length(),
+      this->service_name().data(), static_cast<int>(this->service_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.HttpHealthCheck.service_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       5, this->service_name(), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.HealthCheck.HttpHealthCheck)
 }
 
@@ -1081,7 +1109,7 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
   // string host = 1;
   if (this->host().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->host().data(), this->host().length(),
+      this->host().data(), static_cast<int>(this->host().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.HttpHealthCheck.host");
     target =
@@ -1092,7 +1120,7 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
   // string path = 2;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->path().data(), this->path().length(),
+      this->path().data(), static_cast<int>(this->path().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.HttpHealthCheck.path");
     target =
@@ -1117,7 +1145,7 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
   // string service_name = 5;
   if (this->service_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->service_name().data(), this->service_name().length(),
+      this->service_name().data(), static_cast<int>(this->service_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.HealthCheck.HttpHealthCheck.service_name");
     target =
@@ -1125,6 +1153,10 @@ void HealthCheck_HttpHealthCheck::SerializeWithCachedSizes(
         5, this->service_name(), target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.HealthCheck.HttpHealthCheck)
   return target;
 }
@@ -1133,6 +1165,11 @@ size_t HealthCheck_HttpHealthCheck::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.HealthCheck.HttpHealthCheck)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // string host = 1;
   if (this->host().size() > 0) {
     total_size += 1 +
@@ -1240,12 +1277,14 @@ void HealthCheck_HttpHealthCheck::Swap(HealthCheck_HttpHealthCheck* other) {
   InternalSwap(other);
 }
 void HealthCheck_HttpHealthCheck::InternalSwap(HealthCheck_HttpHealthCheck* other) {
+  using std::swap;
   host_.Swap(&other->host_);
   path_.Swap(&other->path_);
   service_name_.Swap(&other->service_name_);
-  std::swap(send_, other->send_);
-  std::swap(receive_, other->receive_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(send_, other->send_);
+  swap(receive_, other->receive_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata HealthCheck_HttpHealthCheck::GetMetadata() const {
@@ -1371,9 +1410,10 @@ void HealthCheck_HttpHealthCheck::clear_send() {
   send_ = NULL;
 }
 const ::envoy::api::v2::HealthCheck_Payload& HealthCheck_HttpHealthCheck::send() const {
+  const ::envoy::api::v2::HealthCheck_Payload* p = send_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.HttpHealthCheck.send)
-  return send_ != NULL ? *send_
-                         : *::envoy::api::v2::HealthCheck_Payload::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::HealthCheck_Payload*>(
+      &::envoy::api::v2::_HealthCheck_Payload_default_instance_);
 }
 ::envoy::api::v2::HealthCheck_Payload* HealthCheck_HttpHealthCheck::mutable_send() {
   
@@ -1410,9 +1450,10 @@ void HealthCheck_HttpHealthCheck::clear_receive() {
   receive_ = NULL;
 }
 const ::envoy::api::v2::HealthCheck_Payload& HealthCheck_HttpHealthCheck::receive() const {
+  const ::envoy::api::v2::HealthCheck_Payload* p = receive_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.HttpHealthCheck.receive)
-  return receive_ != NULL ? *receive_
-                         : *::envoy::api::v2::HealthCheck_Payload::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::HealthCheck_Payload*>(
+      &::envoy::api::v2::_HealthCheck_Payload_default_instance_);
 }
 ::envoy::api::v2::HealthCheck_Payload* HealthCheck_HttpHealthCheck::mutable_receive() {
   
@@ -1535,9 +1576,7 @@ HealthCheck_TcpHealthCheck::~HealthCheck_TcpHealthCheck() {
 }
 
 void HealthCheck_TcpHealthCheck::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete send_;
-  }
+  if (this != internal_default_instance()) delete send_;
 }
 
 void HealthCheck_TcpHealthCheck::SetCachedSize(int size) const {
@@ -1565,11 +1604,16 @@ HealthCheck_TcpHealthCheck* HealthCheck_TcpHealthCheck::New(::google::protobuf::
 
 void HealthCheck_TcpHealthCheck::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.HealthCheck.TcpHealthCheck)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   receive_.Clear();
   if (GetArenaNoVirtual() == NULL && send_ != NULL) {
     delete send_;
   }
   send_ = NULL;
+  _internal_metadata_.Clear();
 }
 
 bool HealthCheck_TcpHealthCheck::MergePartialFromCodedStream(
@@ -1585,7 +1629,7 @@ bool HealthCheck_TcpHealthCheck::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthCheck.Payload send = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_send()));
         } else {
@@ -1597,7 +1641,7 @@ bool HealthCheck_TcpHealthCheck::MergePartialFromCodedStream(
       // repeated .envoy.api.v2.HealthCheck.Payload receive = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_receive()));
         } else {
@@ -1608,12 +1652,11 @@ bool HealthCheck_TcpHealthCheck::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -1640,11 +1683,16 @@ void HealthCheck_TcpHealthCheck::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.HealthCheck.Payload receive = 2;
-  for (unsigned int i = 0, n = this->receive_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->receive_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->receive(i), output);
+      2, this->receive(static_cast<int>(i)), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.HealthCheck.TcpHealthCheck)
 }
 
@@ -1663,12 +1711,17 @@ void HealthCheck_TcpHealthCheck::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.HealthCheck.Payload receive = 2;
-  for (unsigned int i = 0, n = this->receive_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->receive_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->receive(i), deterministic, target);
+        2, this->receive(static_cast<int>(i)), deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.HealthCheck.TcpHealthCheck)
   return target;
 }
@@ -1677,14 +1730,19 @@ size_t HealthCheck_TcpHealthCheck::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.HealthCheck.TcpHealthCheck)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated .envoy.api.v2.HealthCheck.Payload receive = 2;
   {
-    unsigned int count = this->receive_size();
+    unsigned int count = static_cast<unsigned int>(this->receive_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->receive(i));
+          this->receive(static_cast<int>(i)));
     }
   }
 
@@ -1753,9 +1811,11 @@ void HealthCheck_TcpHealthCheck::Swap(HealthCheck_TcpHealthCheck* other) {
   InternalSwap(other);
 }
 void HealthCheck_TcpHealthCheck::InternalSwap(HealthCheck_TcpHealthCheck* other) {
+  using std::swap;
   receive_.InternalSwap(&other->receive_);
-  std::swap(send_, other->send_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(send_, other->send_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata HealthCheck_TcpHealthCheck::GetMetadata() const {
@@ -1775,9 +1835,10 @@ void HealthCheck_TcpHealthCheck::clear_send() {
   send_ = NULL;
 }
 const ::envoy::api::v2::HealthCheck_Payload& HealthCheck_TcpHealthCheck::send() const {
+  const ::envoy::api::v2::HealthCheck_Payload* p = send_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.TcpHealthCheck.send)
-  return send_ != NULL ? *send_
-                         : *::envoy::api::v2::HealthCheck_Payload::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::HealthCheck_Payload*>(
+      &::envoy::api::v2::_HealthCheck_Payload_default_instance_);
 }
 ::envoy::api::v2::HealthCheck_Payload* HealthCheck_TcpHealthCheck::mutable_send() {
   
@@ -1895,6 +1956,11 @@ HealthCheck_RedisHealthCheck* HealthCheck_RedisHealthCheck::New(::google::protob
 
 void HealthCheck_RedisHealthCheck::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.HealthCheck.RedisHealthCheck)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
 }
 
 bool HealthCheck_RedisHealthCheck::MergePartialFromCodedStream(
@@ -1907,12 +1973,11 @@ bool HealthCheck_RedisHealthCheck::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
   handle_unusual:
-    if (tag == 0 ||
-        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+    if (tag == 0) {
       goto success;
     }
-    DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
   // @@protoc_insertion_point(parse_success:envoy.api.v2.HealthCheck.RedisHealthCheck)
@@ -1929,6 +1994,10 @@ void HealthCheck_RedisHealthCheck::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.HealthCheck.RedisHealthCheck)
 }
 
@@ -1939,6 +2008,10 @@ void HealthCheck_RedisHealthCheck::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.HealthCheck.RedisHealthCheck)
   return target;
 }
@@ -1947,6 +2020,11 @@ size_t HealthCheck_RedisHealthCheck::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.HealthCheck.RedisHealthCheck)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -2001,7 +2079,9 @@ void HealthCheck_RedisHealthCheck::Swap(HealthCheck_RedisHealthCheck* other) {
   InternalSwap(other);
 }
 void HealthCheck_RedisHealthCheck::InternalSwap(HealthCheck_RedisHealthCheck* other) {
-  std::swap(_cached_size_, other->_cached_size_);
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata HealthCheck_RedisHealthCheck::GetMetadata() const {
@@ -2099,8 +2179,9 @@ HealthCheck::HealthCheck(const HealthCheck& from)
 }
 
 void HealthCheck::SharedCtor() {
-  ::memset(&timeout_, 0, reinterpret_cast<char*>(&reuse_connection_) -
-    reinterpret_cast<char*>(&timeout_) + sizeof(reuse_connection_));
+  ::memset(&timeout_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&reuse_connection_) -
+      reinterpret_cast<char*>(&timeout_)) + sizeof(reuse_connection_));
   clear_has_health_checker();
   _cached_size_ = 0;
 }
@@ -2111,27 +2192,13 @@ HealthCheck::~HealthCheck() {
 }
 
 void HealthCheck::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete timeout_;
-  }
-  if (this != internal_default_instance()) {
-    delete interval_;
-  }
-  if (this != internal_default_instance()) {
-    delete interval_jitter_;
-  }
-  if (this != internal_default_instance()) {
-    delete unhealthy_threshold_;
-  }
-  if (this != internal_default_instance()) {
-    delete healthy_threshold_;
-  }
-  if (this != internal_default_instance()) {
-    delete alt_port_;
-  }
-  if (this != internal_default_instance()) {
-    delete reuse_connection_;
-  }
+  if (this != internal_default_instance()) delete timeout_;
+  if (this != internal_default_instance()) delete interval_;
+  if (this != internal_default_instance()) delete interval_jitter_;
+  if (this != internal_default_instance()) delete unhealthy_threshold_;
+  if (this != internal_default_instance()) delete healthy_threshold_;
+  if (this != internal_default_instance()) delete alt_port_;
+  if (this != internal_default_instance()) delete reuse_connection_;
   if (has_health_checker()) {
     clear_health_checker();
   }
@@ -2185,6 +2252,10 @@ void HealthCheck::clear_health_checker() {
 
 void HealthCheck::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.HealthCheck)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   if (GetArenaNoVirtual() == NULL && timeout_ != NULL) {
     delete timeout_;
   }
@@ -2214,6 +2285,7 @@ void HealthCheck::Clear() {
   }
   reuse_connection_ = NULL;
   clear_health_checker();
+  _internal_metadata_.Clear();
 }
 
 bool HealthCheck::MergePartialFromCodedStream(
@@ -2229,7 +2301,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.Duration timeout = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_timeout()));
         } else {
@@ -2241,7 +2313,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.Duration interval = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_interval()));
         } else {
@@ -2253,7 +2325,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.Duration interval_jitter = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_interval_jitter()));
         } else {
@@ -2265,7 +2337,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.UInt32Value unhealthy_threshold = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_unhealthy_threshold()));
         } else {
@@ -2277,7 +2349,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.UInt32Value healthy_threshold = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_healthy_threshold()));
         } else {
@@ -2289,7 +2361,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.UInt32Value alt_port = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_alt_port()));
         } else {
@@ -2301,7 +2373,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .google.protobuf.BoolValue reuse_connection = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u)) {
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_reuse_connection()));
         } else {
@@ -2313,7 +2385,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthCheck.HttpHealthCheck http_health_check = 8;
       case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u)) {
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_http_health_check()));
         } else {
@@ -2325,7 +2397,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthCheck.TcpHealthCheck tcp_health_check = 9;
       case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u)) {
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_tcp_health_check()));
         } else {
@@ -2337,7 +2409,7 @@ bool HealthCheck::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthCheck.RedisHealthCheck redis_health_check = 10;
       case 10: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u)) {
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_redis_health_check()));
         } else {
@@ -2348,12 +2420,11 @@ bool HealthCheck::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -2433,6 +2504,10 @@ void HealthCheck::SerializeWithCachedSizes(
       10, *health_checker_.redis_health_check_, output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.HealthCheck)
 }
 
@@ -2513,6 +2588,10 @@ void HealthCheck::SerializeWithCachedSizes(
         10, *health_checker_.redis_health_check_, deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.HealthCheck)
   return target;
 }
@@ -2521,6 +2600,11 @@ size_t HealthCheck::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.HealthCheck)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // .google.protobuf.Duration timeout = 1;
   if (this->has_timeout()) {
     total_size += 1 +
@@ -2688,16 +2772,18 @@ void HealthCheck::Swap(HealthCheck* other) {
   InternalSwap(other);
 }
 void HealthCheck::InternalSwap(HealthCheck* other) {
-  std::swap(timeout_, other->timeout_);
-  std::swap(interval_, other->interval_);
-  std::swap(interval_jitter_, other->interval_jitter_);
-  std::swap(unhealthy_threshold_, other->unhealthy_threshold_);
-  std::swap(healthy_threshold_, other->healthy_threshold_);
-  std::swap(alt_port_, other->alt_port_);
-  std::swap(reuse_connection_, other->reuse_connection_);
-  std::swap(health_checker_, other->health_checker_);
-  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-  std::swap(_cached_size_, other->_cached_size_);
+  using std::swap;
+  swap(timeout_, other->timeout_);
+  swap(interval_, other->interval_);
+  swap(interval_jitter_, other->interval_jitter_);
+  swap(unhealthy_threshold_, other->unhealthy_threshold_);
+  swap(healthy_threshold_, other->healthy_threshold_);
+  swap(alt_port_, other->alt_port_);
+  swap(reuse_connection_, other->reuse_connection_);
+  swap(health_checker_, other->health_checker_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata HealthCheck::GetMetadata() const {
@@ -2717,9 +2803,10 @@ void HealthCheck::clear_timeout() {
   timeout_ = NULL;
 }
 const ::google::protobuf::Duration& HealthCheck::timeout() const {
+  const ::google::protobuf::Duration* p = timeout_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.timeout)
-  return timeout_ != NULL ? *timeout_
-                         : *::google::protobuf::Duration::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
 }
 ::google::protobuf::Duration* HealthCheck::mutable_timeout() {
   
@@ -2761,9 +2848,10 @@ void HealthCheck::clear_interval() {
   interval_ = NULL;
 }
 const ::google::protobuf::Duration& HealthCheck::interval() const {
+  const ::google::protobuf::Duration* p = interval_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.interval)
-  return interval_ != NULL ? *interval_
-                         : *::google::protobuf::Duration::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
 }
 ::google::protobuf::Duration* HealthCheck::mutable_interval() {
   
@@ -2805,9 +2893,10 @@ void HealthCheck::clear_interval_jitter() {
   interval_jitter_ = NULL;
 }
 const ::google::protobuf::Duration& HealthCheck::interval_jitter() const {
+  const ::google::protobuf::Duration* p = interval_jitter_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.interval_jitter)
-  return interval_jitter_ != NULL ? *interval_jitter_
-                         : *::google::protobuf::Duration::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
 }
 ::google::protobuf::Duration* HealthCheck::mutable_interval_jitter() {
   
@@ -2849,9 +2938,10 @@ void HealthCheck::clear_unhealthy_threshold() {
   unhealthy_threshold_ = NULL;
 }
 const ::google::protobuf::UInt32Value& HealthCheck::unhealthy_threshold() const {
+  const ::google::protobuf::UInt32Value* p = unhealthy_threshold_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.unhealthy_threshold)
-  return unhealthy_threshold_ != NULL ? *unhealthy_threshold_
-                         : *::google::protobuf::UInt32Value::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::UInt32Value*>(
+      &::google::protobuf::_UInt32Value_default_instance_);
 }
 ::google::protobuf::UInt32Value* HealthCheck::mutable_unhealthy_threshold() {
   
@@ -2893,9 +2983,10 @@ void HealthCheck::clear_healthy_threshold() {
   healthy_threshold_ = NULL;
 }
 const ::google::protobuf::UInt32Value& HealthCheck::healthy_threshold() const {
+  const ::google::protobuf::UInt32Value* p = healthy_threshold_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.healthy_threshold)
-  return healthy_threshold_ != NULL ? *healthy_threshold_
-                         : *::google::protobuf::UInt32Value::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::UInt32Value*>(
+      &::google::protobuf::_UInt32Value_default_instance_);
 }
 ::google::protobuf::UInt32Value* HealthCheck::mutable_healthy_threshold() {
   
@@ -2937,9 +3028,10 @@ void HealthCheck::clear_alt_port() {
   alt_port_ = NULL;
 }
 const ::google::protobuf::UInt32Value& HealthCheck::alt_port() const {
+  const ::google::protobuf::UInt32Value* p = alt_port_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.alt_port)
-  return alt_port_ != NULL ? *alt_port_
-                         : *::google::protobuf::UInt32Value::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::UInt32Value*>(
+      &::google::protobuf::_UInt32Value_default_instance_);
 }
 ::google::protobuf::UInt32Value* HealthCheck::mutable_alt_port() {
   
@@ -2981,9 +3073,10 @@ void HealthCheck::clear_reuse_connection() {
   reuse_connection_ = NULL;
 }
 const ::google::protobuf::BoolValue& HealthCheck::reuse_connection() const {
+  const ::google::protobuf::BoolValue* p = reuse_connection_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.HealthCheck.reuse_connection)
-  return reuse_connection_ != NULL ? *reuse_connection_
-                         : *::google::protobuf::BoolValue::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::BoolValue*>(
+      &::google::protobuf::_BoolValue_default_instance_);
 }
 ::google::protobuf::BoolValue* HealthCheck::mutable_reuse_connection() {
   

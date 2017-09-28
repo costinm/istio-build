@@ -20,64 +20,59 @@
 namespace envoy {
 namespace api {
 namespace v2 {
-class PipeDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<Pipe> {
+class PipeDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Pipe>
+     _instance;
 } _Pipe_default_instance_;
-class UnresolvedAddress_NamedAddressDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UnresolvedAddress_NamedAddress> {
-  public:
-  const ::google::protobuf::UInt32Value* port_;
-  ::google::protobuf::internal::ArenaStringPtr service_name_;
-} _UnresolvedAddress_NamedAddress_default_instance_;
-class UnresolvedAddress_ResolverDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UnresolvedAddress_Resolver> {
-} _UnresolvedAddress_Resolver_default_instance_;
-class UnresolvedAddressDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UnresolvedAddress> {
-  public:
-  const ::envoy::api::v2::UnresolvedAddress_NamedAddress* named_address_;
+class SocketAddressDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<SocketAddress>
+     _instance;
+  ::google::protobuf::uint32 port_value_;
+  ::google::protobuf::internal::ArenaStringPtr named_port_;
+} _SocketAddress_default_instance_;
+class BindConfigDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<BindConfig>
+     _instance;
+} _BindConfig_default_instance_;
+class AddressDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Address>
+     _instance;
+  const ::envoy::api::v2::SocketAddress* socket_address_;
   const ::envoy::api::v2::Pipe* pipe_;
-} _UnresolvedAddress_default_instance_;
-class UnresolvedAddressesDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UnresolvedAddresses> {
-} _UnresolvedAddresses_default_instance_;
-class ResolvedAddress_SocketAddressDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ResolvedAddress_SocketAddress> {
-} _ResolvedAddress_SocketAddress_default_instance_;
-class ResolvedAddressDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ResolvedAddress> {
-  public:
-  const ::envoy::api::v2::ResolvedAddress_SocketAddress* socket_address_;
-  const ::envoy::api::v2::Pipe* pipe_;
-} _ResolvedAddress_default_instance_;
-class ResolvedAddressesDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ResolvedAddresses> {
-} _ResolvedAddresses_default_instance_;
+} _Address_default_instance_;
 
 namespace protobuf_api_2faddress_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[8];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
+::google::protobuf::Metadata file_level_metadata[4];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 }  // namespace
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
-    const TableStruct::entries[] = {
+    const TableStruct::entries[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
 };
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
-    const TableStruct::aux[] = {
+    const TableStruct::aux[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ::google::protobuf::internal::AuxillaryParseTableField(),
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
-    TableStruct::schema[] = {
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
+    TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
-const ::google::protobuf::uint32 TableStruct::offsets[] = {
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pipe, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -85,80 +80,43 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Pipe, path_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_NamedAddress, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SocketAddress, _internal_metadata_),
   ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_NamedAddress, _oneof_case_[0]),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SocketAddress, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_NamedAddress, protocol_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_NamedAddress, address_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_UnresolvedAddress_NamedAddress_default_instance_), port_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_UnresolvedAddress_NamedAddress_default_instance_), service_name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_NamedAddress, port_specifier_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SocketAddress, protocol_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SocketAddress, address_),
+  offsetof(SocketAddressDefaultTypeInternal, port_value_),
+  offsetof(SocketAddressDefaultTypeInternal, named_port_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SocketAddress, resolver_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SocketAddress, port_specifier_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_Resolver, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BindConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress_Resolver, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(BindConfig, source_address_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Address, _internal_metadata_),
   ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress, _oneof_case_[0]),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Address, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress, resolver_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_UnresolvedAddress_default_instance_), named_address_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_UnresolvedAddress_default_instance_), pipe_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddress, address_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddresses, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UnresolvedAddresses, addresses_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress_SocketAddress, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress_SocketAddress, protocol_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress_SocketAddress, ip_address_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress_SocketAddress, port_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress, _internal_metadata_),
-  ~0u,  // no _extensions_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress, _oneof_case_[0]),
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ResolvedAddress_default_instance_), socket_address_),
-  GOOGLE_PROTOBUF_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET((&_ResolvedAddress_default_instance_), pipe_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddress, address_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddresses, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ResolvedAddresses, addresses_),
+  offsetof(AddressDefaultTypeInternal, socket_address_),
+  offsetof(AddressDefaultTypeInternal, pipe_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Address, address_),
 };
-
-static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(Pipe)},
-  { 6, -1, sizeof(UnresolvedAddress_NamedAddress)},
-  { 16, -1, sizeof(UnresolvedAddress_Resolver)},
-  { 22, -1, sizeof(UnresolvedAddress)},
-  { 31, -1, sizeof(UnresolvedAddresses)},
-  { 37, -1, sizeof(ResolvedAddress_SocketAddress)},
-  { 45, -1, sizeof(ResolvedAddress)},
-  { 53, -1, sizeof(ResolvedAddresses)},
+  { 6, -1, sizeof(SocketAddress)},
+  { 17, -1, sizeof(BindConfig)},
+  { 23, -1, sizeof(Address)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_Pipe_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UnresolvedAddress_NamedAddress_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UnresolvedAddress_Resolver_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UnresolvedAddress_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UnresolvedAddresses_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_ResolvedAddress_SocketAddress_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_ResolvedAddress_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_ResolvedAddresses_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_SocketAddress_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_BindConfig_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Address_default_instance_),
 };
 
 namespace {
@@ -179,58 +137,31 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 8);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
 }
 
 }  // namespace
-
-void TableStruct::Shutdown() {
-  _Pipe_default_instance_.Shutdown();
-  delete file_level_metadata[0].reflection;
-  _UnresolvedAddress_NamedAddress_default_instance_.Shutdown();
-  delete file_level_metadata[1].reflection;
-  _UnresolvedAddress_Resolver_default_instance_.Shutdown();
-  delete file_level_metadata[2].reflection;
-  _UnresolvedAddress_default_instance_.Shutdown();
-  delete file_level_metadata[3].reflection;
-  _UnresolvedAddresses_default_instance_.Shutdown();
-  delete file_level_metadata[4].reflection;
-  _ResolvedAddress_SocketAddress_default_instance_.Shutdown();
-  delete file_level_metadata[5].reflection;
-  _ResolvedAddress_default_instance_.Shutdown();
-  delete file_level_metadata[6].reflection;
-  _ResolvedAddresses_default_instance_.Shutdown();
-  delete file_level_metadata[7].reflection;
-}
-
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::InitDefaults();
-  _Pipe_default_instance_.DefaultConstruct();
-  _UnresolvedAddress_NamedAddress_default_instance_.DefaultConstruct();
-  _UnresolvedAddress_Resolver_default_instance_.DefaultConstruct();
-  _UnresolvedAddress_default_instance_.DefaultConstruct();
-  _UnresolvedAddresses_default_instance_.DefaultConstruct();
-  _ResolvedAddress_SocketAddress_default_instance_.DefaultConstruct();
-  _ResolvedAddress_default_instance_.DefaultConstruct();
-  _ResolvedAddresses_default_instance_.DefaultConstruct();
-  _UnresolvedAddress_NamedAddress_default_instance_.port_ = const_cast< ::google::protobuf::UInt32Value*>(
-      ::google::protobuf::UInt32Value::internal_default_instance());
-  _UnresolvedAddress_NamedAddress_default_instance_.service_name_.UnsafeSetDefault(
+  _Pipe_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Pipe_default_instance_);_SocketAddress_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_SocketAddress_default_instance_);_BindConfig_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_BindConfig_default_instance_);_Address_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Address_default_instance_);_SocketAddress_default_instance_.port_value_ = 0u;
+  _SocketAddress_default_instance_.named_port_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _UnresolvedAddress_default_instance_.get_mutable()->resolver_ = const_cast< ::envoy::api::v2::UnresolvedAddress_Resolver*>(
-      ::envoy::api::v2::UnresolvedAddress_Resolver::internal_default_instance());
-  _UnresolvedAddress_default_instance_.named_address_ = const_cast< ::envoy::api::v2::UnresolvedAddress_NamedAddress*>(
-      ::envoy::api::v2::UnresolvedAddress_NamedAddress::internal_default_instance());
-  _UnresolvedAddress_default_instance_.pipe_ = const_cast< ::envoy::api::v2::Pipe*>(
-      ::envoy::api::v2::Pipe::internal_default_instance());
-  _ResolvedAddress_SocketAddress_default_instance_.get_mutable()->port_ = const_cast< ::google::protobuf::UInt32Value*>(
-      ::google::protobuf::UInt32Value::internal_default_instance());
-  _ResolvedAddress_default_instance_.socket_address_ = const_cast< ::envoy::api::v2::ResolvedAddress_SocketAddress*>(
-      ::envoy::api::v2::ResolvedAddress_SocketAddress::internal_default_instance());
-  _ResolvedAddress_default_instance_.pipe_ = const_cast< ::envoy::api::v2::Pipe*>(
+  _BindConfig_default_instance_._instance.get_mutable()->source_address_ = const_cast< ::envoy::api::v2::SocketAddress*>(
+      ::envoy::api::v2::SocketAddress::internal_default_instance());
+  _Address_default_instance_.socket_address_ = const_cast< ::envoy::api::v2::SocketAddress*>(
+      ::envoy::api::v2::SocketAddress::internal_default_instance());
+  _Address_default_instance_.pipe_ = const_cast< ::envoy::api::v2::Pipe*>(
       ::envoy::api::v2::Pipe::internal_default_instance());
 }
 
@@ -238,48 +169,37 @@ void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
 }
+namespace {
 void AddDescriptorsImpl() {
   InitDefaults();
-  static const char descriptor[] = {
+  static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\021api/address.proto\022\014envoy.api.v2\032\036googl"
       "e/protobuf/wrappers.proto\"\024\n\004Pipe\022\014\n\004pat"
-      "h\030\001 \001(\t\"\267\003\n\021UnresolvedAddress\022:\n\010resolve"
-      "r\030\001 \001(\0132(.envoy.api.v2.UnresolvedAddress"
-      ".Resolver\022E\n\rnamed_address\030\002 \001(\0132,.envoy"
-      ".api.v2.UnresolvedAddress.NamedAddressH\000"
-      "\022\"\n\004pipe\030\003 \001(\0132\022.envoy.api.v2.PipeH\000\032\325\001\n"
-      "\014NamedAddress\022G\n\010protocol\030\001 \001(\01625.envoy."
-      "api.v2.UnresolvedAddress.NamedAddress.Pr"
-      "otocol\022\017\n\007address\030\002 \001(\t\022,\n\004port\030\003 \001(\0132\034."
-      "google.protobuf.UInt32ValueH\000\022\026\n\014service"
-      "_name\030\004 \001(\tH\000\"\023\n\010Protocol\022\007\n\003TCP\020\000B\020\n\016po"
-      "rt_specifier\032\030\n\010Resolver\022\014\n\004name\030\001 \001(\tB\t"
-      "\n\007address\"I\n\023UnresolvedAddresses\0222\n\taddr"
-      "esses\030\001 \003(\0132\037.envoy.api.v2.UnresolvedAdd"
-      "ress\"\266\002\n\017ResolvedAddress\022E\n\016socket_addre"
-      "ss\030\002 \001(\0132+.envoy.api.v2.ResolvedAddress."
-      "SocketAddressH\000\022\"\n\004pipe\030\003 \001(\0132\022.envoy.ap"
-      "i.v2.PipeH\000\032\254\001\n\rSocketAddress\022F\n\010protoco"
-      "l\030\001 \001(\01624.envoy.api.v2.ResolvedAddress.S"
-      "ocketAddress.Protocol\022\022\n\nip_address\030\002 \001("
-      "\t\022*\n\004port\030\003 \001(\0132\034.google.protobuf.UInt32"
-      "Value\"\023\n\010Protocol\022\007\n\003TCP\020\000B\t\n\007address\"E\n"
-      "\021ResolvedAddresses\0220\n\taddresses\030\001 \003(\0132\035."
-      "envoy.api.v2.ResolvedAddressb\006proto3"
+      "h\030\001 \001(\t\"\313\001\n\rSocketAddress\0226\n\010protocol\030\001 "
+      "\001(\0162$.envoy.api.v2.SocketAddress.Protoco"
+      "l\022\017\n\007address\030\002 \001(\t\022\024\n\nport_value\030\003 \001(\rH\000"
+      "\022\024\n\nnamed_port\030\004 \001(\tH\000\022\025\n\rresolver_name\030"
+      "\005 \001(\t\"\034\n\010Protocol\022\007\n\003TCP\020\000\022\007\n\003UDP\020\001B\020\n\016p"
+      "ort_specifier\"A\n\nBindConfig\0223\n\016source_ad"
+      "dress\030\001 \001(\0132\033.envoy.api.v2.SocketAddress"
+      "\"o\n\007Address\0225\n\016socket_address\030\001 \001(\0132\033.en"
+      "voy.api.v2.SocketAddressH\000\022\"\n\004pipe\030\002 \001(\013"
+      "2\022.envoy.api.v2.PipeH\000B\t\n\007addressb\006proto"
+      "3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 996);
+      descriptor, 481);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api/address.proto", &protobuf_RegisterTypes);
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::AddDescriptors();
-  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
+} // anonymous namespace
 
 void AddDescriptors() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
 }
-// Force AddDescriptors() to be called at static initialization time.
+// Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
   StaticDescriptorInitializer() {
     AddDescriptors();
@@ -288,13 +208,14 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_api_2faddress_2eproto
 
-const ::google::protobuf::EnumDescriptor* UnresolvedAddress_NamedAddress_Protocol_descriptor() {
+const ::google::protobuf::EnumDescriptor* SocketAddress_Protocol_descriptor() {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_enum_descriptors[0];
 }
-bool UnresolvedAddress_NamedAddress_Protocol_IsValid(int value) {
+bool SocketAddress_Protocol_IsValid(int value) {
   switch (value) {
     case 0:
+    case 1:
       return true;
     default:
       return false;
@@ -302,29 +223,11 @@ bool UnresolvedAddress_NamedAddress_Protocol_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const UnresolvedAddress_NamedAddress_Protocol UnresolvedAddress_NamedAddress::TCP;
-const UnresolvedAddress_NamedAddress_Protocol UnresolvedAddress_NamedAddress::Protocol_MIN;
-const UnresolvedAddress_NamedAddress_Protocol UnresolvedAddress_NamedAddress::Protocol_MAX;
-const int UnresolvedAddress_NamedAddress::Protocol_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* ResolvedAddress_SocketAddress_Protocol_descriptor() {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_enum_descriptors[1];
-}
-bool ResolvedAddress_SocketAddress_Protocol_IsValid(int value) {
-  switch (value) {
-    case 0:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const ResolvedAddress_SocketAddress_Protocol ResolvedAddress_SocketAddress::TCP;
-const ResolvedAddress_SocketAddress_Protocol ResolvedAddress_SocketAddress::Protocol_MIN;
-const ResolvedAddress_SocketAddress_Protocol ResolvedAddress_SocketAddress::Protocol_MAX;
-const int ResolvedAddress_SocketAddress::Protocol_ARRAYSIZE;
+const SocketAddress_Protocol SocketAddress::TCP;
+const SocketAddress_Protocol SocketAddress::UDP;
+const SocketAddress_Protocol SocketAddress::Protocol_MIN;
+const SocketAddress_Protocol SocketAddress::Protocol_MAX;
+const int SocketAddress::Protocol_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
@@ -392,7 +295,12 @@ Pipe* Pipe::New(::google::protobuf::Arena* arena) const {
 
 void Pipe::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.Pipe)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
 }
 
 bool Pipe::MergePartialFromCodedStream(
@@ -408,11 +316,11 @@ bool Pipe::MergePartialFromCodedStream(
       // string path = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_path()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->path().data(), this->path().length(),
+            this->path().data(), static_cast<int>(this->path().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.Pipe.path"));
         } else {
@@ -423,12 +331,11 @@ bool Pipe::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -451,13 +358,17 @@ void Pipe::SerializeWithCachedSizes(
   // string path = 1;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->path().data(), this->path().length(),
+      this->path().data(), static_cast<int>(this->path().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.Pipe.path");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->path(), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.Pipe)
 }
 
@@ -471,7 +382,7 @@ void Pipe::SerializeWithCachedSizes(
   // string path = 1;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->path().data(), this->path().length(),
+      this->path().data(), static_cast<int>(this->path().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.Pipe.path");
     target =
@@ -479,6 +390,10 @@ void Pipe::SerializeWithCachedSizes(
         1, this->path(), target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.Pipe)
   return target;
 }
@@ -487,6 +402,11 @@ size_t Pipe::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.Pipe)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // string path = 1;
   if (this->path().size() > 0) {
     total_size += 1 +
@@ -552,8 +472,10 @@ void Pipe::Swap(Pipe* other) {
   InternalSwap(other);
 }
 void Pipe::InternalSwap(Pipe* other) {
+  using std::swap;
   path_.Swap(&other->path_);
-  std::swap(_cached_size_, other->_cached_size_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata Pipe::GetMetadata() const {
@@ -622,21 +544,22 @@ void Pipe::set_allocated_path(::std::string* path) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int UnresolvedAddress_NamedAddress::kProtocolFieldNumber;
-const int UnresolvedAddress_NamedAddress::kAddressFieldNumber;
-const int UnresolvedAddress_NamedAddress::kPortFieldNumber;
-const int UnresolvedAddress_NamedAddress::kServiceNameFieldNumber;
+const int SocketAddress::kProtocolFieldNumber;
+const int SocketAddress::kAddressFieldNumber;
+const int SocketAddress::kPortValueFieldNumber;
+const int SocketAddress::kNamedPortFieldNumber;
+const int SocketAddress::kResolverNameFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-UnresolvedAddress_NamedAddress::UnresolvedAddress_NamedAddress()
+SocketAddress::SocketAddress()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
     protobuf_api_2faddress_2eproto::InitDefaults();
   }
   SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(constructor:envoy.api.v2.SocketAddress)
 }
-UnresolvedAddress_NamedAddress::UnresolvedAddress_NamedAddress(const UnresolvedAddress_NamedAddress& from)
+SocketAddress::SocketAddress(const SocketAddress& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _cached_size_(0) {
@@ -645,75 +568,81 @@ UnresolvedAddress_NamedAddress::UnresolvedAddress_NamedAddress(const UnresolvedA
   if (from.address().size() > 0) {
     address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
   }
+  resolver_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.resolver_name().size() > 0) {
+    resolver_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.resolver_name_);
+  }
   protocol_ = from.protocol_;
   clear_has_port_specifier();
   switch (from.port_specifier_case()) {
-    case kPort: {
-      mutable_port()->::google::protobuf::UInt32Value::MergeFrom(from.port());
+    case kPortValue: {
+      set_port_value(from.port_value());
       break;
     }
-    case kServiceName: {
-      set_service_name(from.service_name());
+    case kNamedPort: {
+      set_named_port(from.named_port());
       break;
     }
     case PORT_SPECIFIER_NOT_SET: {
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.SocketAddress)
 }
 
-void UnresolvedAddress_NamedAddress::SharedCtor() {
+void SocketAddress::SharedCtor() {
   address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resolver_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   protocol_ = 0;
   clear_has_port_specifier();
   _cached_size_ = 0;
 }
 
-UnresolvedAddress_NamedAddress::~UnresolvedAddress_NamedAddress() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.UnresolvedAddress.NamedAddress)
+SocketAddress::~SocketAddress() {
+  // @@protoc_insertion_point(destructor:envoy.api.v2.SocketAddress)
   SharedDtor();
 }
 
-void UnresolvedAddress_NamedAddress::SharedDtor() {
+void SocketAddress::SharedDtor() {
   address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resolver_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (has_port_specifier()) {
     clear_port_specifier();
   }
 }
 
-void UnresolvedAddress_NamedAddress::SetCachedSize(int size) const {
+void SocketAddress::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* UnresolvedAddress_NamedAddress::descriptor() {
+const ::google::protobuf::Descriptor* SocketAddress::descriptor() {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const UnresolvedAddress_NamedAddress& UnresolvedAddress_NamedAddress::default_instance() {
+const SocketAddress& SocketAddress::default_instance() {
   protobuf_api_2faddress_2eproto::InitDefaults();
   return *internal_default_instance();
 }
 
-UnresolvedAddress_NamedAddress* UnresolvedAddress_NamedAddress::New(::google::protobuf::Arena* arena) const {
-  UnresolvedAddress_NamedAddress* n = new UnresolvedAddress_NamedAddress;
+SocketAddress* SocketAddress::New(::google::protobuf::Arena* arena) const {
+  SocketAddress* n = new SocketAddress;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void UnresolvedAddress_NamedAddress::clear_port_specifier() {
-// @@protoc_insertion_point(one_of_clear_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+void SocketAddress::clear_port_specifier() {
+// @@protoc_insertion_point(one_of_clear_start:envoy.api.v2.SocketAddress)
   switch (port_specifier_case()) {
-    case kPort: {
-      delete port_specifier_.port_;
+    case kPortValue: {
+      // No need to clear
       break;
     }
-    case kServiceName: {
-      port_specifier_.service_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    case kNamedPort: {
+      port_specifier_.named_port_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
       break;
     }
     case PORT_SPECIFIER_NOT_SET: {
@@ -724,32 +653,38 @@ void UnresolvedAddress_NamedAddress::clear_port_specifier() {
 }
 
 
-void UnresolvedAddress_NamedAddress::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+void SocketAddress::Clear() {
+// @@protoc_insertion_point(message_clear_start:envoy.api.v2.SocketAddress)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resolver_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   protocol_ = 0;
   clear_port_specifier();
+  _internal_metadata_.Clear();
 }
 
-bool UnresolvedAddress_NamedAddress::MergePartialFromCodedStream(
+bool SocketAddress::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(parse_start:envoy.api.v2.SocketAddress)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .envoy.api.v2.UnresolvedAddress.NamedAddress.Protocol protocol = 1;
+      // .envoy.api.v2.SocketAddress.Protocol protocol = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u)) {
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_protocol(static_cast< ::envoy::api::v2::UnresolvedAddress_NamedAddress_Protocol >(value));
+          set_protocol(static_cast< ::envoy::api::v2::SocketAddress_Protocol >(value));
         } else {
           goto handle_unusual;
         }
@@ -759,41 +694,60 @@ bool UnresolvedAddress_NamedAddress::MergePartialFromCodedStream(
       // string address = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_address()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->address().data(), this->address().length(),
+            this->address().data(), static_cast<int>(this->address().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "envoy.api.v2.UnresolvedAddress.NamedAddress.address"));
+            "envoy.api.v2.SocketAddress.address"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .google.protobuf.UInt32Value port = 3;
+      // uint32 port_value = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_port()));
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          clear_port_specifier();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &port_specifier_.port_value_)));
+          set_has_port_value();
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string service_name = 4;
+      // string named_port = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_service_name()));
+                input, this->mutable_named_port()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->service_name().data(), this->service_name().length(),
+            this->named_port().data(), static_cast<int>(this->named_port().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "envoy.api.v2.UnresolvedAddress.NamedAddress.service_name"));
+            "envoy.api.v2.SocketAddress.named_port"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string resolver_name = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_resolver_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->resolver_name().data(), static_cast<int>(this->resolver_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "envoy.api.v2.SocketAddress.resolver_name"));
         } else {
           goto handle_unusual;
         }
@@ -802,32 +756,31 @@ bool UnresolvedAddress_NamedAddress::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(parse_success:envoy.api.v2.SocketAddress)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(parse_failure:envoy.api.v2.SocketAddress)
   return false;
 #undef DO_
 }
 
-void UnresolvedAddress_NamedAddress::SerializeWithCachedSizes(
+void SocketAddress::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(serialize_start:envoy.api.v2.SocketAddress)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .envoy.api.v2.UnresolvedAddress.NamedAddress.Protocol protocol = 1;
+  // .envoy.api.v2.SocketAddress.Protocol protocol = 1;
   if (this->protocol() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->protocol(), output);
@@ -836,40 +789,53 @@ void UnresolvedAddress_NamedAddress::SerializeWithCachedSizes(
   // string address = 2;
   if (this->address().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->address().data(), this->address().length(),
+      this->address().data(), static_cast<int>(this->address().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UnresolvedAddress.NamedAddress.address");
+      "envoy.api.v2.SocketAddress.address");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->address(), output);
   }
 
-  // .google.protobuf.UInt32Value port = 3;
-  if (has_port()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *port_specifier_.port_, output);
+  // uint32 port_value = 3;
+  if (has_port_value()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->port_value(), output);
   }
 
-  // string service_name = 4;
-  if (has_service_name()) {
+  // string named_port = 4;
+  if (has_named_port()) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->service_name().data(), this->service_name().length(),
+      this->named_port().data(), static_cast<int>(this->named_port().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UnresolvedAddress.NamedAddress.service_name");
+      "envoy.api.v2.SocketAddress.named_port");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->service_name(), output);
+      4, this->named_port(), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // string resolver_name = 5;
+  if (this->resolver_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->resolver_name().data(), static_cast<int>(this->resolver_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.SocketAddress.resolver_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->resolver_name(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:envoy.api.v2.SocketAddress)
 }
 
-::google::protobuf::uint8* UnresolvedAddress_NamedAddress::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* SocketAddress::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.SocketAddress)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .envoy.api.v2.UnresolvedAddress.NamedAddress.Protocol protocol = 1;
+  // .envoy.api.v2.SocketAddress.Protocol protocol = 1;
   if (this->protocol() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->protocol(), target);
@@ -878,40 +844,58 @@ void UnresolvedAddress_NamedAddress::SerializeWithCachedSizes(
   // string address = 2;
   if (this->address().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->address().data(), this->address().length(),
+      this->address().data(), static_cast<int>(this->address().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UnresolvedAddress.NamedAddress.address");
+      "envoy.api.v2.SocketAddress.address");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->address(), target);
   }
 
-  // .google.protobuf.UInt32Value port = 3;
-  if (has_port()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, *port_specifier_.port_, deterministic, target);
+  // uint32 port_value = 3;
+  if (has_port_value()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->port_value(), target);
   }
 
-  // string service_name = 4;
-  if (has_service_name()) {
+  // string named_port = 4;
+  if (has_named_port()) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->service_name().data(), this->service_name().length(),
+      this->named_port().data(), static_cast<int>(this->named_port().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UnresolvedAddress.NamedAddress.service_name");
+      "envoy.api.v2.SocketAddress.named_port");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->service_name(), target);
+        4, this->named_port(), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // string resolver_name = 5;
+  if (this->resolver_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->resolver_name().data(), static_cast<int>(this->resolver_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "envoy.api.v2.SocketAddress.resolver_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->resolver_name(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.SocketAddress)
   return target;
 }
 
-size_t UnresolvedAddress_NamedAddress::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+size_t SocketAddress::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.SocketAddress)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // string address = 2;
   if (this->address().size() > 0) {
     total_size += 1 +
@@ -919,25 +903,32 @@ size_t UnresolvedAddress_NamedAddress::ByteSizeLong() const {
         this->address());
   }
 
-  // .envoy.api.v2.UnresolvedAddress.NamedAddress.Protocol protocol = 1;
+  // string resolver_name = 5;
+  if (this->resolver_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->resolver_name());
+  }
+
+  // .envoy.api.v2.SocketAddress.Protocol protocol = 1;
   if (this->protocol() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->protocol());
   }
 
   switch (port_specifier_case()) {
-    // .google.protobuf.UInt32Value port = 3;
-    case kPort: {
+    // uint32 port_value = 3;
+    case kPortValue: {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *port_specifier_.port_);
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->port_value());
       break;
     }
-    // string service_name = 4;
-    case kServiceName: {
+    // string named_port = 4;
+    case kNamedPort: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->service_name());
+          this->named_port());
       break;
     }
     case PORT_SPECIFIER_NOT_SET: {
@@ -951,23 +942,23 @@ size_t UnresolvedAddress_NamedAddress::ByteSizeLong() const {
   return total_size;
 }
 
-void UnresolvedAddress_NamedAddress::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+void SocketAddress::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.SocketAddress)
   GOOGLE_DCHECK_NE(&from, this);
-  const UnresolvedAddress_NamedAddress* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const UnresolvedAddress_NamedAddress>(
+  const SocketAddress* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SocketAddress>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.SocketAddress)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.UnresolvedAddress.NamedAddress)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.SocketAddress)
     MergeFrom(*source);
   }
 }
 
-void UnresolvedAddress_NamedAddress::MergeFrom(const UnresolvedAddress_NamedAddress& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+void SocketAddress::MergeFrom(const SocketAddress& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.SocketAddress)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -977,16 +968,20 @@ void UnresolvedAddress_NamedAddress::MergeFrom(const UnresolvedAddress_NamedAddr
 
     address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
   }
+  if (from.resolver_name().size() > 0) {
+
+    resolver_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.resolver_name_);
+  }
   if (from.protocol() != 0) {
     set_protocol(from.protocol());
   }
   switch (from.port_specifier_case()) {
-    case kPort: {
-      mutable_port()->::google::protobuf::UInt32Value::MergeFrom(from.port());
+    case kPortValue: {
+      set_port_value(from.port_value());
       break;
     }
-    case kServiceName: {
-      set_service_name(from.service_name());
+    case kNamedPort: {
+      set_named_port(from.named_port());
       break;
     }
     case PORT_SPECIFIER_NOT_SET: {
@@ -995,358 +990,395 @@ void UnresolvedAddress_NamedAddress::MergeFrom(const UnresolvedAddress_NamedAddr
   }
 }
 
-void UnresolvedAddress_NamedAddress::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+void SocketAddress::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.SocketAddress)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void UnresolvedAddress_NamedAddress::CopyFrom(const UnresolvedAddress_NamedAddress& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.UnresolvedAddress.NamedAddress)
+void SocketAddress::CopyFrom(const SocketAddress& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.SocketAddress)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool UnresolvedAddress_NamedAddress::IsInitialized() const {
+bool SocketAddress::IsInitialized() const {
   return true;
 }
 
-void UnresolvedAddress_NamedAddress::Swap(UnresolvedAddress_NamedAddress* other) {
+void SocketAddress::Swap(SocketAddress* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void UnresolvedAddress_NamedAddress::InternalSwap(UnresolvedAddress_NamedAddress* other) {
+void SocketAddress::InternalSwap(SocketAddress* other) {
+  using std::swap;
   address_.Swap(&other->address_);
-  std::swap(protocol_, other->protocol_);
-  std::swap(port_specifier_, other->port_specifier_);
-  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-  std::swap(_cached_size_, other->_cached_size_);
+  resolver_name_.Swap(&other->resolver_name_);
+  swap(protocol_, other->protocol_);
+  swap(port_specifier_, other->port_specifier_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata UnresolvedAddress_NamedAddress::GetMetadata() const {
+::google::protobuf::Metadata SocketAddress::GetMetadata() const {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// UnresolvedAddress_NamedAddress
+// SocketAddress
 
-// .envoy.api.v2.UnresolvedAddress.NamedAddress.Protocol protocol = 1;
-void UnresolvedAddress_NamedAddress::clear_protocol() {
+// .envoy.api.v2.SocketAddress.Protocol protocol = 1;
+void SocketAddress::clear_protocol() {
   protocol_ = 0;
 }
-::envoy::api::v2::UnresolvedAddress_NamedAddress_Protocol UnresolvedAddress_NamedAddress::protocol() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.NamedAddress.protocol)
-  return static_cast< ::envoy::api::v2::UnresolvedAddress_NamedAddress_Protocol >(protocol_);
+::envoy::api::v2::SocketAddress_Protocol SocketAddress::protocol() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.SocketAddress.protocol)
+  return static_cast< ::envoy::api::v2::SocketAddress_Protocol >(protocol_);
 }
-void UnresolvedAddress_NamedAddress::set_protocol(::envoy::api::v2::UnresolvedAddress_NamedAddress_Protocol value) {
+void SocketAddress::set_protocol(::envoy::api::v2::SocketAddress_Protocol value) {
   
   protocol_ = value;
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UnresolvedAddress.NamedAddress.protocol)
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.protocol)
 }
 
 // string address = 2;
-void UnresolvedAddress_NamedAddress::clear_address() {
+void SocketAddress::clear_address() {
   address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-const ::std::string& UnresolvedAddress_NamedAddress::address() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+const ::std::string& SocketAddress::address() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.SocketAddress.address)
   return address_.GetNoArena();
 }
-void UnresolvedAddress_NamedAddress::set_address(const ::std::string& value) {
+void SocketAddress::set_address(const ::std::string& value) {
   
   address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.address)
 }
 #if LANG_CXX11
-void UnresolvedAddress_NamedAddress::set_address(::std::string&& value) {
+void SocketAddress::set_address(::std::string&& value) {
   
   address_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.SocketAddress.address)
 }
 #endif
-void UnresolvedAddress_NamedAddress::set_address(const char* value) {
+void SocketAddress::set_address(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.SocketAddress.address)
 }
-void UnresolvedAddress_NamedAddress::set_address(const char* value, size_t size) {
+void SocketAddress::set_address(const char* value, size_t size) {
   
   address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.SocketAddress.address)
 }
-::std::string* UnresolvedAddress_NamedAddress::mutable_address() {
+::std::string* SocketAddress::mutable_address() {
   
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.SocketAddress.address)
   return address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-::std::string* UnresolvedAddress_NamedAddress::release_address() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+::std::string* SocketAddress::release_address() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.SocketAddress.address)
   
   return address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-void UnresolvedAddress_NamedAddress::set_allocated_address(::std::string* address) {
+void SocketAddress::set_allocated_address(::std::string* address) {
   if (address != NULL) {
     
   } else {
     
   }
   address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), address);
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.NamedAddress.address)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.SocketAddress.address)
 }
 
-// .google.protobuf.UInt32Value port = 3;
-bool UnresolvedAddress_NamedAddress::has_port() const {
-  return port_specifier_case() == kPort;
+// uint32 port_value = 3;
+bool SocketAddress::has_port_value() const {
+  return port_specifier_case() == kPortValue;
 }
-void UnresolvedAddress_NamedAddress::set_has_port() {
-  _oneof_case_[0] = kPort;
+void SocketAddress::set_has_port_value() {
+  _oneof_case_[0] = kPortValue;
 }
-void UnresolvedAddress_NamedAddress::clear_port() {
-  if (has_port()) {
-    delete port_specifier_.port_;
+void SocketAddress::clear_port_value() {
+  if (has_port_value()) {
+    port_specifier_.port_value_ = 0u;
     clear_has_port_specifier();
   }
 }
- const ::google::protobuf::UInt32Value& UnresolvedAddress_NamedAddress::port() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.NamedAddress.port)
-  return has_port()
-      ? *port_specifier_.port_
-      : ::google::protobuf::UInt32Value::default_instance();
+::google::protobuf::uint32 SocketAddress::port_value() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.SocketAddress.port_value)
+  if (has_port_value()) {
+    return port_specifier_.port_value_;
+  }
+  return 0u;
 }
-::google::protobuf::UInt32Value* UnresolvedAddress_NamedAddress::mutable_port() {
-  if (!has_port()) {
+void SocketAddress::set_port_value(::google::protobuf::uint32 value) {
+  if (!has_port_value()) {
     clear_port_specifier();
-    set_has_port();
-    port_specifier_.port_ = new ::google::protobuf::UInt32Value;
+    set_has_port_value();
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.NamedAddress.port)
-  return port_specifier_.port_;
-}
-::google::protobuf::UInt32Value* UnresolvedAddress_NamedAddress::release_port() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.NamedAddress.port)
-  if (has_port()) {
-    clear_has_port_specifier();
-    ::google::protobuf::UInt32Value* temp = port_specifier_.port_;
-    port_specifier_.port_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
-}
-void UnresolvedAddress_NamedAddress::set_allocated_port(::google::protobuf::UInt32Value* port) {
-  clear_port_specifier();
-  if (port) {
-    if (static_cast< ::google::protobuf::UInt32Value*>(port)->GetArena() != NULL) {
-      ::google::protobuf::UInt32Value* new_port = new ::google::protobuf::UInt32Value;
-      new_port->CopyFrom(*port);
-      port = new_port;
-    }
-    set_has_port();
-    port_specifier_.port_ = port;
-  }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.NamedAddress.port)
+  port_specifier_.port_value_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.port_value)
 }
 
-// string service_name = 4;
-bool UnresolvedAddress_NamedAddress::has_service_name() const {
-  return port_specifier_case() == kServiceName;
+// string named_port = 4;
+bool SocketAddress::has_named_port() const {
+  return port_specifier_case() == kNamedPort;
 }
-void UnresolvedAddress_NamedAddress::set_has_service_name() {
-  _oneof_case_[0] = kServiceName;
+void SocketAddress::set_has_named_port() {
+  _oneof_case_[0] = kNamedPort;
 }
-void UnresolvedAddress_NamedAddress::clear_service_name() {
-  if (has_service_name()) {
-    port_specifier_.service_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void SocketAddress::clear_named_port() {
+  if (has_named_port()) {
+    port_specifier_.named_port_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     clear_has_port_specifier();
   }
 }
-const ::std::string& UnresolvedAddress_NamedAddress::service_name() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
-  if (has_service_name()) {
-    return port_specifier_.service_name_.GetNoArena();
+const ::std::string& SocketAddress::named_port() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.SocketAddress.named_port)
+  if (has_named_port()) {
+    return port_specifier_.named_port_.GetNoArena();
   }
   return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
-void UnresolvedAddress_NamedAddress::set_service_name(const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
-  if (!has_service_name()) {
+void SocketAddress::set_named_port(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.named_port)
+  if (!has_named_port()) {
     clear_port_specifier();
-    set_has_service_name();
-    port_specifier_.service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    set_has_named_port();
+    port_specifier_.named_port_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  port_specifier_.service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
+  port_specifier_.named_port_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.named_port)
 }
 #if LANG_CXX11
-void UnresolvedAddress_NamedAddress::set_service_name(::std::string&& value) {
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
-  if (!has_service_name()) {
+void SocketAddress::set_named_port(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.named_port)
+  if (!has_named_port()) {
     clear_port_specifier();
-    set_has_service_name();
-    port_specifier_.service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    set_has_named_port();
+    port_specifier_.named_port_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  port_specifier_.service_name_.SetNoArena(
+  port_specifier_.named_port_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.SocketAddress.named_port)
 }
 #endif
-void UnresolvedAddress_NamedAddress::set_service_name(const char* value) {
+void SocketAddress::set_named_port(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  if (!has_service_name()) {
+  if (!has_named_port()) {
     clear_port_specifier();
-    set_has_service_name();
-    port_specifier_.service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    set_has_named_port();
+    port_specifier_.named_port_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  port_specifier_.service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  port_specifier_.named_port_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.SocketAddress.named_port)
 }
-void UnresolvedAddress_NamedAddress::set_service_name(const char* value, size_t size) {
-  if (!has_service_name()) {
+void SocketAddress::set_named_port(const char* value, size_t size) {
+  if (!has_named_port()) {
     clear_port_specifier();
-    set_has_service_name();
-    port_specifier_.service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    set_has_named_port();
+    port_specifier_.named_port_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  port_specifier_.service_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  port_specifier_.named_port_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.SocketAddress.named_port)
 }
-::std::string* UnresolvedAddress_NamedAddress::mutable_service_name() {
-  if (!has_service_name()) {
+::std::string* SocketAddress::mutable_named_port() {
+  if (!has_named_port()) {
     clear_port_specifier();
-    set_has_service_name();
-    port_specifier_.service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    set_has_named_port();
+    port_specifier_.named_port_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
-  return port_specifier_.service_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.SocketAddress.named_port)
+  return port_specifier_.named_port_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-::std::string* UnresolvedAddress_NamedAddress::release_service_name() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
-  if (has_service_name()) {
+::std::string* SocketAddress::release_named_port() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.SocketAddress.named_port)
+  if (has_named_port()) {
     clear_has_port_specifier();
-    return port_specifier_.service_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return port_specifier_.named_port_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   } else {
     return NULL;
   }
 }
-void UnresolvedAddress_NamedAddress::set_allocated_service_name(::std::string* service_name) {
-  if (!has_service_name()) {
-    port_specifier_.service_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void SocketAddress::set_allocated_named_port(::std::string* named_port) {
+  if (!has_named_port()) {
+    port_specifier_.named_port_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   clear_port_specifier();
-  if (service_name != NULL) {
-    set_has_service_name();
-    port_specifier_.service_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-        service_name);
+  if (named_port != NULL) {
+    set_has_named_port();
+    port_specifier_.named_port_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+        named_port);
   }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.NamedAddress.service_name)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.SocketAddress.named_port)
 }
 
-bool UnresolvedAddress_NamedAddress::has_port_specifier() const {
+// string resolver_name = 5;
+void SocketAddress::clear_resolver_name() {
+  resolver_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& SocketAddress::resolver_name() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.SocketAddress.resolver_name)
+  return resolver_name_.GetNoArena();
+}
+void SocketAddress::set_resolver_name(const ::std::string& value) {
+  
+  resolver_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:envoy.api.v2.SocketAddress.resolver_name)
+}
+#if LANG_CXX11
+void SocketAddress::set_resolver_name(::std::string&& value) {
+  
+  resolver_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.SocketAddress.resolver_name)
+}
+#endif
+void SocketAddress::set_resolver_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  resolver_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:envoy.api.v2.SocketAddress.resolver_name)
+}
+void SocketAddress::set_resolver_name(const char* value, size_t size) {
+  
+  resolver_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.SocketAddress.resolver_name)
+}
+::std::string* SocketAddress::mutable_resolver_name() {
+  
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.SocketAddress.resolver_name)
+  return resolver_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* SocketAddress::release_resolver_name() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.SocketAddress.resolver_name)
+  
+  return resolver_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void SocketAddress::set_allocated_resolver_name(::std::string* resolver_name) {
+  if (resolver_name != NULL) {
+    
+  } else {
+    
+  }
+  resolver_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), resolver_name);
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.SocketAddress.resolver_name)
+}
+
+bool SocketAddress::has_port_specifier() const {
   return port_specifier_case() != PORT_SPECIFIER_NOT_SET;
 }
-void UnresolvedAddress_NamedAddress::clear_has_port_specifier() {
+void SocketAddress::clear_has_port_specifier() {
   _oneof_case_[0] = PORT_SPECIFIER_NOT_SET;
 }
-UnresolvedAddress_NamedAddress::PortSpecifierCase UnresolvedAddress_NamedAddress::port_specifier_case() const {
-  return UnresolvedAddress_NamedAddress::PortSpecifierCase(_oneof_case_[0]);
+SocketAddress::PortSpecifierCase SocketAddress::port_specifier_case() const {
+  return SocketAddress::PortSpecifierCase(_oneof_case_[0]);
 }
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int UnresolvedAddress_Resolver::kNameFieldNumber;
+const int BindConfig::kSourceAddressFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-UnresolvedAddress_Resolver::UnresolvedAddress_Resolver()
+BindConfig::BindConfig()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
     protobuf_api_2faddress_2eproto::InitDefaults();
   }
   SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(constructor:envoy.api.v2.BindConfig)
 }
-UnresolvedAddress_Resolver::UnresolvedAddress_Resolver(const UnresolvedAddress_Resolver& from)
+BindConfig::BindConfig(const BindConfig& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  if (from.has_source_address()) {
+    source_address_ = new ::envoy::api::v2::SocketAddress(*from.source_address_);
+  } else {
+    source_address_ = NULL;
   }
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.BindConfig)
 }
 
-void UnresolvedAddress_Resolver::SharedCtor() {
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void BindConfig::SharedCtor() {
+  source_address_ = NULL;
   _cached_size_ = 0;
 }
 
-UnresolvedAddress_Resolver::~UnresolvedAddress_Resolver() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.UnresolvedAddress.Resolver)
+BindConfig::~BindConfig() {
+  // @@protoc_insertion_point(destructor:envoy.api.v2.BindConfig)
   SharedDtor();
 }
 
-void UnresolvedAddress_Resolver::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void BindConfig::SharedDtor() {
+  if (this != internal_default_instance()) delete source_address_;
 }
 
-void UnresolvedAddress_Resolver::SetCachedSize(int size) const {
+void BindConfig::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* UnresolvedAddress_Resolver::descriptor() {
+const ::google::protobuf::Descriptor* BindConfig::descriptor() {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const UnresolvedAddress_Resolver& UnresolvedAddress_Resolver::default_instance() {
+const BindConfig& BindConfig::default_instance() {
   protobuf_api_2faddress_2eproto::InitDefaults();
   return *internal_default_instance();
 }
 
-UnresolvedAddress_Resolver* UnresolvedAddress_Resolver::New(::google::protobuf::Arena* arena) const {
-  UnresolvedAddress_Resolver* n = new UnresolvedAddress_Resolver;
+BindConfig* BindConfig::New(::google::protobuf::Arena* arena) const {
+  BindConfig* n = new BindConfig;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void UnresolvedAddress_Resolver::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.UnresolvedAddress.Resolver)
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void BindConfig::Clear() {
+// @@protoc_insertion_point(message_clear_start:envoy.api.v2.BindConfig)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == NULL && source_address_ != NULL) {
+    delete source_address_;
+  }
+  source_address_ = NULL;
+  _internal_metadata_.Clear();
 }
 
-bool UnresolvedAddress_Resolver::MergePartialFromCodedStream(
+bool BindConfig::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(parse_start:envoy.api.v2.BindConfig)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
+      // .envoy.api.v2.SocketAddress source_address = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), this->name().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "envoy.api.v2.UnresolvedAddress.Resolver.name"));
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_source_address()));
         } else {
           goto handle_unusual;
         }
@@ -1355,472 +1387,81 @@ bool UnresolvedAddress_Resolver::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(parse_success:envoy.api.v2.BindConfig)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(parse_failure:envoy.api.v2.BindConfig)
   return false;
 #undef DO_
 }
 
-void UnresolvedAddress_Resolver::SerializeWithCachedSizes(
+void BindConfig::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(serialize_start:envoy.api.v2.BindConfig)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), this->name().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UnresolvedAddress.Resolver.name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
+  // .envoy.api.v2.SocketAddress source_address = 1;
+  if (this->has_source_address()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->source_address_, output);
   }
 
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.UnresolvedAddress.Resolver)
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:envoy.api.v2.BindConfig)
 }
 
-::google::protobuf::uint8* UnresolvedAddress_Resolver::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* BindConfig::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.UnresolvedAddress.Resolver)
+  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.BindConfig)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), this->name().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.UnresolvedAddress.Resolver.name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+  // .envoy.api.v2.SocketAddress source_address = 1;
+  if (this->has_source_address()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->source_address_, deterministic, target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.UnresolvedAddress.Resolver)
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.BindConfig)
   return target;
 }
 
-size_t UnresolvedAddress_Resolver::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.UnresolvedAddress.Resolver)
+size_t BindConfig::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.BindConfig)
   size_t total_size = 0;
 
-  // string name = 1;
-  if (this->name().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void UnresolvedAddress_Resolver::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.UnresolvedAddress.Resolver)
-  GOOGLE_DCHECK_NE(&from, this);
-  const UnresolvedAddress_Resolver* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const UnresolvedAddress_Resolver>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.UnresolvedAddress.Resolver)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.UnresolvedAddress.Resolver)
-    MergeFrom(*source);
-  }
-}
-
-void UnresolvedAddress_Resolver::MergeFrom(const UnresolvedAddress_Resolver& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.UnresolvedAddress.Resolver)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
-}
-
-void UnresolvedAddress_Resolver::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.UnresolvedAddress.Resolver)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void UnresolvedAddress_Resolver::CopyFrom(const UnresolvedAddress_Resolver& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.UnresolvedAddress.Resolver)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool UnresolvedAddress_Resolver::IsInitialized() const {
-  return true;
-}
-
-void UnresolvedAddress_Resolver::Swap(UnresolvedAddress_Resolver* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void UnresolvedAddress_Resolver::InternalSwap(UnresolvedAddress_Resolver* other) {
-  name_.Swap(&other->name_);
-  std::swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata UnresolvedAddress_Resolver::GetMetadata() const {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// UnresolvedAddress_Resolver
-
-// string name = 1;
-void UnresolvedAddress_Resolver::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-const ::std::string& UnresolvedAddress_Resolver::name() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.Resolver.name)
-  return name_.GetNoArena();
-}
-void UnresolvedAddress_Resolver::set_name(const ::std::string& value) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UnresolvedAddress.Resolver.name)
-}
-#if LANG_CXX11
-void UnresolvedAddress_Resolver::set_name(::std::string&& value) {
-  
-  name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.UnresolvedAddress.Resolver.name)
-}
-#endif
-void UnresolvedAddress_Resolver::set_name(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.UnresolvedAddress.Resolver.name)
-}
-void UnresolvedAddress_Resolver::set_name(const char* value, size_t size) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.UnresolvedAddress.Resolver.name)
-}
-::std::string* UnresolvedAddress_Resolver::mutable_name() {
-  
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.Resolver.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-::std::string* UnresolvedAddress_Resolver::release_name() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.Resolver.name)
-  
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-void UnresolvedAddress_Resolver::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
-    
-  } else {
-    
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.Resolver.name)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int UnresolvedAddress::kResolverFieldNumber;
-const int UnresolvedAddress::kNamedAddressFieldNumber;
-const int UnresolvedAddress::kPipeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-UnresolvedAddress::UnresolvedAddress()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    protobuf_api_2faddress_2eproto::InitDefaults();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.UnresolvedAddress)
-}
-UnresolvedAddress::UnresolvedAddress(const UnresolvedAddress& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_resolver()) {
-    resolver_ = new ::envoy::api::v2::UnresolvedAddress_Resolver(*from.resolver_);
-  } else {
-    resolver_ = NULL;
-  }
-  clear_has_address();
-  switch (from.address_case()) {
-    case kNamedAddress: {
-      mutable_named_address()->::envoy::api::v2::UnresolvedAddress_NamedAddress::MergeFrom(from.named_address());
-      break;
-    }
-    case kPipe: {
-      mutable_pipe()->::envoy::api::v2::Pipe::MergeFrom(from.pipe());
-      break;
-    }
-    case ADDRESS_NOT_SET: {
-      break;
-    }
-  }
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.UnresolvedAddress)
-}
-
-void UnresolvedAddress::SharedCtor() {
-  resolver_ = NULL;
-  clear_has_address();
-  _cached_size_ = 0;
-}
-
-UnresolvedAddress::~UnresolvedAddress() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.UnresolvedAddress)
-  SharedDtor();
-}
-
-void UnresolvedAddress::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete resolver_;
-  }
-  if (has_address()) {
-    clear_address();
-  }
-}
-
-void UnresolvedAddress::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* UnresolvedAddress::descriptor() {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const UnresolvedAddress& UnresolvedAddress::default_instance() {
-  protobuf_api_2faddress_2eproto::InitDefaults();
-  return *internal_default_instance();
-}
-
-UnresolvedAddress* UnresolvedAddress::New(::google::protobuf::Arena* arena) const {
-  UnresolvedAddress* n = new UnresolvedAddress;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void UnresolvedAddress::clear_address() {
-// @@protoc_insertion_point(one_of_clear_start:envoy.api.v2.UnresolvedAddress)
-  switch (address_case()) {
-    case kNamedAddress: {
-      delete address_.named_address_;
-      break;
-    }
-    case kPipe: {
-      delete address_.pipe_;
-      break;
-    }
-    case ADDRESS_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = ADDRESS_NOT_SET;
-}
-
-
-void UnresolvedAddress::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.UnresolvedAddress)
-  if (GetArenaNoVirtual() == NULL && resolver_ != NULL) {
-    delete resolver_;
-  }
-  resolver_ = NULL;
-  clear_address();
-}
-
-bool UnresolvedAddress::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.UnresolvedAddress)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .envoy.api.v2.UnresolvedAddress.Resolver resolver = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_resolver()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .envoy.api.v2.UnresolvedAddress.NamedAddress named_address = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_named_address()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .envoy.api.v2.Pipe pipe = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_pipe()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.UnresolvedAddress)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.UnresolvedAddress)
-  return false;
-#undef DO_
-}
-
-void UnresolvedAddress::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.UnresolvedAddress)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .envoy.api.v2.UnresolvedAddress.Resolver resolver = 1;
-  if (this->has_resolver()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->resolver_, output);
-  }
-
-  // .envoy.api.v2.UnresolvedAddress.NamedAddress named_address = 2;
-  if (has_named_address()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *address_.named_address_, output);
-  }
-
-  // .envoy.api.v2.Pipe pipe = 3;
-  if (has_pipe()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *address_.pipe_, output);
-  }
-
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.UnresolvedAddress)
-}
-
-::google::protobuf::uint8* UnresolvedAddress::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.UnresolvedAddress)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .envoy.api.v2.UnresolvedAddress.Resolver resolver = 1;
-  if (this->has_resolver()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        1, *this->resolver_, deterministic, target);
-  }
-
-  // .envoy.api.v2.UnresolvedAddress.NamedAddress named_address = 2;
-  if (has_named_address()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        2, *address_.named_address_, deterministic, target);
-  }
-
-  // .envoy.api.v2.Pipe pipe = 3;
-  if (has_pipe()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, *address_.pipe_, deterministic, target);
-  }
-
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.UnresolvedAddress)
-  return target;
-}
-
-size_t UnresolvedAddress::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.UnresolvedAddress)
-  size_t total_size = 0;
-
-  // .envoy.api.v2.UnresolvedAddress.Resolver resolver = 1;
-  if (this->has_resolver()) {
+  // .envoy.api.v2.SocketAddress source_address = 1;
+  if (this->has_source_address()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->resolver_);
+        *this->source_address_);
   }
 
-  switch (address_case()) {
-    // .envoy.api.v2.UnresolvedAddress.NamedAddress named_address = 2;
-    case kNamedAddress: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *address_.named_address_);
-      break;
-    }
-    // .envoy.api.v2.Pipe pipe = 3;
-    case kPipe: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *address_.pipe_);
-      break;
-    }
-    case ADDRESS_NOT_SET: {
-      break;
-    }
-  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -1828,478 +1469,108 @@ size_t UnresolvedAddress::ByteSizeLong() const {
   return total_size;
 }
 
-void UnresolvedAddress::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.UnresolvedAddress)
+void BindConfig::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.BindConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  const UnresolvedAddress* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const UnresolvedAddress>(
+  const BindConfig* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const BindConfig>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.UnresolvedAddress)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.BindConfig)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.UnresolvedAddress)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.BindConfig)
     MergeFrom(*source);
   }
 }
 
-void UnresolvedAddress::MergeFrom(const UnresolvedAddress& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.UnresolvedAddress)
+void BindConfig::MergeFrom(const BindConfig& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.BindConfig)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_resolver()) {
-    mutable_resolver()->::envoy::api::v2::UnresolvedAddress_Resolver::MergeFrom(from.resolver());
-  }
-  switch (from.address_case()) {
-    case kNamedAddress: {
-      mutable_named_address()->::envoy::api::v2::UnresolvedAddress_NamedAddress::MergeFrom(from.named_address());
-      break;
-    }
-    case kPipe: {
-      mutable_pipe()->::envoy::api::v2::Pipe::MergeFrom(from.pipe());
-      break;
-    }
-    case ADDRESS_NOT_SET: {
-      break;
-    }
+  if (from.has_source_address()) {
+    mutable_source_address()->::envoy::api::v2::SocketAddress::MergeFrom(from.source_address());
   }
 }
 
-void UnresolvedAddress::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.UnresolvedAddress)
+void BindConfig::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.BindConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void UnresolvedAddress::CopyFrom(const UnresolvedAddress& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.UnresolvedAddress)
+void BindConfig::CopyFrom(const BindConfig& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.BindConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool UnresolvedAddress::IsInitialized() const {
+bool BindConfig::IsInitialized() const {
   return true;
 }
 
-void UnresolvedAddress::Swap(UnresolvedAddress* other) {
+void BindConfig::Swap(BindConfig* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void UnresolvedAddress::InternalSwap(UnresolvedAddress* other) {
-  std::swap(resolver_, other->resolver_);
-  std::swap(address_, other->address_);
-  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-  std::swap(_cached_size_, other->_cached_size_);
+void BindConfig::InternalSwap(BindConfig* other) {
+  using std::swap;
+  swap(source_address_, other->source_address_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata UnresolvedAddress::GetMetadata() const {
+::google::protobuf::Metadata BindConfig::GetMetadata() const {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// UnresolvedAddress
+// BindConfig
 
-// .envoy.api.v2.UnresolvedAddress.Resolver resolver = 1;
-bool UnresolvedAddress::has_resolver() const {
-  return this != internal_default_instance() && resolver_ != NULL;
+// .envoy.api.v2.SocketAddress source_address = 1;
+bool BindConfig::has_source_address() const {
+  return this != internal_default_instance() && source_address_ != NULL;
 }
-void UnresolvedAddress::clear_resolver() {
-  if (GetArenaNoVirtual() == NULL && resolver_ != NULL) delete resolver_;
-  resolver_ = NULL;
+void BindConfig::clear_source_address() {
+  if (GetArenaNoVirtual() == NULL && source_address_ != NULL) delete source_address_;
+  source_address_ = NULL;
 }
-const ::envoy::api::v2::UnresolvedAddress_Resolver& UnresolvedAddress::resolver() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.resolver)
-  return resolver_ != NULL ? *resolver_
-                         : *::envoy::api::v2::UnresolvedAddress_Resolver::internal_default_instance();
+const ::envoy::api::v2::SocketAddress& BindConfig::source_address() const {
+  const ::envoy::api::v2::SocketAddress* p = source_address_;
+  // @@protoc_insertion_point(field_get:envoy.api.v2.BindConfig.source_address)
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::SocketAddress*>(
+      &::envoy::api::v2::_SocketAddress_default_instance_);
 }
-::envoy::api::v2::UnresolvedAddress_Resolver* UnresolvedAddress::mutable_resolver() {
+::envoy::api::v2::SocketAddress* BindConfig::mutable_source_address() {
   
-  if (resolver_ == NULL) {
-    resolver_ = new ::envoy::api::v2::UnresolvedAddress_Resolver;
+  if (source_address_ == NULL) {
+    source_address_ = new ::envoy::api::v2::SocketAddress;
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.resolver)
-  return resolver_;
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.BindConfig.source_address)
+  return source_address_;
 }
-::envoy::api::v2::UnresolvedAddress_Resolver* UnresolvedAddress::release_resolver() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.resolver)
+::envoy::api::v2::SocketAddress* BindConfig::release_source_address() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.BindConfig.source_address)
   
-  ::envoy::api::v2::UnresolvedAddress_Resolver* temp = resolver_;
-  resolver_ = NULL;
+  ::envoy::api::v2::SocketAddress* temp = source_address_;
+  source_address_ = NULL;
   return temp;
 }
-void UnresolvedAddress::set_allocated_resolver(::envoy::api::v2::UnresolvedAddress_Resolver* resolver) {
-  delete resolver_;
-  resolver_ = resolver;
-  if (resolver) {
+void BindConfig::set_allocated_source_address(::envoy::api::v2::SocketAddress* source_address) {
+  delete source_address_;
+  source_address_ = source_address;
+  if (source_address) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.resolver)
-}
-
-// .envoy.api.v2.UnresolvedAddress.NamedAddress named_address = 2;
-bool UnresolvedAddress::has_named_address() const {
-  return address_case() == kNamedAddress;
-}
-void UnresolvedAddress::set_has_named_address() {
-  _oneof_case_[0] = kNamedAddress;
-}
-void UnresolvedAddress::clear_named_address() {
-  if (has_named_address()) {
-    delete address_.named_address_;
-    clear_has_address();
-  }
-}
- const ::envoy::api::v2::UnresolvedAddress_NamedAddress& UnresolvedAddress::named_address() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.named_address)
-  return has_named_address()
-      ? *address_.named_address_
-      : ::envoy::api::v2::UnresolvedAddress_NamedAddress::default_instance();
-}
-::envoy::api::v2::UnresolvedAddress_NamedAddress* UnresolvedAddress::mutable_named_address() {
-  if (!has_named_address()) {
-    clear_address();
-    set_has_named_address();
-    address_.named_address_ = new ::envoy::api::v2::UnresolvedAddress_NamedAddress;
-  }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.named_address)
-  return address_.named_address_;
-}
-::envoy::api::v2::UnresolvedAddress_NamedAddress* UnresolvedAddress::release_named_address() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.named_address)
-  if (has_named_address()) {
-    clear_has_address();
-    ::envoy::api::v2::UnresolvedAddress_NamedAddress* temp = address_.named_address_;
-    address_.named_address_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
-}
-void UnresolvedAddress::set_allocated_named_address(::envoy::api::v2::UnresolvedAddress_NamedAddress* named_address) {
-  clear_address();
-  if (named_address) {
-    set_has_named_address();
-    address_.named_address_ = named_address;
-  }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.named_address)
-}
-
-// .envoy.api.v2.Pipe pipe = 3;
-bool UnresolvedAddress::has_pipe() const {
-  return address_case() == kPipe;
-}
-void UnresolvedAddress::set_has_pipe() {
-  _oneof_case_[0] = kPipe;
-}
-void UnresolvedAddress::clear_pipe() {
-  if (has_pipe()) {
-    delete address_.pipe_;
-    clear_has_address();
-  }
-}
- const ::envoy::api::v2::Pipe& UnresolvedAddress::pipe() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddress.pipe)
-  return has_pipe()
-      ? *address_.pipe_
-      : ::envoy::api::v2::Pipe::default_instance();
-}
-::envoy::api::v2::Pipe* UnresolvedAddress::mutable_pipe() {
-  if (!has_pipe()) {
-    clear_address();
-    set_has_pipe();
-    address_.pipe_ = new ::envoy::api::v2::Pipe;
-  }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddress.pipe)
-  return address_.pipe_;
-}
-::envoy::api::v2::Pipe* UnresolvedAddress::release_pipe() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.UnresolvedAddress.pipe)
-  if (has_pipe()) {
-    clear_has_address();
-    ::envoy::api::v2::Pipe* temp = address_.pipe_;
-    address_.pipe_ = NULL;
-    return temp;
-  } else {
-    return NULL;
-  }
-}
-void UnresolvedAddress::set_allocated_pipe(::envoy::api::v2::Pipe* pipe) {
-  clear_address();
-  if (pipe) {
-    set_has_pipe();
-    address_.pipe_ = pipe;
-  }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UnresolvedAddress.pipe)
-}
-
-bool UnresolvedAddress::has_address() const {
-  return address_case() != ADDRESS_NOT_SET;
-}
-void UnresolvedAddress::clear_has_address() {
-  _oneof_case_[0] = ADDRESS_NOT_SET;
-}
-UnresolvedAddress::AddressCase UnresolvedAddress::address_case() const {
-  return UnresolvedAddress::AddressCase(_oneof_case_[0]);
-}
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int UnresolvedAddresses::kAddressesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-UnresolvedAddresses::UnresolvedAddresses()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    protobuf_api_2faddress_2eproto::InitDefaults();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.UnresolvedAddresses)
-}
-UnresolvedAddresses::UnresolvedAddresses(const UnresolvedAddresses& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      addresses_(from.addresses_),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.UnresolvedAddresses)
-}
-
-void UnresolvedAddresses::SharedCtor() {
-  _cached_size_ = 0;
-}
-
-UnresolvedAddresses::~UnresolvedAddresses() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.UnresolvedAddresses)
-  SharedDtor();
-}
-
-void UnresolvedAddresses::SharedDtor() {
-}
-
-void UnresolvedAddresses::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* UnresolvedAddresses::descriptor() {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const UnresolvedAddresses& UnresolvedAddresses::default_instance() {
-  protobuf_api_2faddress_2eproto::InitDefaults();
-  return *internal_default_instance();
-}
-
-UnresolvedAddresses* UnresolvedAddresses::New(::google::protobuf::Arena* arena) const {
-  UnresolvedAddresses* n = new UnresolvedAddresses;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void UnresolvedAddresses::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.UnresolvedAddresses)
-  addresses_.Clear();
-}
-
-bool UnresolvedAddresses::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.UnresolvedAddresses)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .envoy.api.v2.UnresolvedAddress addresses = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_addresses()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.UnresolvedAddresses)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.UnresolvedAddresses)
-  return false;
-#undef DO_
-}
-
-void UnresolvedAddresses::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.UnresolvedAddresses)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .envoy.api.v2.UnresolvedAddress addresses = 1;
-  for (unsigned int i = 0, n = this->addresses_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->addresses(i), output);
-  }
-
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.UnresolvedAddresses)
-}
-
-::google::protobuf::uint8* UnresolvedAddresses::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.UnresolvedAddresses)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .envoy.api.v2.UnresolvedAddress addresses = 1;
-  for (unsigned int i = 0, n = this->addresses_size(); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        1, this->addresses(i), deterministic, target);
-  }
-
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.UnresolvedAddresses)
-  return target;
-}
-
-size_t UnresolvedAddresses::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.UnresolvedAddresses)
-  size_t total_size = 0;
-
-  // repeated .envoy.api.v2.UnresolvedAddress addresses = 1;
-  {
-    unsigned int count = this->addresses_size();
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->addresses(i));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void UnresolvedAddresses::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.UnresolvedAddresses)
-  GOOGLE_DCHECK_NE(&from, this);
-  const UnresolvedAddresses* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const UnresolvedAddresses>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.UnresolvedAddresses)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.UnresolvedAddresses)
-    MergeFrom(*source);
-  }
-}
-
-void UnresolvedAddresses::MergeFrom(const UnresolvedAddresses& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.UnresolvedAddresses)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  addresses_.MergeFrom(from.addresses_);
-}
-
-void UnresolvedAddresses::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.UnresolvedAddresses)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void UnresolvedAddresses::CopyFrom(const UnresolvedAddresses& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.UnresolvedAddresses)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool UnresolvedAddresses::IsInitialized() const {
-  return true;
-}
-
-void UnresolvedAddresses::Swap(UnresolvedAddresses* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void UnresolvedAddresses::InternalSwap(UnresolvedAddresses* other) {
-  addresses_.InternalSwap(&other->addresses_);
-  std::swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata UnresolvedAddresses::GetMetadata() const {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// UnresolvedAddresses
-
-// repeated .envoy.api.v2.UnresolvedAddress addresses = 1;
-int UnresolvedAddresses::addresses_size() const {
-  return addresses_.size();
-}
-void UnresolvedAddresses::clear_addresses() {
-  addresses_.Clear();
-}
-const ::envoy::api::v2::UnresolvedAddress& UnresolvedAddresses::addresses(int index) const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UnresolvedAddresses.addresses)
-  return addresses_.Get(index);
-}
-::envoy::api::v2::UnresolvedAddress* UnresolvedAddresses::mutable_addresses(int index) {
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.UnresolvedAddresses.addresses)
-  return addresses_.Mutable(index);
-}
-::envoy::api::v2::UnresolvedAddress* UnresolvedAddresses::add_addresses() {
-  // @@protoc_insertion_point(field_add:envoy.api.v2.UnresolvedAddresses.addresses)
-  return addresses_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::envoy::api::v2::UnresolvedAddress >*
-UnresolvedAddresses::mutable_addresses() {
-  // @@protoc_insertion_point(field_mutable_list:envoy.api.v2.UnresolvedAddresses.addresses)
-  return &addresses_;
-}
-const ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::UnresolvedAddress >&
-UnresolvedAddresses::addresses() const {
-  // @@protoc_insertion_point(field_list:envoy.api.v2.UnresolvedAddresses.addresses)
-  return addresses_;
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.BindConfig.source_address)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2307,460 +1578,19 @@ UnresolvedAddresses::addresses() const {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ResolvedAddress_SocketAddress::kProtocolFieldNumber;
-const int ResolvedAddress_SocketAddress::kIpAddressFieldNumber;
-const int ResolvedAddress_SocketAddress::kPortFieldNumber;
+const int Address::kSocketAddressFieldNumber;
+const int Address::kPipeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-ResolvedAddress_SocketAddress::ResolvedAddress_SocketAddress()
+Address::Address()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
     protobuf_api_2faddress_2eproto::InitDefaults();
   }
   SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.ResolvedAddress.SocketAddress)
+  // @@protoc_insertion_point(constructor:envoy.api.v2.Address)
 }
-ResolvedAddress_SocketAddress::ResolvedAddress_SocketAddress(const ResolvedAddress_SocketAddress& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ip_address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.ip_address().size() > 0) {
-    ip_address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_address_);
-  }
-  if (from.has_port()) {
-    port_ = new ::google::protobuf::UInt32Value(*from.port_);
-  } else {
-    port_ = NULL;
-  }
-  protocol_ = from.protocol_;
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.ResolvedAddress.SocketAddress)
-}
-
-void ResolvedAddress_SocketAddress::SharedCtor() {
-  ip_address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&port_, 0, reinterpret_cast<char*>(&protocol_) -
-    reinterpret_cast<char*>(&port_) + sizeof(protocol_));
-  _cached_size_ = 0;
-}
-
-ResolvedAddress_SocketAddress::~ResolvedAddress_SocketAddress() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.ResolvedAddress.SocketAddress)
-  SharedDtor();
-}
-
-void ResolvedAddress_SocketAddress::SharedDtor() {
-  ip_address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) {
-    delete port_;
-  }
-}
-
-void ResolvedAddress_SocketAddress::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* ResolvedAddress_SocketAddress::descriptor() {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const ResolvedAddress_SocketAddress& ResolvedAddress_SocketAddress::default_instance() {
-  protobuf_api_2faddress_2eproto::InitDefaults();
-  return *internal_default_instance();
-}
-
-ResolvedAddress_SocketAddress* ResolvedAddress_SocketAddress::New(::google::protobuf::Arena* arena) const {
-  ResolvedAddress_SocketAddress* n = new ResolvedAddress_SocketAddress;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void ResolvedAddress_SocketAddress::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  ip_address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && port_ != NULL) {
-    delete port_;
-  }
-  port_ = NULL;
-  protocol_ = 0;
-}
-
-bool ResolvedAddress_SocketAddress::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .envoy.api.v2.ResolvedAddress.SocketAddress.Protocol protocol = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_protocol(static_cast< ::envoy::api::v2::ResolvedAddress_SocketAddress_Protocol >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string ip_address = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_ip_address()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->ip_address().data(), this->ip_address().length(),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "envoy.api.v2.ResolvedAddress.SocketAddress.ip_address"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.UInt32Value port = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_port()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.ResolvedAddress.SocketAddress)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.ResolvedAddress.SocketAddress)
-  return false;
-#undef DO_
-}
-
-void ResolvedAddress_SocketAddress::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .envoy.api.v2.ResolvedAddress.SocketAddress.Protocol protocol = 1;
-  if (this->protocol() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->protocol(), output);
-  }
-
-  // string ip_address = 2;
-  if (this->ip_address().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ip_address().data(), this->ip_address().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.ResolvedAddress.SocketAddress.ip_address");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->ip_address(), output);
-  }
-
-  // .google.protobuf.UInt32Value port = 3;
-  if (this->has_port()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->port_, output);
-  }
-
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.ResolvedAddress.SocketAddress)
-}
-
-::google::protobuf::uint8* ResolvedAddress_SocketAddress::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .envoy.api.v2.ResolvedAddress.SocketAddress.Protocol protocol = 1;
-  if (this->protocol() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->protocol(), target);
-  }
-
-  // string ip_address = 2;
-  if (this->ip_address().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->ip_address().data(), this->ip_address().length(),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "envoy.api.v2.ResolvedAddress.SocketAddress.ip_address");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->ip_address(), target);
-  }
-
-  // .google.protobuf.UInt32Value port = 3;
-  if (this->has_port()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, *this->port_, deterministic, target);
-  }
-
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ResolvedAddress.SocketAddress)
-  return target;
-}
-
-size_t ResolvedAddress_SocketAddress::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  size_t total_size = 0;
-
-  // string ip_address = 2;
-  if (this->ip_address().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->ip_address());
-  }
-
-  // .google.protobuf.UInt32Value port = 3;
-  if (this->has_port()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->port_);
-  }
-
-  // .envoy.api.v2.ResolvedAddress.SocketAddress.Protocol protocol = 1;
-  if (this->protocol() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->protocol());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void ResolvedAddress_SocketAddress::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ResolvedAddress_SocketAddress* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ResolvedAddress_SocketAddress>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.ResolvedAddress.SocketAddress)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.ResolvedAddress.SocketAddress)
-    MergeFrom(*source);
-  }
-}
-
-void ResolvedAddress_SocketAddress::MergeFrom(const ResolvedAddress_SocketAddress& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.ip_address().size() > 0) {
-
-    ip_address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_address_);
-  }
-  if (from.has_port()) {
-    mutable_port()->::google::protobuf::UInt32Value::MergeFrom(from.port());
-  }
-  if (from.protocol() != 0) {
-    set_protocol(from.protocol());
-  }
-}
-
-void ResolvedAddress_SocketAddress::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void ResolvedAddress_SocketAddress::CopyFrom(const ResolvedAddress_SocketAddress& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.ResolvedAddress.SocketAddress)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ResolvedAddress_SocketAddress::IsInitialized() const {
-  return true;
-}
-
-void ResolvedAddress_SocketAddress::Swap(ResolvedAddress_SocketAddress* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void ResolvedAddress_SocketAddress::InternalSwap(ResolvedAddress_SocketAddress* other) {
-  ip_address_.Swap(&other->ip_address_);
-  std::swap(port_, other->port_);
-  std::swap(protocol_, other->protocol_);
-  std::swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata ResolvedAddress_SocketAddress::GetMetadata() const {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// ResolvedAddress_SocketAddress
-
-// .envoy.api.v2.ResolvedAddress.SocketAddress.Protocol protocol = 1;
-void ResolvedAddress_SocketAddress::clear_protocol() {
-  protocol_ = 0;
-}
-::envoy::api::v2::ResolvedAddress_SocketAddress_Protocol ResolvedAddress_SocketAddress::protocol() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.ResolvedAddress.SocketAddress.protocol)
-  return static_cast< ::envoy::api::v2::ResolvedAddress_SocketAddress_Protocol >(protocol_);
-}
-void ResolvedAddress_SocketAddress::set_protocol(::envoy::api::v2::ResolvedAddress_SocketAddress_Protocol value) {
-  
-  protocol_ = value;
-  // @@protoc_insertion_point(field_set:envoy.api.v2.ResolvedAddress.SocketAddress.protocol)
-}
-
-// string ip_address = 2;
-void ResolvedAddress_SocketAddress::clear_ip_address() {
-  ip_address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-const ::std::string& ResolvedAddress_SocketAddress::ip_address() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-  return ip_address_.GetNoArena();
-}
-void ResolvedAddress_SocketAddress::set_ip_address(const ::std::string& value) {
-  
-  ip_address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-}
-#if LANG_CXX11
-void ResolvedAddress_SocketAddress::set_ip_address(::std::string&& value) {
-  
-  ip_address_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-}
-#endif
-void ResolvedAddress_SocketAddress::set_ip_address(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  ip_address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-}
-void ResolvedAddress_SocketAddress::set_ip_address(const char* value, size_t size) {
-  
-  ip_address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-}
-::std::string* ResolvedAddress_SocketAddress::mutable_ip_address() {
-  
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-  return ip_address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-::std::string* ResolvedAddress_SocketAddress::release_ip_address() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-  
-  return ip_address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-void ResolvedAddress_SocketAddress::set_allocated_ip_address(::std::string* ip_address) {
-  if (ip_address != NULL) {
-    
-  } else {
-    
-  }
-  ip_address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip_address);
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ResolvedAddress.SocketAddress.ip_address)
-}
-
-// .google.protobuf.UInt32Value port = 3;
-bool ResolvedAddress_SocketAddress::has_port() const {
-  return this != internal_default_instance() && port_ != NULL;
-}
-void ResolvedAddress_SocketAddress::clear_port() {
-  if (GetArenaNoVirtual() == NULL && port_ != NULL) delete port_;
-  port_ = NULL;
-}
-const ::google::protobuf::UInt32Value& ResolvedAddress_SocketAddress::port() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.ResolvedAddress.SocketAddress.port)
-  return port_ != NULL ? *port_
-                         : *::google::protobuf::UInt32Value::internal_default_instance();
-}
-::google::protobuf::UInt32Value* ResolvedAddress_SocketAddress::mutable_port() {
-  
-  if (port_ == NULL) {
-    port_ = new ::google::protobuf::UInt32Value;
-  }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ResolvedAddress.SocketAddress.port)
-  return port_;
-}
-::google::protobuf::UInt32Value* ResolvedAddress_SocketAddress::release_port() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.ResolvedAddress.SocketAddress.port)
-  
-  ::google::protobuf::UInt32Value* temp = port_;
-  port_ = NULL;
-  return temp;
-}
-void ResolvedAddress_SocketAddress::set_allocated_port(::google::protobuf::UInt32Value* port) {
-  delete port_;
-  if (port != NULL && port->GetArena() != NULL) {
-    ::google::protobuf::UInt32Value* new_port = new ::google::protobuf::UInt32Value;
-    new_port->CopyFrom(*port);
-    port = new_port;
-  }
-  port_ = port;
-  if (port) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ResolvedAddress.SocketAddress.port)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ResolvedAddress::kSocketAddressFieldNumber;
-const int ResolvedAddress::kPipeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ResolvedAddress::ResolvedAddress()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    protobuf_api_2faddress_2eproto::InitDefaults();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.ResolvedAddress)
-}
-ResolvedAddress::ResolvedAddress(const ResolvedAddress& from)
+Address::Address(const Address& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _cached_size_(0) {
@@ -2768,7 +1598,7 @@ ResolvedAddress::ResolvedAddress(const ResolvedAddress& from)
   clear_has_address();
   switch (from.address_case()) {
     case kSocketAddress: {
-      mutable_socket_address()->::envoy::api::v2::ResolvedAddress_SocketAddress::MergeFrom(from.socket_address());
+      mutable_socket_address()->::envoy::api::v2::SocketAddress::MergeFrom(from.socket_address());
       break;
     }
     case kPipe: {
@@ -2779,50 +1609,50 @@ ResolvedAddress::ResolvedAddress(const ResolvedAddress& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.Address)
 }
 
-void ResolvedAddress::SharedCtor() {
+void Address::SharedCtor() {
   clear_has_address();
   _cached_size_ = 0;
 }
 
-ResolvedAddress::~ResolvedAddress() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.ResolvedAddress)
+Address::~Address() {
+  // @@protoc_insertion_point(destructor:envoy.api.v2.Address)
   SharedDtor();
 }
 
-void ResolvedAddress::SharedDtor() {
+void Address::SharedDtor() {
   if (has_address()) {
     clear_address();
   }
 }
 
-void ResolvedAddress::SetCachedSize(int size) const {
+void Address::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* ResolvedAddress::descriptor() {
+const ::google::protobuf::Descriptor* Address::descriptor() {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const ResolvedAddress& ResolvedAddress::default_instance() {
+const Address& Address::default_instance() {
   protobuf_api_2faddress_2eproto::InitDefaults();
   return *internal_default_instance();
 }
 
-ResolvedAddress* ResolvedAddress::New(::google::protobuf::Arena* arena) const {
-  ResolvedAddress* n = new ResolvedAddress;
+Address* Address::New(::google::protobuf::Arena* arena) const {
+  Address* n = new Address;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void ResolvedAddress::clear_address() {
-// @@protoc_insertion_point(one_of_clear_start:envoy.api.v2.ResolvedAddress)
+void Address::clear_address() {
+// @@protoc_insertion_point(one_of_clear_start:envoy.api.v2.Address)
   switch (address_case()) {
     case kSocketAddress: {
       delete address_.socket_address_;
@@ -2840,25 +1670,30 @@ void ResolvedAddress::clear_address() {
 }
 
 
-void ResolvedAddress::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.ResolvedAddress)
+void Address::Clear() {
+// @@protoc_insertion_point(message_clear_start:envoy.api.v2.Address)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   clear_address();
+  _internal_metadata_.Clear();
 }
 
-bool ResolvedAddress::MergePartialFromCodedStream(
+bool Address::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(parse_start:envoy.api.v2.Address)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .envoy.api.v2.ResolvedAddress.SocketAddress socket_address = 2;
-      case 2: {
+      // .envoy.api.v2.SocketAddress socket_address = 1;
+      case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_socket_address()));
         } else {
@@ -2867,10 +1702,10 @@ bool ResolvedAddress::MergePartialFromCodedStream(
         break;
       }
 
-      // .envoy.api.v2.Pipe pipe = 3;
-      case 3: {
+      // .envoy.api.v2.Pipe pipe = 2;
+      case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_pipe()));
         } else {
@@ -2881,84 +1716,96 @@ bool ResolvedAddress::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(parse_success:envoy.api.v2.Address)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(parse_failure:envoy.api.v2.Address)
   return false;
 #undef DO_
 }
 
-void ResolvedAddress::SerializeWithCachedSizes(
+void Address::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(serialize_start:envoy.api.v2.Address)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .envoy.api.v2.ResolvedAddress.SocketAddress socket_address = 2;
+  // .envoy.api.v2.SocketAddress socket_address = 1;
   if (has_socket_address()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *address_.socket_address_, output);
+      1, *address_.socket_address_, output);
   }
 
-  // .envoy.api.v2.Pipe pipe = 3;
+  // .envoy.api.v2.Pipe pipe = 2;
   if (has_pipe()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *address_.pipe_, output);
+      2, *address_.pipe_, output);
   }
 
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.ResolvedAddress)
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:envoy.api.v2.Address)
 }
 
-::google::protobuf::uint8* ResolvedAddress::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Address::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.Address)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .envoy.api.v2.ResolvedAddress.SocketAddress socket_address = 2;
+  // .envoy.api.v2.SocketAddress socket_address = 1;
   if (has_socket_address()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, *address_.socket_address_, deterministic, target);
+        1, *address_.socket_address_, deterministic, target);
   }
 
-  // .envoy.api.v2.Pipe pipe = 3;
+  // .envoy.api.v2.Pipe pipe = 2;
   if (has_pipe()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        3, *address_.pipe_, deterministic, target);
+        2, *address_.pipe_, deterministic, target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ResolvedAddress)
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.Address)
   return target;
 }
 
-size_t ResolvedAddress::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ResolvedAddress)
+size_t Address::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.Address)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   switch (address_case()) {
-    // .envoy.api.v2.ResolvedAddress.SocketAddress socket_address = 2;
+    // .envoy.api.v2.SocketAddress socket_address = 1;
     case kSocketAddress: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *address_.socket_address_);
       break;
     }
-    // .envoy.api.v2.Pipe pipe = 3;
+    // .envoy.api.v2.Pipe pipe = 2;
     case kPipe: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -2976,23 +1823,23 @@ size_t ResolvedAddress::ByteSizeLong() const {
   return total_size;
 }
 
-void ResolvedAddress::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.ResolvedAddress)
+void Address::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.Address)
   GOOGLE_DCHECK_NE(&from, this);
-  const ResolvedAddress* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ResolvedAddress>(
+  const Address* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Address>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.Address)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.ResolvedAddress)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.Address)
     MergeFrom(*source);
   }
 }
 
-void ResolvedAddress::MergeFrom(const ResolvedAddress& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.ResolvedAddress)
+void Address::MergeFrom(const Address& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.Address)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -3000,7 +1847,7 @@ void ResolvedAddress::MergeFrom(const ResolvedAddress& from) {
 
   switch (from.address_case()) {
     case kSocketAddress: {
-      mutable_socket_address()->::envoy::api::v2::ResolvedAddress_SocketAddress::MergeFrom(from.socket_address());
+      mutable_socket_address()->::envoy::api::v2::SocketAddress::MergeFrom(from.socket_address());
       break;
     }
     case kPipe: {
@@ -3013,120 +1860,122 @@ void ResolvedAddress::MergeFrom(const ResolvedAddress& from) {
   }
 }
 
-void ResolvedAddress::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.ResolvedAddress)
+void Address::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.Address)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ResolvedAddress::CopyFrom(const ResolvedAddress& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.ResolvedAddress)
+void Address::CopyFrom(const Address& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.Address)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ResolvedAddress::IsInitialized() const {
+bool Address::IsInitialized() const {
   return true;
 }
 
-void ResolvedAddress::Swap(ResolvedAddress* other) {
+void Address::Swap(Address* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void ResolvedAddress::InternalSwap(ResolvedAddress* other) {
-  std::swap(address_, other->address_);
-  std::swap(_oneof_case_[0], other->_oneof_case_[0]);
-  std::swap(_cached_size_, other->_cached_size_);
+void Address::InternalSwap(Address* other) {
+  using std::swap;
+  swap(address_, other->address_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata ResolvedAddress::GetMetadata() const {
+::google::protobuf::Metadata Address::GetMetadata() const {
   protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// ResolvedAddress
+// Address
 
-// .envoy.api.v2.ResolvedAddress.SocketAddress socket_address = 2;
-bool ResolvedAddress::has_socket_address() const {
+// .envoy.api.v2.SocketAddress socket_address = 1;
+bool Address::has_socket_address() const {
   return address_case() == kSocketAddress;
 }
-void ResolvedAddress::set_has_socket_address() {
+void Address::set_has_socket_address() {
   _oneof_case_[0] = kSocketAddress;
 }
-void ResolvedAddress::clear_socket_address() {
+void Address::clear_socket_address() {
   if (has_socket_address()) {
     delete address_.socket_address_;
     clear_has_address();
   }
 }
- const ::envoy::api::v2::ResolvedAddress_SocketAddress& ResolvedAddress::socket_address() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.ResolvedAddress.socket_address)
+ const ::envoy::api::v2::SocketAddress& Address::socket_address() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.Address.socket_address)
   return has_socket_address()
       ? *address_.socket_address_
-      : ::envoy::api::v2::ResolvedAddress_SocketAddress::default_instance();
+      : ::envoy::api::v2::SocketAddress::default_instance();
 }
-::envoy::api::v2::ResolvedAddress_SocketAddress* ResolvedAddress::mutable_socket_address() {
+::envoy::api::v2::SocketAddress* Address::mutable_socket_address() {
   if (!has_socket_address()) {
     clear_address();
     set_has_socket_address();
-    address_.socket_address_ = new ::envoy::api::v2::ResolvedAddress_SocketAddress;
+    address_.socket_address_ = new ::envoy::api::v2::SocketAddress;
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ResolvedAddress.socket_address)
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.Address.socket_address)
   return address_.socket_address_;
 }
-::envoy::api::v2::ResolvedAddress_SocketAddress* ResolvedAddress::release_socket_address() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.ResolvedAddress.socket_address)
+::envoy::api::v2::SocketAddress* Address::release_socket_address() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.Address.socket_address)
   if (has_socket_address()) {
     clear_has_address();
-    ::envoy::api::v2::ResolvedAddress_SocketAddress* temp = address_.socket_address_;
+    ::envoy::api::v2::SocketAddress* temp = address_.socket_address_;
     address_.socket_address_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-void ResolvedAddress::set_allocated_socket_address(::envoy::api::v2::ResolvedAddress_SocketAddress* socket_address) {
+void Address::set_allocated_socket_address(::envoy::api::v2::SocketAddress* socket_address) {
   clear_address();
   if (socket_address) {
     set_has_socket_address();
     address_.socket_address_ = socket_address;
   }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ResolvedAddress.socket_address)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.Address.socket_address)
 }
 
-// .envoy.api.v2.Pipe pipe = 3;
-bool ResolvedAddress::has_pipe() const {
+// .envoy.api.v2.Pipe pipe = 2;
+bool Address::has_pipe() const {
   return address_case() == kPipe;
 }
-void ResolvedAddress::set_has_pipe() {
+void Address::set_has_pipe() {
   _oneof_case_[0] = kPipe;
 }
-void ResolvedAddress::clear_pipe() {
+void Address::clear_pipe() {
   if (has_pipe()) {
     delete address_.pipe_;
     clear_has_address();
   }
 }
- const ::envoy::api::v2::Pipe& ResolvedAddress::pipe() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.ResolvedAddress.pipe)
+ const ::envoy::api::v2::Pipe& Address::pipe() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.Address.pipe)
   return has_pipe()
       ? *address_.pipe_
       : ::envoy::api::v2::Pipe::default_instance();
 }
-::envoy::api::v2::Pipe* ResolvedAddress::mutable_pipe() {
+::envoy::api::v2::Pipe* Address::mutable_pipe() {
   if (!has_pipe()) {
     clear_address();
     set_has_pipe();
     address_.pipe_ = new ::envoy::api::v2::Pipe;
   }
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ResolvedAddress.pipe)
+  // @@protoc_insertion_point(field_mutable:envoy.api.v2.Address.pipe)
   return address_.pipe_;
 }
-::envoy::api::v2::Pipe* ResolvedAddress::release_pipe() {
-  // @@protoc_insertion_point(field_release:envoy.api.v2.ResolvedAddress.pipe)
+::envoy::api::v2::Pipe* Address::release_pipe() {
+  // @@protoc_insertion_point(field_release:envoy.api.v2.Address.pipe)
   if (has_pipe()) {
     clear_has_address();
     ::envoy::api::v2::Pipe* temp = address_.pipe_;
@@ -3136,277 +1985,24 @@ void ResolvedAddress::clear_pipe() {
     return NULL;
   }
 }
-void ResolvedAddress::set_allocated_pipe(::envoy::api::v2::Pipe* pipe) {
+void Address::set_allocated_pipe(::envoy::api::v2::Pipe* pipe) {
   clear_address();
   if (pipe) {
     set_has_pipe();
     address_.pipe_ = pipe;
   }
-  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.ResolvedAddress.pipe)
+  // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.Address.pipe)
 }
 
-bool ResolvedAddress::has_address() const {
+bool Address::has_address() const {
   return address_case() != ADDRESS_NOT_SET;
 }
-void ResolvedAddress::clear_has_address() {
+void Address::clear_has_address() {
   _oneof_case_[0] = ADDRESS_NOT_SET;
 }
-ResolvedAddress::AddressCase ResolvedAddress::address_case() const {
-  return ResolvedAddress::AddressCase(_oneof_case_[0]);
+Address::AddressCase Address::address_case() const {
+  return Address::AddressCase(_oneof_case_[0]);
 }
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ResolvedAddresses::kAddressesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ResolvedAddresses::ResolvedAddresses()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    protobuf_api_2faddress_2eproto::InitDefaults();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:envoy.api.v2.ResolvedAddresses)
-}
-ResolvedAddresses::ResolvedAddresses(const ResolvedAddresses& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      addresses_(from.addresses_),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:envoy.api.v2.ResolvedAddresses)
-}
-
-void ResolvedAddresses::SharedCtor() {
-  _cached_size_ = 0;
-}
-
-ResolvedAddresses::~ResolvedAddresses() {
-  // @@protoc_insertion_point(destructor:envoy.api.v2.ResolvedAddresses)
-  SharedDtor();
-}
-
-void ResolvedAddresses::SharedDtor() {
-}
-
-void ResolvedAddresses::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* ResolvedAddresses::descriptor() {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const ResolvedAddresses& ResolvedAddresses::default_instance() {
-  protobuf_api_2faddress_2eproto::InitDefaults();
-  return *internal_default_instance();
-}
-
-ResolvedAddresses* ResolvedAddresses::New(::google::protobuf::Arena* arena) const {
-  ResolvedAddresses* n = new ResolvedAddresses;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void ResolvedAddresses::Clear() {
-// @@protoc_insertion_point(message_clear_start:envoy.api.v2.ResolvedAddresses)
-  addresses_.Clear();
-}
-
-bool ResolvedAddresses::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:envoy.api.v2.ResolvedAddresses)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .envoy.api.v2.ResolvedAddress addresses = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_addresses()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:envoy.api.v2.ResolvedAddresses)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:envoy.api.v2.ResolvedAddresses)
-  return false;
-#undef DO_
-}
-
-void ResolvedAddresses::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:envoy.api.v2.ResolvedAddresses)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .envoy.api.v2.ResolvedAddress addresses = 1;
-  for (unsigned int i = 0, n = this->addresses_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->addresses(i), output);
-  }
-
-  // @@protoc_insertion_point(serialize_end:envoy.api.v2.ResolvedAddresses)
-}
-
-::google::protobuf::uint8* ResolvedAddresses::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:envoy.api.v2.ResolvedAddresses)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .envoy.api.v2.ResolvedAddress addresses = 1;
-  for (unsigned int i = 0, n = this->addresses_size(); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        1, this->addresses(i), deterministic, target);
-  }
-
-  // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ResolvedAddresses)
-  return target;
-}
-
-size_t ResolvedAddresses::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ResolvedAddresses)
-  size_t total_size = 0;
-
-  // repeated .envoy.api.v2.ResolvedAddress addresses = 1;
-  {
-    unsigned int count = this->addresses_size();
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->addresses(i));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void ResolvedAddresses::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:envoy.api.v2.ResolvedAddresses)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ResolvedAddresses* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ResolvedAddresses>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:envoy.api.v2.ResolvedAddresses)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:envoy.api.v2.ResolvedAddresses)
-    MergeFrom(*source);
-  }
-}
-
-void ResolvedAddresses::MergeFrom(const ResolvedAddresses& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:envoy.api.v2.ResolvedAddresses)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  addresses_.MergeFrom(from.addresses_);
-}
-
-void ResolvedAddresses::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:envoy.api.v2.ResolvedAddresses)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void ResolvedAddresses::CopyFrom(const ResolvedAddresses& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:envoy.api.v2.ResolvedAddresses)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ResolvedAddresses::IsInitialized() const {
-  return true;
-}
-
-void ResolvedAddresses::Swap(ResolvedAddresses* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void ResolvedAddresses::InternalSwap(ResolvedAddresses* other) {
-  addresses_.InternalSwap(&other->addresses_);
-  std::swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata ResolvedAddresses::GetMetadata() const {
-  protobuf_api_2faddress_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2faddress_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// ResolvedAddresses
-
-// repeated .envoy.api.v2.ResolvedAddress addresses = 1;
-int ResolvedAddresses::addresses_size() const {
-  return addresses_.size();
-}
-void ResolvedAddresses::clear_addresses() {
-  addresses_.Clear();
-}
-const ::envoy::api::v2::ResolvedAddress& ResolvedAddresses::addresses(int index) const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.ResolvedAddresses.addresses)
-  return addresses_.Get(index);
-}
-::envoy::api::v2::ResolvedAddress* ResolvedAddresses::mutable_addresses(int index) {
-  // @@protoc_insertion_point(field_mutable:envoy.api.v2.ResolvedAddresses.addresses)
-  return addresses_.Mutable(index);
-}
-::envoy::api::v2::ResolvedAddress* ResolvedAddresses::add_addresses() {
-  // @@protoc_insertion_point(field_add:envoy.api.v2.ResolvedAddresses.addresses)
-  return addresses_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::envoy::api::v2::ResolvedAddress >*
-ResolvedAddresses::mutable_addresses() {
-  // @@protoc_insertion_point(field_mutable_list:envoy.api.v2.ResolvedAddresses.addresses)
-  return &addresses_;
-}
-const ::google::protobuf::RepeatedPtrField< ::envoy::api::v2::ResolvedAddress >&
-ResolvedAddresses::addresses() const {
-  // @@protoc_insertion_point(field_list:envoy.api.v2.ResolvedAddresses.addresses)
-  return addresses_;
-}
-
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)

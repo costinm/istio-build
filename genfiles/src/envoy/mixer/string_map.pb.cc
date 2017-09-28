@@ -20,9 +20,15 @@
 namespace istio {
 namespace proxy {
 namespace mixer {
-class StringMap_MapEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<StringMap::StringMap_MapEntry> {
+class StringMap_MapEntryDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<StringMap::StringMap_MapEntry>
+     _instance;
 } _StringMap_MapEntry_default_instance_;
-class StringMapDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<StringMap> {
+class StringMapDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<StringMap>
+     _instance;
 } _StringMap_default_instance_;
 
 namespace protobuf_src_2fenvoy_2fmixer_2fstring_5fmap_2eproto {
@@ -35,21 +41,21 @@ namespace {
 }  // namespace
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
-    const TableStruct::entries[] = {
+    const TableStruct::entries[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
 };
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
-    const TableStruct::aux[] = {
+    const TableStruct::aux[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ::google::protobuf::internal::AuxillaryParseTableField(),
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
-    TableStruct::schema[] = {
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
+    TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
-const ::google::protobuf::uint32 TableStruct::offsets[] = {
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringMap, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -57,8 +63,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(StringMap, map_),
 };
-
-static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(StringMap)},
 };
 
@@ -75,7 +80,7 @@ void protobuf_AssignDescriptors() {
   AssignDescriptors(
       "src/envoy/mixer/string_map.proto", schemas, file_default_instances, TableStruct::offsets, factory,
       file_level_metadata, NULL, NULL);
-file_level_metadata[0].reflection = StringMap::StringMap_MapEntry::CreateReflection(file_level_metadata[0].descriptor, _StringMap_MapEntry_default_instance_.get_mutable());
+file_level_metadata[0].reflection = StringMap::StringMap_MapEntry::CreateReflection(file_level_metadata[0].descriptor, _StringMap_MapEntry_default_instance_._instance.get_mutable());
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -90,30 +95,26 @@ void protobuf_RegisterTypes(const ::std::string&) {
 }
 
 }  // namespace
-
-void TableStruct::Shutdown() {
-  _StringMap_default_instance_.Shutdown();
-  delete file_level_metadata[1].reflection;
-  delete file_level_metadata[0].reflection;
-}
-
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
-  _StringMap_MapEntry_default_instance_.DefaultConstruct();
-  _StringMap_default_instance_.DefaultConstruct();
-  _StringMap_MapEntry_default_instance_.get_mutable()->set_default_instance(_StringMap_MapEntry_default_instance_.get_mutable());
-  _StringMap_MapEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
+  _StringMap_MapEntry_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_StringMap_MapEntry_default_instance_);_StringMap_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_StringMap_default_instance_);_StringMap_MapEntry_default_instance_._instance.get_mutable()->set_default_instance(_StringMap_MapEntry_default_instance_._instance.get_mutable());
+  _StringMap_MapEntry_default_instance_._instance.get_mutable()->InitAsDefaultInstance();
 }
 
 void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
 }
+namespace {
 void AddDescriptorsImpl() {
   InitDefaults();
-  static const char descriptor[] = {
+  static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n src/envoy/mixer/string_map.proto\022\021isti"
       "o.proxy.mixer\"k\n\tStringMap\0222\n\003map\030\001 \003(\0132"
       "%.istio.proxy.mixer.StringMap.MapEntry\032*"
@@ -124,14 +125,14 @@ void AddDescriptorsImpl() {
       descriptor, 170);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "src/envoy/mixer/string_map.proto", &protobuf_RegisterTypes);
-  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
+} // anonymous namespace
 
 void AddDescriptors() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
 }
-// Force AddDescriptors() to be called at static initialization time.
+// Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
   StaticDescriptorInitializer() {
     AddDescriptors();
@@ -220,7 +221,12 @@ StringMap* StringMap::New(::google::protobuf::Arena* arena) const {
 
 void StringMap::Clear() {
 // @@protoc_insertion_point(message_clear_start:istio.proxy.mixer.StringMap)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   map_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool StringMap::MergePartialFromCodedStream(
@@ -236,7 +242,7 @@ bool StringMap::MergePartialFromCodedStream(
       // map<string, string> map = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           StringMap_MapEntry::Parser< ::google::protobuf::internal::MapField<
               StringMap_MapEntry,
               ::std::string, ::std::string,
@@ -247,11 +253,11 @@ bool StringMap::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
               input, &parser));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), parser.key().length(),
+            parser.key().data(), static_cast<int>(parser.key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "istio.proxy.mixer.StringMap.MapEntry.key"));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), parser.value().length(),
+            parser.value().data(), static_cast<int>(parser.value().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "istio.proxy.mixer.StringMap.MapEntry.value"));
         } else {
@@ -262,12 +268,11 @@ bool StringMap::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -296,11 +301,11 @@ void StringMap::SerializeWithCachedSizes(
     struct Utf8Check {
       static void Check(ConstPtr p) {
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), p->first.length(),
+          p->first.data(), static_cast<int>(p->first.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
           "istio.proxy.mixer.StringMap.MapEntry.key");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), p->second.length(),
+          p->second.data(), static_cast<int>(p->second.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
           "istio.proxy.mixer.StringMap.MapEntry.value");
       }
@@ -315,16 +320,16 @@ void StringMap::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
           it = this->map().begin();
           it != this->map().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<StringMap_MapEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(map_.NewEntryWrapper(
-            items[i]->first, items[i]->second));
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             1, *entry, output);
-        Utf8Check::Check(items[i]);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
       }
     } else {
       ::google::protobuf::scoped_ptr<StringMap_MapEntry> entry;
@@ -340,6 +345,10 @@ void StringMap::SerializeWithCachedSizes(
     }
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:istio.proxy.mixer.StringMap)
 }
 
@@ -359,11 +368,11 @@ void StringMap::SerializeWithCachedSizes(
     struct Utf8Check {
       static void Check(ConstPtr p) {
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), p->first.length(),
+          p->first.data(), static_cast<int>(p->first.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
           "istio.proxy.mixer.StringMap.MapEntry.key");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), p->second.length(),
+          p->second.data(), static_cast<int>(p->second.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
           "istio.proxy.mixer.StringMap.MapEntry.value");
       }
@@ -378,18 +387,18 @@ void StringMap::SerializeWithCachedSizes(
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
           it = this->map().begin();
           it != this->map().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
-      ::std::sort(&items[0], &items[n], Less());
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       ::google::protobuf::scoped_ptr<StringMap_MapEntry> entry;
       for (size_type i = 0; i < n; i++) {
         entry.reset(map_.NewEntryWrapper(
-            items[i]->first, items[i]->second));
+            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
                        1, *entry, deterministic, target);
 ;
-        Utf8Check::Check(items[i]);
+        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
       }
     } else {
       ::google::protobuf::scoped_ptr<StringMap_MapEntry> entry;
@@ -407,6 +416,10 @@ void StringMap::SerializeWithCachedSizes(
     }
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:istio.proxy.mixer.StringMap)
   return target;
 }
@@ -415,6 +428,11 @@ size_t StringMap::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:istio.proxy.mixer.StringMap)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // map<string, string> map = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->map_size());
@@ -484,8 +502,10 @@ void StringMap::Swap(StringMap* other) {
   InternalSwap(other);
 }
 void StringMap::InternalSwap(StringMap* other) {
+  using std::swap;
   map_.Swap(&other->map_);
-  std::swap(_cached_size_, other->_cached_size_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata StringMap::GetMetadata() const {

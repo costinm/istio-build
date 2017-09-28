@@ -20,29 +20,50 @@
 namespace envoy {
 namespace api {
 namespace v2 {
-class LbEndpointDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LbEndpoint> {
+class LbEndpointDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<LbEndpoint>
+     _instance;
 } _LbEndpoint_default_instance_;
-class LocalityLbEndpointsDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LocalityLbEndpoints> {
+class LocalityLbEndpointsDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<LocalityLbEndpoints>
+     _instance;
 } _LocalityLbEndpoints_default_instance_;
-class EndpointLoadMetricStatsDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<EndpointLoadMetricStats> {
+class EndpointLoadMetricStatsDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<EndpointLoadMetricStats>
+     _instance;
 } _EndpointLoadMetricStats_default_instance_;
-class UpstreamLocalityStats_TcpErrorsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry> {
-} _UpstreamLocalityStats_TcpErrorsEntry_default_instance_;
-class UpstreamLocalityStats_HttpErrorsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry> {
-} _UpstreamLocalityStats_HttpErrorsEntry_default_instance_;
-class UpstreamLocalityStats_GrpcErrorsEntryDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry> {
-} _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_;
-class UpstreamLocalityStatsDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<UpstreamLocalityStats> {
+class UpstreamLocalityStatsDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<UpstreamLocalityStats>
+     _instance;
 } _UpstreamLocalityStats_default_instance_;
-class ClusterStatsDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ClusterStats> {
+class ClusterStatsDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<ClusterStats>
+     _instance;
 } _ClusterStats_default_instance_;
-class LoadStatsRequestDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LoadStatsRequest> {
+class LoadStatsRequestDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<LoadStatsRequest>
+     _instance;
 } _LoadStatsRequest_default_instance_;
-class ClusterLoadAssignment_PolicyDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ClusterLoadAssignment_Policy> {
+class ClusterLoadAssignment_PolicyDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<ClusterLoadAssignment_Policy>
+     _instance;
 } _ClusterLoadAssignment_Policy_default_instance_;
-class ClusterLoadAssignmentDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<ClusterLoadAssignment> {
+class ClusterLoadAssignmentDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<ClusterLoadAssignment>
+     _instance;
 } _ClusterLoadAssignment_default_instance_;
-class LoadStatsResponseDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<LoadStatsResponse> {
+class LoadStatsResponseDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<LoadStatsResponse>
+     _instance;
 } _LoadStatsResponse_default_instance_;
 
 namespace protobuf_api_2feds_2eproto {
@@ -50,37 +71,33 @@ namespace protobuf_api_2feds_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[12];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+::google::protobuf::Metadata file_level_metadata[9];
 
 }  // namespace
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTableField
-    const TableStruct::entries[] = {
+    const TableStruct::entries[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   {0, 0, 0, ::google::protobuf::internal::kInvalidMask, 0, 0},
 };
 
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
-    const TableStruct::aux[] = {
+    const TableStruct::aux[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ::google::protobuf::internal::AuxillaryParseTableField(),
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
-    TableStruct::schema[] = {
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
-  { NULL, NULL, 0, -1, -1, false },
+    TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
-const ::google::protobuf::uint32 TableStruct::offsets[] = {
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LbEndpoint, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -112,12 +129,10 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, locality_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, total_requests_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, total_successful_requests_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, total_requests_in_progress_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, tcp_errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, http_errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, grpc_errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, dropped_requests_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, total_error_requests_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, total_dropped_requests_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UpstreamLocalityStats, load_metric_stats_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ClusterStats, _internal_metadata_),
@@ -156,26 +171,22 @@ const ::google::protobuf::uint32 TableStruct::offsets[] = {
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoadStatsResponse, clusters_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(LoadStatsResponse, load_reporting_interval_),
 };
-
-static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(LbEndpoint)},
   { 9, -1, sizeof(LocalityLbEndpoints)},
   { 17, -1, sizeof(EndpointLoadMetricStats)},
   { 25, -1, sizeof(UpstreamLocalityStats)},
-  { 38, -1, sizeof(ClusterStats)},
-  { 45, -1, sizeof(LoadStatsRequest)},
-  { 52, -1, sizeof(ClusterLoadAssignment_Policy)},
-  { 58, -1, sizeof(ClusterLoadAssignment)},
-  { 67, -1, sizeof(LoadStatsResponse)},
+  { 36, -1, sizeof(ClusterStats)},
+  { 43, -1, sizeof(LoadStatsRequest)},
+  { 50, -1, sizeof(ClusterLoadAssignment_Policy)},
+  { 56, -1, sizeof(ClusterLoadAssignment)},
+  { 65, -1, sizeof(LoadStatsResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_LbEndpoint_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_LocalityLbEndpoints_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_EndpointLoadMetricStats_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UpstreamLocalityStats_TcpErrorsEntry_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UpstreamLocalityStats_HttpErrorsEntry_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_UpstreamLocalityStats_GrpcErrorsEntry_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_UpstreamLocalityStats_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_ClusterStats_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_LoadStatsRequest_default_instance_),
@@ -191,10 +202,7 @@ void protobuf_AssignDescriptors() {
   ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
       "api/eds.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-file_level_metadata[3].reflection = UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry::CreateReflection(file_level_metadata[3].descriptor, _UpstreamLocalityStats_TcpErrorsEntry_default_instance_.get_mutable());
-file_level_metadata[4].reflection = UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry::CreateReflection(file_level_metadata[4].descriptor, _UpstreamLocalityStats_HttpErrorsEntry_default_instance_.get_mutable());
-file_level_metadata[5].reflection = UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry::CreateReflection(file_level_metadata[5].descriptor, _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable());
+      file_level_metadata, NULL, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -205,79 +213,55 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 9);
 }
 
 }  // namespace
-
-void TableStruct::Shutdown() {
-  _LbEndpoint_default_instance_.Shutdown();
-  delete file_level_metadata[0].reflection;
-  _LocalityLbEndpoints_default_instance_.Shutdown();
-  delete file_level_metadata[1].reflection;
-  _EndpointLoadMetricStats_default_instance_.Shutdown();
-  delete file_level_metadata[2].reflection;
-  _UpstreamLocalityStats_default_instance_.Shutdown();
-  delete file_level_metadata[6].reflection;
-  _ClusterStats_default_instance_.Shutdown();
-  delete file_level_metadata[7].reflection;
-  _LoadStatsRequest_default_instance_.Shutdown();
-  delete file_level_metadata[8].reflection;
-  _ClusterLoadAssignment_Policy_default_instance_.Shutdown();
-  delete file_level_metadata[9].reflection;
-  _ClusterLoadAssignment_default_instance_.Shutdown();
-  delete file_level_metadata[10].reflection;
-  _LoadStatsResponse_default_instance_.Shutdown();
-  delete file_level_metadata[11].reflection;
-  delete file_level_metadata[3].reflection;
-  delete file_level_metadata[4].reflection;
-  delete file_level_metadata[5].reflection;
-}
-
 void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::envoy::api::v2::protobuf_api_2fbase_2eproto::InitDefaults();
+  ::envoy::api::v2::protobuf_api_2fdiscovery_2eproto::InitDefaults();
   ::envoy::api::v2::protobuf_api_2fhealth_5fcheck_2eproto::InitDefaults();
   ::google::api::protobuf_google_2fapi_2fannotations_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::InitDefaults();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::InitDefaults();
-  _LbEndpoint_default_instance_.DefaultConstruct();
-  _LocalityLbEndpoints_default_instance_.DefaultConstruct();
-  _EndpointLoadMetricStats_default_instance_.DefaultConstruct();
-  _UpstreamLocalityStats_TcpErrorsEntry_default_instance_.DefaultConstruct();
-  _UpstreamLocalityStats_HttpErrorsEntry_default_instance_.DefaultConstruct();
-  _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.DefaultConstruct();
-  _UpstreamLocalityStats_default_instance_.DefaultConstruct();
-  _ClusterStats_default_instance_.DefaultConstruct();
-  _LoadStatsRequest_default_instance_.DefaultConstruct();
-  _ClusterLoadAssignment_Policy_default_instance_.DefaultConstruct();
-  _ClusterLoadAssignment_default_instance_.DefaultConstruct();
-  _LoadStatsResponse_default_instance_.DefaultConstruct();
-  _LbEndpoint_default_instance_.get_mutable()->endpoint_ = const_cast< ::envoy::api::v2::Endpoint*>(
+  _LbEndpoint_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_LbEndpoint_default_instance_);_LocalityLbEndpoints_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_LocalityLbEndpoints_default_instance_);_EndpointLoadMetricStats_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_EndpointLoadMetricStats_default_instance_);_UpstreamLocalityStats_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_UpstreamLocalityStats_default_instance_);_ClusterStats_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_ClusterStats_default_instance_);_LoadStatsRequest_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_LoadStatsRequest_default_instance_);_ClusterLoadAssignment_Policy_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_ClusterLoadAssignment_Policy_default_instance_);_ClusterLoadAssignment_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_ClusterLoadAssignment_default_instance_);_LoadStatsResponse_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_LoadStatsResponse_default_instance_);_LbEndpoint_default_instance_._instance.get_mutable()->endpoint_ = const_cast< ::envoy::api::v2::Endpoint*>(
       ::envoy::api::v2::Endpoint::internal_default_instance());
-  _LbEndpoint_default_instance_.get_mutable()->metadata_ = const_cast< ::envoy::api::v2::Metadata*>(
+  _LbEndpoint_default_instance_._instance.get_mutable()->metadata_ = const_cast< ::envoy::api::v2::Metadata*>(
       ::envoy::api::v2::Metadata::internal_default_instance());
-  _LbEndpoint_default_instance_.get_mutable()->load_balancing_weight_ = const_cast< ::google::protobuf::UInt32Value*>(
+  _LbEndpoint_default_instance_._instance.get_mutable()->load_balancing_weight_ = const_cast< ::google::protobuf::UInt32Value*>(
       ::google::protobuf::UInt32Value::internal_default_instance());
-  _LocalityLbEndpoints_default_instance_.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
+  _LocalityLbEndpoints_default_instance_._instance.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
       ::envoy::api::v2::Locality::internal_default_instance());
-  _LocalityLbEndpoints_default_instance_.get_mutable()->load_balancing_weight_ = const_cast< ::google::protobuf::UInt32Value*>(
+  _LocalityLbEndpoints_default_instance_._instance.get_mutable()->load_balancing_weight_ = const_cast< ::google::protobuf::UInt32Value*>(
       ::google::protobuf::UInt32Value::internal_default_instance());
-  _UpstreamLocalityStats_TcpErrorsEntry_default_instance_.get_mutable()->set_default_instance(_UpstreamLocalityStats_TcpErrorsEntry_default_instance_.get_mutable());
-  _UpstreamLocalityStats_TcpErrorsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _UpstreamLocalityStats_HttpErrorsEntry_default_instance_.get_mutable()->set_default_instance(_UpstreamLocalityStats_HttpErrorsEntry_default_instance_.get_mutable());
-  _UpstreamLocalityStats_HttpErrorsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable()->set_default_instance(_UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable());
-  _UpstreamLocalityStats_GrpcErrorsEntry_default_instance_.get_mutable()->InitAsDefaultInstance();
-  _UpstreamLocalityStats_default_instance_.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
+  _UpstreamLocalityStats_default_instance_._instance.get_mutable()->locality_ = const_cast< ::envoy::api::v2::Locality*>(
       ::envoy::api::v2::Locality::internal_default_instance());
-  _LoadStatsRequest_default_instance_.get_mutable()->node_ = const_cast< ::envoy::api::v2::Node*>(
+  _LoadStatsRequest_default_instance_._instance.get_mutable()->node_ = const_cast< ::envoy::api::v2::Node*>(
       ::envoy::api::v2::Node::internal_default_instance());
-  _ClusterLoadAssignment_default_instance_.get_mutable()->policy_ = const_cast< ::envoy::api::v2::ClusterLoadAssignment_Policy*>(
+  _ClusterLoadAssignment_default_instance_._instance.get_mutable()->policy_ = const_cast< ::envoy::api::v2::ClusterLoadAssignment_Policy*>(
       ::envoy::api::v2::ClusterLoadAssignment_Policy::internal_default_instance());
-  _LoadStatsResponse_default_instance_.get_mutable()->load_reporting_interval_ = const_cast< ::google::protobuf::Duration*>(
+  _LoadStatsResponse_default_instance_._instance.get_mutable()->load_reporting_interval_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
 }
 
@@ -285,82 +269,76 @@ void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
 }
+namespace {
 void AddDescriptorsImpl() {
   InitDefaults();
-  static const char descriptor[] = {
+  static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\rapi/eds.proto\022\014envoy.api.v2\032\016api/base."
-      "proto\032\026api/health_check.proto\032\034google/ap"
-      "i/annotations.proto\032\036google/protobuf/dur"
-      "ation.proto\032\036google/protobuf/wrappers.pr"
-      "oto\"\320\001\n\nLbEndpoint\022(\n\010endpoint\030\001 \001(\0132\026.e"
-      "nvoy.api.v2.Endpoint\0221\n\rhealth_status\030\002 "
-      "\001(\0162\032.envoy.api.v2.HealthStatus\022(\n\010metad"
-      "ata\030\003 \001(\0132\026.envoy.api.v2.Metadata\022;\n\025loa"
-      "d_balancing_weight\030\004 \001(\0132\034.google.protob"
-      "uf.UInt32Value\"\254\001\n\023LocalityLbEndpoints\022("
-      "\n\010locality\030\001 \001(\0132\026.envoy.api.v2.Locality"
-      "\022.\n\014lb_endpoints\030\002 \003(\0132\030.envoy.api.v2.Lb"
-      "Endpoint\022;\n\025load_balancing_weight\030\003 \001(\0132"
-      "\034.google.protobuf.UInt32Value\"u\n\027Endpoin"
-      "tLoadMetricStats\022\023\n\013metric_name\030\001 \001(\t\022)\n"
-      "!num_requests_finished_with_metric\030\002 \001(\004"
-      "\022\032\n\022total_metric_value\030\003 \001(\001\"\352\004\n\025Upstrea"
-      "mLocalityStats\022(\n\010locality\030\001 \001(\0132\026.envoy"
-      ".api.v2.Locality\022\026\n\016total_requests\030\002 \001(\004"
-      "\022\"\n\032total_requests_in_progress\030\003 \001(\004\022F\n\n"
-      "tcp_errors\030\004 \003(\01322.envoy.api.v2.Upstream"
-      "LocalityStats.TcpErrorsEntry\022H\n\013http_err"
-      "ors\030\005 \003(\01323.envoy.api.v2.UpstreamLocalit"
-      "yStats.HttpErrorsEntry\022H\n\013grpc_errors\030\006 "
-      "\003(\01323.envoy.api.v2.UpstreamLocalityStats"
-      ".GrpcErrorsEntry\022\030\n\020dropped_requests\030\007 \001"
-      "(\004\022@\n\021load_metric_stats\030\010 \003(\0132%.envoy.ap"
-      "i.v2.EndpointLoadMetricStats\0320\n\016TcpError"
-      "sEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\004:\0028\001\0321"
-      "\n\017HttpErrorsEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030"
-      "\002 \001(\004:\0028\001\0321\n\017GrpcErrorsEntry\022\013\n\003key\030\001 \001("
-      "\r\022\r\n\005value\030\002 \001(\004:\0028\001\"\033\n\014TcpErrorType\022\013\n\007"
-      "TIMEOUT\020\000\"j\n\014ClusterStats\022\024\n\014cluster_nam"
-      "e\030\001 \001(\t\022D\n\027upstream_locality_stats\030\002 \003(\013"
-      "2#.envoy.api.v2.UpstreamLocalityStats\"g\n"
-      "\020LoadStatsRequest\022 \n\004node\030\001 \001(\0132\022.envoy."
-      "api.v2.Node\0221\n\rcluster_stats\030\002 \003(\0132\032.env"
-      "oy.api.v2.ClusterStats\"\377\001\n\025ClusterLoadAs"
-      "signment\022\024\n\014cluster_name\030\001 \001(\t\0224\n\tendpoi"
-      "nts\030\002 \003(\0132!.envoy.api.v2.LocalityLbEndpo"
-      "ints\022=\n\022failover_endpoints\030\003 \003(\0132!.envoy"
-      ".api.v2.LocalityLbEndpoints\022:\n\006policy\030\004 "
-      "\001(\0132*.envoy.api.v2.ClusterLoadAssignment"
-      ".Policy\032\037\n\006Policy\022\025\n\rdrop_overload\030\001 \001(\001"
-      "\"a\n\021LoadStatsResponse\022\020\n\010clusters\030\001 \003(\t\022"
-      ":\n\027load_reporting_interval\030\002 \001(\0132\031.googl"
-      "e.protobuf.Duration2\305\002\n\030EndpointDiscover"
-      "yService\022X\n\017StreamEndpoints\022\036.envoy.api."
-      "v2.DiscoveryRequest\032\037.envoy.api.v2.Disco"
-      "veryResponse\"\000(\0010\001\022u\n\016FetchEndpoints\022\036.e"
-      "nvoy.api.v2.DiscoveryRequest\032\037.envoy.api"
-      ".v2.DiscoveryResponse\"\"\202\323\344\223\002\034\"\027/v2/disco"
-      "very:endpoints:\001*\022X\n\017StreamLoadStats\022\036.e"
-      "nvoy.api.v2.LoadStatsRequest\032\037.envoy.api"
-      ".v2.LoadStatsResponse\"\000(\0010\001b\006proto3"
+      "proto\032\023api/discovery.proto\032\026api/health_c"
+      "heck.proto\032\034google/api/annotations.proto"
+      "\032\036google/protobuf/duration.proto\032\036google"
+      "/protobuf/wrappers.proto\"\320\001\n\nLbEndpoint\022"
+      "(\n\010endpoint\030\001 \001(\0132\026.envoy.api.v2.Endpoin"
+      "t\0221\n\rhealth_status\030\002 \001(\0162\032.envoy.api.v2."
+      "HealthStatus\022(\n\010metadata\030\003 \001(\0132\026.envoy.a"
+      "pi.v2.Metadata\022;\n\025load_balancing_weight\030"
+      "\004 \001(\0132\034.google.protobuf.UInt32Value\"\254\001\n\023"
+      "LocalityLbEndpoints\022(\n\010locality\030\001 \001(\0132\026."
+      "envoy.api.v2.Locality\022.\n\014lb_endpoints\030\002 "
+      "\003(\0132\030.envoy.api.v2.LbEndpoint\022;\n\025load_ba"
+      "lancing_weight\030\003 \001(\0132\034.google.protobuf.U"
+      "Int32Value\"u\n\027EndpointLoadMetricStats\022\023\n"
+      "\013metric_name\030\001 \001(\t\022)\n!num_requests_finis"
+      "hed_with_metric\030\002 \001(\004\022\032\n\022total_metric_va"
+      "lue\030\003 \001(\001\"\210\002\n\025UpstreamLocalityStats\022(\n\010l"
+      "ocality\030\001 \001(\0132\026.envoy.api.v2.Locality\022!\n"
+      "\031total_successful_requests\030\002 \001(\004\022\"\n\032tota"
+      "l_requests_in_progress\030\003 \001(\004\022\034\n\024total_er"
+      "ror_requests\030\004 \001(\004\022\036\n\026total_dropped_requ"
+      "ests\030\005 \001(\004\022@\n\021load_metric_stats\030\006 \003(\0132%."
+      "envoy.api.v2.EndpointLoadMetricStats\"j\n\014"
+      "ClusterStats\022\024\n\014cluster_name\030\001 \001(\t\022D\n\027up"
+      "stream_locality_stats\030\002 \003(\0132#.envoy.api."
+      "v2.UpstreamLocalityStats\"g\n\020LoadStatsReq"
+      "uest\022 \n\004node\030\001 \001(\0132\022.envoy.api.v2.Node\0221"
+      "\n\rcluster_stats\030\002 \003(\0132\032.envoy.api.v2.Clu"
+      "sterStats\"\377\001\n\025ClusterLoadAssignment\022\024\n\014c"
+      "luster_name\030\001 \001(\t\0224\n\tendpoints\030\002 \003(\0132!.e"
+      "nvoy.api.v2.LocalityLbEndpoints\022=\n\022failo"
+      "ver_endpoints\030\003 \003(\0132!.envoy.api.v2.Local"
+      "ityLbEndpoints\022:\n\006policy\030\004 \001(\0132*.envoy.a"
+      "pi.v2.ClusterLoadAssignment.Policy\032\037\n\006Po"
+      "licy\022\025\n\rdrop_overload\030\001 \001(\001\"a\n\021LoadStats"
+      "Response\022\020\n\010clusters\030\001 \003(\t\022:\n\027load_repor"
+      "ting_interval\030\002 \001(\0132\031.google.protobuf.Du"
+      "ration2\305\002\n\030EndpointDiscoveryService\022X\n\017S"
+      "treamEndpoints\022\036.envoy.api.v2.DiscoveryR"
+      "equest\032\037.envoy.api.v2.DiscoveryResponse\""
+      "\000(\0010\001\022u\n\016FetchEndpoints\022\036.envoy.api.v2.D"
+      "iscoveryRequest\032\037.envoy.api.v2.Discovery"
+      "Response\"\"\202\323\344\223\002\034\"\027/v2/discovery:endpoint"
+      "s:\001*\022X\n\017StreamLoadStats\022\036.envoy.api.v2.L"
+      "oadStatsRequest\032\037.envoy.api.v2.LoadStats"
+      "Response\"\000(\0010\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2195);
+      descriptor, 1862);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api/eds.proto", &protobuf_RegisterTypes);
   ::envoy::api::v2::protobuf_api_2fbase_2eproto::AddDescriptors();
+  ::envoy::api::v2::protobuf_api_2fdiscovery_2eproto::AddDescriptors();
   ::envoy::api::v2::protobuf_api_2fhealth_5fcheck_2eproto::AddDescriptors();
   ::google::api::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
   ::google::protobuf::protobuf_google_2fprotobuf_2fwrappers_2eproto::AddDescriptors();
-  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
 }
+} // anonymous namespace
 
 void AddDescriptors() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
   ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
 }
-// Force AddDescriptors() to be called at static initialization time.
+// Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
   StaticDescriptorInitializer() {
     AddDescriptors();
@@ -369,25 +347,6 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_api_2feds_2eproto
 
-const ::google::protobuf::EnumDescriptor* UpstreamLocalityStats_TcpErrorType_descriptor() {
-  protobuf_api_2feds_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2feds_2eproto::file_level_enum_descriptors[0];
-}
-bool UpstreamLocalityStats_TcpErrorType_IsValid(int value) {
-  switch (value) {
-    case 0:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const UpstreamLocalityStats_TcpErrorType UpstreamLocalityStats::TIMEOUT;
-const UpstreamLocalityStats_TcpErrorType UpstreamLocalityStats::TcpErrorType_MIN;
-const UpstreamLocalityStats_TcpErrorType UpstreamLocalityStats::TcpErrorType_MAX;
-const int UpstreamLocalityStats::TcpErrorType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -431,8 +390,9 @@ LbEndpoint::LbEndpoint(const LbEndpoint& from)
 }
 
 void LbEndpoint::SharedCtor() {
-  ::memset(&endpoint_, 0, reinterpret_cast<char*>(&health_status_) -
-    reinterpret_cast<char*>(&endpoint_) + sizeof(health_status_));
+  ::memset(&endpoint_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&health_status_) -
+      reinterpret_cast<char*>(&endpoint_)) + sizeof(health_status_));
   _cached_size_ = 0;
 }
 
@@ -442,15 +402,9 @@ LbEndpoint::~LbEndpoint() {
 }
 
 void LbEndpoint::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete endpoint_;
-  }
-  if (this != internal_default_instance()) {
-    delete metadata_;
-  }
-  if (this != internal_default_instance()) {
-    delete load_balancing_weight_;
-  }
+  if (this != internal_default_instance()) delete endpoint_;
+  if (this != internal_default_instance()) delete metadata_;
+  if (this != internal_default_instance()) delete load_balancing_weight_;
 }
 
 void LbEndpoint::SetCachedSize(int size) const {
@@ -478,6 +432,10 @@ LbEndpoint* LbEndpoint::New(::google::protobuf::Arena* arena) const {
 
 void LbEndpoint::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.LbEndpoint)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   if (GetArenaNoVirtual() == NULL && endpoint_ != NULL) {
     delete endpoint_;
   }
@@ -491,6 +449,7 @@ void LbEndpoint::Clear() {
   }
   load_balancing_weight_ = NULL;
   health_status_ = 0;
+  _internal_metadata_.Clear();
 }
 
 bool LbEndpoint::MergePartialFromCodedStream(
@@ -506,7 +465,7 @@ bool LbEndpoint::MergePartialFromCodedStream(
       // .envoy.api.v2.Endpoint endpoint = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_endpoint()));
         } else {
@@ -518,7 +477,7 @@ bool LbEndpoint::MergePartialFromCodedStream(
       // .envoy.api.v2.HealthStatus health_status = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u)) {
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -533,7 +492,7 @@ bool LbEndpoint::MergePartialFromCodedStream(
       // .envoy.api.v2.Metadata metadata = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_metadata()));
         } else {
@@ -545,7 +504,7 @@ bool LbEndpoint::MergePartialFromCodedStream(
       // .google.protobuf.UInt32Value load_balancing_weight = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_load_balancing_weight()));
         } else {
@@ -556,12 +515,11 @@ bool LbEndpoint::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -605,6 +563,10 @@ void LbEndpoint::SerializeWithCachedSizes(
       4, *this->load_balancing_weight_, output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.LbEndpoint)
 }
 
@@ -642,6 +604,10 @@ void LbEndpoint::SerializeWithCachedSizes(
         4, *this->load_balancing_weight_, deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.LbEndpoint)
   return target;
 }
@@ -650,6 +616,11 @@ size_t LbEndpoint::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.LbEndpoint)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // .envoy.api.v2.Endpoint endpoint = 1;
   if (this->has_endpoint()) {
     total_size += 1 +
@@ -743,11 +714,13 @@ void LbEndpoint::Swap(LbEndpoint* other) {
   InternalSwap(other);
 }
 void LbEndpoint::InternalSwap(LbEndpoint* other) {
-  std::swap(endpoint_, other->endpoint_);
-  std::swap(metadata_, other->metadata_);
-  std::swap(load_balancing_weight_, other->load_balancing_weight_);
-  std::swap(health_status_, other->health_status_);
-  std::swap(_cached_size_, other->_cached_size_);
+  using std::swap;
+  swap(endpoint_, other->endpoint_);
+  swap(metadata_, other->metadata_);
+  swap(load_balancing_weight_, other->load_balancing_weight_);
+  swap(health_status_, other->health_status_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LbEndpoint::GetMetadata() const {
@@ -767,9 +740,10 @@ void LbEndpoint::clear_endpoint() {
   endpoint_ = NULL;
 }
 const ::envoy::api::v2::Endpoint& LbEndpoint::endpoint() const {
+  const ::envoy::api::v2::Endpoint* p = endpoint_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.endpoint)
-  return endpoint_ != NULL ? *endpoint_
-                         : *::envoy::api::v2::Endpoint::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::Endpoint*>(
+      &::envoy::api::v2::_Endpoint_default_instance_);
 }
 ::envoy::api::v2::Endpoint* LbEndpoint::mutable_endpoint() {
   
@@ -820,9 +794,10 @@ void LbEndpoint::clear_metadata() {
   metadata_ = NULL;
 }
 const ::envoy::api::v2::Metadata& LbEndpoint::metadata() const {
+  const ::envoy::api::v2::Metadata* p = metadata_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.metadata)
-  return metadata_ != NULL ? *metadata_
-                         : *::envoy::api::v2::Metadata::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::Metadata*>(
+      &::envoy::api::v2::_Metadata_default_instance_);
 }
 ::envoy::api::v2::Metadata* LbEndpoint::mutable_metadata() {
   
@@ -859,9 +834,10 @@ void LbEndpoint::clear_load_balancing_weight() {
   load_balancing_weight_ = NULL;
 }
 const ::google::protobuf::UInt32Value& LbEndpoint::load_balancing_weight() const {
+  const ::google::protobuf::UInt32Value* p = load_balancing_weight_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LbEndpoint.load_balancing_weight)
-  return load_balancing_weight_ != NULL ? *load_balancing_weight_
-                         : *::google::protobuf::UInt32Value::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::UInt32Value*>(
+      &::google::protobuf::_UInt32Value_default_instance_);
 }
 ::google::protobuf::UInt32Value* LbEndpoint::mutable_load_balancing_weight() {
   
@@ -932,8 +908,9 @@ LocalityLbEndpoints::LocalityLbEndpoints(const LocalityLbEndpoints& from)
 }
 
 void LocalityLbEndpoints::SharedCtor() {
-  ::memset(&locality_, 0, reinterpret_cast<char*>(&load_balancing_weight_) -
-    reinterpret_cast<char*>(&locality_) + sizeof(load_balancing_weight_));
+  ::memset(&locality_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&load_balancing_weight_) -
+      reinterpret_cast<char*>(&locality_)) + sizeof(load_balancing_weight_));
   _cached_size_ = 0;
 }
 
@@ -943,12 +920,8 @@ LocalityLbEndpoints::~LocalityLbEndpoints() {
 }
 
 void LocalityLbEndpoints::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete locality_;
-  }
-  if (this != internal_default_instance()) {
-    delete load_balancing_weight_;
-  }
+  if (this != internal_default_instance()) delete locality_;
+  if (this != internal_default_instance()) delete load_balancing_weight_;
 }
 
 void LocalityLbEndpoints::SetCachedSize(int size) const {
@@ -976,6 +949,10 @@ LocalityLbEndpoints* LocalityLbEndpoints::New(::google::protobuf::Arena* arena) 
 
 void LocalityLbEndpoints::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.LocalityLbEndpoints)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   lb_endpoints_.Clear();
   if (GetArenaNoVirtual() == NULL && locality_ != NULL) {
     delete locality_;
@@ -985,6 +962,7 @@ void LocalityLbEndpoints::Clear() {
     delete load_balancing_weight_;
   }
   load_balancing_weight_ = NULL;
+  _internal_metadata_.Clear();
 }
 
 bool LocalityLbEndpoints::MergePartialFromCodedStream(
@@ -1000,7 +978,7 @@ bool LocalityLbEndpoints::MergePartialFromCodedStream(
       // .envoy.api.v2.Locality locality = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_locality()));
         } else {
@@ -1012,7 +990,7 @@ bool LocalityLbEndpoints::MergePartialFromCodedStream(
       // repeated .envoy.api.v2.LbEndpoint lb_endpoints = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_lb_endpoints()));
         } else {
@@ -1024,7 +1002,7 @@ bool LocalityLbEndpoints::MergePartialFromCodedStream(
       // .google.protobuf.UInt32Value load_balancing_weight = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_load_balancing_weight()));
         } else {
@@ -1035,12 +1013,11 @@ bool LocalityLbEndpoints::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -1067,9 +1044,10 @@ void LocalityLbEndpoints::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.LbEndpoint lb_endpoints = 2;
-  for (unsigned int i = 0, n = this->lb_endpoints_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->lb_endpoints_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->lb_endpoints(i), output);
+      2, this->lb_endpoints(static_cast<int>(i)), output);
   }
 
   // .google.protobuf.UInt32Value load_balancing_weight = 3;
@@ -1078,6 +1056,10 @@ void LocalityLbEndpoints::SerializeWithCachedSizes(
       3, *this->load_balancing_weight_, output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.LocalityLbEndpoints)
 }
 
@@ -1096,10 +1078,11 @@ void LocalityLbEndpoints::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.LbEndpoint lb_endpoints = 2;
-  for (unsigned int i = 0, n = this->lb_endpoints_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->lb_endpoints_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->lb_endpoints(i), deterministic, target);
+        2, this->lb_endpoints(static_cast<int>(i)), deterministic, target);
   }
 
   // .google.protobuf.UInt32Value load_balancing_weight = 3;
@@ -1109,6 +1092,10 @@ void LocalityLbEndpoints::SerializeWithCachedSizes(
         3, *this->load_balancing_weight_, deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.LocalityLbEndpoints)
   return target;
 }
@@ -1117,14 +1104,19 @@ size_t LocalityLbEndpoints::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.LocalityLbEndpoints)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated .envoy.api.v2.LbEndpoint lb_endpoints = 2;
   {
-    unsigned int count = this->lb_endpoints_size();
+    unsigned int count = static_cast<unsigned int>(this->lb_endpoints_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->lb_endpoints(i));
+          this->lb_endpoints(static_cast<int>(i)));
     }
   }
 
@@ -1203,10 +1195,12 @@ void LocalityLbEndpoints::Swap(LocalityLbEndpoints* other) {
   InternalSwap(other);
 }
 void LocalityLbEndpoints::InternalSwap(LocalityLbEndpoints* other) {
+  using std::swap;
   lb_endpoints_.InternalSwap(&other->lb_endpoints_);
-  std::swap(locality_, other->locality_);
-  std::swap(load_balancing_weight_, other->load_balancing_weight_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(locality_, other->locality_);
+  swap(load_balancing_weight_, other->load_balancing_weight_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LocalityLbEndpoints::GetMetadata() const {
@@ -1226,9 +1220,10 @@ void LocalityLbEndpoints::clear_locality() {
   locality_ = NULL;
 }
 const ::envoy::api::v2::Locality& LocalityLbEndpoints::locality() const {
+  const ::envoy::api::v2::Locality* p = locality_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LocalityLbEndpoints.locality)
-  return locality_ != NULL ? *locality_
-                         : *::envoy::api::v2::Locality::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::Locality*>(
+      &::envoy::api::v2::_Locality_default_instance_);
 }
 ::envoy::api::v2::Locality* LocalityLbEndpoints::mutable_locality() {
   
@@ -1295,9 +1290,10 @@ void LocalityLbEndpoints::clear_load_balancing_weight() {
   load_balancing_weight_ = NULL;
 }
 const ::google::protobuf::UInt32Value& LocalityLbEndpoints::load_balancing_weight() const {
+  const ::google::protobuf::UInt32Value* p = load_balancing_weight_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LocalityLbEndpoints.load_balancing_weight)
-  return load_balancing_weight_ != NULL ? *load_balancing_weight_
-                         : *::google::protobuf::UInt32Value::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::UInt32Value*>(
+      &::google::protobuf::_UInt32Value_default_instance_);
 }
 ::google::protobuf::UInt32Value* LocalityLbEndpoints::mutable_load_balancing_weight() {
   
@@ -1358,15 +1354,16 @@ EndpointLoadMetricStats::EndpointLoadMetricStats(const EndpointLoadMetricStats& 
     metric_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.metric_name_);
   }
   ::memcpy(&num_requests_finished_with_metric_, &from.num_requests_finished_with_metric_,
-    reinterpret_cast<char*>(&total_metric_value_) -
-    reinterpret_cast<char*>(&num_requests_finished_with_metric_) + sizeof(total_metric_value_));
+    static_cast<size_t>(reinterpret_cast<char*>(&total_metric_value_) -
+    reinterpret_cast<char*>(&num_requests_finished_with_metric_)) + sizeof(total_metric_value_));
   // @@protoc_insertion_point(copy_constructor:envoy.api.v2.EndpointLoadMetricStats)
 }
 
 void EndpointLoadMetricStats::SharedCtor() {
   metric_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&num_requests_finished_with_metric_, 0, reinterpret_cast<char*>(&total_metric_value_) -
-    reinterpret_cast<char*>(&num_requests_finished_with_metric_) + sizeof(total_metric_value_));
+  ::memset(&num_requests_finished_with_metric_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_metric_value_) -
+      reinterpret_cast<char*>(&num_requests_finished_with_metric_)) + sizeof(total_metric_value_));
   _cached_size_ = 0;
 }
 
@@ -1404,9 +1401,15 @@ EndpointLoadMetricStats* EndpointLoadMetricStats::New(::google::protobuf::Arena*
 
 void EndpointLoadMetricStats::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.EndpointLoadMetricStats)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   metric_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&num_requests_finished_with_metric_, 0, reinterpret_cast<char*>(&total_metric_value_) -
-    reinterpret_cast<char*>(&num_requests_finished_with_metric_) + sizeof(total_metric_value_));
+  ::memset(&num_requests_finished_with_metric_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_metric_value_) -
+      reinterpret_cast<char*>(&num_requests_finished_with_metric_)) + sizeof(total_metric_value_));
+  _internal_metadata_.Clear();
 }
 
 bool EndpointLoadMetricStats::MergePartialFromCodedStream(
@@ -1422,11 +1425,11 @@ bool EndpointLoadMetricStats::MergePartialFromCodedStream(
       // string metric_name = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_metric_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->metric_name().data(), this->metric_name().length(),
+            this->metric_name().data(), static_cast<int>(this->metric_name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.EndpointLoadMetricStats.metric_name"));
         } else {
@@ -1438,7 +1441,7 @@ bool EndpointLoadMetricStats::MergePartialFromCodedStream(
       // uint64 num_requests_finished_with_metric = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u)) {
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1452,7 +1455,7 @@ bool EndpointLoadMetricStats::MergePartialFromCodedStream(
       // double total_metric_value = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(25u)) {
+            static_cast< ::google::protobuf::uint8>(25u /* 25 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -1465,12 +1468,11 @@ bool EndpointLoadMetricStats::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -1493,7 +1495,7 @@ void EndpointLoadMetricStats::SerializeWithCachedSizes(
   // string metric_name = 1;
   if (this->metric_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->metric_name().data(), this->metric_name().length(),
+      this->metric_name().data(), static_cast<int>(this->metric_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.EndpointLoadMetricStats.metric_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -1510,6 +1512,10 @@ void EndpointLoadMetricStats::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->total_metric_value(), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.EndpointLoadMetricStats)
 }
 
@@ -1523,7 +1529,7 @@ void EndpointLoadMetricStats::SerializeWithCachedSizes(
   // string metric_name = 1;
   if (this->metric_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->metric_name().data(), this->metric_name().length(),
+      this->metric_name().data(), static_cast<int>(this->metric_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.EndpointLoadMetricStats.metric_name");
     target =
@@ -1541,6 +1547,10 @@ void EndpointLoadMetricStats::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->total_metric_value(), target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.EndpointLoadMetricStats)
   return target;
 }
@@ -1549,6 +1559,11 @@ size_t EndpointLoadMetricStats::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.EndpointLoadMetricStats)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // string metric_name = 1;
   if (this->metric_name().size() > 0) {
     total_size += 1 +
@@ -1632,10 +1647,12 @@ void EndpointLoadMetricStats::Swap(EndpointLoadMetricStats* other) {
   InternalSwap(other);
 }
 void EndpointLoadMetricStats::InternalSwap(EndpointLoadMetricStats* other) {
+  using std::swap;
   metric_name_.Swap(&other->metric_name_);
-  std::swap(num_requests_finished_with_metric_, other->num_requests_finished_with_metric_);
-  std::swap(total_metric_value_, other->total_metric_value_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(num_requests_finished_with_metric_, other->num_requests_finished_with_metric_);
+  swap(total_metric_value_, other->total_metric_value_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata EndpointLoadMetricStats::GetMetadata() const {
@@ -1731,71 +1748,12 @@ void EndpointLoadMetricStats::set_total_metric_value(double value) {
 
 // ===================================================================
 
-UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry::UpstreamLocalityStats_TcpErrorsEntry() {}
-UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry::UpstreamLocalityStats_TcpErrorsEntry(::google::protobuf::Arena* arena) : SuperType(arena) {}
-::google::protobuf::Metadata UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry::GetMetadata() const {
-  protobuf_api_2feds_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2feds_2eproto::file_level_metadata[3];
-}
-void UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-void UpstreamLocalityStats::UpstreamLocalityStats_TcpErrorsEntry::MergeFrom(const UpstreamLocalityStats_TcpErrorsEntry& other) {
-  MergeFromInternal(other);
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry::UpstreamLocalityStats_HttpErrorsEntry() {}
-UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry::UpstreamLocalityStats_HttpErrorsEntry(::google::protobuf::Arena* arena) : SuperType(arena) {}
-::google::protobuf::Metadata UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry::GetMetadata() const {
-  protobuf_api_2feds_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2feds_2eproto::file_level_metadata[4];
-}
-void UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-void UpstreamLocalityStats::UpstreamLocalityStats_HttpErrorsEntry::MergeFrom(const UpstreamLocalityStats_HttpErrorsEntry& other) {
-  MergeFromInternal(other);
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry::UpstreamLocalityStats_GrpcErrorsEntry() {}
-UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry::UpstreamLocalityStats_GrpcErrorsEntry(::google::protobuf::Arena* arena) : SuperType(arena) {}
-::google::protobuf::Metadata UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry::GetMetadata() const {
-  protobuf_api_2feds_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2feds_2eproto::file_level_metadata[5];
-}
-void UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-void UpstreamLocalityStats::UpstreamLocalityStats_GrpcErrorsEntry::MergeFrom(const UpstreamLocalityStats_GrpcErrorsEntry& other) {
-  MergeFromInternal(other);
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int UpstreamLocalityStats::kLocalityFieldNumber;
-const int UpstreamLocalityStats::kTotalRequestsFieldNumber;
+const int UpstreamLocalityStats::kTotalSuccessfulRequestsFieldNumber;
 const int UpstreamLocalityStats::kTotalRequestsInProgressFieldNumber;
-const int UpstreamLocalityStats::kTcpErrorsFieldNumber;
-const int UpstreamLocalityStats::kHttpErrorsFieldNumber;
-const int UpstreamLocalityStats::kGrpcErrorsFieldNumber;
-const int UpstreamLocalityStats::kDroppedRequestsFieldNumber;
+const int UpstreamLocalityStats::kTotalErrorRequestsFieldNumber;
+const int UpstreamLocalityStats::kTotalDroppedRequestsFieldNumber;
 const int UpstreamLocalityStats::kLoadMetricStatsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -1813,23 +1771,21 @@ UpstreamLocalityStats::UpstreamLocalityStats(const UpstreamLocalityStats& from)
       load_metric_stats_(from.load_metric_stats_),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  tcp_errors_.MergeFrom(from.tcp_errors_);
-  http_errors_.MergeFrom(from.http_errors_);
-  grpc_errors_.MergeFrom(from.grpc_errors_);
   if (from.has_locality()) {
     locality_ = new ::envoy::api::v2::Locality(*from.locality_);
   } else {
     locality_ = NULL;
   }
-  ::memcpy(&total_requests_, &from.total_requests_,
-    reinterpret_cast<char*>(&dropped_requests_) -
-    reinterpret_cast<char*>(&total_requests_) + sizeof(dropped_requests_));
+  ::memcpy(&total_successful_requests_, &from.total_successful_requests_,
+    static_cast<size_t>(reinterpret_cast<char*>(&total_dropped_requests_) -
+    reinterpret_cast<char*>(&total_successful_requests_)) + sizeof(total_dropped_requests_));
   // @@protoc_insertion_point(copy_constructor:envoy.api.v2.UpstreamLocalityStats)
 }
 
 void UpstreamLocalityStats::SharedCtor() {
-  ::memset(&locality_, 0, reinterpret_cast<char*>(&dropped_requests_) -
-    reinterpret_cast<char*>(&locality_) + sizeof(dropped_requests_));
+  ::memset(&locality_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_dropped_requests_) -
+      reinterpret_cast<char*>(&locality_)) + sizeof(total_dropped_requests_));
   _cached_size_ = 0;
 }
 
@@ -1839,9 +1795,7 @@ UpstreamLocalityStats::~UpstreamLocalityStats() {
 }
 
 void UpstreamLocalityStats::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete locality_;
-  }
+  if (this != internal_default_instance()) delete locality_;
 }
 
 void UpstreamLocalityStats::SetCachedSize(int size) const {
@@ -1869,16 +1823,19 @@ UpstreamLocalityStats* UpstreamLocalityStats::New(::google::protobuf::Arena* are
 
 void UpstreamLocalityStats::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.UpstreamLocalityStats)
-  tcp_errors_.Clear();
-  http_errors_.Clear();
-  grpc_errors_.Clear();
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   load_metric_stats_.Clear();
   if (GetArenaNoVirtual() == NULL && locality_ != NULL) {
     delete locality_;
   }
   locality_ = NULL;
-  ::memset(&total_requests_, 0, reinterpret_cast<char*>(&dropped_requests_) -
-    reinterpret_cast<char*>(&total_requests_) + sizeof(dropped_requests_));
+  ::memset(&total_successful_requests_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_dropped_requests_) -
+      reinterpret_cast<char*>(&total_successful_requests_)) + sizeof(total_dropped_requests_));
+  _internal_metadata_.Clear();
 }
 
 bool UpstreamLocalityStats::MergePartialFromCodedStream(
@@ -1894,7 +1851,7 @@ bool UpstreamLocalityStats::MergePartialFromCodedStream(
       // .envoy.api.v2.Locality locality = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_locality()));
         } else {
@@ -1903,14 +1860,14 @@ bool UpstreamLocalityStats::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 total_requests = 2;
+      // uint64 total_successful_requests = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u)) {
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &total_requests_)));
+                 input, &total_successful_requests_)));
         } else {
           goto handle_unusual;
         }
@@ -1920,7 +1877,7 @@ bool UpstreamLocalityStats::MergePartialFromCodedStream(
       // uint64 total_requests_in_progress = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u)) {
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1931,81 +1888,38 @@ bool UpstreamLocalityStats::MergePartialFromCodedStream(
         break;
       }
 
-      // map<uint32, uint64> tcp_errors = 4;
+      // uint64 total_error_requests = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
-          UpstreamLocalityStats_TcpErrorsEntry::Parser< ::google::protobuf::internal::MapField<
-              UpstreamLocalityStats_TcpErrorsEntry,
-              ::google::protobuf::uint32, ::google::protobuf::uint64,
-              ::google::protobuf::internal::WireFormatLite::TYPE_UINT32,
-              ::google::protobuf::internal::WireFormatLite::TYPE_UINT64,
-              0 >,
-            ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 > > parser(&tcp_errors_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // map<uint32, uint64> http_errors = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u)) {
-          UpstreamLocalityStats_HttpErrorsEntry::Parser< ::google::protobuf::internal::MapField<
-              UpstreamLocalityStats_HttpErrorsEntry,
-              ::google::protobuf::uint32, ::google::protobuf::uint64,
-              ::google::protobuf::internal::WireFormatLite::TYPE_UINT32,
-              ::google::protobuf::internal::WireFormatLite::TYPE_UINT64,
-              0 >,
-            ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 > > parser(&http_errors_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // map<uint32, uint64> grpc_errors = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u)) {
-          UpstreamLocalityStats_GrpcErrorsEntry::Parser< ::google::protobuf::internal::MapField<
-              UpstreamLocalityStats_GrpcErrorsEntry,
-              ::google::protobuf::uint32, ::google::protobuf::uint64,
-              ::google::protobuf::internal::WireFormatLite::TYPE_UINT32,
-              ::google::protobuf::internal::WireFormatLite::TYPE_UINT64,
-              0 >,
-            ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 > > parser(&grpc_errors_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 dropped_requests = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u)) {
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &dropped_requests_)));
+                 input, &total_error_requests_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 8;
-      case 8: {
+      // uint64 total_dropped_requests = 5;
+      case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u)) {
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &total_dropped_requests_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_load_metric_stats()));
         } else {
@@ -2016,12 +1930,11 @@ bool UpstreamLocalityStats::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -2047,9 +1960,9 @@ void UpstreamLocalityStats::SerializeWithCachedSizes(
       1, *this->locality_, output);
   }
 
-  // uint64 total_requests = 2;
-  if (this->total_requests() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->total_requests(), output);
+  // uint64 total_successful_requests = 2;
+  if (this->total_successful_requests() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->total_successful_requests(), output);
   }
 
   // uint64 total_requests_in_progress = 3;
@@ -2057,134 +1970,27 @@ void UpstreamLocalityStats::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->total_requests_in_progress(), output);
   }
 
-  // map<uint32, uint64> tcp_errors = 4;
-  if (!this->tcp_errors().empty()) {
-    typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_pointer
-        ConstPtr;
-    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::uint32, ConstPtr > SortItem;
-    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
-
-    if (output->IsSerializationDeterministic() &&
-        this->tcp_errors().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->tcp_errors().size()]);
-      typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->tcp_errors().begin();
-          it != this->tcp_errors().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[n], Less());
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_TcpErrorsEntry> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(tcp_errors_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            4, *entry, output);
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_TcpErrorsEntry> entry;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->tcp_errors().begin();
-          it != this->tcp_errors().end(); ++it) {
-        entry.reset(tcp_errors_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            4, *entry, output);
-      }
-    }
+  // uint64 total_error_requests = 4;
+  if (this->total_error_requests() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->total_error_requests(), output);
   }
 
-  // map<uint32, uint64> http_errors = 5;
-  if (!this->http_errors().empty()) {
-    typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_pointer
-        ConstPtr;
-    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::uint32, ConstPtr > SortItem;
-    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
-
-    if (output->IsSerializationDeterministic() &&
-        this->http_errors().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->http_errors().size()]);
-      typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->http_errors().begin();
-          it != this->http_errors().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[n], Less());
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_HttpErrorsEntry> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(http_errors_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            5, *entry, output);
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_HttpErrorsEntry> entry;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->http_errors().begin();
-          it != this->http_errors().end(); ++it) {
-        entry.reset(http_errors_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            5, *entry, output);
-      }
-    }
+  // uint64 total_dropped_requests = 5;
+  if (this->total_dropped_requests() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->total_dropped_requests(), output);
   }
 
-  // map<uint32, uint64> grpc_errors = 6;
-  if (!this->grpc_errors().empty()) {
-    typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_pointer
-        ConstPtr;
-    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::uint32, ConstPtr > SortItem;
-    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
-
-    if (output->IsSerializationDeterministic() &&
-        this->grpc_errors().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->grpc_errors().size()]);
-      typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->grpc_errors().begin();
-          it != this->grpc_errors().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[n], Less());
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_GrpcErrorsEntry> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(grpc_errors_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            6, *entry, output);
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_GrpcErrorsEntry> entry;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->grpc_errors().begin();
-          it != this->grpc_errors().end(); ++it) {
-        entry.reset(grpc_errors_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            6, *entry, output);
-      }
-    }
-  }
-
-  // uint64 dropped_requests = 7;
-  if (this->dropped_requests() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(7, this->dropped_requests(), output);
-  }
-
-  // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 8;
-  for (unsigned int i = 0, n = this->load_metric_stats_size(); i < n; i++) {
+  // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->load_metric_stats_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->load_metric_stats(i), output);
+      6, this->load_metric_stats(static_cast<int>(i)), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.UpstreamLocalityStats)
 }
 
@@ -2202,9 +2008,9 @@ void UpstreamLocalityStats::SerializeWithCachedSizes(
         1, *this->locality_, deterministic, target);
   }
 
-  // uint64 total_requests = 2;
-  if (this->total_requests() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->total_requests(), target);
+  // uint64 total_successful_requests = 2;
+  if (this->total_successful_requests() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->total_successful_requests(), target);
   }
 
   // uint64 total_requests_in_progress = 3;
@@ -2212,147 +2018,28 @@ void UpstreamLocalityStats::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->total_requests_in_progress(), target);
   }
 
-  // map<uint32, uint64> tcp_errors = 4;
-  if (!this->tcp_errors().empty()) {
-    typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_pointer
-        ConstPtr;
-    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::uint32, ConstPtr > SortItem;
-    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
-
-    if (deterministic &&
-        this->tcp_errors().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->tcp_errors().size()]);
-      typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->tcp_errors().begin();
-          it != this->tcp_errors().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[n], Less());
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_TcpErrorsEntry> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(tcp_errors_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       4, *entry, deterministic, target);
-;
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_TcpErrorsEntry> entry;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->tcp_errors().begin();
-          it != this->tcp_errors().end(); ++it) {
-        entry.reset(tcp_errors_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       4, *entry, deterministic, target);
-;
-      }
-    }
+  // uint64 total_error_requests = 4;
+  if (this->total_error_requests() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->total_error_requests(), target);
   }
 
-  // map<uint32, uint64> http_errors = 5;
-  if (!this->http_errors().empty()) {
-    typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_pointer
-        ConstPtr;
-    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::uint32, ConstPtr > SortItem;
-    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
-
-    if (deterministic &&
-        this->http_errors().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->http_errors().size()]);
-      typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->http_errors().begin();
-          it != this->http_errors().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[n], Less());
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_HttpErrorsEntry> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(http_errors_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       5, *entry, deterministic, target);
-;
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_HttpErrorsEntry> entry;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->http_errors().begin();
-          it != this->http_errors().end(); ++it) {
-        entry.reset(http_errors_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       5, *entry, deterministic, target);
-;
-      }
-    }
+  // uint64 total_dropped_requests = 5;
+  if (this->total_dropped_requests() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->total_dropped_requests(), target);
   }
 
-  // map<uint32, uint64> grpc_errors = 6;
-  if (!this->grpc_errors().empty()) {
-    typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_pointer
-        ConstPtr;
-    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::uint32, ConstPtr > SortItem;
-    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
-
-    if (deterministic &&
-        this->grpc_errors().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
-          new SortItem[this->grpc_errors().size()]);
-      typedef ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->grpc_errors().begin();
-          it != this->grpc_errors().end(); ++it, ++n) {
-        items[n] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[n], Less());
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_GrpcErrorsEntry> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(grpc_errors_.NewEntryWrapper(
-            items[i].second->first, items[i].second->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       6, *entry, deterministic, target);
-;
-      }
-    } else {
-      ::google::protobuf::scoped_ptr<UpstreamLocalityStats_GrpcErrorsEntry> entry;
-      for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-          it = this->grpc_errors().begin();
-          it != this->grpc_errors().end(); ++it) {
-        entry.reset(grpc_errors_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       6, *entry, deterministic, target);
-;
-      }
-    }
-  }
-
-  // uint64 dropped_requests = 7;
-  if (this->dropped_requests() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(7, this->dropped_requests(), target);
-  }
-
-  // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 8;
-  for (unsigned int i = 0, n = this->load_metric_stats_size(); i < n; i++) {
+  // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->load_metric_stats_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        8, this->load_metric_stats(i), deterministic, target);
+        6, this->load_metric_stats(static_cast<int>(i)), deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.UpstreamLocalityStats)
   return target;
 }
@@ -2361,56 +2048,19 @@ size_t UpstreamLocalityStats::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.UpstreamLocalityStats)
   size_t total_size = 0;
 
-  // map<uint32, uint64> tcp_errors = 4;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->tcp_errors_size());
-  {
-    ::google::protobuf::scoped_ptr<UpstreamLocalityStats_TcpErrorsEntry> entry;
-    for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-        it = this->tcp_errors().begin();
-        it != this->tcp_errors().end(); ++it) {
-      entry.reset(tcp_errors_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-
-  // map<uint32, uint64> http_errors = 5;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->http_errors_size());
+  // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 6;
   {
-    ::google::protobuf::scoped_ptr<UpstreamLocalityStats_HttpErrorsEntry> entry;
-    for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-        it = this->http_errors().begin();
-        it != this->http_errors().end(); ++it) {
-      entry.reset(http_errors_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // map<uint32, uint64> grpc_errors = 6;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->grpc_errors_size());
-  {
-    ::google::protobuf::scoped_ptr<UpstreamLocalityStats_GrpcErrorsEntry> entry;
-    for (::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >::const_iterator
-        it = this->grpc_errors().begin();
-        it != this->grpc_errors().end(); ++it) {
-      entry.reset(grpc_errors_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 8;
-  {
-    unsigned int count = this->load_metric_stats_size();
+    unsigned int count = static_cast<unsigned int>(this->load_metric_stats_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->load_metric_stats(i));
+          this->load_metric_stats(static_cast<int>(i)));
     }
   }
 
@@ -2421,11 +2071,11 @@ size_t UpstreamLocalityStats::ByteSizeLong() const {
         *this->locality_);
   }
 
-  // uint64 total_requests = 2;
-  if (this->total_requests() != 0) {
+  // uint64 total_successful_requests = 2;
+  if (this->total_successful_requests() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->total_requests());
+        this->total_successful_requests());
   }
 
   // uint64 total_requests_in_progress = 3;
@@ -2435,11 +2085,18 @@ size_t UpstreamLocalityStats::ByteSizeLong() const {
         this->total_requests_in_progress());
   }
 
-  // uint64 dropped_requests = 7;
-  if (this->dropped_requests() != 0) {
+  // uint64 total_error_requests = 4;
+  if (this->total_error_requests() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->dropped_requests());
+        this->total_error_requests());
+  }
+
+  // uint64 total_dropped_requests = 5;
+  if (this->total_dropped_requests() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->total_dropped_requests());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2471,21 +2128,21 @@ void UpstreamLocalityStats::MergeFrom(const UpstreamLocalityStats& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  tcp_errors_.MergeFrom(from.tcp_errors_);
-  http_errors_.MergeFrom(from.http_errors_);
-  grpc_errors_.MergeFrom(from.grpc_errors_);
   load_metric_stats_.MergeFrom(from.load_metric_stats_);
   if (from.has_locality()) {
     mutable_locality()->::envoy::api::v2::Locality::MergeFrom(from.locality());
   }
-  if (from.total_requests() != 0) {
-    set_total_requests(from.total_requests());
+  if (from.total_successful_requests() != 0) {
+    set_total_successful_requests(from.total_successful_requests());
   }
   if (from.total_requests_in_progress() != 0) {
     set_total_requests_in_progress(from.total_requests_in_progress());
   }
-  if (from.dropped_requests() != 0) {
-    set_dropped_requests(from.dropped_requests());
+  if (from.total_error_requests() != 0) {
+    set_total_error_requests(from.total_error_requests());
+  }
+  if (from.total_dropped_requests() != 0) {
+    set_total_dropped_requests(from.total_dropped_requests());
   }
 }
 
@@ -2512,15 +2169,15 @@ void UpstreamLocalityStats::Swap(UpstreamLocalityStats* other) {
   InternalSwap(other);
 }
 void UpstreamLocalityStats::InternalSwap(UpstreamLocalityStats* other) {
-  tcp_errors_.Swap(&other->tcp_errors_);
-  http_errors_.Swap(&other->http_errors_);
-  grpc_errors_.Swap(&other->grpc_errors_);
+  using std::swap;
   load_metric_stats_.InternalSwap(&other->load_metric_stats_);
-  std::swap(locality_, other->locality_);
-  std::swap(total_requests_, other->total_requests_);
-  std::swap(total_requests_in_progress_, other->total_requests_in_progress_);
-  std::swap(dropped_requests_, other->dropped_requests_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(locality_, other->locality_);
+  swap(total_successful_requests_, other->total_successful_requests_);
+  swap(total_requests_in_progress_, other->total_requests_in_progress_);
+  swap(total_error_requests_, other->total_error_requests_);
+  swap(total_dropped_requests_, other->total_dropped_requests_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata UpstreamLocalityStats::GetMetadata() const {
@@ -2540,9 +2197,10 @@ void UpstreamLocalityStats::clear_locality() {
   locality_ = NULL;
 }
 const ::envoy::api::v2::Locality& UpstreamLocalityStats::locality() const {
+  const ::envoy::api::v2::Locality* p = locality_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.locality)
-  return locality_ != NULL ? *locality_
-                         : *::envoy::api::v2::Locality::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::Locality*>(
+      &::envoy::api::v2::_Locality_default_instance_);
 }
 ::envoy::api::v2::Locality* UpstreamLocalityStats::mutable_locality() {
   
@@ -2570,18 +2228,18 @@ void UpstreamLocalityStats::set_allocated_locality(::envoy::api::v2::Locality* l
   // @@protoc_insertion_point(field_set_allocated:envoy.api.v2.UpstreamLocalityStats.locality)
 }
 
-// uint64 total_requests = 2;
-void UpstreamLocalityStats::clear_total_requests() {
-  total_requests_ = GOOGLE_ULONGLONG(0);
+// uint64 total_successful_requests = 2;
+void UpstreamLocalityStats::clear_total_successful_requests() {
+  total_successful_requests_ = GOOGLE_ULONGLONG(0);
 }
-::google::protobuf::uint64 UpstreamLocalityStats::total_requests() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.total_requests)
-  return total_requests_;
+::google::protobuf::uint64 UpstreamLocalityStats::total_successful_requests() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.total_successful_requests)
+  return total_successful_requests_;
 }
-void UpstreamLocalityStats::set_total_requests(::google::protobuf::uint64 value) {
+void UpstreamLocalityStats::set_total_successful_requests(::google::protobuf::uint64 value) {
   
-  total_requests_ = value;
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.total_requests)
+  total_successful_requests_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.total_successful_requests)
 }
 
 // uint64 total_requests_in_progress = 3;
@@ -2598,75 +2256,35 @@ void UpstreamLocalityStats::set_total_requests_in_progress(::google::protobuf::u
   // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.total_requests_in_progress)
 }
 
-// map<uint32, uint64> tcp_errors = 4;
-int UpstreamLocalityStats::tcp_errors_size() const {
-  return tcp_errors_.size();
+// uint64 total_error_requests = 4;
+void UpstreamLocalityStats::clear_total_error_requests() {
+  total_error_requests_ = GOOGLE_ULONGLONG(0);
 }
-void UpstreamLocalityStats::clear_tcp_errors() {
-  tcp_errors_.Clear();
+::google::protobuf::uint64 UpstreamLocalityStats::total_error_requests() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.total_error_requests)
+  return total_error_requests_;
 }
- const ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >&
-UpstreamLocalityStats::tcp_errors() const {
-  // @@protoc_insertion_point(field_map:envoy.api.v2.UpstreamLocalityStats.tcp_errors)
-  return tcp_errors_.GetMap();
-}
- ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >*
-UpstreamLocalityStats::mutable_tcp_errors() {
-  // @@protoc_insertion_point(field_mutable_map:envoy.api.v2.UpstreamLocalityStats.tcp_errors)
-  return tcp_errors_.MutableMap();
-}
-
-// map<uint32, uint64> http_errors = 5;
-int UpstreamLocalityStats::http_errors_size() const {
-  return http_errors_.size();
-}
-void UpstreamLocalityStats::clear_http_errors() {
-  http_errors_.Clear();
-}
- const ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >&
-UpstreamLocalityStats::http_errors() const {
-  // @@protoc_insertion_point(field_map:envoy.api.v2.UpstreamLocalityStats.http_errors)
-  return http_errors_.GetMap();
-}
- ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >*
-UpstreamLocalityStats::mutable_http_errors() {
-  // @@protoc_insertion_point(field_mutable_map:envoy.api.v2.UpstreamLocalityStats.http_errors)
-  return http_errors_.MutableMap();
-}
-
-// map<uint32, uint64> grpc_errors = 6;
-int UpstreamLocalityStats::grpc_errors_size() const {
-  return grpc_errors_.size();
-}
-void UpstreamLocalityStats::clear_grpc_errors() {
-  grpc_errors_.Clear();
-}
- const ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >&
-UpstreamLocalityStats::grpc_errors() const {
-  // @@protoc_insertion_point(field_map:envoy.api.v2.UpstreamLocalityStats.grpc_errors)
-  return grpc_errors_.GetMap();
-}
- ::google::protobuf::Map< ::google::protobuf::uint32, ::google::protobuf::uint64 >*
-UpstreamLocalityStats::mutable_grpc_errors() {
-  // @@protoc_insertion_point(field_mutable_map:envoy.api.v2.UpstreamLocalityStats.grpc_errors)
-  return grpc_errors_.MutableMap();
-}
-
-// uint64 dropped_requests = 7;
-void UpstreamLocalityStats::clear_dropped_requests() {
-  dropped_requests_ = GOOGLE_ULONGLONG(0);
-}
-::google::protobuf::uint64 UpstreamLocalityStats::dropped_requests() const {
-  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.dropped_requests)
-  return dropped_requests_;
-}
-void UpstreamLocalityStats::set_dropped_requests(::google::protobuf::uint64 value) {
+void UpstreamLocalityStats::set_total_error_requests(::google::protobuf::uint64 value) {
   
-  dropped_requests_ = value;
-  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.dropped_requests)
+  total_error_requests_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.total_error_requests)
 }
 
-// repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 8;
+// uint64 total_dropped_requests = 5;
+void UpstreamLocalityStats::clear_total_dropped_requests() {
+  total_dropped_requests_ = GOOGLE_ULONGLONG(0);
+}
+::google::protobuf::uint64 UpstreamLocalityStats::total_dropped_requests() const {
+  // @@protoc_insertion_point(field_get:envoy.api.v2.UpstreamLocalityStats.total_dropped_requests)
+  return total_dropped_requests_;
+}
+void UpstreamLocalityStats::set_total_dropped_requests(::google::protobuf::uint64 value) {
+  
+  total_dropped_requests_ = value;
+  // @@protoc_insertion_point(field_set:envoy.api.v2.UpstreamLocalityStats.total_dropped_requests)
+}
+
+// repeated .envoy.api.v2.EndpointLoadMetricStats load_metric_stats = 6;
 int UpstreamLocalityStats::load_metric_stats_size() const {
   return load_metric_stats_.size();
 }
@@ -2765,8 +2383,13 @@ ClusterStats* ClusterStats::New(::google::protobuf::Arena* arena) const {
 
 void ClusterStats::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.ClusterStats)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   upstream_locality_stats_.Clear();
   cluster_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
 }
 
 bool ClusterStats::MergePartialFromCodedStream(
@@ -2782,11 +2405,11 @@ bool ClusterStats::MergePartialFromCodedStream(
       // string cluster_name = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_cluster_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->cluster_name().data(), this->cluster_name().length(),
+            this->cluster_name().data(), static_cast<int>(this->cluster_name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.ClusterStats.cluster_name"));
         } else {
@@ -2798,7 +2421,7 @@ bool ClusterStats::MergePartialFromCodedStream(
       // repeated .envoy.api.v2.UpstreamLocalityStats upstream_locality_stats = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_upstream_locality_stats()));
         } else {
@@ -2809,12 +2432,11 @@ bool ClusterStats::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -2837,7 +2459,7 @@ void ClusterStats::SerializeWithCachedSizes(
   // string cluster_name = 1;
   if (this->cluster_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cluster_name().data(), this->cluster_name().length(),
+      this->cluster_name().data(), static_cast<int>(this->cluster_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.ClusterStats.cluster_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -2845,11 +2467,16 @@ void ClusterStats::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.UpstreamLocalityStats upstream_locality_stats = 2;
-  for (unsigned int i = 0, n = this->upstream_locality_stats_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->upstream_locality_stats_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->upstream_locality_stats(i), output);
+      2, this->upstream_locality_stats(static_cast<int>(i)), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.ClusterStats)
 }
 
@@ -2863,7 +2490,7 @@ void ClusterStats::SerializeWithCachedSizes(
   // string cluster_name = 1;
   if (this->cluster_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cluster_name().data(), this->cluster_name().length(),
+      this->cluster_name().data(), static_cast<int>(this->cluster_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.ClusterStats.cluster_name");
     target =
@@ -2872,12 +2499,17 @@ void ClusterStats::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.UpstreamLocalityStats upstream_locality_stats = 2;
-  for (unsigned int i = 0, n = this->upstream_locality_stats_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->upstream_locality_stats_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->upstream_locality_stats(i), deterministic, target);
+        2, this->upstream_locality_stats(static_cast<int>(i)), deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ClusterStats)
   return target;
 }
@@ -2886,14 +2518,19 @@ size_t ClusterStats::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ClusterStats)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated .envoy.api.v2.UpstreamLocalityStats upstream_locality_stats = 2;
   {
-    unsigned int count = this->upstream_locality_stats_size();
+    unsigned int count = static_cast<unsigned int>(this->upstream_locality_stats_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->upstream_locality_stats(i));
+          this->upstream_locality_stats(static_cast<int>(i)));
     }
   }
 
@@ -2963,9 +2600,11 @@ void ClusterStats::Swap(ClusterStats* other) {
   InternalSwap(other);
 }
 void ClusterStats::InternalSwap(ClusterStats* other) {
+  using std::swap;
   upstream_locality_stats_.InternalSwap(&other->upstream_locality_stats_);
   cluster_name_.Swap(&other->cluster_name_);
-  std::swap(_cached_size_, other->_cached_size_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata ClusterStats::GetMetadata() const {
@@ -3101,9 +2740,7 @@ LoadStatsRequest::~LoadStatsRequest() {
 }
 
 void LoadStatsRequest::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete node_;
-  }
+  if (this != internal_default_instance()) delete node_;
 }
 
 void LoadStatsRequest::SetCachedSize(int size) const {
@@ -3131,11 +2768,16 @@ LoadStatsRequest* LoadStatsRequest::New(::google::protobuf::Arena* arena) const 
 
 void LoadStatsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.LoadStatsRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   cluster_stats_.Clear();
   if (GetArenaNoVirtual() == NULL && node_ != NULL) {
     delete node_;
   }
   node_ = NULL;
+  _internal_metadata_.Clear();
 }
 
 bool LoadStatsRequest::MergePartialFromCodedStream(
@@ -3151,7 +2793,7 @@ bool LoadStatsRequest::MergePartialFromCodedStream(
       // .envoy.api.v2.Node node = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_node()));
         } else {
@@ -3163,7 +2805,7 @@ bool LoadStatsRequest::MergePartialFromCodedStream(
       // repeated .envoy.api.v2.ClusterStats cluster_stats = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_cluster_stats()));
         } else {
@@ -3174,12 +2816,11 @@ bool LoadStatsRequest::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -3206,11 +2847,16 @@ void LoadStatsRequest::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.ClusterStats cluster_stats = 2;
-  for (unsigned int i = 0, n = this->cluster_stats_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->cluster_stats_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->cluster_stats(i), output);
+      2, this->cluster_stats(static_cast<int>(i)), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.LoadStatsRequest)
 }
 
@@ -3229,12 +2875,17 @@ void LoadStatsRequest::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.ClusterStats cluster_stats = 2;
-  for (unsigned int i = 0, n = this->cluster_stats_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->cluster_stats_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->cluster_stats(i), deterministic, target);
+        2, this->cluster_stats(static_cast<int>(i)), deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.LoadStatsRequest)
   return target;
 }
@@ -3243,14 +2894,19 @@ size_t LoadStatsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.LoadStatsRequest)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated .envoy.api.v2.ClusterStats cluster_stats = 2;
   {
-    unsigned int count = this->cluster_stats_size();
+    unsigned int count = static_cast<unsigned int>(this->cluster_stats_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->cluster_stats(i));
+          this->cluster_stats(static_cast<int>(i)));
     }
   }
 
@@ -3319,9 +2975,11 @@ void LoadStatsRequest::Swap(LoadStatsRequest* other) {
   InternalSwap(other);
 }
 void LoadStatsRequest::InternalSwap(LoadStatsRequest* other) {
+  using std::swap;
   cluster_stats_.InternalSwap(&other->cluster_stats_);
-  std::swap(node_, other->node_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(node_, other->node_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LoadStatsRequest::GetMetadata() const {
@@ -3341,9 +2999,10 @@ void LoadStatsRequest::clear_node() {
   node_ = NULL;
 }
 const ::envoy::api::v2::Node& LoadStatsRequest::node() const {
+  const ::envoy::api::v2::Node* p = node_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LoadStatsRequest.node)
-  return node_ != NULL ? *node_
-                         : *::envoy::api::v2::Node::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::Node*>(
+      &::envoy::api::v2::_Node_default_instance_);
 }
 ::envoy::api::v2::Node* LoadStatsRequest::mutable_node() {
   
@@ -3464,7 +3123,12 @@ ClusterLoadAssignment_Policy* ClusterLoadAssignment_Policy::New(::google::protob
 
 void ClusterLoadAssignment_Policy::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.ClusterLoadAssignment.Policy)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   drop_overload_ = 0;
+  _internal_metadata_.Clear();
 }
 
 bool ClusterLoadAssignment_Policy::MergePartialFromCodedStream(
@@ -3480,7 +3144,7 @@ bool ClusterLoadAssignment_Policy::MergePartialFromCodedStream(
       // double drop_overload = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(9u)) {
+            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -3493,12 +3157,11 @@ bool ClusterLoadAssignment_Policy::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -3523,6 +3186,10 @@ void ClusterLoadAssignment_Policy::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->drop_overload(), output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.ClusterLoadAssignment.Policy)
 }
 
@@ -3538,6 +3205,10 @@ void ClusterLoadAssignment_Policy::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->drop_overload(), target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ClusterLoadAssignment.Policy)
   return target;
 }
@@ -3546,6 +3217,11 @@ size_t ClusterLoadAssignment_Policy::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ClusterLoadAssignment.Policy)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // double drop_overload = 1;
   if (this->drop_overload() != 0) {
     total_size += 1 + 8;
@@ -3608,8 +3284,10 @@ void ClusterLoadAssignment_Policy::Swap(ClusterLoadAssignment_Policy* other) {
   InternalSwap(other);
 }
 void ClusterLoadAssignment_Policy::InternalSwap(ClusterLoadAssignment_Policy* other) {
-  std::swap(drop_overload_, other->drop_overload_);
-  std::swap(_cached_size_, other->_cached_size_);
+  using std::swap;
+  swap(drop_overload_, other->drop_overload_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata ClusterLoadAssignment_Policy::GetMetadata() const {
@@ -3685,9 +3363,7 @@ ClusterLoadAssignment::~ClusterLoadAssignment() {
 
 void ClusterLoadAssignment::SharedDtor() {
   cluster_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) {
-    delete policy_;
-  }
+  if (this != internal_default_instance()) delete policy_;
 }
 
 void ClusterLoadAssignment::SetCachedSize(int size) const {
@@ -3715,6 +3391,10 @@ ClusterLoadAssignment* ClusterLoadAssignment::New(::google::protobuf::Arena* are
 
 void ClusterLoadAssignment::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.ClusterLoadAssignment)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   endpoints_.Clear();
   failover_endpoints_.Clear();
   cluster_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -3722,6 +3402,7 @@ void ClusterLoadAssignment::Clear() {
     delete policy_;
   }
   policy_ = NULL;
+  _internal_metadata_.Clear();
 }
 
 bool ClusterLoadAssignment::MergePartialFromCodedStream(
@@ -3737,11 +3418,11 @@ bool ClusterLoadAssignment::MergePartialFromCodedStream(
       // string cluster_name = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_cluster_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->cluster_name().data(), this->cluster_name().length(),
+            this->cluster_name().data(), static_cast<int>(this->cluster_name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.ClusterLoadAssignment.cluster_name"));
         } else {
@@ -3753,7 +3434,7 @@ bool ClusterLoadAssignment::MergePartialFromCodedStream(
       // repeated .envoy.api.v2.LocalityLbEndpoints endpoints = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_endpoints()));
         } else {
@@ -3765,7 +3446,7 @@ bool ClusterLoadAssignment::MergePartialFromCodedStream(
       // repeated .envoy.api.v2.LocalityLbEndpoints failover_endpoints = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_failover_endpoints()));
         } else {
@@ -3777,7 +3458,7 @@ bool ClusterLoadAssignment::MergePartialFromCodedStream(
       // .envoy.api.v2.ClusterLoadAssignment.Policy policy = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_policy()));
         } else {
@@ -3788,12 +3469,11 @@ bool ClusterLoadAssignment::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -3816,7 +3496,7 @@ void ClusterLoadAssignment::SerializeWithCachedSizes(
   // string cluster_name = 1;
   if (this->cluster_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cluster_name().data(), this->cluster_name().length(),
+      this->cluster_name().data(), static_cast<int>(this->cluster_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.ClusterLoadAssignment.cluster_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -3824,15 +3504,17 @@ void ClusterLoadAssignment::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.LocalityLbEndpoints endpoints = 2;
-  for (unsigned int i = 0, n = this->endpoints_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->endpoints_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->endpoints(i), output);
+      2, this->endpoints(static_cast<int>(i)), output);
   }
 
   // repeated .envoy.api.v2.LocalityLbEndpoints failover_endpoints = 3;
-  for (unsigned int i = 0, n = this->failover_endpoints_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->failover_endpoints_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->failover_endpoints(i), output);
+      3, this->failover_endpoints(static_cast<int>(i)), output);
   }
 
   // .envoy.api.v2.ClusterLoadAssignment.Policy policy = 4;
@@ -3841,6 +3523,10 @@ void ClusterLoadAssignment::SerializeWithCachedSizes(
       4, *this->policy_, output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.ClusterLoadAssignment)
 }
 
@@ -3854,7 +3540,7 @@ void ClusterLoadAssignment::SerializeWithCachedSizes(
   // string cluster_name = 1;
   if (this->cluster_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cluster_name().data(), this->cluster_name().length(),
+      this->cluster_name().data(), static_cast<int>(this->cluster_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.ClusterLoadAssignment.cluster_name");
     target =
@@ -3863,17 +3549,19 @@ void ClusterLoadAssignment::SerializeWithCachedSizes(
   }
 
   // repeated .envoy.api.v2.LocalityLbEndpoints endpoints = 2;
-  for (unsigned int i = 0, n = this->endpoints_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->endpoints_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        2, this->endpoints(i), deterministic, target);
+        2, this->endpoints(static_cast<int>(i)), deterministic, target);
   }
 
   // repeated .envoy.api.v2.LocalityLbEndpoints failover_endpoints = 3;
-  for (unsigned int i = 0, n = this->failover_endpoints_size(); i < n; i++) {
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->failover_endpoints_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        3, this->failover_endpoints(i), deterministic, target);
+        3, this->failover_endpoints(static_cast<int>(i)), deterministic, target);
   }
 
   // .envoy.api.v2.ClusterLoadAssignment.Policy policy = 4;
@@ -3883,6 +3571,10 @@ void ClusterLoadAssignment::SerializeWithCachedSizes(
         4, *this->policy_, deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.ClusterLoadAssignment)
   return target;
 }
@@ -3891,25 +3583,30 @@ size_t ClusterLoadAssignment::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.ClusterLoadAssignment)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated .envoy.api.v2.LocalityLbEndpoints endpoints = 2;
   {
-    unsigned int count = this->endpoints_size();
+    unsigned int count = static_cast<unsigned int>(this->endpoints_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->endpoints(i));
+          this->endpoints(static_cast<int>(i)));
     }
   }
 
   // repeated .envoy.api.v2.LocalityLbEndpoints failover_endpoints = 3;
   {
-    unsigned int count = this->failover_endpoints_size();
+    unsigned int count = static_cast<unsigned int>(this->failover_endpoints_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->failover_endpoints(i));
+          this->failover_endpoints(static_cast<int>(i)));
     }
   }
 
@@ -3990,11 +3687,13 @@ void ClusterLoadAssignment::Swap(ClusterLoadAssignment* other) {
   InternalSwap(other);
 }
 void ClusterLoadAssignment::InternalSwap(ClusterLoadAssignment* other) {
+  using std::swap;
   endpoints_.InternalSwap(&other->endpoints_);
   failover_endpoints_.InternalSwap(&other->failover_endpoints_);
   cluster_name_.Swap(&other->cluster_name_);
-  std::swap(policy_, other->policy_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(policy_, other->policy_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata ClusterLoadAssignment::GetMetadata() const {
@@ -4127,9 +3826,10 @@ void ClusterLoadAssignment::clear_policy() {
   policy_ = NULL;
 }
 const ::envoy::api::v2::ClusterLoadAssignment_Policy& ClusterLoadAssignment::policy() const {
+  const ::envoy::api::v2::ClusterLoadAssignment_Policy* p = policy_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.ClusterLoadAssignment.policy)
-  return policy_ != NULL ? *policy_
-                         : *::envoy::api::v2::ClusterLoadAssignment_Policy::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::envoy::api::v2::ClusterLoadAssignment_Policy*>(
+      &::envoy::api::v2::_ClusterLoadAssignment_Policy_default_instance_);
 }
 ::envoy::api::v2::ClusterLoadAssignment_Policy* ClusterLoadAssignment::mutable_policy() {
   
@@ -4199,9 +3899,7 @@ LoadStatsResponse::~LoadStatsResponse() {
 }
 
 void LoadStatsResponse::SharedDtor() {
-  if (this != internal_default_instance()) {
-    delete load_reporting_interval_;
-  }
+  if (this != internal_default_instance()) delete load_reporting_interval_;
 }
 
 void LoadStatsResponse::SetCachedSize(int size) const {
@@ -4229,11 +3927,16 @@ LoadStatsResponse* LoadStatsResponse::New(::google::protobuf::Arena* arena) cons
 
 void LoadStatsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:envoy.api.v2.LoadStatsResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   clusters_.Clear();
   if (GetArenaNoVirtual() == NULL && load_reporting_interval_ != NULL) {
     delete load_reporting_interval_;
   }
   load_reporting_interval_ = NULL;
+  _internal_metadata_.Clear();
 }
 
 bool LoadStatsResponse::MergePartialFromCodedStream(
@@ -4249,12 +3952,12 @@ bool LoadStatsResponse::MergePartialFromCodedStream(
       // repeated string clusters = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_clusters()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->clusters(this->clusters_size() - 1).data(),
-            this->clusters(this->clusters_size() - 1).length(),
+            static_cast<int>(this->clusters(this->clusters_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "envoy.api.v2.LoadStatsResponse.clusters"));
         } else {
@@ -4266,7 +3969,7 @@ bool LoadStatsResponse::MergePartialFromCodedStream(
       // .google.protobuf.Duration load_reporting_interval = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_load_reporting_interval()));
         } else {
@@ -4277,12 +3980,11 @@ bool LoadStatsResponse::MergePartialFromCodedStream(
 
       default: {
       handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+        if (tag == 0) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
         break;
       }
     }
@@ -4305,7 +4007,7 @@ void LoadStatsResponse::SerializeWithCachedSizes(
   // repeated string clusters = 1;
   for (int i = 0, n = this->clusters_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->clusters(i).data(), this->clusters(i).length(),
+      this->clusters(i).data(), static_cast<int>(this->clusters(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.LoadStatsResponse.clusters");
     ::google::protobuf::internal::WireFormatLite::WriteString(
@@ -4318,6 +4020,10 @@ void LoadStatsResponse::SerializeWithCachedSizes(
       2, *this->load_reporting_interval_, output);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
   // @@protoc_insertion_point(serialize_end:envoy.api.v2.LoadStatsResponse)
 }
 
@@ -4331,7 +4037,7 @@ void LoadStatsResponse::SerializeWithCachedSizes(
   // repeated string clusters = 1;
   for (int i = 0, n = this->clusters_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->clusters(i).data(), this->clusters(i).length(),
+      this->clusters(i).data(), static_cast<int>(this->clusters(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "envoy.api.v2.LoadStatsResponse.clusters");
     target = ::google::protobuf::internal::WireFormatLite::
@@ -4345,6 +4051,10 @@ void LoadStatsResponse::SerializeWithCachedSizes(
         2, *this->load_reporting_interval_, deterministic, target);
   }
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:envoy.api.v2.LoadStatsResponse)
   return target;
 }
@@ -4353,6 +4063,11 @@ size_t LoadStatsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:envoy.api.v2.LoadStatsResponse)
   size_t total_size = 0;
 
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
   // repeated string clusters = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->clusters_size());
@@ -4426,9 +4141,11 @@ void LoadStatsResponse::Swap(LoadStatsResponse* other) {
   InternalSwap(other);
 }
 void LoadStatsResponse::InternalSwap(LoadStatsResponse* other) {
+  using std::swap;
   clusters_.InternalSwap(&other->clusters_);
-  std::swap(load_reporting_interval_, other->load_reporting_interval_);
-  std::swap(_cached_size_, other->_cached_size_);
+  swap(load_reporting_interval_, other->load_reporting_interval_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata LoadStatsResponse::GetMetadata() const {
@@ -4517,9 +4234,10 @@ void LoadStatsResponse::clear_load_reporting_interval() {
   load_reporting_interval_ = NULL;
 }
 const ::google::protobuf::Duration& LoadStatsResponse::load_reporting_interval() const {
+  const ::google::protobuf::Duration* p = load_reporting_interval_;
   // @@protoc_insertion_point(field_get:envoy.api.v2.LoadStatsResponse.load_reporting_interval)
-  return load_reporting_interval_ != NULL ? *load_reporting_interval_
-                         : *::google::protobuf::Duration::internal_default_instance();
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
 }
 ::google::protobuf::Duration* LoadStatsResponse::mutable_load_reporting_interval() {
   

@@ -1,2 +1,0 @@
-Copied from bazel build
-
