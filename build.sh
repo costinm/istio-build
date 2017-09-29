@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 WS=${WS:-$GOPATH/..}
 ISTIO=${ISTIO_IO:-${WS}/go/src/istio.io}
@@ -51,6 +51,8 @@ function getCross() {
         mkdir -p prebuilts/linux-x86/pi
         (cd prebuilts/linux-x86/pi; git clone https://github.com/raspberrypi/tools)
   fi
+
+
 }
 
 function buildPi() {
@@ -148,19 +150,21 @@ function buildAlpine() {
     #docker run -it --name istio-alpine -v $WS:/workspace alpine sh -c /workspace/build.sh alpineRunBuild
     #docker exec -it istio-alpine /bin/bash
 
+    # Image with compiler and other tools, for incremental builds.
+    docker build -t alpine-istio-build docker/alpine-build
 
-    docker run -it --rm -v $WS:/workspace alpine sh -c /workspace/tools/build_alpine.sh
+    docker run -it --rm -v $WS:/workspace alpine-istio-build sh -x -c "/workspace/build.sh alpineRunBuild"
 }
 
 # Script to run inside alpine container
 function buildAlpineRun() {
-  apk update
-  apk add  g++ gcc make perl cmake git bash go libnetfilter_acct-dev libnetfilter_cttimeout-dev 	libexecinfo-dev
+  #apk update
+  #apk add  g++ gcc make perl cmake git bash go libnetfilter_acct-dev libnetfilter_cttimeout-dev 	libexecinfo-dev
 
   cd /workspace
   mkdir cmake-alpine
   cd cmake-alpine
-  cmake ..
+  cmake -DUSE_MUSL:bool=ON ..
   make envoy
 }
 
