@@ -145,8 +145,11 @@ function getBazel() {
 
 function buildAlpine() {
 
-    docker run -it --name istio-alpine -v $WS:/workspace alpine sh -c /workspace/build.sh alpineRunBuild
-    #docker run -it --rm -v $WS:/workspace alpine sh -c /workspace/tools/build_alpine.sh
+    #docker run -it --name istio-alpine -v $WS:/workspace alpine sh -c /workspace/build.sh alpineRunBuild
+    #docker exec -it istio-alpine /bin/bash
+
+
+    docker run -it --rm -v $WS:/workspace alpine sh -c /workspace/tools/build_alpine.sh
 }
 
 # Script to run inside alpine container
@@ -158,7 +161,7 @@ function buildAlpineRun() {
   mkdir cmake-alpine
   cd cmake-alpine
   cmake ..
-  make
+  make envoy
 }
 
 # Populate the pre-generated files - using the canonical bazle build.
