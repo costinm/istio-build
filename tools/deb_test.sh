@@ -93,53 +93,6 @@ function istioGCEExternalIP() {
 
 
 
-# Initialize the K8S internal services for DNS and pilot. Must be run once, generates
-# files for configuring resolv.conf or dnsmasq.conf
-function istioInitInternalServices() {
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Service
-metadata:
-  name: istio-pilot-ilb
-  annotations:
-    cloud.google.com/load-balancer-type: "internal"
-  labels:
-    istio: pilot
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080
-    protocol: TCP
-  selector:
-    istio: pilot
-EOF
-cat <<EOF | kubectl apply -n kube-system -f -
-apiVersion: v1
-kind: Service
-metadata:
-  name: dns-ilb
-  annotations:
-    cloud.google.com/load-balancer-type: "internal"
-  labels:
-    k8s-app: kube-dns
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 53
-    protocol: UDP
-  - port: 53
-    protocol: TCP
-  selector:
-    k8s-app: kube-dns
-EOF
-
-  PILOT_IP=$(kubectl get service istio-pilot-ilb -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-  ISTIO_DNS=$(kubectl get -n kube-system service dns-ilb -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-
-  #/etc/dnsmasq.d/kubedns
-  echo "server=/default.svc.cluster.local/$ISTIO_DNS" > kubedns
-
-}
 
 # Alternative using kubedns endpoint address (may change)
 function getDns() {
@@ -160,6 +113,7 @@ function istioExposeRawVM() {
   PORT=${1:-8080}
   NAME=${2:-$ISTIO_RAW}
   ISTIO_RAWVM_INTERNAL_IP=${3:-$(gcloud compute --project $PROJECT instances describe $ISTIO_RAWVM --format='value(networkInterfaces[0].networkIP)')}
+  # The 'name: http' is critical - without it the service is exposed as TCP
 
   cat << EOF | kubectl apply -f -
 kind: Service
@@ -170,6 +124,7 @@ spec:
   ports:
     - protocol: TCP
       port: $PORT
+      name: http
 
 ---
 
@@ -183,6 +138,36 @@ subsets:
     ports:
       - port: $PORT
 EOF
+}
+
+function getCert() {
+  local ACT=${1:-istio.istio-mixer-service-account}
+  kubectl get secret $ACT -o jsonpath='{.data.cert-chain\.pem}' |base64 -d  > cert-chain.pem
+  kubectl get secret $ACT -o jsonpath='{.data.cert-chain\.pem}' |base64 -d  > cert-chain.pem
+  kubectl get secret $ACT -o jsonpath='{.data.cert-chain\.pem}' |base64 -d  > cert-chain.pem
+  # | openssl x509 -text
+
+}
+
+function pilotDebug() {
+ PILOT=localhost:8080
+
+
+ # LDS - Listeners - each listener defines a cluster name and a route name
+ #  GET /v1/listeners/(string: service_cluster)/(string: service_node)
+ curl -v http://${PILOT}/v1/listeners/istio-proxy/cluster.local | head -n -1 > envoy-static.json
+
+ # RDS - Routes - For each route - route names use the port number as name
+ # GET /v1/routes/(string: route_config_name)/(string: service_cluster)/(string: service_node)
+ curl -v http://localhost:8080/v1/routes/80/istio-proxy/sidecar~127.0.0.1~.~cluster.local >> envoy-static.json
+
+ # CDS - clusters - should have 'in' clusters based on matching the node
+ # GET /v1/clusters/(string: service_cluster)/(string: service_node)
+ curl -v 'http://${PILOT}/v1/clusters/istio-proxy/10.20.1.9|hello-3564253481-dvc07.default|cluster.local'
+
+ # SDS - service endpoints. Service name extracted from the cluster.
+ #  GET /v1/registration/(string: service_name)
+ curl -v 'http://${PILOT}/v1/registration/istio-mixer.default.svc.cluster.local|tcp' >endpoints.mixer.json
 }
 
 # Create a config that can be deployed into the raw VM, to allow auth with minimal RBAC access

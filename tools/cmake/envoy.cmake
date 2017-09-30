@@ -224,22 +224,18 @@ set(ENVOY_SOURCE_FILES
 
         )
 
-# Files not working/used on android
-set(ENVOY_SOURCE_FILES_NO_ANDROID
-        envoy/source/exe/signal_action.cc
+# Not working/used on android or musl. The file installs a signal handler for backtraces.
+if (NOT DEFINED ANDROID_TOOLCHAIN AND NOT DEFINED USE_MUSL)
+   set(ENVOY_SOURCE_FILES
+           ${ENVOY_SOURCE_FILES}
+           envoy/source/exe/signal_action.cc
         )
+endif()
+
+add_executable(envoy ${ENVOY_SOURCE_FILES} $<TARGET_OBJECTS:istioproxy>)
 
 if (DEFINED ANDROID_TOOLCHAIN)
-    add_executable(envoy ${ENVOY_SOURCE_FILES}
-            $<TARGET_OBJECTS:istioproxy>
-            )
     target_link_libraries (envoy PUBLIC -llog -landroid)
-else()
-    add_executable(envoy ${ENVOY_SOURCE_FILES} ${ENVOY_SOURCE_FILES_NO_ANDROID}
-            $<TARGET_OBJECTS:istioproxy>
-            )
-    target_link_libraries (envoy PUBLIC -lpthread -lrt)
-
 endif()
 
 target_link_libraries(envoy PUBLIC tracer)
