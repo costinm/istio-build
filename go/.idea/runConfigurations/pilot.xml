@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="pilot" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="go" />
+    <working_directory value="$PROJECT_DIR$/" />
+    <go_parameters value="-i" />
+    <parameters value="discovery -n default --kubeconfig ~/.kube/config" />
+    <envs>
+      <env name="POD_NAMESPACE" value="istio-system" />
+      <env name="POD_NAME" value="pilot" />
+    </envs>
+    <kind value="PACKAGE" />
+    <filePath value="$PROJECT_DIR$/" />
+    <package value="istio.io/pilot/cmd/pilot-discovery" />
+    <method />
+  </configuration>
+</component>

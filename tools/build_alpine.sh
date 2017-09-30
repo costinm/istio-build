@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # docker run -it -v /ws/istio:/workspace alpine
 

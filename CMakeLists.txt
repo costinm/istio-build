@@ -81,7 +81,6 @@ include(tools/cmake/cares.cmake)
 include(tools/cmake/lightstep-tracer.cmake)
 include(tools/cmake/http-parser.cmake)
 include(tools/cmake/nghttp2.cmake)
-#include(tools/cmake/protobuf.cmake)
 include(tools/cmake/istio-mixer.cmake)
 
 include(tools/cmake/envoy.cmake)
