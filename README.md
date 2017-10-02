@@ -37,4 +37,7 @@ They need to be re-generated after .proto updates or if the protobuf branch is c
 
 Normal debug/breakpoints should work.
 
+# Gerrit 
 
+An experiment of using gerrit:
+repo init -u ssh://costinm@review.gerrithub.io:29418/costinm/istio-repo
