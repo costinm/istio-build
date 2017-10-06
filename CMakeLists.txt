@@ -10,12 +10,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11" )
 
 # Envoy uses its own boring ssl crypto, no need for it in libevent
 set(EVENT__DISABLE_OPENSSL ON CACHE bool "Disable ssl")
-set(EVENT__DISABLE_TESTS ON CACHE bool "disable tests" FORCE)
+set(EVENT__DISABLE_TESTS ON CACHE bool "disable tests")
 set(EVENT__DISABLE_SAMPLES ON CACHE bool "disable samples")
 set(EVENT__DISABLE_BENCHMARK ON CACHE bool "disable bench")
-set(YAML_CPP_BUILD_TOOLS OFF CACHE bool "disable tools" FORCE)
-set(protobuf_BUILD_TESTS OFF CACHE bool "dsable tests" FORCE)
-set(ZLIB_LIBRARY "" CACHE string "no zlib" FORCE)
 
 # To compile boring ssl - requires go in path
 set(GO_EXECUTABLE "go")
@@ -31,57 +28,48 @@ add_definitions(-DHAVE_PTHREAD)
 include_directories(
         envoy/include
         genfiles
-        go/src/istio.io/proxy
         src/protobuf/src
-        src/cares/cares
+        third_party/cares/cares
         src/boringssl/src/include
-        src/http-parser/src
-        src/nghttp2/src/lib/includes
+        third_party/http-parser/src
+        third_party/nghttp2/src/lib/includes
         src/rapidjson/include
         # Tracing
-        src/lightstep/src/c++11
+        third_party/lightstep-tracer/src/src/c++11
         # CLI
-        src/tclap/include
+        third_party/tclap/include
         # Backtraces
         src/backward
         src/grpc_transcoding/src/include
 
-        # DNS
-        src/cares
+        third_party/cares
+        third_party/envoy/include
+        third_party/nghttp2/include
+        third_party/libevent/src/compat
+        third_party/libevent/src/include
+        third_party/libevent/include
+        third_party/cares/config_linux
+        third_party/external/envoy
+        third_party/external/mixerapi_git
+        third_party/external/googleapis_git
 
-        src/envoy/include
-        src/nghttp2/include
-        src/libevent/src/compat
-        src/libevent/src/include
-        src/libevent/include
-        src/cares/config_linux
-        src/external/envoy
-        src/external/mixerapi_git
-        src/external/googleapis_git
-
-        src/fmt
-        src/xxhash
         src/mixerclient
         src/proxy
-        src/yaml-cpp/include
 )
 
 set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl/src)
 
-# Projects already using cmake
+#include(third_party/libevent/libevent.cmake)
 # Doesn't work with CMake 2.8 on trusty
-add_subdirectory(src/libevent/src)
+add_subdirectory(third_party/libevent/src)
 add_subdirectory(src/boringssl/src)
-add_subdirectory(src/yaml-cpp)
-add_subdirectory(src/xxhash/cmake_unofficial)
-add_subdirectory(src/protobuf/cmake)
+#add_subdirectory(src/envoy-remote-filter)
 
 # Packages without cmake support - custom files, similar with the custom bazel
 include(tools/cmake/cares.cmake)
 include(tools/cmake/lightstep-tracer.cmake)
+include(tools/cmake/envoy.cmake)
 include(tools/cmake/http-parser.cmake)
 include(tools/cmake/nghttp2.cmake)
-#include(tools/cmake/protobuf.cmake)
+include(tools/cmake/protobuf.cmake)
 include(tools/cmake/istio-mixer.cmake)
-
-include(tools/cmake/envoy.cmake)

@@ -1,0 +1,10 @@
+# RBAC permissions for a raw-VM node running a user job.
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: debtest
+rules:
+  # Find the pilot and DNS server.
+  - apiGroups: [""]
+    resources: ["namespaces", "nodes"]
+    verbs: ["get", "list", "watch"]

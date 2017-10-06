@@ -14,7 +14,7 @@ set(ENVOY_SOURCE_FILES
         envoy/source/common/access_log/access_log_manager_impl.cc
         envoy/source/common/api/api_impl.cc
         envoy/source/common/buffer/buffer_impl.cc
-        envoy/source/common/buffer/watermark_buffer.cc
+        #\envoy/source/common/buffer/watermark_buffer.cc
         envoy/source/common/buffer/zero_copy_input_stream_impl.cc
         envoy/source/common/common/base64.cc
         envoy/source/common/common/hex.cc
