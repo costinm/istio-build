@@ -23,3 +23,4 @@ src/http-parser/
 src/grpc_transcoding/
 src/googleapis/src/
 src/fmt/
+src/envoy-api
