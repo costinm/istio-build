@@ -153,7 +153,12 @@ function buildAlpine() {
     # Image with compiler and other tools, for incremental builds.
     docker build -t alpine-istio-build docker/alpine-build
 
-    docker run -it --rm -v $WS:/workspace alpine-istio-build sh -x -c "/workspace/build.sh alpineRunBuild"
+    docker run --net=host -it -u $(id -u) --rm -w /workspace -v $WS:/workspace alpine-istio-build sh -x -c "/workspace/build.sh alpineRunBuild"
+
+    cp Docker $ISTIO_IO/proxy/tools/dev/istio-* cmake-alpine
+    docker build -t alpine-istio-proxy docker/istio-proxy-alpine
+
+
 }
 
 # Script to run inside alpine container

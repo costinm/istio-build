@@ -13,6 +13,7 @@ set(ENVOY_SOURCE_FILES
 
         envoy/source/common/access_log/access_log_manager_impl.cc
         envoy/source/common/api/api_impl.cc
+
         envoy/source/common/buffer/buffer_impl.cc
         envoy/source/common/buffer/watermark_buffer.cc
         envoy/source/common/buffer/zero_copy_input_stream_impl.cc
@@ -27,10 +28,6 @@ set(ENVOY_SOURCE_FILES
         #envoy/source/common/dynamo/dynamo_request_parser.cc
         #envoy/source/common/dynamo/dynamo_utility.cc
         #envoy/source/server/config/http/dynamo.cc
-        envoy/source/common/mongo/bson_impl.cc
-        envoy/source/common/mongo/codec_impl.cc
-        envoy/source/common/mongo/proxy.cc
-        envoy/source/common/mongo/utility.cc
         #envoy/source/server/config/network/mongo_proxy.cc
         envoy/source/common/config/address_json.cc
         envoy/source/common/config/base_json.cc
@@ -228,8 +225,18 @@ set(ENVOY_SOURCE_FILES
 if (NOT DEFINED ANDROID_TOOLCHAIN AND NOT DEFINED USE_MUSL)
    set(ENVOY_SOURCE_FILES
            ${ENVOY_SOURCE_FILES}
+           envoy/source/common/api/os_sys_calls_impl.cc
+           envoy/source/common/mongo/bson_impl.cc
+           envoy/source/common/mongo/codec_impl.cc
+           envoy/source/common/mongo/proxy.cc
+           envoy/source/common/mongo/utility.cc
            envoy/source/exe/signal_action.cc
         )
+else()
+    set(ENVOY_SOURCE_FILES
+            ${ENVOY_SOURCE_FILES}
+            tools/cmake/os_sys_calls_impl.cc
+            )
 endif()
 
 add_executable(envoy ${ENVOY_SOURCE_FILES} $<TARGET_OBJECTS:istioproxy>)

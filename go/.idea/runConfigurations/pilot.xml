@@ -5,8 +5,8 @@
     <go_parameters value="-i" />
     <parameters value="discovery -n default --kubeconfig ~/.kube/config" />
     <envs>
-      <env name="POD_NAMESPACE" value="istio-system" />
       <env name="POD_NAME" value="pilot" />
+      <env name="POD_NAMESPACE" value="istio-system" />
     </envs>
     <kind value="PACKAGE" />
     <filePath value="$PROJECT_DIR$/" />
