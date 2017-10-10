@@ -8,8 +8,8 @@
       <env name="POD_NAME" value="pilot" />
       <env name="POD_NAMESPACE" value="istio-system" />
     </envs>
-    <kind value="PACKAGE" />
     <filePath value="$PROJECT_DIR$/" />
+    <kind value="PACKAGE" />
     <package value="istio.io/pilot/cmd/pilot-discovery" />
     <method />
   </configuration>
