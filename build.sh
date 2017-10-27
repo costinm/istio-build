@@ -57,10 +57,6 @@ function getCross() {
 
 function buildPi() {
     getCross
-    cd envoy
-    # TODO: submit PR to envoy
-    git apply ../tools/pi.diff
-    cd ..
 
     mkdir cmake-pi-debug
     pushd cmake-pi-debug
