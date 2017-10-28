@@ -169,41 +169,6 @@ function buildAlpineRun() {
   make envoy
 }
 
-# Populate the pre-generated files - using the canonical bazle build.
-# In future this can be generated directly with protoc.
-function genUpdate() {
-
-    cp -a -f $ISTIO/proxy/bazel-genfiles/external/mixerapi_git/mixer/v1 $WS/genfiles/mixer/v1
-
-    #rm -rf $WS/genfiles/src/lightstep/lightstep-tracer-common
-    #cp -a $ISTIO/proxy/bazel-genfiles/external/mixerapi_git/mixer/v1 $WS/genfiles/src/lightstep/
-
-    cp -a -f $ISTIO/proxy/bazel-genfiles/external/gogoproto_git/gogoproto $WS/genfiles
-
-    cp -a -f $ISTIO/proxy/bazel-genfiles/external/googleapis_git/google/rpc/ $WS/genfiles/google/
-
-   cp -a -f $ISTIO/proxy/bazel-genfiles/external/envoy_api/api  $WS/genfiles
-
-    cp -a -f  $ISTIO/proxy/bazel-genfiles/src/envoy/mixer  $WS/genfiles/src/envoy
-    cp -a -f  $ISTIO/proxy/bazel-genfiles/external/googleapis/google/api  /ws/istio-master/genfiles/google
-    mkdir -p $WS/genfiles/common/filesystem/
-    cp -f $WS/envoy/source/common/filesystem/inotify/watcher_impl.h $WS/genfiles/common/filesystem/
-
-    cp -a -f  $ISTIO/proxy/bazel-genfiles/external/envoy/source/common/ratelimit $WS/genfiles/source/common
-
-   cp $ISTIO/proxy/bazel-proxy/external/envoy_deps/thirdparty_build/include/lightstep_carrier.pb.h $WS/genfiles/
-    cp $ISTIO/proxy/bazel-proxy/external/envoy_deps/thirdparty_build/include/collector.pb.h $WS/genfiles/
-
-    cp $ISTIO/proxy/bazel-genfiles/external/mixerclient_git/src/global_dictionary.cc $WS/genfiles/
-
-    pushd cmake-debug
-    make protoc
-    ./src/protobuf/cmake/protoc  --proto_path=../src/lightstep/lightstep-tracer-common/:../src/protobuf/src --cpp_out=../genfiles/ ../src/lightstep/lightstep-tracer-common/lightstep_carrier.proto
-    ./src/protobuf/cmake/protoc  --proto_path=../src/lightstep/lightstep-tracer-common/:../src/protobuf/src --cpp_out=../genfiles/ ../src/lightstep/lightstep-tracer-common/collector.proto
-    popd
-
-
-}
 
 function buildBazel() {
   . go/src/istio.io/istio/bin/flat_build
@@ -226,9 +191,6 @@ function buildAll() {
 }
 
 case "$1" in
-    "update")
-        genUpdate
-    ;;
     "android")
         buildAndroid
     ;;

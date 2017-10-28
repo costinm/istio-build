@@ -1,36 +1,38 @@
 include_directories(
-        src/mixer
-        src/proxy
-        third_party/api
+        ${ISTIO_NATIVE}/mixerclient
+        .
+        ${ISTIO_NATIVE}/api
+        ${ISTIO_NATIVE}/envoy/include
+        ${ISTIO_NATIVE}/proxy
 )
 
 set(ISTIOPROXY_SOURCES
-        src/mixerclient/src/attribute.cc
-        src/mixerclient/src/check_cache.cc
-        src/mixerclient/src/referenced.cc
-        src/mixerclient/src/client_impl.cc
-        src/mixerclient/src/delta_update.cc
-        src/mixerclient/src/quota_cache.cc
-        src/mixerclient/utils/md5.cc
-        src/mixerclient/utils/protobuf.cc
-        src/mixerclient/src/report_batch.cc
-        src/mixerclient/src/attribute_converter.cc
-        go/src/istio.io/proxy/src/envoy/mixer/http_filter.cc
-        go/src/istio.io/proxy/src/envoy/mixer/utils.cc
-        go/src/istio.io/proxy/src/envoy/mixer/tcp_filter.cc
-        go/src/istio.io/proxy/src/envoy/mixer/mixer_control.cc
-        go/src/istio.io/proxy/src/envoy/mixer/config.cc
-        go/src/istio.io/proxy/src/envoy/mixer/grpc_transport.cc
-        src/mixerclient/prefetch/quota_prefetch.cc
-        src/mixerclient/prefetch/time_based_counter.cc
+        ${ISTIO_NATIVE}/mixerclient/src/attribute_compressor.cc
+        ${ISTIO_NATIVE}/mixerclient/src/check_cache.cc
+        ${ISTIO_NATIVE}/mixerclient/src/referenced.cc
+        ${ISTIO_NATIVE}/mixerclient/src/client_impl.cc
+        ${ISTIO_NATIVE}/mixerclient/src/delta_update.cc
+        ${ISTIO_NATIVE}/mixerclient/src/quota_cache.cc
+        ${ISTIO_NATIVE}/mixerclient/utils/md5.cc
+        ${ISTIO_NATIVE}/mixerclient/utils/protobuf.cc
+        ${ISTIO_NATIVE}/mixerclient/src/report_batch.cc
+        ${ISTIO_NATIVE}/mixerclient/prefetch/quota_prefetch.cc
+        ${ISTIO_NATIVE}/mixerclient/prefetch/time_based_counter.cc
 
-        genfiles/mixer/v1/attributes.pb.cc
-        genfiles/mixer/v1/check.pb.cc
-        genfiles/mixer/v1/report.pb.cc
-        genfiles/mixer/v1/service.pb.cc
-        genfiles/google/rpc/status.pb.cc
-        genfiles/src/envoy/mixer/string_map.pb.cc
-        genfiles/global_dictionary.cc
+        ${ISTIO_NATIVE}/proxy/src/envoy/mixer/http_filter.cc
+        ${ISTIO_NATIVE}/proxy/src/envoy/mixer/utils.cc
+        ${ISTIO_NATIVE}/proxy/src/envoy/mixer/tcp_filter.cc
+        ${ISTIO_NATIVE}/proxy/src/envoy/mixer/mixer_control.cc
+        ${ISTIO_NATIVE}/proxy/src/envoy/mixer/config.cc
+        ${ISTIO_NATIVE}/proxy/src/envoy/mixer/grpc_transport.cc
+
+        ${ISTIO_GENFILES}/external/mixerapi_git/mixer/v1/attributes.pb.cc
+        ${ISTIO_GENFILES}/external/mixerapi_git/mixer/v1/check.pb.cc
+        ${ISTIO_GENFILES}/external/mixerapi_git/mixer/v1/report.pb.cc
+        ${ISTIO_GENFILES}/external/mixerapi_git/mixer/v1/service.pb.cc
+        ${ISTIO_GENFILES}/external/googleapis_git/google/rpc/status.pb.cc
+        ${ISTIO_GENFILES}/src/envoy/mixer/string_map.pb.cc
+        ${ISTIO_GENFILES}/external/mixerclient_git/src/global_dictionary.cc
         )
 
 
