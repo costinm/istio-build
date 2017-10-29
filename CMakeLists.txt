@@ -5,9 +5,9 @@ project(istio)
 
 set(ISTIO_BASE "" CACHE string "Istio base directory, default to current dir")
 set(ISTIO_NATIVE "src" CACHE string "Native source directory")
-set(ISTIO_CMAKE "tools/cmake" CACHE string "Custom CMake files")
+set(ISTIO_CMAKE "build/cmake" CACHE string "Custom CMake files" FORCE)
 
-set(ISTIO_GENFILES "src/proxy/bazel-genfiles" CACHE string "Location of generated files")
+set(ISTIO_GENFILES "bazel-genfiles" CACHE string "Location of generated files")
 # TODO: convince envoy to preserve genfiles.
 set(ISTIO_DEP_GENFILES "genfiles" CACHE string "Location of dependency genfiles. Envoy doesn't preserve them.")
 
@@ -31,28 +31,23 @@ set(GO_EXECUTABLE "go")
 
 # protobuf requires it
 add_definitions(-DHAVE_PTHREAD)
-# add_definitions(-m64)
 
-#add_definitions(-std=c++11)
-
-# Merged includes for all deps. Generated files are checked in (similar with golang style)
-
-set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR src/boringssl/src)
+set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR ${ISTIO_NATIVE}/boringssl/src)
 
 # Projects already using cmake
 # Doesn't work with CMake 2.8 on trusty
-add_subdirectory(src/libevent/src)
-add_subdirectory(src/boringssl/src)
-add_subdirectory(src/yaml-cpp)
-add_subdirectory(src/xxhash/cmake_unofficial)
-add_subdirectory(src/protobuf/cmake)
+add_subdirectory(${ISTIO_NATIVE}/libevent/src)
+add_subdirectory(${ISTIO_NATIVE}/boringssl/src)
+add_subdirectory(${ISTIO_NATIVE}/yaml-cpp)
+add_subdirectory(${ISTIO_NATIVE}/xxhash/cmake_unofficial)
+add_subdirectory(${ISTIO_NATIVE}/protobuf/cmake)
 
 # Packages without cmake support - custom files, similar with the custom bazel
 include(${ISTIO_CMAKE}/cares.cmake)
-include(tools/cmake/lightstep-tracer.cmake)
-include(tools/cmake/http-parser.cmake)
-include(tools/cmake/nghttp2.cmake)
-include(tools/cmake/istio-mixer.cmake)
-include(tools/cmake/grpc_transcoding.cmake)
+include(${ISTIO_CMAKE}/lightstep-tracer.cmake)
+include(${ISTIO_CMAKE}/http-parser.cmake)
+include(${ISTIO_CMAKE}/nghttp2.cmake)
+include(${ISTIO_CMAKE}/istio-mixer.cmake)
+include(${ISTIO_CMAKE}/grpc_transcoding.cmake)
 
-include(tools/cmake/envoy.cmake)
+include(${ISTIO_CMAKE}/envoy.cmake)
