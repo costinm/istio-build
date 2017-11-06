@@ -1,7 +1,20 @@
 #!/bin/bash
 
-set -x
-echo $*
-echo | /usr/bin/repo init $*
+REPO=${REPO:-http://github.com/costinm/istio-repo}
 
-/usr/bin/repo sync -c
+# Download the source files.
+function init_repo() {
+    if [ ! -f .repo ]; then
+      repo init -u $REPO $*
+    fi
+
+}
+
+
+
+set -x
+
+init_repo $*
+
+repo sync -c
+

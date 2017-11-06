@@ -1,8 +1,6 @@
-
-
 FROM alpine
+
 # Install the build environment needed to compile Istio sidecar
-#  docker build -t alpine-istio-build docker/alpine-build
 #  docker build -t docker.io/costinm/istio-alpine-build docker/alpine-build
 
 RUN  apk update \
