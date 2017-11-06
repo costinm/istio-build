@@ -5,7 +5,7 @@
 build:
 	#cd src/proxy; bazel build src/envoy/mixer:envoy
 	bazel build @proxy//src/envoy/mixer:envoy
-	(cd go/src/istio.io/pilot; bazel build cmd/pilot-agent:pilot-agent)
+	(cd go/src/istio.io/isto; bazel build //pilot/cmd/pilot-agent:pilot-agent)
 
 deb:
 	bazel build @proxy//tools/deb:istio-proxy
@@ -19,6 +19,15 @@ docker:
 	cp src/proxy/tools/deb/envoy.json ${BAZEL_TARGET_DIR}
 	cp src/proxy/docker/proxy-* ${BAZEL_TARGET_DIR}
 	cp src/proxy/docker/Dockerfile.* ${BAZEL_TARGET_DIR}/
+
+dep:
+  go get -u github.com/golang/dep/cmd/dep
+  (cd go/src/stio.io/istio; dep ensure)
+  (cd go/src/stio.io/istio; go build pilot/cmd/...)
+
+go:
+  (cd go/src/stio.io/istio; go build pilot/cmd/pilot-agent)
+
 
 #### Cross compilation
 
