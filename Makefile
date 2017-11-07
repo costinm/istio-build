@@ -22,6 +22,14 @@ docker:
 	cp src/proxy/docker/proxy-* ${BAZEL_TARGET_DIR}
 	cp src/proxy/docker/Dockerfile.* ${BAZEL_TARGET_DIR}/
 
+dep:
+	go get -u github.com/golang/dep/cmd/dep
+	(cd go/src/stio.io/istio; dep ensure)
+	(cd go/src/stio.io/istio; go build pilot/cmd/...)
+
+go:
+	(cd go/src/stio.io/istio; go build pilot/cmd/pilot-agent)
+
 ### Docker images used for CI
 
 docker-builder:
