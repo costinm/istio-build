@@ -22,14 +22,12 @@ function genUpdate() {
 
     # Built during envoy_deps, but not included in bazel (deleted after autoconf/build)
     PROTOC=$PROXY/bazel-out/host/bin/external/com_google_protobuf/protoc
-    $PROTOC  --proto_path=$DEPS/lightstep/lightstep-tracer-common/:$DEPS/protobuf/src --cpp_out=$GEN $DEPS/lightstep/lightstep-tracer-common/lightstep_carrier.proto
-    $PROTOC  --proto_path=$DEPS/lightstep/lightstep-tracer-common/:$DEPS/protobuf/src --cpp_out=$GEN $DEPS/lightstep/lightstep-tracer-common/collector.proto
+    $PROTOC  --proto_path=$DEPS/lightstep-tracer-common/:$DEPS/protobuf/src --cpp_out=$GEN $DEPS/lightstep-tracer-common/lightstep_carrier.proto
+    $PROTOC  --proto_path=$DEPS/lightstep-tracer-common/:$DEPS/protobuf/src --cpp_out=$GEN $DEPS/lightstep-tracer-common/collector.proto
 
     # Manually generated:
     # cares/ - autoconf, extracted from grpc repo which uses same mechanism
     # nghttp2ver.h - manually generated
 }
 
-if [[ ${1:-} == "gen" ]] ; then
-  genUpdate
-fi
+genUpdate

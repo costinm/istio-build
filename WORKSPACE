@@ -19,7 +19,7 @@ local_repository(
     path = "src/protobuf"
 )
 
-local_repository(mixer
+local_repository(
     name = "proxy",
     path = "src/proxy"
 )

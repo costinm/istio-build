@@ -5,7 +5,7 @@ project(istio)
 
 set(ISTIO_BASE "" CACHE string "Istio base directory, default to current dir")
 set(ISTIO_NATIVE "src" CACHE string "Native source directory")
-set(ISTIO_CMAKE "build/cmake" CACHE string "Custom CMake files" FORCE)
+set(ISTIO_CMAKE "build/contrib/cmake" CACHE string "Custom CMake files" FORCE)
 
 set(ISTIO_GENFILES "bazel-genfiles" CACHE string "Location of generated files")
 # TODO: convince envoy to preserve genfiles.
@@ -36,7 +36,7 @@ set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR ${ISTIO_NATIVE}/boringssl/src)
 
 # Projects already using cmake
 # Doesn't work with CMake 2.8 on trusty
-add_subdirectory(${ISTIO_NATIVE}/libevent/src)
+add_subdirectory(${ISTIO_NATIVE}/libevent)
 add_subdirectory(${ISTIO_NATIVE}/boringssl/src)
 add_subdirectory(${ISTIO_NATIVE}/yaml-cpp)
 add_subdirectory(${ISTIO_NATIVE}/xxhash/cmake_unofficial)

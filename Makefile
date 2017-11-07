@@ -1,4 +1,7 @@
-
+DEPOT ?= docker.io/costinm
+BAZEL_TARGET_DIR ?= "bazel-bin/external/proxy/src/envoy/mixer"
+export TOP = $(shell pwd)
+export ISTIO_SRC = ${TOP}
 
 .PHONY: build cmake docker docker-build-images deb gen
 
@@ -11,7 +14,6 @@ deb:
 	bazel build @proxy//tools/deb:istio-proxy
 	(cd go/src/istio.io/pilot; bazel build tools/deb/...)
 
-BAZEL_TARGET_DIR ?= "bazel-bin/external/proxy/src/envoy/mixer"
 
 docker:
 	cp src/proxy/tools/deb/istio-iptables.sh ${BAZEL_TARGET_DIR}
@@ -21,7 +23,6 @@ docker:
 	cp src/proxy/docker/Dockerfile.* ${BAZEL_TARGET_DIR}/
 
 ### Docker images used for CI
-DEPOT ?= docker.io/costinm
 
 docker-builder:
 	docker build -t ${DEPOT}/istio-fpm-build build/docker/fpm
@@ -44,9 +45,34 @@ docker-builder-push:
 # Generate files for cmake build.
 # Must be called periodically, and before cmake cross targets
 gen:
-	 ./build/tools/update_gen.sh gen
+	 ./build/contrib/tools/update_gen.sh gen
 
 # Experimental cmake target - will build alpine, pi, android binaries
+
+DBUILD=${TOP}/build/contrib/dbuild.sh
+
+
+cmake-pi:
+	mkdir -p cmake-pi-debug
+	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; cmake -DCMAKE_TOOLCHAIN_FILE=../build/cmake/pi.cmake  -DISTIO_GENFILES=genfiles/bazel .. && make $MFLAGS envoy"
+
+cmake-alpine:
+	mkdir -p cmake-alpine-debug
+	${DBUILD} ${DEPOT}/istio-alpine-build "cd cmake-alpine-debug; cmake .. -DISTIO_GENFILES=genfiles/bazel -DUSE_MUSL:bool=ON && make -j8 envoy"
+
+ANDROID_CMD="cd cmake-android-debug; /opt/android-sdk/cmake/3.6.4111459/bin/cmake -DISTIO_GENFILES=genfiles/bazel -DANDROID_CPP_FEATURES=rtti -DANDROID_STL=c++_static -DANDROID_TOOLCHAIN=clang -DANDROID_PLATFORM=android-26  -DANDROID_NDK=/opt/android-sdk/ndk-bundle -DCMAKE_TOOLCHAIN_FILE=/opt/android-sdk/ndk-bundle/build/cmake/android.toolchain.cmake .. && make $MFLAGS envoy"
+
+cmake-android:
+	mkdir -p cmake-android-debug
+	${DBUILD} ${DEPOT}/istio-android-build ${ANDROID_CMD}
+
+CMAKE_MAKE_OPT?=-j 8
+
+cmake-local:
+	mkdir -p cmake-build-debug
+	(cd cmake-build-debug; cmake ..)
+	(cd cmake-build-debug; make envoy ${CMAKE_MAKE_OPT})
+
 cmake:
 	 ./build/tools/build_cmake.sh
 

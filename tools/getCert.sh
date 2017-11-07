@@ -13,6 +13,4 @@ function getCert() {
     GCE_SERVICE_ACCOUNT_FILE=$ISTIOENV/dns.json \
     lego --email $EMAIL --domains productpage.release02.istio.webinf.info --dns=gcloud run
 
-
-
 }
