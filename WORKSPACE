@@ -23,26 +23,35 @@ local_repository(
     name = "proxy",
     path = "src/proxy"
 )
-
+#git_repository(
+#        name = "org_pubref_rules_protobuf",
+#        commit = "563b674a2ce6650d459732932ea2bc98c9c9a9bf",
+#        remote = "https://github.com/pubref/rules_protobuf",
+#    )
+#local_repository(
+#    name = "com_google_protobuf_cc",
+#    path = "src/protobuf"
+#)
 local_repository(
-    name = "com_google_protobuf_cc",
-    path = "src/protobuf"
+    name = "mixerapi_git",
+    path = "go/src/istio.io/api"
+)
+local_repository(
+    name = "mixerclient_git",
+    path = "src/mixerclient"
 )
 
 load(
-    "@proxy//src/envoy/mixer:repositories.bzl",
+    "//build/contrib/proxy_mixer_repositories.bzl",
     "mixer_client_repositories",
 )
 
 mixer_client_repositories()
 
 load(
-    "@mixerclient_git//:repositories.bzl",
-    "googleapis_repositories",
+    "//build/contrib/mixerclient_repositories.bzl",
     "mixerapi_repositories",
 )
-
-googleapis_repositories()
 
 mixerapi_repositories()
 
@@ -51,14 +60,14 @@ bind(
     actual = "//external:ssl",
 )
 
-bind(
-      name = "protobuf",
-      actual = "@com_google_protobuf//:protobuf",
-)
-bind(
-      name = "protoc",
-      actual = "@com_google_protobuf_cc//:protoc",
-  )
+#bind(
+#      name = "protobuf",
+#      actual = "@com_google_protobuf//:protobuf",
+#)
+#bind(
+#      name = "protoc",
+#      actual = "@com_google_protobuf_cc//:protoc",
+#  )
 
 
 local_repository(
@@ -68,7 +77,7 @@ local_repository(
 
 load("@envoy//bazel:repositories.bzl", "envoy_dependencies")
 
-envoy_dependencies(repository="@envoy")
+envoy_dependencies(skip_targets = ['com_google_protobuf'])
 
 bind(
     name = "cc_wkt_protos",
@@ -110,11 +119,14 @@ git_repository(
     remote = "https://github.com/istio/mixer",
 )
 
-#local_repository(
-#    name = "com_github_istio_mixer",
-#    path = "go/src/istio.io/mixer"
-#)
+local_repository(
+    name = "io_istio_istio",
+    path = "go/src/istio.io/istio"
+)
 
-load("@com_github_istio_mixer//test:repositories.bzl", "mixer_test_repositories")
+load("@io_istio_istio//mixer:adapter_author_deps.bzl", "mixer_adapter_repositories")
+mixer_adapter_repositories()
 
-mixer_test_repositories()
+load("@mixerapi_git//:api_dependencies.bzl", "mixer_api_for_proxy_dependencies")
+mixer_api_for_proxy_dependencies()
+
