@@ -40,16 +40,20 @@ local_repository(
     name = "mixerclient_git",
     path = "src/mixerclient"
 )
+local_repository(
+    name = "build_contrib",
+    path = "build/contrib"
+)
 
 load(
-    "//build/contrib/proxy_mixer_repositories.bzl",
+    "@build_contrib//:proxy_mixer_repositories.bzl",
     "mixer_client_repositories",
 )
 
 mixer_client_repositories()
 
 load(
-    "//build/contrib/mixerclient_repositories.bzl",
+    "@build_contrib//:mixerclient_repositories.bzl",
     "mixerapi_repositories",
 )
 
