@@ -183,8 +183,13 @@ set(ENVOY_SOURCE_FILES
         ${ISTIO_GENFILES}/external/envoy_api/api/address.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/bootstrap.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/cds.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/mongo_proxy.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/http_connection_manager.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/fault.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/router.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/fault.pb.cc
+
         ${ISTIO_GENFILES}/external/envoy_api/api/discovery.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/lds.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/protocol.pb.cc
@@ -216,7 +221,7 @@ if (NOT DEFINED ANDROID_TOOLCHAIN AND NOT DEFINED USE_MUSL)
 else ()
     set(ENVOY_SOURCE_FILES
             ${ENVOY_SOURCE_FILES}
-            build/patches/os_sys_calls_impl.cc
+            build/contrib/patches/os_sys_calls_impl.cc
             )
 endif ()
 

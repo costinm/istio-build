@@ -3,32 +3,48 @@ BAZEL_TARGET_DIR ?= "bazel-bin/external/proxy/src/envoy/mixer"
 export TOP = $(shell pwd)
 export ISTIO_SRC = ${TOP}
 
-.PHONY: build cmake docker docker-build-images deb gen
+.PHONY: build cmake docker docker-build-images deb gen go
 
-build:
+# Build binaries, ready for local testing
+build: go
 	#cd src/proxy; bazel build src/envoy/mixer:envoy
 	bazel build @proxy//src/envoy/mixer:envoy
-	(cd go/src/istio.io/istio; bazel build pilot/cmd/pilot-agent:pilot-agent)
 
+# Build deb files
 deb:
 	bazel build @proxy//tools/deb:istio-proxy
-	(cd go/src/istio.io/pilot; bazel build tools/deb/...)
+	(cd go/src/istio.io/istio; bazel build pilot/tools/deb/... \
+		security/tools/deb/...)
 
-
+# Build docker images - without uploading
 docker:
+	(cd go/src/istio.io/istio; BUILD_ONLY=true ./mixer/bin/push_docker)
+	(cd go/src/istio.io/istio; BUILD_ONLY=true ./pilot/bin/push_docker)
+
 	cp src/proxy/tools/deb/istio-iptables.sh ${BAZEL_TARGET_DIR}
 	cp src/proxy/tools/deb/istio-start.sh ${BAZEL_TARGET_DIR}
 	cp src/proxy/tools/deb/envoy.json ${BAZEL_TARGET_DIR}
 	cp src/proxy/docker/proxy-* ${BAZEL_TARGET_DIR}
 	cp src/proxy/docker/Dockerfile.* ${BAZEL_TARGET_DIR}/
 
+# Push images to external registry, for testing in real k8s.
+docker-push:
+	docker push ${DEPOT}/proxy:lastest
+
+# Update go dependencies.
 dep:
 	go get -u github.com/golang/dep/cmd/dep
 	(cd go/src/stio.io/istio; dep ensure)
-	(cd go/src/stio.io/istio; go build pilot/cmd/...)
 
+# Build only go binaries, using bazel.
 go:
-	(cd go/src/stio.io/istio; go build pilot/cmd/pilot-agent)
+	(cd go/src/istio.io/istio; bazel build \
+		pilot/cmd/pilot-agent:pilot-agent \
+		mixer/cmd/server:mixs \
+		mixer/cmd/client:mixc \
+		security/cmd/node_agent:node_agent \
+        security/cmd/istio_ca:istio_ca \
+    )
 
 ### Docker images used for CI
 
@@ -47,8 +63,7 @@ docker-builder-push:
 	docker push ${DEPOT}/istio-repo-build
 
 #### Cross compilation
-
-
+CMAKE_MAKE_OPT?=-j 8
 
 # Generate files for cmake build.
 # Must be called periodically, and before cmake cross targets
@@ -62,19 +77,19 @@ DBUILD=${TOP}/build/contrib/dbuild.sh
 
 cmake-pi:
 	mkdir -p cmake-pi-debug
-	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; cmake -DCMAKE_TOOLCHAIN_FILE=../build/cmake/pi.cmake  -DISTIO_GENFILES=genfiles/bazel .. && make $MFLAGS envoy"
+	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; cmake -DCMAKE_TOOLCHAIN_FILE=../build/contrib/cmake/pi.cmake  -DISTIO_GENFILES=genfiles/bazel .. && make ${MFLAGS} envoy"
+
+cmake-ipi:
+	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; make ${MFLAGS} envoy"
 
 cmake-alpine:
 	mkdir -p cmake-alpine-debug
 	${DBUILD} ${DEPOT}/istio-alpine-build "cd cmake-alpine-debug; cmake .. -DISTIO_GENFILES=genfiles/bazel -DUSE_MUSL:bool=ON && make -j8 envoy"
 
-ANDROID_CMD="cd cmake-android-debug; /opt/android-sdk/cmake/3.6.4111459/bin/cmake -DISTIO_GENFILES=genfiles/bazel -DANDROID_CPP_FEATURES=rtti -DANDROID_STL=c++_static -DANDROID_TOOLCHAIN=clang -DANDROID_PLATFORM=android-26  -DANDROID_NDK=/opt/android-sdk/ndk-bundle -DCMAKE_TOOLCHAIN_FILE=/opt/android-sdk/ndk-bundle/build/cmake/android.toolchain.cmake .. && make $MFLAGS envoy"
-
 cmake-android:
 	mkdir -p cmake-android-debug
-	${DBUILD} ${DEPOT}/istio-android-build ${ANDROID_CMD}
+	${DBUILD} ${DEPOT}/istio-android-build ./build/contrib/cmake/android.sh
 
-CMAKE_MAKE_OPT?=-j 8
 
 cmake-local:
 	mkdir -p cmake-build-debug

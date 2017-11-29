@@ -1,5 +1,5 @@
 
-set(TANSCODING_SOURCES
+add_library(grpc_transcoding STATIC
         ${ISTIO_NATIVE}/grpc_transcoding/src/http_template.cc
         ${ISTIO_NATIVE}/grpc_transcoding/src/json_request_translator.cc
         ${ISTIO_NATIVE}/grpc_transcoding/src/message_reader.cc
@@ -13,8 +13,8 @@ set(TANSCODING_SOURCES
         ${ISTIO_NATIVE}/grpc_transcoding/src/type_helper.cc
         )
 
-add_library(grpc_transcoding STATIC ${TANSCODING_SOURCES})
-target_include_directories(grpc_transcoding PRIVATE
+target_include_directories(grpc_transcoding
+        PRIVATE
             ${ISTIO_NATIVE}/grpc_transcoding/src/include
-        ${ISTIO_NATIVE}/protobuf/src
+            ${ISTIO_NATIVE}/protobuf/src
 )

@@ -7,15 +7,14 @@ set(ISTIO_BASE "" CACHE string "Istio base directory, default to current dir")
 set(ISTIO_NATIVE "src" CACHE string "Native source directory")
 set(ISTIO_CMAKE "build/contrib/cmake" CACHE string "Custom CMake files" FORCE)
 
-set(ISTIO_GENFILES "bazel-genfiles" CACHE string "Location of generated files")
+set(ISTIO_GENFILES "genfiles/bazel" CACHE string "Location of generated files")
 # TODO: convince envoy to preserve genfiles.
 set(ISTIO_DEP_GENFILES "genfiles" CACHE string "Location of dependency genfiles. Envoy doesn't preserve them.")
 
-
 # No effect on trusty - must set cxx flag
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11" )
+set(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14" )
 
 # Envoy uses its own boring ssl crypto, no need for it in libevent
 set(EVENT__DISABLE_OPENSSL ON CACHE bool "Disable ssl")

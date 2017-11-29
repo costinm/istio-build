@@ -1,4 +1,4 @@
-set(CARES_SOURCE
+add_library(cares STATIC
         ${ISTIO_NATIVE}/cares/ares__close_sockets.c
         ${ISTIO_NATIVE}/cares/ares__get_hostent.c
         ${ISTIO_NATIVE}/cares/ares__read_line.c
@@ -50,11 +50,11 @@ set(CARES_SOURCE
         ${ISTIO_NATIVE}/cares/windows_port.c
         )
 
-add_library(cares STATIC ${CARES_SOURCE})
 set_target_properties(cares PROPERTIES COMPILE_FLAGS -DHAVE_CONFIG_H=1)
 
-target_include_directories(cares PRIVATE
-        ${ISTIO_DEP_GENFILES}/cares/config_linux
-        ${ISTIO_DEP_GENFILES}/cares/
+target_include_directories(cares
+        PRIVATE
+            ${ISTIO_DEP_GENFILES}/cares/config_linux
+            ${ISTIO_DEP_GENFILES}/cares/
 )
 

@@ -1,4 +1,4 @@
-set(NGHTTP2_SOURCES
+add_library(nghttp2 STATIC
         ${ISTIO_NATIVE}/nghttp2/lib/nghttp2_pq.c
         ${ISTIO_NATIVE}/nghttp2/lib/nghttp2_map.c
         ${ISTIO_NATIVE}/nghttp2/lib/nghttp2_queue.c
@@ -23,7 +23,6 @@ set(NGHTTP2_SOURCES
         ${ISTIO_NATIVE}/nghttp2/lib/nghttp2_debug.c
         )
 
-add_library(nghttp2 STATIC ${NGHTTP2_SOURCES})
 set_target_properties(nghttp2 PROPERTIES COMPILE_FLAGS -DBUILDING_NGHTTP2)
 
 target_include_directories(nghttp2 PRIVATE
