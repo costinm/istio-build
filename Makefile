@@ -1,5 +1,6 @@
 DEPOT ?= docker.io/costinm
 BAZEL_TARGET_DIR ?= "bazel-bin/external/proxy/src/envoy/mixer"
+ISTIO_TAG ?= ${USERNAME}
 export TOP = $(shell pwd)
 export ISTIO_SRC = ${TOP}
 
@@ -99,3 +100,8 @@ cmake-local:
 cmake:
 	 ./build/tools/build_cmake.sh
 
+run-envoy-docker:
+	 docker run --rm -it --entrypoint /bin/bash \
+	   -v ${TOP}/src/proxy/tools/deb/istio-start.sh:/usr/local/bin/istio-start.sh \
+	   -v ${TOP}/src/proxy/tools/deb/envoy.json:/var/lib/istio/envoy.json  \
+	   --cap-add=NET_ADMIN  -p 15000:15000 gcr.io/istio-testing/envoy-debug:${ISTIO_TAG}

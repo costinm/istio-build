@@ -1,0 +1,137 @@
+{
+  "virtual_hosts": [
+   {
+    "name": "debworker-http.default.svc.cluster.local|http",
+    "domains": [
+     "debworker-http.default.svc:80",
+     "debworker-http.default.svc",
+     "debworker-http.default.svc.cluster:80",
+     "debworker-http.default.svc.cluster",
+     "debworker-http.default.svc.cluster.local:80",
+     "debworker-http.default.svc.cluster.local",
+     "10.23.247.114:80",
+     "10.23.247.114"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.bd07a4941e84c1b1ba81bb52b6e09f73d9d90e42"
+     }
+    ]
+   },
+   {
+    "name": "debworker-http80.default.svc.cluster.local|http",
+    "domains": [
+     "debworker-http80.default.svc:80",
+     "debworker-http80.default.svc",
+     "debworker-http80.default.svc.cluster:80",
+     "debworker-http80.default.svc.cluster",
+     "debworker-http80.default.svc.cluster.local:80",
+     "debworker-http80.default.svc.cluster.local",
+     "10.23.254.252:80",
+     "10.23.254.252"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.fb6162b1b9ee5436394fd5d96d290846a810b352"
+     }
+    ]
+   },
+   {
+    "name": "hello.default.svc.cluster.local|http",
+    "domains": [
+     "hello.default.svc:80",
+     "hello.default.svc",
+     "hello.default.svc.cluster:80",
+     "hello.default.svc.cluster",
+     "hello.default.svc.cluster.local:80",
+     "hello.default.svc.cluster.local",
+     "10.23.246.143:80",
+     "10.23.246.143"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.e5c9564b7c4dbb0355a4f740e9d29277ccca97cd"
+     }
+    ]
+   },
+   {
+    "name": "istio-ingress.default.svc.cluster.local|http",
+    "domains": [
+     "istio-ingress.default.svc:80",
+     "istio-ingress.default.svc",
+     "istio-ingress.default.svc.cluster:80",
+     "istio-ingress.default.svc.cluster",
+     "istio-ingress.default.svc.cluster.local:80",
+     "istio-ingress.default.svc.cluster.local",
+     "10.23.243.161:80",
+     "10.23.243.161"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.fd518f1d0ba070c47739cbf6b191f85eb1cdda3d"
+     }
+    ]
+   },
+   {
+    "name": "justhello.default.svc.cluster.local|http",
+    "domains": [
+     "justhello.default.svc:80",
+     "justhello.default.svc",
+     "justhello.default.svc.cluster:80",
+     "justhello.default.svc.cluster",
+     "justhello.default.svc.cluster.local:80",
+     "justhello.default.svc.cluster.local",
+     "10.23.249.181:80",
+     "10.23.249.181"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.9d29c4ef2e1e1b4827148cd5a71fab978e90918a"
+     }
+    ]
+   },
+   {
+    "name": "nginx.default.svc.cluster.local|http",
+    "domains": [
+     "nginx.default.svc:80",
+     "nginx.default.svc",
+     "nginx.default.svc.cluster:80",
+     "nginx.default.svc.cluster",
+     "nginx.default.svc.cluster.local:80",
+     "nginx.default.svc.cluster.local",
+     "10.23.243.41:80",
+     "10.23.243.41"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.4205d7a46b381fa61a80695e535209023019b246"
+     }
+    ]
+   },
+   {
+    "name": "nginxistio.default.svc.cluster.local|http",
+    "domains": [
+     "nginxistio.default.svc:80",
+     "nginxistio.default.svc",
+     "nginxistio.default.svc.cluster:80",
+     "nginxistio.default.svc.cluster",
+     "nginxistio.default.svc.cluster.local:80",
+     "nginxistio.default.svc.cluster.local",
+     "10.23.253.217:80",
+     "10.23.253.217"
+    ],
+    "routes": [
+     {
+      "prefix": "/",
+      "cluster": "out.d4b7b8f0956df1349295f2961f70aebc9f6647aa"
+     }
+    ]
+   }
+  ]
+ }

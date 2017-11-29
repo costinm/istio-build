@@ -1,0 +1,222 @@
+{
+  "clusters": [
+   {
+    "name": "in.8000",
+    "connect_timeout_ms": 1000,
+    "type": "static",
+    "lb_type": "round_robin",
+    "hosts": [
+     {
+      "url": "tcp://127.0.0.1:8000"
+     }
+    ]
+   },
+   {
+    "name": "mixer_server",
+    "connect_timeout_ms": 1000,
+    "type": "strict_dns",
+    "lb_type": "round_robin",
+    "hosts": [
+     {
+      "url": "tcp://istio-mixer:9091"
+     }
+    ],
+    "features": "http2",
+    "circuit_breakers": {
+     "default": {
+      "max_pending_requests": 10000,
+      "max_requests": 10000
+     }
+    }
+   },
+   {
+    "name": "out.01b3502fc7b29750c3b185358aec68fcbb4b9cf6",
+    "service_name": "istio-pilot.default.svc.cluster.local|http-discovery",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.042f561d6007351c54657066df505a4e37433a8e",
+    "service_name": "my-service.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.085861efa91e0636afefc66e54e5bb33fe2239ff",
+    "service_name": "istio-ingress.default.svc.cluster.local|https",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.1280abe8bec2fab497193042d93514356521669a",
+    "service_name": "mixer-ilb.default.svc.cluster.local",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.12f3dd72236b695f073a0aefd003f84ed1166ec6",
+    "service_name": "prometheus.default.svc.cluster.local|prometheus",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.1b33d702979c352c8053a70beacf409f024e98eb",
+    "service_name": "istio-egress.default.svc.cluster.local",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.25a1a9a34ddf5dbc7797b6bb77c660ea5d6a1e4b",
+    "service_name": "nginx.default.svc.cluster.local|envoyadmin",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.2c4950712045e0d7cab567406a89589a45402b30",
+    "service_name": "grafana.default.svc.cluster.local|grafana",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.4205d7a46b381fa61a80695e535209023019b246",
+    "service_name": "nginx.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.4cd54daeea2a7b6b0a99e1ce9239a17575d26a46",
+    "service_name": "nginx.default.svc.cluster.local|mixerconf",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.4eeeb6134ebc82c6765c53bbb421488179cffd03",
+    "service_name": "nginx.default.svc.cluster.local|envoystatsd",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.5c016f2d2e2d3e962a6e31bbdf6a85bc09d219f7",
+    "service_name": "nginx.default.svc.cluster.local|prom",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.613663238fb620535d24aaf4ed1131d32b9e52e7",
+    "service_name": "istio-mixer.default.svc.cluster.local|configapi",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.64a5722ae8d6cfbb7c8968b6de8ce26c7c7dd032",
+    "service_name": "kubernetes.default.svc.cluster.local|https",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.96c4dfcd665fa0caf6f48ab026e4263d1d17bac2",
+    "service_name": "istio-pilot.default.svc.cluster.local|http-apiserver",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.9d29c4ef2e1e1b4827148cd5a71fab978e90918a",
+    "service_name": "justhello.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.a49404239b7341d522ab5653b862be41fc02c06c",
+    "service_name": "nginx.default.svc.cluster.local|mixerprom",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.b9535e6694323543677e0f181d314a2624dcae6f",
+    "service_name": "istio-pilot-ilb.default.svc.cluster.local",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.c38145e999b9cc753c429c7cb5906247a34f77c9",
+    "service_name": "servicegraph.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.c585980af0793384480c7998912f77c2c410e26c",
+    "service_name": "istio-mixer.default.svc.cluster.local|prometheus",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.d4b7b8f0956df1349295f2961f70aebc9f6647aa",
+    "service_name": "nginxistio.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.e5c9564b7c4dbb0355a4f740e9d29277ccca97cd",
+    "service_name": "hello.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.e7806d18cf47a495ba0728f7174f385c9c507720",
+    "service_name": "nginx.default.svc.cluster.local|manager",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.ed7dceb7d7133b12d471052b173524b21fa6ad70",
+    "service_name": "zipkin.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.f304b28d7cb12017c731fd67b78c9c87924b8fde",
+    "service_name": "nginx.default.svc.cluster.local|mixer",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.f576d95a3e0e7f57142daccfd0834b399ef96dfe",
+    "service_name": "istio-mixer.default.svc.cluster.local|tcp",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   },
+   {
+    "name": "out.fd518f1d0ba070c47739cbf6b191f85eb1cdda3d",
+    "service_name": "istio-ingress.default.svc.cluster.local|http",
+    "connect_timeout_ms": 1000,
+    "type": "sds",
+    "lb_type": "round_robin"
+   }
+  ]
+ }
