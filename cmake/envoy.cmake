@@ -53,8 +53,8 @@ set(ENVOY_SOURCE_FILES
         ${ISTIO_NATIVE}/envoy/source/common/grpc/grpc_web_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/grpc/json_transcoder_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/grpc/transcoder_input_stream_impl.cc
-        ${ISTIO_NATIVE}/envoy/source/common/http/access_log/access_log_formatter.cc
-        ${ISTIO_NATIVE}/envoy/source/common/http/access_log/access_log_impl.cc
+        ${ISTIO_NATIVE}/envoy/source/common/access_log/access_log_formatter.cc
+        ${ISTIO_NATIVE}/envoy/source/common/access_log/access_log_impl.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/buffer_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/fault_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/ip_tagging_filter.cc
@@ -98,6 +98,7 @@ set(ENVOY_SOURCE_FILES
         ${ISTIO_NATIVE}/envoy/source/common/router/config_impl.cc
         ${ISTIO_NATIVE}/envoy/source/common/router/config_utility.cc
         ${ISTIO_NATIVE}/envoy/source/common/router/rds_impl.cc
+        ${ISTIO_NATIVE}/envoy/source/common/router/resp_header_parser.cc
         ${ISTIO_NATIVE}/envoy/source/common/router/rds_subscription.cc
         ${ISTIO_NATIVE}/envoy/source/common/router/req_header_formatter.cc
         ${ISTIO_NATIVE}/envoy/source/common/router/retry_state_impl.cc
@@ -182,19 +183,29 @@ set(ENVOY_SOURCE_FILES
 
         ${ISTIO_GENFILES}/external/envoy_api/api/address.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/bootstrap.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/auth.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/cds.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/mongo_proxy.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/http_connection_manager.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/buffer.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/health_check.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/fault.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/router.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog/accesslog.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/fault.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/mongo_proxy.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/redis_proxy.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/tcp_proxy.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/http_connection_manager.pb.cc
+
 
         ${ISTIO_GENFILES}/external/envoy_api/api/discovery.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/lds.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/protocol.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/rds.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/sds.pb.cc
+
+        ${ISTIO_GENFILES}/external/com_lyft_protoc_gen_validate/validate/validate.pb.cc
         #${ISTIO_GENFILES}/external/envoy_api/api/tls_context.pb.cc
         #${ISTIO_GENFILES}/external/envoy_api/api/filter/http_connection_manager.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/base.pb.cc
@@ -237,6 +248,7 @@ else ()
 endif ()
 
 target_include_directories(envoy PRIVATE
+        ${ISTIO_GENFILES}/external/com_lyft_protoc_gen_validate
         ${ISTIO_GENFILES}/external/envoy_api
         ${ISTIO_GENFILES}/external/envoy
         ${ISTIO_GENFILES}/external/googleapis_git
@@ -267,6 +279,7 @@ target_include_directories(envoy PRIVATE
         ${ISTIO_NATIVE}/grpc_transcoding/src/include
 
         ${ISTIO_NATIVE}/envoy/include
+        ${ISTIO_NATIVE}/abseil-cpp
         )
 
 target_link_libraries(envoy PUBLIC tracer)
@@ -281,4 +294,5 @@ target_link_libraries(envoy PUBLIC libprotobuf)
 target_link_libraries(envoy PUBLIC yaml-cpp)
 target_link_libraries(envoy PUBLIC grpc_transcoding)
 target_link_libraries(envoy PUBLIC xxhash)
+target_link_libraries(envoy PUBLIC absl_base)
 

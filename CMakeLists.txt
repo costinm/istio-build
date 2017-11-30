@@ -6,8 +6,11 @@ project(istio)
 set(ISTIO_BASE "" CACHE string "Istio base directory, default to current dir")
 set(ISTIO_NATIVE "src" CACHE string "Native source directory")
 set(ISTIO_CMAKE "build/contrib/cmake" CACHE string "Custom CMake files" FORCE)
+# Duplicate gtest with boring ssl
+set(YAML_CPP_BUILD_TESTS FALSE)
+set(ABSL_NO_TEST TRUE)
 
-set(ISTIO_GENFILES "genfiles/bazel" CACHE string "Location of generated files")
+set(ISTIO_GENFILES "genfiles/bazel" CACHE string "Location of generated files" FORCE)
 # TODO: convince envoy to preserve genfiles.
 set(ISTIO_DEP_GENFILES "genfiles" CACHE string "Location of dependency genfiles. Envoy doesn't preserve them.")
 
@@ -28,6 +31,7 @@ set(ZLIB_LIBRARY "" CACHE string "no zlib" FORCE)
 # To compile boring ssl - requires go in path
 set(GO_EXECUTABLE "go")
 
+set(BUILD_TESTING OFF CACHE bool "" FORCE)
 # protobuf requires it
 add_definitions(-DHAVE_PTHREAD)
 
@@ -36,10 +40,13 @@ set_property(GLOBAL PROPERTY OPENSSL_ROOT_DIR ${ISTIO_NATIVE}/boringssl/src)
 # Projects already using cmake
 # Doesn't work with CMake 2.8 on trusty
 add_subdirectory(${ISTIO_NATIVE}/libevent)
-add_subdirectory(${ISTIO_NATIVE}/boringssl/src)
+add_subdirectory(${ISTIO_NATIVE}/boringssl/src EXCLUDE_FROM_ALL)
 add_subdirectory(${ISTIO_NATIVE}/yaml-cpp)
 add_subdirectory(${ISTIO_NATIVE}/xxhash/cmake_unofficial)
 add_subdirectory(${ISTIO_NATIVE}/protobuf/cmake)
+add_subdirectory(${ISTIO_NATIVE}/cctz)
+add_subdirectory(${ISTIO_NATIVE}/googletest)
+add_subdirectory(${ISTIO_NATIVE}/abseil-cpp)
 
 # Packages without cmake support - custom files, similar with the custom bazel
 include(${ISTIO_CMAKE}/cares.cmake)

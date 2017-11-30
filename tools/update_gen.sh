@@ -21,7 +21,11 @@ function genUpdate() {
     cp -f src/envoy/source/common/filesystem/inotify/watcher_impl.h $GEN/common/filesystem
 
     # Built during envoy_deps, but not included in bazel (deleted after autoconf/build)
-    PROTOC=$PROXY/bazel-out/host/bin/external/com_google_protobuf/protoc
+    if [ -d $PROXY/bazel-out/host/bin/external/ ] ; then
+        PROTOC=$PROXY/bazel-out/host/bin/external/com_google_protobuf/protoc
+    else
+        PROTOC=bazel-out/host/bin/external/com_google_protobuf/protoc
+    fi
     $PROTOC  --proto_path=$DEPS/lightstep-tracer-common/:$DEPS/protobuf/src --cpp_out=$GEN $DEPS/lightstep-tracer-common/lightstep_carrier.proto
     $PROTOC  --proto_path=$DEPS/lightstep-tracer-common/:$DEPS/protobuf/src --cpp_out=$GEN $DEPS/lightstep-tracer-common/collector.proto
 
