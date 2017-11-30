@@ -4,7 +4,7 @@ ISTIO_TAG ?= ${USERNAME}
 export TOP = $(shell pwd)
 export ISTIO_SRC = ${TOP}
 
-.PHONY: build cmake docker docker-build-images deb gen go
+.PHONY: build cmake docker docker-build-images deb gen go cmake-alpine cmake-pi
 
 # Build binaries, ready for local testing
 build: go

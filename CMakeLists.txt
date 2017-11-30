@@ -7,7 +7,7 @@ set(ISTIO_BASE "" CACHE string "Istio base directory, default to current dir")
 set(ISTIO_NATIVE "src" CACHE string "Native source directory")
 set(ISTIO_CMAKE "build/contrib/cmake" CACHE string "Custom CMake files" FORCE)
 # Duplicate gtest with boring ssl
-set(YAML_CPP_BUILD_TESTS FALSE)
+set(YAML_CPP_BUILD_TESTS OFF CACHE bool "disable yaml gtest dup" FORCE)
 set(ABSL_NO_TEST TRUE)
 
 set(ISTIO_GENFILES "genfiles/bazel" CACHE string "Location of generated files" FORCE)
@@ -45,8 +45,8 @@ add_subdirectory(${ISTIO_NATIVE}/yaml-cpp)
 add_subdirectory(${ISTIO_NATIVE}/xxhash/cmake_unofficial)
 add_subdirectory(${ISTIO_NATIVE}/protobuf/cmake)
 add_subdirectory(${ISTIO_NATIVE}/cctz)
-add_subdirectory(${ISTIO_NATIVE}/googletest)
-add_subdirectory(${ISTIO_NATIVE}/abseil-cpp)
+#add_subdirectory(${ISTIO_NATIVE}/googletest)
+#add_subdirectory(${ISTIO_NATIVE}/abseil-cpp)
 
 # Packages without cmake support - custom files, similar with the custom bazel
 include(${ISTIO_CMAKE}/cares.cmake)

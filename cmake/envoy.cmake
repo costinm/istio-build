@@ -215,6 +215,7 @@ set(ENVOY_SOURCE_FILES
 
         ${ISTIO_GENFILES}/external/googleapis_git/google/api/annotations.pb.cc
         ${ISTIO_GENFILES}/external/googleapis_git/google/api/http.pb.cc
+        ${ISTIO_NATIVE}/abseil-cpp/absl/base/internal/spinlock_wait.cc
         )
 
 # Not working/used on android or musl. The file installs a signal handler for backtraces.
@@ -294,5 +295,4 @@ target_link_libraries(envoy PUBLIC libprotobuf)
 target_link_libraries(envoy PUBLIC yaml-cpp)
 target_link_libraries(envoy PUBLIC grpc_transcoding)
 target_link_libraries(envoy PUBLIC xxhash)
-target_link_libraries(envoy PUBLIC absl_base)
 
