@@ -46,14 +46,14 @@ local_repository(
 )
 
 load(
-    "@build_contrib//:proxy_mixer_repositories.bzl",
+    "@build_contrib//bazel:proxy_mixer_repositories.bzl",
     "mixer_client_repositories",
 )
 
 mixer_client_repositories()
 
 load(
-    "@build_contrib//:mixerclient_repositories.bzl",
+    "@build_contrib//bazel/:mixerclient_repositories.bzl",
     "mixerapi_repositories",
 )
 

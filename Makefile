@@ -3,6 +3,19 @@ BAZEL_TARGET_DIR ?= "bazel-bin/external/proxy/src/envoy/mixer"
 ISTIO_TAG ?= ${USERNAME}
 export TOP = $(shell pwd)
 export ISTIO_SRC = ${TOP}
+export ANDROID_SDK ?= /opt/android-sdk
+export NDK ?= ${ANDROID_SDK}/ndk-bundle
+# Should match the version installed in the docker image or local disk
+ANDROID_CMAKE_VERSION ?= 3.6.4111459
+
+OUT ?= out
+DIST ?= ${OUT}/dist
+
+# Examples:
+# - build
+#    make dist
+# - build pi with verbose commands:
+#    make pi MFLAGS="VERBOSE=1"
 
 .PHONY: build cmake docker docker-build-images deb gen go cmake-alpine cmake-pi
 
@@ -78,7 +91,7 @@ DBUILD=${TOP}/build/contrib/dbuild.sh
 
 cmake-pi:
 	mkdir -p cmake-pi-debug
-	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; cmake -DCMAKE_TOOLCHAIN_FILE=../build/contrib/cmake/pi.cmake  -DISTIO_GENFILES=genfiles/bazel .. && make ${MFLAGS} envoy"
+	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; cmake -DCMAKE_TOOLCHAIN_FILE=../build/contrib/cmake/pi.toolchain.cmake  -DISTIO_GENFILES=genfiles/bazel .. && make ${MFLAGS} envoy"
 
 cmake-ipi:
 	${DBUILD} ${DEPOT}/istio-pi-build "cd cmake-pi-debug; make ${MFLAGS} envoy"
@@ -89,7 +102,34 @@ cmake-alpine:
 
 cmake-android:
 	mkdir -p cmake-android-debug
-	${DBUILD} ${DEPOT}/istio-android-build ./build/contrib/cmake/android.sh
+	${DBUILD} ${DEPOT}/istio-android-build "make android"
+	# ./build/contrib/cmake/android.sh
+
+ISTIO_SRC_DIRS=go/src/istio.io/{api,istio} src/{proxy,mixerclient,envoy,envoy-api}
+dist:
+	mkdir -p ${DIST}
+	# Native and go dependencies
+	tar cfz ${DIST}/istio_src_all.tgz src go build WORKSPACE CMakeLists.txt Makefile
+	tar cfz ${DIST}/istio_src.tgz ${ISTIO_SRC_DIRS}
+	tar cfz ${DIST}/istio_src_deps_native.tgz src --exclude ${ISTIO_SRC_DIRS}
+	tar cfz ${DIST}/istio_src_vendor.tgz go/src/istio.io/istio/vendor
+
+
+android:
+	mkdir -p cmake-android-debug; \
+	cd cmake-android-debug; \
+	${ANDROID_SDK}/cmake/${ANDROID_CMAKE_VERSION}/bin/cmake \
+     -DISTIO_GENFILES=genfiles/bazel \
+     -DANDROID_CPP_FEATURES=rtti \
+     -DANDROID_STL=c++_static \
+     -DANDROID_TOOLCHAIN=clang \
+     -DANDROID_PLATFORM=android-26  \
+     -DANDROID_NDK=/opt/android-sdk/ndk-bundle \
+     -DCMAKE_TOOLCHAIN_FILE=${NDK}/build/cmake/android.toolchain.cmake \
+     .. && \
+    make ${MFLAGS} envoy && \
+    cp envoy envoy-debug && \
+    ${NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-strip envoy
 
 
 cmake-local:

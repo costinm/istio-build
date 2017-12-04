@@ -248,6 +248,8 @@ else ()
     set_target_properties(envoy PROPERTIES COMPILE_FLAGS "-DBUILD_SCM_STATUS=\\\"1\\\" -DBUILD_SCM_REVISION=\\\"2\\\" -D_GLIBCXX_REGEX_STATE_LIMIT")
 endif ()
 
+set(CMAKE_CXX_FLAGS " -DHAVE_LONG_LONG ${CMAKE_CXX_FLAGS}")
+
 target_include_directories(envoy PRIVATE
         ${ISTIO_GENFILES}/external/com_lyft_protoc_gen_validate
         ${ISTIO_GENFILES}/external/envoy_api

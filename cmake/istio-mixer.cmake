@@ -15,6 +15,7 @@ set(ISTIOPROXY_SOURCES
         ${ISTIO_NATIVE}/mixerclient/src/attribute_compressor.cc
         ${ISTIO_NATIVE}/mixerclient/src/attributes_builder.cc
         ${ISTIO_NATIVE}/mixerclient/src/check_cache.cc
+        # CLang build errors
         ${ISTIO_NATIVE}/mixerclient/src/referenced.cc
         ${ISTIO_NATIVE}/mixerclient/src/client_impl.cc
         ${ISTIO_NATIVE}/mixerclient/src/delta_update.cc
