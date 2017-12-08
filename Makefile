@@ -26,9 +26,9 @@ build: go
 
 # Build deb files
 deb:
-	bazel build @proxy//tools/deb:istio-proxy
+	bazel build @proxy//tools/deb:istio-proxy ${BAZEL_BUILD_ARGS}
 	(cd go/src/istio.io/istio; bazel build pilot/tools/deb/... \
-		security/tools/deb/...)
+		security/tools/deb/... ${BAZEL_BUILD_ARGS})
 
 # Build docker images - without uploading
 docker:
@@ -107,7 +107,14 @@ cmake-android:
 
 ISTIO_SRC_DIRS=go/src/istio.io/{api,istio} src/{proxy,mixerclient,envoy,envoy-api}
 dist:
-	mkdir -p ${DIST}
+	mkdir -p ${DIST}/
+	mkdir -p ${DIST}/bin/android && \
+	    cp ${TOP}/cmake-android-debug/{envoy,envoy-debug} ${DIST}/bin/android/envoy
+	mkdir -p ${DIST}/bin/alpine && \
+	    cp ${TOP}/cmake-alpine-debug/envoy ${DIST}/bin/alpine/envoy
+	mkdir -p ${DIST}/bin/pi && \
+	    cp ${TOP}/cmake-pi-debug/envoy ${DIST}/bin/pi/envoy
+	repo manifest -o ${DIST}/repo.xml
 	# Native and go dependencies
 	tar cfz ${DIST}/istio_src_all.tgz src go build WORKSPACE CMakeLists.txt Makefile
 	tar cfz ${DIST}/istio_src.tgz ${ISTIO_SRC_DIRS}
@@ -136,9 +143,6 @@ cmake-local:
 	mkdir -p cmake-build-debug
 	(cd cmake-build-debug; cmake ..)
 	(cd cmake-build-debug; make envoy ${CMAKE_MAKE_OPT})
-
-cmake:
-	 ./build/tools/build_cmake.sh
 
 run-envoy-docker:
 	 docker run --rm -it --entrypoint /bin/bash \

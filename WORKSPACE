@@ -53,7 +53,7 @@ load(
 mixer_client_repositories()
 
 load(
-    "@build_contrib//bazel/:mixerclient_repositories.bzl",
+    "@build_contrib//bazel:mixerclient_repositories.bzl",
     "mixerapi_repositories",
 )
 
