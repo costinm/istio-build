@@ -1,16 +1,13 @@
-
-FROM ubuntu:xenial
+FROM circleci/golang:latest
 
 # Install the build environment needed to compile Istio sidecar for pi
 #  docker build -t docker.io/costinm/istio-pi-build docker/pi-build
 
-RUN apt-get update \
-  && apt-get -qqy install g++ gcc make perl cmake git bash golang
-
-# mkdir /opt/pi && cd /opt/pi && git clone https://github.com/raspberrypi/tools
-
-RUN apt-get -qqy install \
+RUN sudo apt-get update \
+  && sudo apt-get -qqy install g++ gcc make perl cmake git bash \
   gcc-arm-linux-gnueabihf \
-  g++-arm-linux-gnueabihf pkg-config-arm-linux-gnueabihf
+  g++-arm-linux-gnueabihf \
+  curl
 
-RUN apt-get -y install gcc-5 g++-5
+RUN curl -Lo /tmp/repo https://storage.googleapis.com/git-repo-downloads/repo &&\
+    chmod a+x /tmp/repo && sudo mv /tmp/repo /usr/local/bin

@@ -63,17 +63,17 @@ go:
 ### Docker images used for CI
 
 docker-builder:
-	docker build -t ${DEPOT}/istio-fpm-build build/docker/fpm
-	docker build -t ${DEPOT}/istio-alpine-build build/docker/alpine-build
-	docker build -t ${DEPOT}/istio-android-build build/docker/android-build
-	docker build -t ${DEPOT}/istio-pi-build build/docker/pi-build
-	docker build -t ${DEPOT}/istio-repo-build build/docker/repo-build
+	docker build -t ${DEPOT}/istio-pi-build build/contrib/docker/pi-build
+	docker build -t ${DEPOT}/istio-fpm-build build/contrib/docker/fpm
+	docker build -t ${DEPOT}/istio-alpine-build build/contrib/docker/alpine-build
+	docker build -t ${DEPOT}/istio-android-build build/contrib/docker/android-build
+	docker build -t ${DEPOT}/istio-repo-build build/contrib/docker/repo-build
 
 docker-builder-push:
+	docker push ${DEPOT}/istio-pi-build
 	docker push ${DEPOT}/istio-fpm-build
 	docker push ${DEPOT}/istio-alpine-build
 	docker push ${DEPOT}/istio-android-build
-	docker push ${DEPOT}/istio-pi-build
 	docker push ${DEPOT}/istio-repo-build
 
 #### Cross compilation
@@ -126,7 +126,7 @@ android:
 	mkdir -p cmake-android-debug; \
 	cd cmake-android-debug; \
 	${ANDROID_SDK}/cmake/${ANDROID_CMAKE_VERSION}/bin/cmake \
-     -DISTIO_GENFILES=genfiles/bazel \
+     -buildDISTIO_GENFILES=genfiles/bazel \
      -DANDROID_CPP_FEATURES=rtti \
      -DANDROID_STL=c++_static \
      -DANDROID_TOOLCHAIN=clang \

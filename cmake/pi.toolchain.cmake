@@ -12,8 +12,8 @@ SET(PI_ROOTFS /opt/pi/tools/rootfs)
 #SET(CMAKE_C_COMPILER ${PI_TOOLCHAIN}/bin/arm-linux-gnueabihf-gcc)
 #SET(CMAKE_CXX_COMPILER ${PI_TOOLCHAIN}/bin/arm-linux-gnueabihf-g++)
 
-SET(CMAKE_C_COMPILER /usr/bin/arm-linux-gnueabihf-gcc-5)
-SET(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabihf-g++-5)
+SET(CMAKE_C_COMPILER /usr/bin/arm-linux-gnueabihf-gcc-6)
+SET(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabihf-g++-6)
 
 SET(CMAKE_FIND_ROOT_PATH ${PI_ROOTFS})
 SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
