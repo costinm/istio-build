@@ -227,7 +227,8 @@ set(ENVOY_SOURCE_FILES
         ${ISTIO_GENFILES}/external/googleapis/google/api/annotations.pb.cc
         ${ISTIO_GENFILES}/external/googleapis/google/api/http.pb.cc
         # TODO: move to separate cmake - the abseil cmake doesn't seem to work on ARM
-        ${ISTIO_NATIVE}/abseil-cpp/absl/base/internal/spinlock_wait.cc
+        # This also doesn't compile on android.
+        #${ISTIO_NATIVE}/abseil-cpp/absl/base/internal/spinlock_wait.cc
         )
 
 # Not working/used on android or musl. The file installs a signal handler for backtraces.
