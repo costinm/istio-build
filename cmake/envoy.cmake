@@ -183,41 +183,49 @@ set(ENVOY_SOURCE_FILES
         ${ISTIO_NATIVE}/envoy/source/exe/main.cc
         ${ISTIO_NATIVE}/envoy/source/exe/main_common.cc
 
-        ${ISTIO_GENFILES}/external/envoy_api/api/address.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/bootstrap.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/auth.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/cds.pb.cc
+
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/http_connection_manager.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/buffer.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/health_check.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/fault.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/http/router.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog/accesslog.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/http/buffer.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/http/health_check.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/http/fault.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/fault.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/http/router.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog/accesslog.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/mongo_proxy.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/redis_proxy.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/tcp_proxy.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/http_connection_manager.pb.cc
+
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/accesslog.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/fault.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/filter/network/mongo_proxy.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/network/redis_proxy.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/network/tcp_proxy.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/filter/network/http_connection_manager.pb.cc
 
 
+        ${ISTIO_GENFILES}/external/envoy_api/api/address.pb.cc
+        #${ISTIO_GENFILES}/external/envoy_api/api/auth.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/base.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/bootstrap.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/cds.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/discovery.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/eds.pb.cc
+        ${ISTIO_GENFILES}/external/envoy_api/api/health_check.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/lds.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/protocol.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/rds.pb.cc
         ${ISTIO_GENFILES}/external/envoy_api/api/sds.pb.cc
 
-        ${ISTIO_GENFILES}/external/com_lyft_protoc_gen_validate/validate/validate.pb.cc
+        #${ISTIO_GENFILES}/external/com_lyft_protoc_gen_validate/validate/validate.pb.cc
         #${ISTIO_GENFILES}/external/envoy_api/api/tls_context.pb.cc
         #${ISTIO_GENFILES}/external/envoy_api/api/filter/http_connection_manager.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/base.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/health_check.pb.cc
-        ${ISTIO_GENFILES}/external/envoy_api/api/eds.pb.cc
         ${ISTIO_GENFILES}/external/envoy/source/common/ratelimit/ratelimit.pb.cc
 
-        ${ISTIO_GENFILES}/external/googleapis_git/google/api/annotations.pb.cc
-        ${ISTIO_GENFILES}/external/googleapis_git/google/api/http.pb.cc
+        #${ISTIO_GENFILES}/external/googleapis_git/google/api/annotations.pb.cc
+        #${ISTIO_GENFILES}/external/googleapis_git/google/api/http.pb.cc
+        ${ISTIO_GENFILES}/external/com_github_googleapis_googleapis/google/rpc/status.pb.cc
 
+        ${ISTIO_GENFILES}/external/googleapis/google/api/annotations.pb.cc
+        ${ISTIO_GENFILES}/external/googleapis/google/api/http.pb.cc
         # TODO: move to separate cmake - the abseil cmake doesn't seem to work on ARM
         ${ISTIO_NATIVE}/abseil-cpp/absl/base/internal/spinlock_wait.cc
         )
@@ -259,12 +267,14 @@ target_include_directories(envoy PRIVATE
         ${ISTIO_GENFILES}/external/envoy_api
         ${ISTIO_GENFILES}/external/envoy
         ${ISTIO_GENFILES}/external/googleapis_git
+        ${ISTIO_GENFILES}/external/googleapis
         ${ISTIO_NATIVE}/nghttp2/lib/includes
         ${ISTIO_DEP_GENFILES}/
 
         ${ISTIO_DEP_GENFILES}/cares/
 
         ${CMAKE_BINARY_DIR}/src/libevent/include
+        ${CMAKE_BINARY_DIR}/vendor/src/libevent/include
 
         ${ISTIO_NATIVE}/lightstep/src/c++11
         ${ISTIO_NATIVE}/protobuf/src
@@ -287,12 +297,14 @@ target_include_directories(envoy PRIVATE
 
         ${ISTIO_NATIVE}/envoy/include
         ${ISTIO_NATIVE}/abseil-cpp
+        ${ISTIO_GENFILES}/external/com_github_googleapis_googleapis
         )
 
 target_link_libraries(envoy PUBLIC tracer)
 target_link_libraries(envoy PUBLIC http-parser)
 target_link_libraries(envoy PUBLIC cares)
 target_link_libraries(envoy PUBLIC ssl)
+target_link_libraries(envoy PUBLIC istiomixer)
 target_link_libraries(envoy PUBLIC crypto)
 target_link_libraries(envoy PUBLIC nghttp2)
 target_link_libraries(envoy PUBLIC event_pthreads_static)

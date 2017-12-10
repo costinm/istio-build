@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 project(istio)
 
 set(ISTIO_BASE "" CACHE string "Istio base directory, default to current dir")
+set(ISTIO_PROXY "project" CACHE string "Proxy source directory")
 set(ISTIO_NATIVE "src" CACHE string "Native source directory")
 set(ISTIO_CMAKE "build/contrib/cmake" CACHE string "Custom CMake files" FORCE)
 # Duplicate gtest with boring ssl
@@ -54,6 +55,7 @@ include(${ISTIO_CMAKE}/lightstep-tracer.cmake)
 include(${ISTIO_CMAKE}/http-parser.cmake)
 include(${ISTIO_CMAKE}/nghttp2.cmake)
 include(${ISTIO_CMAKE}/istio-mixer.cmake)
+include(${ISTIO_CMAKE}/istio-proxy.cmake)
 include(${ISTIO_CMAKE}/grpc_transcoding.cmake)
 
 include(${ISTIO_CMAKE}/envoy.cmake)
