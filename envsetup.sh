@@ -1,3 +1,4 @@
+# Android-inspired environment setup for istio builds.
 
 # Run '. build/envsetup.sh' first. Will set environment variables
 # and functions used for the build and test env.

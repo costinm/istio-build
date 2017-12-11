@@ -1,4 +1,3 @@
-
 # Get a cert, for GCloud DNS
 # https://github.com/xenolf/lego/blob/master/providers/dns/googlecloud/googlecloud.go
 
@@ -12,5 +11,4 @@ function getCert() {
 
     GCE_SERVICE_ACCOUNT_FILE=$ISTIOENV/dns.json \
     lego --email $EMAIL --domains productpage.release02.istio.webinf.info --dns=gcloud run
-
 }

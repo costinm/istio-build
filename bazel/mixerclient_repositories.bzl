@@ -106,7 +106,7 @@ cc_library(
             actual = "@googletest_git//:googletest_main",
         )
 
-        native.bind(
+cmake        native.bind(
             name = "googletest_prod",
             actual = "@googletest_git//:googletest_prod",
         )

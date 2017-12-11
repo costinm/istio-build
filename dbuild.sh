@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Small shell script to run a transient docker build step, as current user
-# The command will be run with the ID and USER of the caller of the script,
-# using the current directory mounted as "WS".
+# using the current directory mounted as "WS" (may be set as /workspace or
+# /home/circleci).
 
 IMG=$1
 shift

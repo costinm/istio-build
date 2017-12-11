@@ -79,8 +79,8 @@ docker-builder-push:
 #### Cross compilation
 CMAKE_MAKE_OPT?=-j 8
 
-# Generate files for cmake build.
-# Must be called periodically, and before cmake cross targets
+# Update generated files, currently using the bazel build and manual protoc.
+# Must be called, and results uploaded to github.
 gen:
 	 ./build/contrib/tools/update_gen.sh gen
 

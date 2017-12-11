@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Experimenting with external DNS to setup the test env.
+
 function build() {
   export GOPATH=/workspace/extdns
   mkdir -p $GOPATH
