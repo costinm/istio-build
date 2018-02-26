@@ -9,6 +9,7 @@ set(ISTIOPROXY_SOURCES
         ${ISTIO_PROXY}/src/envoy/auth/http_filter.cc
         ${ISTIO_PROXY}/src/envoy/auth/http_filter_config.cc
         ${ISTIO_PROXY}/src/envoy/auth/jwt.cc
+        ${ISTIO_PROXY}/src/envoy/mixer/stats.cc
         )
 
 

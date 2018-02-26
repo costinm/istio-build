@@ -59,6 +59,7 @@ set(ENVOY_SOURCE_FILES
         #${ISTIO_NATIVE}/envoy/source/common/access_log/access_log_impl.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/buffer_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/fault_filter.cc
+        ${ISTIO_NATIVE}/envoy/source/common/http/filter/cors_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/ip_tagging_filter.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/filter/ratelimit.cc
         ${ISTIO_NATIVE}/envoy/source/common/http/http1/codec_impl.cc
@@ -149,6 +150,8 @@ set(ENVOY_SOURCE_FILES
         ${ISTIO_NATIVE}/envoy/source/server/config/http/ratelimit.cc
         ${ISTIO_NATIVE}/envoy/source/server/config/http/grpc_web.cc
         ${ISTIO_NATIVE}/envoy/source/server/config/http/ip_tagging.cc
+        ${ISTIO_NATIVE}/envoy/source/server/config/http/file_access_log.cc
+        ${ISTIO_NATIVE}/envoy/source/server/config/http/cors.cc
         ${ISTIO_NATIVE}/envoy/source/server/config/http/router.cc
         ${ISTIO_NATIVE}/envoy/source/server/config/network/client_ssl_auth.cc
         ${ISTIO_NATIVE}/envoy/source/server/config/network/echo.cc
