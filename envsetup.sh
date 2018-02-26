@@ -20,6 +20,9 @@ export PATH=$GOPATH/bin:$ISTIO_OUT:$PATH
 export HUB=${ISTIO_HUB:-grc.io/istio-testing}
 export TAG=${ISTIO_TAG:-$USER}
 
+export LOG_DIR=${TOP}/out/logs
+mkdir -p $LOG_DIR
+
 # Artifacts and temporary files.
 export OUT=${GOPATH}/out
 
@@ -59,13 +62,6 @@ alias kwatch="kubectl get events --all-namespaces -w"
 alias kall="kubectl get all --all-namespaces -o wide"
 alias kpo="kubectl get po --all-namespaces -o wide"
 
-# Kubernetes forward port by label. Will use the same port as the app.
-function kfwd() {
-    local port=$1
-    local label=$2
-    local ns=${3:-istio-system}
-    kubectl --namespace=$ns port-forward $(kubectl --namespace=$ns get -l $label pod -o=jsonpath='{.items[0].metadata.name}') $port:$port
-}
 
 function klog() {
     local label=$1
@@ -87,16 +83,68 @@ function kexec() {
     kubectl --namespace=$ns exec -it $(kubectl --namespace=$ns get -l $label pod -o=jsonpath='{.items[0].metadata.name}') -c $container /bin/bash
 }
 
-function kfwd-pilot() {
-    kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l istio=pilot pod -o=jsonpath='{.items[0].metadata.name}') 15003:8080
+function pilot-get() {
+    curl localhost:15003/cache_stats
 }
 
-function klog-pilot() {
+function pilot-logs() {
     klog istio=pilot discovery istio-system $*
 }
 
-function kexec-pilot() {
+function pilot-exec() {
     kexec istio=pilot
+}
+
+function istio-fwd() {
+    fwd-prom
+    fwd-grafana
+    fwd-servicegraph
+    pilot-fwd
+}
+
+# Kubernetes forward port by label. Will use the same port as the app.
+function kfwd() {
+    local port=$1
+    local label=$2
+    local ns=${3:-istio-system}
+    kubectl --namespace=$ns port-forward $(kubectl --namespace=$ns get -l $label pod -o=jsonpath='{.items[0].metadata.name}') $port:$port
+}
+
+function fwdApp() {
+    local N=$1
+    local P=$2
+
+    if [[ -f $LOG_DIR/fwd-$N.pid ]] ; then
+        kill -9 $(cat $LOG_DIR/fwd-$N.pid)
+    fi
+
+    echo "$N http://localhost:$P"
+    kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l app=$N pod -o=jsonpath='{.items[0].metadata.name}') $P:$P &
+    echo $! > $LOG_DIR/fwd-$N.pid
+}
+
+function pilot-fwd() {
+    local N=pilot
+
+    if [[ -f $LOG_DIR/fwd-$N.pid ]] ; then
+        kill -9 $(cat $LOG_DIR/fwd-$N.pid)
+    fi
+
+    echo "Pilot http://localhost:15003/cache_stats"
+    kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l istio=pilot pod -o=jsonpath='{.items[0].metadata.name}') 15003:8080
+    echo $! > $LOG_DIR/fwd-$N.pid
+}
+
+function fwd-prom() {
+    fwdApp prometheus 9090
+}
+
+function fwd-grafana() {
+    fwdApp grafana 3000
+}
+
+function fwd-servicegraph() {
+    fwdApp servicegraph 8088
 }
 
 alias istiocurl="curl -k --cert /etc/certs/cert-chain.pem --cacert /etc/certs/root-cert.pem --key /etc/certs/key.pem  "
@@ -165,17 +213,23 @@ function stop() {
 # To see generated config and apply custom configs:
 #    kubeapply=less istioDeploy install/kubernetes/istio-helm/scale.yaml
 function istioDeploy() {
-     local v=${1:-install/kubernetes/values-istiotest.yaml}
+     local v=${1:-install/kubernetes/helm/istio/values-istiotest.yaml}
      kubectl create ns istio-system >/dev/null  2>&1
 
-     local apply=${kubeapply:-kubectl apply -f -}
+     local apply=${kubeapply:-kubectl apply -n istio-system -f -}
      echo Deploy istio with $TAG and $HUB $ISTIO_IP:30080
 #     (cd install/kubernetes/istio-helm ; istioctl gen-deploy -o yaml --values $v ) | kubectl apply -f -
-     helm template --values $v \
-       --set ingressNodePort=30080 \
-       --set istioTag=$TAG \
-       --set istioHub=$HUB \
-       install/kubernetes | $apply
+     helm template --namespace istio-system --values $v \
+       --set global.tag=$TAG \
+       --set global.hub=$HUB \
+       install/kubernetes/helm/istio | $apply
+}
+
+function istioDeployDefault() {
+     local v=${1:-install/kubernetes/helm/istio/values-istiotest.yaml}
+     kubectl create ns istio-system >/dev/null  2>&1
+     helm template --namespace istio-system --values $v \
+          install/kubernetes/helm/istio | kubectl apply -n istio-system -f -
 }
 
 # Deploy istio test apps.
@@ -185,7 +239,7 @@ function istioDeployTest() {
      local apply=${kubeapply:-kubectl apply -n istio-test -f -}
 
      kubectl create ns istio-test
-     helm template tests/helm --set testHub=$HUB --set testTag=$TAG $v | istioctl \
+     helm template tests/helm --namespace isti-test --set testHub=$HUB --set testTag=$TAG $v | istioctl \
         kube-inject --debug --meshConfigMapName=istio --hub $HUB --tag $TAG -f - | $apply
 }
 
