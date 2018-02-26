@@ -5,7 +5,7 @@
 
 # Source the file with: ". envsetup.sh"
 
-export TOP=$(cd $(dirname $0)/../../..; pwd)
+export TOP=$(cd ../../..; pwd)
 export GO_TOP=$TOP
 # Used in the shell scripts.
 export ISTIO_SRC=$TOP
@@ -185,7 +185,9 @@ function istioDeployTest() {
      local apply=${kubeapply:-kubectl apply -n istio-test -f -}
 
      kubectl create ns istio-test
-     helm template tests/helm --set testHub=$HUB --set testTag=$TAG $v | istioctl \
+     helm template tests/helm --set testHub=$HUB --set testTag=$TAG   --set istioTag=$TAG \
+       --set istioHub=$HUB \
+           $v | istioctl \
         kube-inject --debug --meshConfigMapName=istio --hub $HUB --tag $TAG -f - | $apply
 }
 
@@ -222,3 +224,22 @@ function istioTestPilot() {
 
 # Also docker rm $(docker ps -a -q)
 alias istioDockerCleanImages='docker rmi $(docker images -q)'
+
+# Switch to a new deb branch
+function istioBranch() {
+    local b=$1
+    git status -b -s --untracked-files=no
+    git checkout github/master
+    git pull github/master
+    git checkout -b $1
+}
+
+function istioSync() {
+    git fetch github
+    git fetch origin
+    git pull github master
+}
+
+function pilot-stats() {
+    curl -v http://$ZVPN:15003/cache_stats
+}
