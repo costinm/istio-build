@@ -11,7 +11,7 @@ export GO_TOP=$TOP
 export ISTIO_SRC=$TOP
 export GOPATH=$TOP
 export ISTIO_GO=$GOPATH/src/istio.io/istio
-
+export OUT_DIR=$TOP/out
 export ISTIO_OUT=$GO_TOP/out/linux_amd64/release
 
 export PATH=$GOPATH/bin:$ISTIO_OUT:$PATH
@@ -82,18 +82,141 @@ function kexec() {
     local ns=${3:-istio-system}
     kubectl --namespace=$ns exec -it $(kubectl --namespace=$ns get -l $label pod -o=jsonpath='{.items[0].metadata.name}') -c $container /bin/bash
 }
+function ingress-exec() {
+    local ns=${1:-istio-system}
+    kubectl --namespace=$ns exec -it $(kubectl --namespace=$ns get -l istio=ingress pod -o=jsonpath='{.items[0].metadata.name}') -c ingress /bin/bash
+}
 
 function pilot-get() {
     curl localhost:15003/cache_stats
 }
 
+# Access to istio-system components
 function pilot-logs() {
     klog istio=pilot discovery istio-system $*
 }
+function ingress-logs() {
+    klog istio=ingress ingress istio-system $*
+}
 
 function pilot-exec() {
-    kexec istio=pilot
+    kexec istio=pilot istio-proxy istio-system
 }
+function istio-exec-system-pilot() {
+    kexec istio=pilot istio-proxy istio-system
+}
+function istio-logs-system-pilot() {
+    klog istio=pilot discovery istio-system $*
+}
+function istio-exec-system-ingress() {
+    kexec istio=ingress ingress istio-system
+}
+function istio-logs-system-ingress() {
+    klog istio=ingress ingress istio-system $*
+}
+function istio-logs-system-mixer() {
+    klog istio=mixer mixer istio-system $*
+}
+function istio-logs-system-mixer-proxy() {
+    klog istio=mixer mixer-proxy istio-system $*
+}
+function istio-exec-system-simple() {
+    kexec app=echosrv echosrv istio-system
+}
+function istio-logs-system-simple() {
+    klog app=echosrv echosrv istio-system $*
+}
+function istio-exec-system-simple-proxy() {
+    kexec app=echosrv istio-proxy istio-system
+}
+function istio-logs-system-simple-proxy() {
+    klog app=echosrv istio-proxy istio-system $*
+}
+function istio-fwd-system-pilotmon() {
+    istio-fwd1 istio=pilot istio-system 11093 9093
+}
+function istio-fwd-system-pilot() {
+    istio-fwd1 istio=pilot istio-system 11080 8080
+}
+
+
+# Access to pilot no-auth suite
+function istio-exec-noauth-a() {
+   kexec app=a istio-proxy pilot-noauth
+}
+function istio-logs-noauth-a() {
+    klog app=a istio-proxy pilot-noauth $*
+}
+function istio-exec-noauth-b() {
+   kexec app=b istio-proxy pilot-noauth
+}
+function istio-exec-noauth-ingress() {
+   kexec app=ingress istio-proxy pilot-noauth-system
+}
+function istio-exec-noauth-pilot() {
+   kexec infra=pilot istio-proxy pilot-noauth-system
+}
+function istio-logs-noauth-mixer-proxy() {
+    klog istio=mixer istio-proxy pilot-noauth-system $*
+}
+function istio-logs-noauth-ingress() {
+    klog app=ingress istio-proxy pilot-noauth-system $*
+}
+function istio-logs-noauth-pilot() {
+    klog infra=pilot discovery pilot-noauth-system $*
+}
+function istio-fwd-noauth-pilotmon() {
+    istio-fwd1 infra=pilot pilot-noauth-system 12093 9093
+}
+function istio-fwd-noauth-pilot() {
+    istio-fwd1 infra=pilot pilot-noauth-system 12080 8080
+}
+
+# Access to istio-test
+# Access to pilot no-auth suite
+function istio-exec-test-a() {
+   kexec app=a istio-proxy istio-test
+}
+function istio-logs-test-a() {
+    klog app=a istio-proxy istio-test $*
+}
+function istio-exec-test-b() {
+   kexec app=b istio-proxy istio-test
+}
+
+function make-bootstrap() {
+ cp $TOP/out/linux_amd64/release/bootstrap/all/envoy-rev0.json pkg/bootstrap/testdata/all_golden.json
+ cp $TOP/out/linux_amd64/release/bootstrap/auth/envoy-rev0.json pkg/bootstrap/testdata/auth_golden.json
+ cp $TOP/out/linux_amd64/release/bootstrap/default/envoy-rev0.json pkg/bootstrap/testdata/default_golden.json
+}
+
+
+function istio-fwd1() {
+    local L=$1
+    local NS=$2
+    local PL=$3
+    local PR=$4
+
+    local N=$NS-$L
+    if [[ -f $LOG_DIR/fwd-$N.pid ]] ; then
+        kill -9 $(cat $LOG_DIR/fwd-$N.pid)
+    fi
+    kubectl --namespace=$NS port-forward $(kubectl --namespace=$NS get -l $L pod -o=jsonpath='{.items[0].metadata.name}') $PL:$PR &
+    echo $! > $LOG_DIR/fwd-$N.pid
+}
+
+
+# Access to the pilot auth suite
+function test-exec-auth-pilot() {
+   kexec infra=pilot istio-proxy pilot-auth-system
+}
+function test-fwd-auth-pilot() {
+   kfwd 15005 infra=pilot pilot-auth-system
+}
+function test-fwd-auth-pilot1() {
+   kfwd2 8080 15003 infra=pilot pilot-auth-system
+}
+
 
 function istio-fwd() {
     fwd-prom
@@ -108,6 +231,26 @@ function kfwd() {
     local label=$2
     local ns=${3:-istio-system}
     kubectl --namespace=$ns port-forward $(kubectl --namespace=$ns get -l $label pod -o=jsonpath='{.items[0].metadata.name}') $port:$port
+}
+function kfwd2() {
+    local port=$1
+    local port2=$2
+    local label=$3
+    local ns=${4:-istio-system}
+    kubectl --namespace=$ns port-forward $(kubectl --namespace=$ns get -l $label pod -o=jsonpath='{.items[0].metadata.name}') $port:$port2
+}
+
+function istioV2() {
+   local T=${1-$TAG}
+    docker tag ${HUB}/proxyv2:$T ${HUB}/proxy:$T
+    docker tag ${HUB}/proxyv2:$T ${HUB}/proxy_debug:$T
+}
+
+function istioV2Push() {
+   local T=${1-$TAG}
+    docker push ${HUB}/proxyv2:$T
+    docker push ${HUB}/proxy:$T
+    docker push ${HUB}/proxy_debug:$T
 }
 
 function fwdApp() {
@@ -134,6 +277,35 @@ function pilot-fwd() {
     echo "Pilot http://localhost:15003/cache_stats $POD"
     #kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l istio=pilot pod -o=jsonpath='{.items[0].metadata.name}') 15003:8080
     kubectl --namespace=istio-system port-forward $POD 15003:8080
+}
+
+function istio-key() {
+
+    go run ./security/cmd/generate_cert/main.go \
+        -signer-priv ./security/samples/plugin_ca_certs/ca-key.pem \
+        -signer-cert ./security/samples/plugin_ca_certs/ca-cert.pem \
+        -client -host spiffe://costin.foo.com
+
+}
+function port-registry() {
+
+  POD=$(kubectl get pods --namespace kube-system -l k8s-app=kube-registry \
+  -o template --template '{{range .items}}{{.metadata.name}} {{.status.phase}}{{"\n"}}{{end}}' \
+  | grep Running | head -1 | cut -f1 -d' ')
+    if [[ -f $LOG_DIR/registry.pid ]] ; then
+        kill -9 $(cat $LOG_DIR/registry.pid)
+    fi
+  kubectl port-forward --namespace kube-system $POD 5000:5000 &
+    echo $! > $LOG_DIR/registry.pid
+}
+
+function pilot-fwdmon() {
+    local N=pilotmon
+
+    if [[ -f $LOG_DIR/fwd-$N.pid ]] ; then
+        kill -9 $(cat $LOG_DIR/fwd-$N.pid)
+    fi
+    kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l istio=pilot pod -o=jsonpath='{.items[0].metadata.name}') 19093:9093 &
     echo $! > $LOG_DIR/fwd-$N.pid
 }
 
@@ -168,6 +340,13 @@ alias istiocurl="curl -k --cert /etc/certs/cert-chain.pem --cacert /etc/certs/ro
 #
 function lunch() {
     local env=$1
+    if [ "$env" != "minikube" ]; then
+        unset DOCKER_BUILDER
+        unset DOCKER_CERT_PATH
+        unset DOCKER_TLS_VERIFY
+        unset DOCKER_HOST
+        unset DOCKER_API_VERSION
+    fi
 
     if [ "$env" == "local" ]; then
     	export KUBECONFIG=${ISTIO_GO}/.circleci/config
@@ -178,30 +357,46 @@ function lunch() {
         export KUBECONFIG=${OUT}/minikube.conf
         minikube status | grep Running
         if [ "$?" != "0" ]  || [ ! -f ${KUBECONFIG} ] ; then
-          minikube start --memory 16384 --cpus 4 --kubernetes-version v1.9.0 \
+          minikube start --memory 8192 --cpus 2 --kubernetes-version v1.9.0 \
             --apiserver-name apiserver.minikube.istio.webinf.info
+          kubectl apply -f tests/util/localregistry/localregistry.yaml
         fi
 	    minikube update-context
 	    eval $(minikube docker-env)
+        #export HUB=localhost:5000
+        #export TAG=latest
 
 	    export ISTIO=$(minikube ip)
 
+        port-registry
+
     elif [[ -f $HOME/.istio/${env} ]]; then
         source $HOME/.istio/${env}
+        export KUBECONFIG=$HOME/.istio/k8s.$env.yaml
 
         export ISTIO=$(kubectl get -n istio-system service istio-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
     else
-        local zone=${2:-us-west1-c}
-        local cluster=${3:-istio-test}
-        export KUBECONFIG=$HOME/.istio/k8s.$env.yaml
-        gcloud container clusters get-credentials $cluster --zone $zone --project $project
+        echo "lunch local|minikube|..."
+        echo ls $HOME/.istio
 
-        export ISTIO=$(kubectl get -n istio-system service istio-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+        echo "Env file must contain ZONE CLUSTER PROJECT"
+        echo "and: gcloud container clusters get-credentials $CLUSTER --zone $ZONE --project $PROJECT"
+        return
     fi
 
     export TEST_ENV=$env
-
+    local CC=$(kubectl current-context)
+    kubectl config set contexts.default-context.namespace istio-system
     echo "Enabled $env with KUBECONFIG=$KUBECONFIG and IP=$ISTIO"
+}
+
+function kconf() {
+ kubectl config set-credentials user --username=$1 --password=$2
+ kubectl config set-cluster local-server --server=http://localhost:8080
+ kubectl config set-context default-context --cluster=local-server --user=user
+ kubectl config use-context default-context
+ kubectl config set contexts.default-context.namespace istio-system
+ kubectl config view
 }
 
 function stop() {
@@ -241,9 +436,8 @@ function istioDeployTest() {
      local apply=${kubeapply:-kubectl apply -n istio-test -f -}
 
      kubectl create ns istio-test
-     helm template tests/helm --set testHub=$HUB --set testTag=$TAG   --set istioTag=$TAG \
-       --set istioHub=$HUB \
-           $v | istioctl \
+     export ISTIO_PROXY_IMAGE=proxyv2
+     helm template tests/helm --namespace istio-test --set istioHub=$HUB --set testHub=$HUB --set testEnv=`date +%H%M` --set testTag=$TAG $v | istioctl \
         kube-inject --debug --meshConfigMapName=istio --hub $HUB --tag $TAG -f - | $apply
 }
 
@@ -322,4 +516,8 @@ function pilot-pprof() {
 
     #go tool pprof -http=:9998 -alloc_space -seconds 20 http://$ZVPN:15003/debug/pprof/heap  &
 
+}
+
+function cpToMk() {
+	docker save $1 | (eval $(minikube docker-env) && docker load)
 }
