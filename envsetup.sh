@@ -130,8 +130,10 @@ function pilot-fwd() {
         kill -9 $(cat $LOG_DIR/fwd-$N.pid)
     fi
 
-    echo "Pilot http://localhost:15003/cache_stats"
-    kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l istio=pilot pod -o=jsonpath='{.items[0].metadata.name}') 15003:8080
+    local POD=$(kubectl get -n istio-system po  |grep pilot |grep Running | cut -f1 -d\ )
+    echo "Pilot http://localhost:15003/cache_stats $POD"
+    #kubectl --namespace=istio-system port-forward $(kubectl --namespace=istio-system get -l istio=pilot pod -o=jsonpath='{.items[0].metadata.name}') 15003:8080
+    kubectl --namespace=istio-system port-forward $POD 15003:8080
     echo $! > $LOG_DIR/fwd-$N.pid
 }
 
@@ -296,4 +298,28 @@ function istioSync() {
 
 function pilot-stats() {
     curl -v http://$ZVPN:15003/cache_stats
+}
+
+function pilot-m() {
+    make pilot docker.pilot push.docker.pilot
+    istioDeploy
+    pilot-fwd
+}
+
+# Get pprof for pilot. Assumes 15003 is forwarded
+function pilot-pprof() {
+
+    if [[ -f $LOG_DIR/pprof.pid ]] ; then
+        kill -9 $(cat $LOG_DIR/pprof.pid)
+    fi
+
+    #go tool pprof -web -sample_index inuse_space  http://$ZVPN:15003/debug/pprof/heap
+    go tool pprof -web -sample_index alloc_space  http://$ZVPN:15003/debug/pprof/heap
+
+    go tool pprof -http=:9999 -alloc_space -seconds 20 http://$ZVPN:15003/debug/pprof/heap  &
+    echo $! > $LOG_DIR/pprof.pid
+    sleep 4000
+
+    #go tool pprof -http=:9998 -alloc_space -seconds 20 http://$ZVPN:15003/debug/pprof/heap  &
+
 }
